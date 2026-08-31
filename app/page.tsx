@@ -39,12 +39,19 @@ export default function Home() {
           </div>
           <Link className="text-link" href={`/story/${featured.slug}`}>Read the signal →</Link>
         </div>
-        <div className="hero__visual" aria-hidden="true">
-          <div className="orb orb--one" />
-          <div className="orb orb--two" />
-          <div className="grid-mark">BF/T</div>
-          <p>Business is being rewritten in real time.</p>
-        </div>
+        {featured.heroImage ? (
+          <div className="hero__visual hero__visual--image">
+            <img className="hero__image" src={featured.heroImage} alt={featured.imageAlt || featured.title} />
+            {featured.imageCredit ? <span className="image-credit">{featured.imageCredit}</span> : null}
+          </div>
+        ) : (
+          <div className="hero__visual" aria-hidden="true">
+            <div className="orb orb--one" />
+            <div className="orb orb--two" />
+            <div className="grid-mark">BF/T</div>
+            <p>Business is being rewritten in real time.</p>
+          </div>
+        )}
       </section>
 
       <section className="manifesto shell">
@@ -59,6 +66,7 @@ export default function Home() {
       <section className="story-grid shell">
         {rest.map((story, index) => (
           <article key={story.slug} id={story.category.toLowerCase()} className={index === 0 ? "story-card story-card--wide" : "story-card"}>
+            {story.cardImage ? <Link href={`/story/${story.slug}`} className="story-card__media"><img className="story-card__image" src={story.cardImage} alt={story.imageAlt || story.title} /></Link> : null}
             <p className="eyebrow">{story.kicker}</p>
             <h3><Link href={`/story/${story.slug}`}>{story.title}</Link></h3>
             <p>{story.dek}</p>

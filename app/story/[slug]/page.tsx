@@ -11,7 +11,14 @@ export function generateStaticParams() { return stories.map((story) => ({ slug: 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const story = stories.find((item) => item.slug === slug);
-  return story ? { title: story.title, description: story.dek } : {};
+  if (!story) return {};
+  const image = story.ogImage ? `https://businessfuture.today${story.ogImage}` : undefined;
+  return {
+    title: story.title,
+    description: story.dek,
+    openGraph: { title: story.title, description: story.dek, type: "article", images: image ? [{ url: image, width: 1200, height: 630, alt: story.imageAlt || story.title }] : undefined },
+    twitter: { card: "summary_large_image", title: story.title, description: story.dek, images: image ? [image] : undefined }
+  };
 }
 
 function ArticleBody({ markdown }: { markdown?: string }) {
@@ -44,6 +51,12 @@ export default async function StoryPage({ params }: Props) {
       <article className="article shell">
         <p className="eyebrow">{story.kicker}</p><h1>{story.title}</h1><p className="article__dek">{story.dek}</p>
         <div className="story-meta"><span>{story.category}</span><span>{story.readTime}</span></div>
+        {story.heroImage ? (
+          <figure className="article__hero">
+            <img src={story.heroImage} alt={story.imageAlt || story.title} />
+            {story.imageCredit ? <figcaption>{story.imageCredit}</figcaption> : null}
+          </figure>
+        ) : null}
         <div className="article__body"><ArticleBody markdown={story.bodyMarkdown} /></div>
         {story.sourceUrls?.length ? <div className="article__sources"><h2>Sources</h2><ul>{story.sourceUrls.map((url) => <li key={url}><a href={url} target="_blank" rel="noreferrer">{new URL(url).hostname}</a></li>)}</ul></div> : null}
       </article>

@@ -99,6 +99,34 @@ export async function ensureSchema() {
     CREATE INDEX IF NOT EXISTS drafts_status_idx
       ON drafts (status, created_at DESC);
 
+    CREATE TABLE IF NOT EXISTS media_assets (
+      id UUID PRIMARY KEY,
+      draft_id UUID NOT NULL REFERENCES drafts(id) ON DELETE CASCADE,
+      role TEXT NOT NULL DEFAULT 'hero',
+      source_type TEXT NOT NULL,
+      source_page_url TEXT,
+      source_image_url TEXT,
+      license_status TEXT NOT NULL DEFAULT 'unknown',
+      license_basis TEXT,
+      attribution_text TEXT,
+      original_path TEXT NOT NULL,
+      hero_path TEXT NOT NULL,
+      card_path TEXT NOT NULL,
+      og_path TEXT NOT NULL,
+      mime_type TEXT NOT NULL DEFAULT 'image/webp',
+      width INTEGER,
+      height INTEGER,
+      alt_text TEXT NOT NULL,
+      prompt TEXT,
+      metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+      updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+      UNIQUE (draft_id, role)
+    );
+
+    CREATE INDEX IF NOT EXISTS media_assets_draft_idx
+      ON media_assets (draft_id, role);
+
     CREATE TABLE IF NOT EXISTS automation_runs (
       id UUID PRIMARY KEY,
       status TEXT NOT NULL,

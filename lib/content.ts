@@ -12,6 +12,13 @@ export type Story = {
   sourceUrls?: readonly string[];
   publishedAt?: string | null;
   generated?: boolean;
+  heroImage?: string | null;
+  cardImage?: string | null;
+  ogImage?: string | null;
+  imageAlt?: string | null;
+  imageCredit?: string | null;
+  sourceImageCandidate?: string | null;
+  licenseStatus?: string | null;
 };
 
 const seedStories: Story[] = [
