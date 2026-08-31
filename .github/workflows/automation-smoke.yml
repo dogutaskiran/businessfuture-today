@@ -1,0 +1,17 @@
+name: Automation smoke
+
+on:
+  workflow_dispatch:
+
+nobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Run live content automation
+        env:
+          BOOTSTRAP_TOKEN: ${{ secrets.BOOTSTRAP_TOKEN }}
+        run: |
+          set -euo pipefail
+          response="$(curl --fail-with-body --silent --show-error --max-time 300 \"https://businessfuture.today/api/automation/run?bootstrap=${BOOTSTRAP_TOKEN}\")"
+          echo "$response"
