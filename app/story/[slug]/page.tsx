@@ -6,62 +6,48 @@ import { SubscribeForm } from "@/components/subscribe-form";
 
 type Props = { params: Promise<{ slug: string }> };
 
-export function generateStaticParams() {
-  return stories.map((story) => ({ slug: story.slug }));
-}
+export function generateStaticParams() { return stories.map((story) => ({ slug: story.slug })); }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const story = stories.find((item) => item.slug === slug);
-  if (!story) return {};
-  return { title: story.title, description: story.dek };
+  return story ? { title: story.title, description: story.dek } : {};
+}
+
+function ArticleBody({ markdown }: { markdown?: string }) {
+  if (!markdown) return (
+    <>
+      <p>This launch-format story is being replaced by Business Future Today&apos;s live editorial engine.</p>
+      <h2>The signal</h2><p>We separate what happened from what matters to operators, founders, executives and builders.</p>
+    </>
+  );
+  const blocks = markdown.split(/\n{2,}/).map((block) => block.trim()).filter(Boolean);
+  return <>{blocks.map((block, index) => {
+    if (block.startsWith("### ")) return <h3 key={index}>{block.slice(4)}</h3>;
+    if (block.startsWith("## ")) return <h2 key={index}>{block.slice(3)}</h2>;
+    if (block.startsWith("# ")) return <h2 key={index}>{block.slice(2)}</h2>;
+    const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
+    if (lines.length > 0 && lines.every((line) => line.startsWith("- "))) {
+      return <ul key={index}>{lines.map((line, i) => <li key={i}>{line.slice(2)}</li>)}</ul>;
+    }
+    return <p key={index}>{block.replace(/\*\*/g, "")}</p>;
+  })}</>;
 }
 
 export default async function StoryPage({ params }: Props) {
   const { slug } = await params;
   const story = stories.find((item) => item.slug === slug);
   if (!story) notFound();
-
   return (
     <main>
-      <header className="site-header shell">
-        <Link href="/" className="brand"><span>BUSINESS FUTURE</span><strong>TODAY</strong></Link>
-        <Link className="back-link" href="/">← Back to today</Link>
-      </header>
-
+      <header className="site-header shell"><Link href="/" className="brand"><span>BUSINESS FUTURE</span><strong>TODAY</strong></Link><Link className="back-link" href="/">← Back to today</Link></header>
       <article className="article shell">
-        <p className="eyebrow">{story.kicker}</p>
-        <h1>{story.title}</h1>
-        <p className="article__dek">{story.dek}</p>
+        <p className="eyebrow">{story.kicker}</p><h1>{story.title}</h1><p className="article__dek">{story.dek}</p>
         <div className="story-meta"><span>{story.category}</span><span>{story.readTime}</span></div>
-
-        <div className="article__body">
-          <p>
-            This is a launch-format story page for Business Future Today. The production content pipeline
-            will be fed by PubMesh: source discovery, editorial synthesis, images, CMS publishing and social distribution.
-          </p>
-          <h2>The signal</h2>
-          <p>
-            We will separate what happened from what matters. Every story should leave the reader with a clearer
-            understanding of the business consequence, not another tab to keep open.
-          </p>
-          <h2>Why it matters</h2>
-          <p>
-            The same underlying event can matter differently to a founder, operator, developer, investor or marketer.
-            That is where the personalization layer will evolve after the first publication loop is working.
-          </p>
-          <h2>What to watch next</h2>
-          <p>
-            Each story becomes an input to follow-up briefings, lists, social posts and personalized recommendations.
-            One editorial object; many useful outputs.
-          </p>
-        </div>
+        <div className="article__body"><ArticleBody markdown={story.bodyMarkdown} /></div>
+        {story.sourceUrls?.length ? <div className="article__sources"><h2>Sources</h2><ul>{story.sourceUrls.map((url) => <li key={url}><a href={url} target="_blank" rel="noreferrer">{new URL(url).hostname}</a></li>)}</ul></div> : null}
       </article>
-
-      <section className="briefing briefing--article shell">
-        <div><p className="eyebrow">STAY AHEAD</p><h2>The future of business, in your inbox.</h2></div>
-        <div><SubscribeForm /><small>Built to become personal, not noisy.</small></div>
-      </section>
+      <section className="briefing briefing--article shell"><div><p className="eyebrow">STAY AHEAD</p><h2>The future of business, in your inbox.</h2></div><div><SubscribeForm /><small>Built to become personal, not noisy.</small></div></section>
     </main>
   );
 }

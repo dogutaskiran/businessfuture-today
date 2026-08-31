@@ -17,7 +17,7 @@ export function db() {
       max: 3,
       idleTimeoutMillis: 10_000,
       connectionTimeoutMillis: 8_000,
-      ssl: { rejectUnauthorized: false }
+      ssl: process.env.DATABASE_SSL === "false" ? false : { rejectUnauthorized: false }
     });
   }
 

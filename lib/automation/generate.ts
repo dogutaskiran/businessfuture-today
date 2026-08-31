@@ -17,6 +17,7 @@ export async function generateDrafts() {
 
   const model = process.env.OPENAI_MODEL || "gpt-5.6-terra";
   const limit = Math.max(1, Math.min(5, Number(process.env.AUTOMATION_MAX_DRAFTS || 2)));
+  const autoPublish = process.env.AUTOMATION_AUTO_PUBLISH === "true";
 
   const clusters = await db().query<{
     id: string; title: string; category: string; score: string; source_count: number;
@@ -25,6 +26,11 @@ export async function generateDrafts() {
        FROM clusters c LEFT JOIN drafts d ON d.cluster_id=c.id
       WHERE d.cluster_id IS NULL AND c.status='open' AND c.score>=0.54
         AND c.updated_at>NOW()-INTERVAL '72 hours'
+        AND (
+          c.source_count >= 2 OR
+          lower(c.title) ~ '(ai|agent|enterprise|company|startup|software|cloud|chip|developer|robot|automation|business|regulat|nvidia|openai|chatgpt|microsoft|google|aws|funding|valuation|acquisition)'
+        )
+        AND lower(c.title) !~ '(headphone|earbud|lowest price|discount|steam leak|game asset|microcar)'
       ORDER BY c.score DESC,c.source_count DESC,c.updated_at DESC LIMIT $1`,
     [limit]
   );
@@ -94,12 +100,12 @@ export async function generateDrafts() {
 
     await db().query(
       `INSERT INTO drafts
-        (id,cluster_id,slug,title,dek,kicker,category,body_markdown,source_urls,social_caption,model)
-       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9::jsonb,$10,$11)`,
+        (id,cluster_id,slug,title,dek,kicker,category,body_markdown,source_urls,social_caption,model,status,published_at)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9::jsonb,$10,$11,$12,$13)`,
       [
         draftId,cluster.id,slug,article.title,article.dek,article.kicker,article.category,
         article.body_markdown,JSON.stringify(sourceItems.rows.map((item)=>item.url)),
-        article.social_caption,model
+        article.social_caption,model,autoPublish ? "published" : "draft",autoPublish ? new Date().toISOString() : null
       ]
     );
 
