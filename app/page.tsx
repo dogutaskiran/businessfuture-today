@@ -42,7 +42,6 @@ export default function Home() {
         {featured.heroImage ? (
           <div className="hero__visual hero__visual--image">
             <img className="hero__image" src={featured.heroImage} alt={featured.imageAlt || featured.title} />
-            {featured.imageCredit ? <span className="image-credit">{featured.imageCredit}</span> : null}
           </div>
         ) : (
           <div className="hero__visual" aria-hidden="true">

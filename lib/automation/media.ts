@@ -133,7 +133,7 @@ export async function processArticleMedia() {
     const paths=await makeVariants(draft.slug,bytes!);
     const assetId=randomUUID();
     const alt=`Editorial image for ${draft.title}`;
-    const credit=sourceType==="source" ? source.attribution : "Business Future Today · AI-generated editorial illustration";
+    const credit=sourceType==="source" ? source.attribution : "Illustration: Business Future Today";
     await db().query(`
       INSERT INTO media_assets (id,draft_id,role,source_type,source_page_url,source_image_url,license_status,license_basis,attribution_text,original_path,hero_path,card_path,og_path,mime_type,width,height,alt_text,prompt,metadata)
       VALUES ($1,$2,'hero',$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,'image/webp',1536,1024,$13,$14,$15::jsonb)
