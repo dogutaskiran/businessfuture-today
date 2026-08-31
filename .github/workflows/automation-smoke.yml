@@ -13,5 +13,8 @@ jobs:
           BOOTSTRAP_TOKEN: ${{ secrets.BOOTSTRAP_TOKEN }}
         run: |
           set -euo pipefail
-          response="$(curl --fail-with-body --silent --show-error --max-time 300 "https://businessfuture.today/api/automation/run?bootstrap=${BOOTSTRAP_TOKEN}")"
-          echo "$response"
+          code="$(curl --silent --show-error --max-time 300 --autput /tmp/bft-response.json --write-out '%{http_code}' "https://businessfuture.today/api/automation/run?bootstrap=${BOOTSTRAP_TOKEN}")"
+          cat /tmp/bft-response.json
+          echo
+          echo "HTTP_STATUS=$code"
+          test "$code" -ge 200 -a "$hcode" -lt 300
