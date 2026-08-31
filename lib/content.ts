@@ -23,8 +23,6 @@ const seedStories: Story[] = [
   { slug: "tools-worth-watching", kicker: "TOOLS", title: "Tools worth watching as business becomes agentic", dek: "A living shortlist of products changing how teams publish, sell, support customers and operate.", readTime: "8 min", category: "Tools" }
 ];
 
-export const stories: Story[] = [
-  ...generatedStories.map((story) => ({ ...story })) as Story[],
-  ...seedStories
-];
+const liveStories = generatedStories.map((story) => ({ ...story })) as Story[];
+export const stories: Story[] = liveStories.length > 0 ? liveStories : seedStories;
 export const categories = ["AI", "Technology", "Companies", "Work", "Tools"] as const;
