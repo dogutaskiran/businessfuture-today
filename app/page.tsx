@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SubscribeForm } from "@/components/subscribe-form";
+import { AdSlot } from "@/components/ad-slot";
 import { categories, stories } from "@/lib/content";
 
 export default function Home() {
@@ -27,6 +28,8 @@ export default function Home() {
           <span>AI</span><i>•</i><span>TECHNOLOGY</span><i>•</i><span>COMPANIES</span><i>•</i><span>WORK</span><i>•</i><span>TOOLS</span>
         </div>
       </section>
+
+      <div className="ad-band shell"><AdSlot slotKey="site_top_billboard" /></div>
 
       <section className="hero shell">
         <div className="hero__copy">
@@ -61,6 +64,8 @@ export default function Home() {
           useful signals, sharp explainers, practical lists and eventually a briefing built for you.
         </p>
       </section>
+
+      <div className="ad-band shell"><AdSlot slotKey="home_midfeed" /></div>
 
       <section className="story-grid shell">
         {rest.map((story, index) => (
