@@ -1,43 +1,32 @@
 import { NextResponse } from "next/server";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PUBMESH_SUBSCRIBE_URL = "https://pubmesh.media/api/v1/public/newsletter/channels/14dc376b-8161-4f1c-bde7-570c620ea0c5/subscribe";
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
   const email = typeof body?.email === "string" ? body.email.trim().toLowerCase() : "";
+  if (!EMAIL_RE.test(email)) return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
 
-  if (!EMAIL_RE.test(email)) {
-    return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
-  }
-
-  const endpoint = process.env.PUBMESH_SUBSCRIBE_URL;
-  const token = process.env.PUBMESH_SERVICE_TOKEN;
-
-  if (!endpoint) {
-    return NextResponse.json(
-      { error: "Subscriptions are opening shortly." },
-      { status: 503 }
-    );
-  }
-
-  const response = await fetch(endpoint, {
+  const response = await fetch(PUBMESH_SUBSCRIBE_URL, {
     method: "POST",
-    headers: {
-      "content-type": "application/json",
-      ...(token ? { authorization: `Bearer ${token}` } : {})
-    },
+    headers: { "content-type": "application/json" },
     body: JSON.stringify({
       email,
-      source: body?.source || "businessfuture.today",
-      publication: "business-future-today",
-      interests: Array.isArray(body?.interests) ? body.interests : []
+      optIn: "double",
+      attributes: {
+        publication: "business-future-today",
+        interests: Array.isArray(body?.interests) ? body.interests : []
+      },
+      consent: {
+        source: typeof body?.source === "string" ? body.source : "businessfuture.today",
+        form: "bft-web-subscribe",
+        privacy: "accepted"
+      }
     }),
     cache: "no-store"
   });
-
-  if (!response.ok) {
-    return NextResponse.json({ error: "We couldn't add you yet." }, { status: 502 });
-  }
-
-  return NextResponse.json({ ok: true });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) return NextResponse.json({ error: "We couldn't add you yet." }, { status: 502 });
+  return NextResponse.json({ ok: true, status: data.status, confirmationRequired: Boolean(data.confirmationRequired), confirmationQueued: Boolean(data.confirmationQueued) });
 }

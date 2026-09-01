@@ -25,7 +25,7 @@ export function SubscribeForm({ compact = false }: { compact?: boolean }) {
       }
 
       setState("success");
-      setMessage("You're on the list.");
+      setMessage(data.confirmationRequired ? "Check your inbox to confirm." : "You’re subscribed.");
       setEmail("");
     } catch (error) {
       setState("error");
