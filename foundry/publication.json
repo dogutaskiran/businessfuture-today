@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "publicationId": "business-future-today",
+  "name": "Business Future Today",
+  "ownerNamespace": "doguvan/foundry",
+  "canonicalDomain": "businessfuture.today",
+  "language": "en",
+  "operatingMode": "social-first",
+  "content": {
+    "rss": "https://businessfuture.today/feed.xml",
+    "canonicalStoryPattern": "https://businessfuture.today/story/{slug}",
+    "sourcePolicy": "source-first-with-rights-check",
+    "generatedMediaFallback": "gpt-image-2-high",
+    "editorialVoicesArePersonas": true
+  },
+  "distribution": {
+    "provider": "pubmesh",
+    "socialOutbox": "https://businessfuture.today/api/social/outbox",
+    "preferredPortrait": "1080x1350",
+    "preferredSquare": "1080x1080"
+  },
+  "email": {
+    "provider": "mailmesh",
+    "domain": "businessfuture.today",
+    "desiredAliases": [
+      "editorial",
+      "tips",
+      "newsletter",
+      "partnerships",
+      "ads"
+    ]
+  },
+  "editorialDesks": [
+    "ai",
+    "technology",
+    "companies",
+    "work",
+    "operator"
+  ],
+  "revenue": {
+    "ads": true,
+    "newsletter": true,
+    "affiliate": true,
+    "futureProducts": true
+  }
+}
