@@ -1,12 +1,76 @@
 export const generatedStories = [
   {
+    "slug": "google-pics-ai-image-editing-workspace",
+    "kicker": "Creative tools",
+    "title": "Google Pics Brings AI Image Editing Into Workspace",
+    "dek": "Google’s new Workspace design suite combines Gemini and the Nano Banana model to give business users more targeted control over generated and edited imagery.",
+    "readTime": "3 min",
+    "category": "Technology",
+    "featured": true,
+    "bodyMarkdown": "Google is introducing **Google Pics**, a creative design suite for Workspace users that aims to make AI-generated and AI-edited business imagery easier to produce and refine.\n\nThe product is built around Gemini and Google’s Nano Banana generative AI model. Its central pitch is not simply image generation: it is more precise, object-level editing. Users can select specific objects or text in an image and describe the change they want, rather than relying on a broad chat prompt to remake an entire visual.\n\n## What changed\n\nGenerative-image tools have become widely used for personal experimentation, but business use has posed a different problem. Marketing and communications teams need visuals that adhere to a brief, preserve product details, and avoid the distorted or irrelevant output often associated with prompt-only image generators.\n\nGoogle Pics is designed to narrow that gap. The suite gives Workspace users tools for generating imagery and manipulating existing images, with more granular controls over what is altered. The approach resembles the template-driven accessibility of products such as Canva, but places Google’s generative AI models at the center of the workflow.\n\nThe ability to target an individual object or a piece of text matters because it can reduce the need to regenerate an image after every requested revision. In principle, a team could keep the parts of a design that work while changing only the element that does not.\n\n## Why it matters for businesses\n\nFor operators and small teams, the appeal is consolidation. Workspace is already where many organizations create documents, presentations, and collaborative materials. Adding a design and image-editing layer could make it easier to produce campaign assets, internal communications, and presentation visuals without moving work between several tools.\n\nFor marketing teams, granular editing is the more consequential feature. Brand work is rarely a one-prompt task. It involves rounds of changes: adjusting copy, replacing a visual element, changing emphasis, and adapting creative for different contexts. An AI tool that can make localized modifications may be more useful than one optimized for producing a single striking image from scratch.\n\nThe release also places Google more directly in a market where design platforms have increasingly added AI generation and editing. Google’s advantage, if Pics is adopted, would come from its position inside Workspace and the collaboration habits already built around that software.\n\n## What to watch next\n\nThe key question is whether targeted controls produce dependable results in business settings. Better selection and prompting do not automatically solve familiar generative-AI issues around accuracy, consistency, and awkward output. Teams will still need to evaluate whether edited images preserve the details that matter to a campaign or product.\n\nBuyers should also watch how Google positions Pics within Workspace workflows: whether it is tightly connected to the documents and presentation tools teams already use, and whether its controls are practical enough for non-designers without becoming limiting for creative professionals.\n\nGoogle Pics signals a broader shift in workplace AI: moving from open-ended generation toward tools that support specific, iterative production tasks. For businesses, the value will depend less on the novelty of generating an image and more on whether AI can make revision cycles faster without sacrificing control.",
+    "sourceUrls": [
+      "https://www.theverge.com/tech/987423/google-pics-ai-image-editor-generator"
+    ],
+    "publishedAt": "2026-09-01T21:35:54.936Z",
+    "heroImage": "/media/google-pics-ai-image-editing-workspace/hero.webp",
+    "cardImage": "/media/google-pics-ai-image-editing-workspace/card.webp",
+    "ogImage": "/media/google-pics-ai-image-editing-workspace/og.webp",
+    "socialSquareImage": "/media/google-pics-ai-image-editing-workspace/social-square.webp",
+    "socialPortraitImage": "/media/google-pics-ai-image-editing-workspace/social-portrait.webp",
+    "imageAlt": "Editorial image for Google Pics Brings AI Image Editing Into Workspace",
+    "imageCredit": "Illustration: Business Future Today",
+    "sourceImageCandidate": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/gettyimages-2287305192.jpg?strip=all",
+    "licenseStatus": "unknown",
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/google-pics-ai-image-editing-workspace/inline-1.webp",
+        "alt": "Supporting image for Google Pics Brings AI Image Editing Into Workspace",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
+    "generated": true
+  },
+  {
+    "slug": "tim-cook-climate-legacy-apple-ai-energy-demand",
+    "kicker": "Technology",
+    "title": "Tim Cook’s Climate Legacy Faces Its Biggest Test in Apple’s AI Push",
+    "dek": "Apple held its carbon footprint steady while much of big tech’s emissions rose. The company’s effort to catch up in AI could make that harder to sustain.",
+    "readTime": "2 min",
+    "category": "Technology",
+    "featured": false,
+    "bodyMarkdown": "Tim Cook leaves Apple with a comparatively strong environmental record, according to The Verge. During his tenure, Apple set ambitious targets to reduce pollution from its products and supply chain, and it kept its carbon footprint from growing even as other large technology companies saw emissions rise.\n\nThe next phase of Apple’s strategy may put that record under greater pressure.\n\n## A climate program built around operations\n\nApple’s environmental progress under Cook was not simply a branding exercise. The company set industry-leading goals covering the emissions created by products and suppliers—an important distinction for a hardware business whose climate impact extends far beyond its own offices and retail stores.\n\nKeeping its footprint from expanding was especially notable as the technology sector grew more dependent on energy-intensive computing infrastructure. For operators and procurement leaders, Apple’s experience illustrates the importance of treating emissions as an operating constraint across manufacturing, component sourcing, logistics and product design.\n\nBut maintaining a flat footprint is different from reducing it in an environment where the underlying demand for computing is accelerating.\n\n## AI changes the energy equation\n\nThe Verge’s central question is whether Apple can continue meeting the climate goals established under Cook while trying to catch up in the AI race.\n\nAI systems can require substantial computing capacity, and the energy needs of that infrastructure have already contributed to rising emissions at other technology giants. That creates a strategic tension for Apple: the company must invest in AI capabilities that customers and investors increasingly expect, while preserving environmental commitments that have become part of its corporate identity.\n\nThe challenge is broader than data centers. If AI features increase demand for more powerful devices, faster upgrade cycles or cloud-based processing, the consequences can flow through Apple’s full emissions profile—from chip production and assembly to electricity use and end-of-life management.\n\n## What business leaders should watch\n\nApple’s next moves will show whether its climate commitments can scale alongside AI investment rather than be sidelined by it. Key signals include whether the company continues to disclose progress across its supply chain, how it accounts for energy used to support AI services, and whether it can avoid an absolute increase in its carbon footprint as computing demand grows.\n\nFor founders and executives, the lesson is practical. Environmental targets set during one technology cycle can be stress-tested by the next. AI roadmaps, infrastructure decisions and sustainability plans can no longer be managed as separate agendas.\n\nCook’s record gives Apple a foundation. The harder task for the company’s next leadership era is proving that its climate strategy still holds when AI becomes a central demand driver.",
+    "sourceUrls": [
+      "https://www.theverge.com/tech/987550/tim-cook-apple-environment-sustainability-legacy"
+    ],
+    "publishedAt": "2026-09-01T21:35:41.784Z",
+    "heroImage": "/media/tim-cook-climate-legacy-apple-ai-energy-demand/hero.webp",
+    "cardImage": "/media/tim-cook-climate-legacy-apple-ai-energy-demand/card.webp",
+    "ogImage": "/media/tim-cook-climate-legacy-apple-ai-energy-demand/og.webp",
+    "socialSquareImage": "/media/tim-cook-climate-legacy-apple-ai-energy-demand/social-square.webp",
+    "socialPortraitImage": "/media/tim-cook-climate-legacy-apple-ai-energy-demand/social-portrait.webp",
+    "imageAlt": "Editorial image for Tim Cook’s Climate Legacy Faces Its Biggest Test in Apple’s AI Push",
+    "imageCredit": "Illustration: Business Future Today",
+    "sourceImageCandidate": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/gettyimages-2287305192.jpg?strip=all",
+    "licenseStatus": "unknown",
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/tim-cook-climate-legacy-apple-ai-energy-demand/inline-1.webp",
+        "alt": "Supporting image for Tim Cook’s Climate Legacy Faces Its Biggest Test in Apple’s AI Push",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
+    "generated": true
+  },
+  {
     "slug": "nvidia-dlss-5-neural-rendering-explained",
     "kicker": "Graphics Technology",
     "title": "Nvidia’s DLSS 5 Reframes AI Graphics as a Developer-Controlled Rendering Tool",
     "dek": "Ahead of its September 3 launch, Nvidia is emphasizing artistic control and frame fidelity after an early DLSS 5 demo drew backlash over AI-altered character imagery.",
     "readTime": "3 min",
     "category": "Technology",
-    "featured": true,
+    "featured": false,
     "bodyMarkdown": "Nvidia is preparing to launch DLSS 5 on September 3 with a clearer explanation of what it calls “neural rendering” — and a more direct response to criticism that the technology can make game imagery look like “AI slop.”\n\nThe company’s messaging has shifted toward three assurances: DLSS 5 is intended to preserve artistic intent, respect the rendered frame, and leave game developers in control. That framing matters because the first public impression of the technology, including imagery of *Resident Evil Requiem* protagonist Grace Ashcroft shown in March, led some players to object to the way AI processing appeared to affect a character’s face.\n\n## What changed\n\nDLSS has long been Nvidia’s label for AI-assisted graphics techniques. The DLSS 5 discussion is centered on neural rendering, a more controversial application because it puts AI processing closer to the visible final image rather than simply being understood as a behind-the-scenes performance tool.\n\nAccording to Nvidia’s new positioning, the technology should not be interpreted as an uncontrolled system replacing a game’s visual direction. The company is explicitly presenting developers as the decision-makers over how the approach is used.\n\nThat distinction is central to the rollout. A technical feature can be evaluated through frame rate, latency, and image quality, but a graphics system that appears to modify faces or other authored details also raises a creative-governance question: who determines the final image, and can teams reliably keep the result aligned with the art direction?\n\n## Why the backlash matters\n\nFor game studios, visual consistency is not a cosmetic detail. Character models, lighting, texture work, and cinematic scenes are expensive creative investments. If an AI-driven rendering layer produces results that players perceive as artificial or inconsistent with the source material, it can become a reputational issue for both the studio and the hardware partner.\n\nThe reaction to the early *Resident Evil Requiem* example illustrates the adoption risk. Even when a rendering technique is designed to improve an image or enable new graphical effects, audiences may judge it by its most conspicuous failure mode. A single unconvincing face can overwhelm the broader technical case.\n\nFor Nvidia, that means DLSS 5’s success will depend on more than demonstrating that neural rendering works. It must demonstrate that developers can deploy it selectively, maintain authorial control, and avoid visible artifacts that undermine trust.\n\n## What operators and builders should watch\n\nThe important question after launch is not simply whether DLSS 5 appears in supported games. Watch how studios describe their implementation and whether they offer players meaningful settings or comparisons that make the rendering choices legible.\n\nDevelopers evaluating the technology will likely focus on practical workflow questions: where neural rendering fits in a production pipeline, what controls are available, and how reliably the output holds up across demanding scenes and close-up character work. Nvidia’s repeated emphasis on respecting the rendered frame suggests it knows these are the areas where skepticism is strongest.\n\nThe Verge reports that it received an Nvidia briefing and hands-on time with a version that had leaked online, indicating that more detailed assessments should emerge around the September 3 release. Those evaluations will matter more than Nvidia’s revised language alone.\n\nDLSS 5 is therefore a useful test case for a broader shift in graphics: AI features are increasingly being judged not only as performance technology, but as part of the creative product itself. The vendors that win adoption will need to make their systems powerful without making the underlying artistic choices feel automated or opaque.",
     "sourceUrls": [
       "https://www.theverge.com/games/986980/nvidias-dlss-5-explained"
