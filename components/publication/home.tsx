@@ -10,7 +10,7 @@ function StoryImage({ story, className = "" }: { story: Story; className?: strin
 }
 
 function Meta({ story }: { story: Story }) {
-  return <div className="pub-meta"><span>{story.category}</span><span>{story.readTime}</span></div>;
+  return <div className="pub-meta"><span>{story.author?`${story.author.name} · ${story.author.desk}`:story.category}</span><span>{story.readTime}</span></div>;
 }
 
 function LeadSection({ stories, template, secondaryCount }: { stories: Story[]; template: PublicationTemplate; secondaryCount: number }) {
