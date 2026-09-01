@@ -29,7 +29,7 @@ function ArticleBody({markdown,inlineImages=[],adSlots=[]}:{markdown?:string;inl
 function RelatedStories({ story, stories, template }: {story:Story;stories:Story[];template:PublicationTemplate}){
   const related=stories.filter((candidate)=>candidate.slug!==story.slug&&candidate.category===story.category).slice(0,3);
   if(!related.length)return null;
-  return <section className="pub-related"><div className="pub-section__head"><h2>More in {story.category}</h2></div><div className="pub-related__grid">{related.map((item)=><article key={item.slug}>{item.cardImage?<StoryLink slug={item.slug} template={template}><img src={item.cardImage} alt={item.imageAlt||item.title}/></StoryLink>:null}<p className="pub-kicker">{item.kicker}</p><h3><StoryLink slug={item.slug} template={template}>{item.title}</StoryLink></h3><div className="pub-meta"><span>{item.category}</span><span>{item.readTime}</span></div></article>)}</div></section>;
+  return <section className="pub-related"><div className="pub-section__head"><h2>More in {story.category}</h2></div><div className="pub-related__grid">{related.map((item)=><article key={item.slug}>{item.cardImage?<StoryLink slug={item.slug} template={template}><img src={item.cardImage} alt={item.imageAlt||item.title}/></StoryLink>:null}<p className="pub-kicker">{item.kicker}</p><h3><StoryLink slug={item.slug} template={template}>{item.title}</StoryLink></h3><div className="pub-meta"><span>{item.author?`${item.author.name} · ${item.author.desk}`:item.category}</span><span>{item.readTime}</span></div></article>)}</div></section>;
 }
 
 export function PublicationArticle({story,stories,template}:{story:Story;stories:Story[];template:PublicationTemplate}){
@@ -38,7 +38,7 @@ export function PublicationArticle({story,stories,template}:{story:Story;stories
     <PublicationHeader template={template} pathname={`/story/${story.slug}`}/>
     {template.article.showTopAd?<div className="pub-ad-band pub-shell"><AdSlot slotKey="site_top_billboard"/></div>:null}
     <article className="pub-article pub-shell">
-      <header className="pub-article__intro"><p className="pub-kicker">{story.kicker}</p><h1>{story.title}</h1><p className="pub-article__dek">{story.dek}</p><div className="pub-article__byline"><strong>{publicationBrand.name}</strong>{date?<time dateTime={date.toISOString()}>{date.toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"})}</time>:null}<span>{story.readTime} read</span></div></header>
+      <header className="pub-article__intro"><p className="pub-kicker">{story.kicker}</p><h1>{story.title}</h1><p className="pub-article__dek">{story.dek}</p><div className="pub-article__byline"><strong>{story.author?`${story.author.name} · ${story.author.desk}`:publicationBrand.name}</strong>{date?<time dateTime={date.toISOString()}>{date.toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"})}</time>:null}<span>{story.readTime} read</span></div></header>
       {story.heroImage?<figure className="pub-article__hero"><img src={story.heroImage} alt={story.imageAlt||story.title}/>{story.imageCredit?<figcaption>{story.imageCredit}</figcaption>:null}</figure>:null}
       {template.article.showAfterHeroAd?<div className="pub-article__after-hero-ad"><AdSlot slotKey="article_after_hero"/></div>:null}
       <div className={`pub-article__content ${template.article.showRailAd?"has-rail":""}`}>
