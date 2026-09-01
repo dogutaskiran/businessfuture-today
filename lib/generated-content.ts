@@ -1,12 +1,76 @@
 export const generatedStories = [
   {
+    "slug": "poco-f9-ultra-bose-subwoofer-bright-display",
+    "kicker": "Mobile hardware",
+    "title": "Poco’s F9 Ultra Keeps Pushing Smartphone Hardware Into Theater Territory",
+    "dek": "Poco’s latest flagship combines a Bose-branded 2.1 speaker system, a light-up rear subwoofer, very bright displays, large batteries and upgraded camera ambitions.",
+    "readTime": "3 min",
+    "category": "Technology",
+    "featured": true,
+    "bodyMarkdown": "Poco’s F9 Pro and F9 Ultra show a familiar smartphone strategy being taken to an unusually visible extreme: make the hardware features easy to see, hear and market.\n\nThe Xiaomi spinoff has renewed its Bose partnership for a second year, bringing Bose-branded speakers to both flagship models. The F9 Ultra is the more conspicuous device, retaining the 2.1 audio system introduced on the prior F8 Ultra and adding a small LED ring around its rear-mounted subwoofer.\n\nThe result is a phone built to distinguish itself through physical hardware rather than a subtle design refresh.\n\n## What changed\n\nThe F9 Ultra’s Bose-branded system uses two upgraded main speakers alongside the same subwoofer hardware used in last year’s model. Poco has changed the subwoofer mount structure to accommodate the LED ring, turning an audio component into a visible design feature.\n\nBeyond audio, Poco is emphasizing extremely bright displays, large batteries and what it describes as its strongest camera setup to date. The F9 Pro also includes Bose speakers, extending the partnership beyond the top-tier device.\n\nThe available details suggest Poco is iterating on a formula rather than redesigning it: maintain the unusual 2.1 system, improve surrounding components, and give the flagship a more recognizable visual signature.\n\n## Why it matters\n\nMost smartphone makers still compete on a largely converged checklist: screen quality, camera performance, battery life, charging and AI features. Poco’s approach is to make sound a flagship-level differentiator, even if the practical value of a built-in subwoofer remains a niche proposition.\n\nFor operators and device builders, the launch is a reminder that component partnerships can serve two roles. Bose adds a recognizable audio brand to the specification sheet, while the illuminated subwoofer gives customers an immediately legible reason to notice the product. Neither requires a wholly new device category.\n\nThat matters in a mature market where annual upgrades can be difficult to communicate. A visible hardware element may be easier to demonstrate in retail, social video and product photography than incremental improvements in processing or imaging.\n\nThere is also a product-positioning trade-off. A glowing subwoofer can help Poco stand apart from more restrained premium phones, but it narrows the appeal toward buyers who value overt performance styling. The feature needs to be backed by meaningful audio performance; branding and lighting alone will not make phone speakers a replacement for headphones or dedicated speakers.\n\n## What to watch next\n\nThe important questions are practical. How bright are the displays in real use, how much battery life do the large cells deliver, and whether Poco’s camera improvements close the gap with other flagship phones will determine the devices’ broader competitiveness.\n\nAudio is the clearest differentiator, but it is also the claim most likely to invite direct comparison. Buyers will want to know whether the upgraded main speakers and retained subwoofer provide a noticeable advantage over conventional stereo phone speakers, and whether the rear LED ring is configurable or simply decorative.\n\nPoco’s second consecutive Bose collaboration indicates that it sees branded, high-output audio as more than a one-off experiment. The F9 Ultra will test whether that bet can become a durable reason to choose a Poco flagship rather than merely an attention-grabbing feature.",
+    "sourceUrls": [
+      "https://www.theverge.com/tech/986148/poco-f9-pro-ultra-specs-features-price-bose"
+    ],
+    "publishedAt": "2026-09-01T12:46:15.756Z",
+    "heroImage": "/media/poco-f9-ultra-bose-subwoofer-bright-display/hero.webp",
+    "cardImage": "/media/poco-f9-ultra-bose-subwoofer-bright-display/card.webp",
+    "ogImage": "/media/poco-f9-ultra-bose-subwoofer-bright-display/og.webp",
+    "socialSquareImage": "/media/poco-f9-ultra-bose-subwoofer-bright-display/social-square.webp",
+    "socialPortraitImage": "/media/poco-f9-ultra-bose-subwoofer-bright-display/social-portrait.webp",
+    "imageAlt": "Editorial image for Poco’s F9 Ultra Keeps Pushing Smartphone Hardware Into Theater Territory",
+    "imageCredit": "Illustration: Business Future Today",
+    "sourceImageCandidate": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/poco-f9-pro-ultra-4.jpg?strip=all",
+    "licenseStatus": "unknown",
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/poco-f9-ultra-bose-subwoofer-bright-display/inline-1.webp",
+        "alt": "Supporting image for Poco’s F9 Ultra Keeps Pushing Smartphone Hardware Into Theater Territory",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
+    "generated": true
+  },
+  {
+    "slug": "engineered-microbes-openai-culture-problem",
+    "kicker": "The Download",
+    "title": "Engineered microbes and OpenAI’s culture problem put execution under scrutiny",
+    "dek": "MIT Technology Review’s daily briefing pairs two reminders for technology leaders: climate-relevant innovation must clear operational hurdles, and AI companies’ internal cultures can become a strategic risk.",
+    "readTime": "3 min",
+    "category": "AI",
+    "featured": false,
+    "bodyMarkdown": "Technology leaders are confronting two very different execution challenges: bringing climate-relevant biology into mainstream agriculture and managing the cultural pressures inside fast-moving AI companies.\n\nMIT Technology Review’s September 1 edition of *The Download* highlights engineered microbes that could help feed crops, alongside questions about OpenAI’s safety culture. The pairing is useful beyond the specific stories. Both point to a familiar operating reality: the technology itself is only part of the product.\n\n## Fertilizer is a large target—and a hard system to change\n\nFertilizer is essential to the global food supply. But producing it requires substantial energy and creates significant emissions, according to the newsletter summary. That makes alternatives or supplements that can support crops with a lower environmental burden strategically important.\n\nEngineered microbes are one possible route. For founders and operators in agricultural technology, the opportunity is not simply to demonstrate a biological mechanism. It is to make a product work in the conditions that determine adoption: varied soils, weather, crop types, farming practices, distribution channels, and farm economics.\n\nThe business question is therefore broader than whether microbes can help plants. Companies must show that their products can fit existing farm workflows and offer results compelling enough to justify switching from, reducing, or complementing established fertilizer practices.\n\nFor investors and executives, this is a reminder that climate technology timelines are often shaped by validation and deployment rather than invention alone. Agricultural products need to earn trust in the field, where outcomes can be difficult to standardize and customers make decisions around seasonal risk.\n\n## AI culture is an operating issue, not just a communications issue\n\nThe same edition flags OpenAI’s culture problem, specifically in relation to safety. The source summary does not detail the underlying issues, but the framing matters: at leading AI organizations, culture and safety processes are increasingly part of the company’s execution capacity.\n\nAs AI systems become more capable and more widely deployed, decisions about research priorities, internal challenge mechanisms, governance, and product release processes can carry commercial consequences. A company that cannot sustain credible safety practices may face difficulty retaining talent, maintaining customer confidence, or navigating heightened scrutiny.\n\nThat makes organizational design a board-level concern. Leaders building AI products should ask whether people closest to technical and safety risks can raise concerns effectively, whether incentives reward responsible decision-making alongside speed, and whether stated principles match how launches are actually handled.\n\n## What to watch next\n\nFor engineered microbes, the key signals will be evidence of performance in real agricultural settings and whether products can be deployed at a cost and reliability that work for growers. Progress will depend on translating laboratory advances into repeatable field outcomes.\n\nFor OpenAI and the broader AI sector, watch for whether safety commitments are supported by durable internal processes. The relevant measure is not messaging; it is whether governance and culture hold up when commercial and competitive pressure rises.\n\nThe common lesson is practical. In both agriculture and AI, technical promise is necessary but insufficient. The organizations that matter most will be those that can turn difficult science into trusted, repeatable operations.",
+    "sourceUrls": [
+      "https://www.technologyreview.com/2026/09/01/1143199/the-download-engineered-microbes-openai-safety-culture/"
+    ],
+    "publishedAt": "2026-09-01T12:45:59.762Z",
+    "heroImage": "/media/engineered-microbes-openai-culture-problem/hero.webp",
+    "cardImage": "/media/engineered-microbes-openai-culture-problem/card.webp",
+    "ogImage": "/media/engineered-microbes-openai-culture-problem/og.webp",
+    "socialSquareImage": "/media/engineered-microbes-openai-culture-problem/social-square.webp",
+    "socialPortraitImage": "/media/engineered-microbes-openai-culture-problem/social-portrait.webp",
+    "imageAlt": "Editorial image for Engineered microbes and OpenAI’s culture problem put execution under scrutiny",
+    "imageCredit": "Illustration: Business Future Today",
+    "sourceImageCandidate": "https://wp.technologyreview.com/wp-content/uploads/2026/08/microbe-fertilizer.jpg",
+    "licenseStatus": "unknown",
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/engineered-microbes-openai-culture-problem/inline-1.webp",
+        "alt": "Supporting image for Engineered microbes and OpenAI’s culture problem put execution under scrutiny",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
+    "generated": true
+  },
+  {
     "slug": "ai-can-make-you-suck-faster-too",
     "kicker": "Technology",
     "title": "AI Can Accelerate Output—and Bad Habits With It",
     "dek": "A newly surfaced essay makes a blunt point: faster tools do not automatically produce better work. For technology leaders, the operational question is whether AI is improving judgment or merely increasing the speed of weak processes.",
     "readTime": "3 min",
     "category": "Technology",
-    "featured": true,
+    "featured": false,
     "bodyMarkdown": "A post titled **“AI Can Make You Suck Faster Too”** is drawing attention on Hacker News for a deliberately uncomfortable premise: AI’s ability to accelerate work does not guarantee that the work itself improves.\n\nThat distinction matters for operators, founders and technical teams now moving AI from experimentation into everyday workflows. The immediate benefit of these tools is usually obvious: they can generate drafts, code, summaries, options and responses quickly. But speed changes the economics of both good and bad decisions. A flawed brief, weak process or mistaken assumption can move through an organization faster when AI is attached to it.\n\n## The bottleneck may be judgment, not production\n\nMany business tasks have a production layer and a judgment layer. Producing a first draft is different from deciding what the draft should say. Generating code is different from determining whether the system design is sound. Summarizing customer feedback is different from recognizing which feedback should alter a product decision.\n\nAI can reduce the cost and time of production. It does not remove the need to set direction, evaluate results or take responsibility for a decision. If a team treats generated output as a substitute for those activities, it may create more work downstream: revisions, quality issues, inconsistent customer communication or technical debt.\n\nThe risk is not simply that an AI system can be wrong. It is that a team can become faster at accepting output without applying enough scrutiny.\n\n## What leaders should examine before scaling use\n\nThe useful question is not whether a team is using AI, but where it is using it and what review remains in place.\n\nFor recurring workflows, leaders can separate work into three categories:\n\n- **Low-risk acceleration:** formatting, internal drafting, meeting preparation and other tasks where a human can cheaply verify the result.\n- **Assisted expert work:** software development, analysis, sales material and customer communications, where AI may help but domain review remains essential.\n- **High-consequence decisions:** areas involving security, legal exposure, financial commitments or sensitive customer outcomes, where speed should not displace controls.\n\nThis framing keeps adoption tied to the cost of being wrong rather than to the novelty of the tool.\n\n## Measure rework, not just throughput\n\nAI pilots are often judged by visible output: more tickets closed, more content drafted or more code produced. Those measures can be incomplete. A faster first pass is valuable only if it does not create a larger verification, correction or maintenance burden later.\n\nTeams should watch for signals such as increased review time, more revisions, defects found after release, unclear ownership and a growing gap between work produced and work actually used. These are practical indicators that a workflow may be accelerating activity without improving outcomes.\n\n## What to watch next\n\nThe Hacker News item has limited discussion so far, but the title captures a broader management challenge. As AI becomes more embedded in work, competitive advantage will not come only from generating more output. It will come from designing workflows that preserve judgment, make review efficient and reveal when speed is masking declining quality.\n\nThe central discipline is straightforward: use AI to compress low-value effort, not to bypass the thinking that makes the effort valuable.",
     "sourceUrls": [
       "https://www.hermit-tech.com/blog/ai-can-make-you-suck-faster-too"
