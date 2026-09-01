@@ -15,7 +15,9 @@ type SourcePolicy = { domain:string; mode:RightsMode; allowed_roles:unknown; att
 
 const STYLE = [
   "Business Future Today visual system: premium modern business/technology editorial art direction.",
-  "Prefer documentary realism, precise industrial/product detail, architectural scale, or restrained conceptual compositions.",
+  "Prefer specific documentary/editorial photography, precise industrial or product detail, architecture, workplaces, real environments and believable physical scenes. Use restrained conceptual compositions only when the subject genuinely has no concrete visual referent.",
+  "If the story names a company, product, place, industry, device or physical system, build the image around that concrete subject category rather than generic symbolism. Make the frame feel commissioned by a serious global business magazine, not generated stock art.",
+  "Use natural lens behavior, plausible materials, coherent lighting and purposeful composition. Avoid surreal object mashups, decorative 3D blobs, fake dashboards, vague glowing geometry and metaphor-first imagery.",
   "Avoid generic AI tropes: no glowing brains, humanoid robots at laptops, neon cyberpunk cities, floating holographic dashboards, random binary code, or meaningless circuit-board overlays.",
   "Generated illustration may use warm cream (#F4F0E7), near-black (#11110F), neutral industrial tones, and a very sparing acid-lime (#D8FF43) accent. Photography should remain natural rather than colorized.",
   "No visible logos, fake UI, text labels, watermarks, or copied protected artwork."
@@ -75,7 +77,7 @@ function roleDirection(draft:DraftRow,role:MediaRole){
 async function generateImage(draft:DraftRow,source:SourceMedia,role:MediaRole){
   const client=new OpenAI({apiKey:process.env.OPENAI_API_KEY,maxRetries:0,timeout:300_000});
   const prompt=[STYLE,`Article: ${draft.title}`,`Context: ${draft.dek}`,`Category: ${draft.category}.`,roleDirection(draft,role),"Landscape 3:2 composition with clean crop-safe edges.",source.imageUrl?"A publisher source image was discovered but is not reusable under current rights policy. Do not copy its composition or protected details; create an independent original visual.":"Create an independent original visual."].join("\n\n");
-  const response=await client.responses.create({model:process.env.OPENAI_IMAGE_ORCHESTRATOR_MODEL||"gpt-5.6-terra",input:prompt,store:false,tools:[{type:"image_generation",model:process.env.OPENAI_IMAGE_MODEL||"gpt-image-2",size:"1536x1024",quality:"medium",output_format:"webp"}],tool_choice:{type:"image_generation"}});
+  const response=await client.responses.create({model:process.env.OPENAI_IMAGE_ORCHESTRATOR_MODEL||"gpt-5.6-terra",input:prompt,store:false,tools:[{type:"image_generation",model:process.env.OPENAI_IMAGE_MODEL||"gpt-image-2",size:"1536x1024",quality:"high",output_format:"webp"}],tool_choice:{type:"image_generation"}});
   const call=response.output.find((item:any)=>item.type==="image_generation_call") as any;if(!call?.result)throw new Error("OPENAI_IMAGE_RESULT_MISSING");
   return{bytes:Buffer.from(call.result,"base64"),prompt,responseId:response.id,model:process.env.OPENAI_IMAGE_MODEL||"gpt-image-2"};
 }
