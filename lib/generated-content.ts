@@ -1,12 +1,78 @@
 export const generatedStories = [
   {
+    "slug": "nori-robotics-low-cost-bimanual-mobile-robot-development",
+    "kicker": "Robotics",
+    "title": "Nori Robotics Targets the Hardware Bottleneck in Robot Development",
+    "dek": "The YC-backed startup is selling a $1,688 wheeled, bimanual robot aimed at giving developers and research teams more affordable platforms for data collection, experiments and task training.",
+    "readTime": "3 min",
+    "category": "Technology",
+    "featured": true,
+    "bodyMarkdown": "Nori Robotics has launched a $1,688 bimanual mobile robot designed for developers and researchers—a price point the San Francisco startup argues can make robotics experimentation less dependent on scarce, expensive lab hardware.\n\nThe company, founded by Columbia robotics researcher Antonio, says it has shipped its first unit and is building its next batch. Its business model is hardware sales, with optional paid software planned on top. Parts of the hardware are open source, and Nori has published an open SDK with teleoperation and demonstration tools.\n\n## A development platform, not a general-purpose humanoid\n\nNori is not a legged humanoid. It uses a differential wheeled base and a telescoping lift, paired with two 7+1 degree-of-freedom arms. Each arm has a stated 1.5 kg payload, while the lift is rated for 55 kg.\n\nIts sensing package includes four 720p RGB cameras running at 30 frames per second, 2D lidar and a dual-microphone array for full-duplex voice communication. A 432 Wh battery and Raspberry Pi 5 with 4 GB of RAM are onboard.\n\nThe computing split is important for prospective users: Nori runs SLAM and safety functions locally, but heavier workloads—including ACT and vision-language-action models—must run on a computer over a LAN connection or a remote server over WAN.\n\nThat makes the system more appropriately understood as an accessible physical endpoint for robotics software development than as a fully self-contained autonomous worker.\n\n## How Nori reached its price target\n\nThe startup says it went through seven iterations to get the machine below $2,000. The central design choices were using high-ratio servos instead of quasi-direct-drive motors and replacing legs with wheels.\n\nThose choices involve familiar robotics trade-offs. A wheeled base reduces mechanical complexity and cost relative to dynamic legged locomotion, while potentially limiting the environments the robot can navigate. High-ratio servos similarly help lower costs, but are a different choice from the actuators used in many higher-priced research platforms.\n\nNori says the platform contains more than 100 moving and structural parts, spanning actuators, bearings, wiring, power delivery and assembly. It assembles units in San Francisco and says the design emphasizes manufacturing and repairability. The company offers 3D files for printing replacement parts.\n\n## Why the price matters\n\nFor robotics teams, the stated goal is not simply lower procurement cost. It is the ability to operate more units, run longer tests and collect larger datasets than a lab limited to one or two costly robots could manage.\n\nNori’s SDK includes tools for teleoperation and human demonstrations, aligning the hardware with workflows used to teach manipulation tasks. The company also provides a browser-based simulator, allowing developers to inspect the platform before acquiring hardware.\n\nNori says the current hardware can perform basic cleaning tasks, open drawers, restock shelves and pour beer. Its longer-term ambition is to let people without robotics expertise teach tasks and distribute those learned behaviors to other owners.\n\n## What to watch next\n\nThe immediate question is whether Nori can deliver repeatable, maintainable hardware at its advertised price as production expands beyond the first shipment. Buyers will also need to assess whether its payload, sensing, wheeled mobility and offboard-compute requirements fit their intended workflows.\n\nFor builders, the more consequential test may be ecosystem traction: whether the open SDK, repairable design and relatively low entry price attract enough developers to generate reusable task demonstrations and software. If that happens, Nori’s value could extend beyond the robot itself to the development loop it enables.",
+    "sourceUrls": [
+      "https://www.norirobotics.com/"
+    ],
+    "publishedAt": "2026-09-01T20:34:14.677Z",
+    "heroImage": "/media/nori-robotics-low-cost-bimanual-mobile-robot-development/hero.webp",
+    "cardImage": "/media/nori-robotics-low-cost-bimanual-mobile-robot-development/card.webp",
+    "ogImage": "/media/nori-robotics-low-cost-bimanual-mobile-robot-development/og.webp",
+    "socialSquareImage": "/media/nori-robotics-low-cost-bimanual-mobile-robot-development/social-square.webp",
+    "socialPortraitImage": "/media/nori-robotics-low-cost-bimanual-mobile-robot-development/social-portrait.webp",
+    "imageAlt": "Editorial image for Nori Robotics Targets the Hardware Bottleneck in Robot Development",
+    "imageCredit": "Illustration: Business Future Today",
+    "sourceImageCandidate": "https://noril1.com/opengraph-image/a3-2026e?09f634070dee520a",
+    "licenseStatus": "unknown",
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/nori-robotics-low-cost-bimanual-mobile-robot-development/inline-1.webp",
+        "alt": "Supporting image for Nori Robotics Targets the Hardware Bottleneck in Robot Development",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
+    "generated": true
+  },
+  {
+    "slug": "john-ternus-new-apple-ceo",
+    "kicker": "Leadership",
+    "title": "John Ternus Takes Over Apple as the Company Enters Its Next Hardware—and AI—Test",
+    "dek": "Apple’s former hardware chief succeeds Tim Cook on September 1, inheriting a company facing an AI transition, component pressure and renewed scrutiny of its product pipeline.",
+    "readTime": "3 min",
+    "category": "Technology",
+    "featured": false,
+    "bodyMarkdown": "John Ternus has become Apple’s CEO, succeeding Tim Cook in the company’s first leadership change since 2011.\n\nTernus, previously Apple’s senior vice president of hardware engineering, begins the role on September 1. Tim Cook will remain executive chairman of Apple’s board, according to The Verge. The handoff puts a comparatively low-profile hardware executive in charge of one of the world’s most valuable companies at a moment when its core product strategy is being tested by AI, supply constraints and political and economic uncertainty.\n\n## A product leader returns to the top job\n\nFor much of Cook’s tenure, Apple’s public identity was closely tied to operational execution, services growth and the expansion of its ecosystem beyond the iPhone. Ternus represents a different starting point: he comes from the hardware organization responsible for the products at the center of that ecosystem.\n\nThat background matters because Apple’s next set of decisions will be judged not only by financial performance, but by whether the company can turn new technologies into products that fit its established approach to integrated hardware and software.\n\nTernus has largely remained out of the spotlight until now, TechCrunch noted. That means executives, developers, suppliers and investors will be looking for early signals about how he runs the company: how much continuity he preserves from the Cook era, where he changes priorities, and which leaders receive broader mandates.\n\nApple has also named Johny Srouji, a longtime company executive, as chief hardware officer, The Verge reported. The pairing suggests that hardware leadership will remain a central organizing force as Ternus takes over.\n\n## The first challenge is bigger than a product launch\n\nApple’s next iPhone event is scheduled for September 9, giving Ternus an immediate high-profile stage. But the more consequential issue is Apple’s position in AI.\n\nThe company is taking over amid the rapid growth of AI and related pressure on the technology supply chain. The Verge cited shortages of RAM and other components tied to AI demand among the conditions confronting Apple. For operators, that makes the CEO transition more than a symbolic changing of the guard: product road maps, component sourcing and margins can all be affected when demand for critical inputs shifts.\n\nThe AI question has two dimensions for Apple. First, it must determine how AI changes its own devices and services. Second, it must manage the operational consequences of an AI boom that is reshaping access to hardware components across the industry.\n\nThose concerns arrive alongside Apple’s longstanding exposure to political and economic developments, which The Verge also identified as part of Ternus’ inheritance.\n\n## What to watch next\n\nThe first clues about the Ternus era should emerge quickly. Watch for three things:\n\n1. **Product direction at the September event.** The event will offer an initial view of the hardware narrative Apple wants to emphasize under its new CEO.\n2. **The division of responsibility between Ternus and Srouji.** With Ternus moving to the CEO role and Srouji becoming chief hardware officer, their operating relationship will matter to Apple’s product cadence and technical priorities.\n3. **How Apple frames AI amid supply pressure.** Investors and industry partners will want evidence that Apple can address AI as both a customer-facing product shift and a constraint on its supply chain.\n\nCook’s continued role as executive chairman provides institutional continuity. Still, Ternus starts with a difficult mandate: preserve the operating discipline behind Apple’s scale while showing that a hardware-led organization can define what comes after the smartphone era.",
+    "sourceUrls": [
+      "https://techcrunch.com/2026/09/01/who-is-john-ternus-the-incoming-apple-ceo/",
+      "https://www.theverge.com/tech/915272/apple-john-ternus-tim-cook",
+      "https://www.theverge.com/tech/987150/apple-ceo-john-ternus"
+    ],
+    "publishedAt": "2026-09-01T20:33:59.803Z",
+    "heroImage": "/media/john-ternus-new-apple-ceo/hero.webp",
+    "cardImage": "/media/john-ternus-new-apple-ceo/card.webp",
+    "ogImage": "/media/john-ternus-new-apple-ceo/og.webp",
+    "socialSquareImage": "/media/john-ternus-new-apple-ceo/social-square.webp",
+    "socialPortraitImage": "/media/john-ternus-new-apple-ceo/social-portrait.webp",
+    "imageAlt": "Editorial image for John Ternus Takes Over Apple as the Company Enters Its Next Hardware—and AI—Test",
+    "imageCredit": "Illustration: Business Future Today",
+    "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/04/GettyImages-2264179980.jpg",
+    "licenseStatus": "denied",
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/john-ternus-new-apple-ceo/inline-1.webp",
+        "alt": "Supporting image for John Ternus Takes Over Apple as the Company Enters Its Next Hardware—and AI—Test",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
+    "generated": true
+  },
+  {
     "slug": "gopro-acquired-285m-ai-infrastructure-public-company",
     "kicker": "Technology",
     "title": "GoPro to Be Acquired in $285M Deal, With Public Listing Intact",
     "dek": "GoPro is set to merge with an AI infrastructure company in a $285 million transaction while continuing to support its consumer camera products and remaining publicly traded.",
     "readTime": "2 min",
     "category": "Technology",
-    "featured": true,
+    "featured": false,
     "bodyMarkdown": "GoPro is set to be acquired in a $285 million deal through a merger with a company that builds AI infrastructure, according to TechCrunch. The combined business will remain a public company, and GoPro says it will continue supporting its existing consumer products.\n\n## What changed\n\nRather than disappearing into a private buyer or being taken off the market, GoPro will merge with an AI infrastructure business in a transaction valued at $285 million. The public-company status is a consequential detail: existing investors will be evaluating not only the future of GoPro’s camera business, but also the strategy and economics of the combined company.\n\nThe available details do not specify the identity of the AI infrastructure company, the ownership structure of the merged entity, or how its technology will be incorporated into GoPro’s operations.\n\n## Why it matters\n\nFor GoPro customers, the immediate message is continuity. The company plans to keep supporting its consumer products, reducing the risk that the deal marks an abrupt end to its camera ecosystem.\n\nFor operators and investors, the transaction is a reminder that established consumer hardware brands can become vehicles for broader technology combinations. GoPro brings a recognized brand and an installed base around action cameras; an AI infrastructure partner brings exposure to a different part of the technology market. Whether those assets create an operating advantage will depend on execution and on details that have not yet been disclosed.\n\nKeeping the company public also preserves a visible market signal. The combined organization will need to explain how it intends to balance GoPro’s consumer-product commitments with the priorities of an AI infrastructure operation.\n\n## Questions to watch\n\nThe key next step is the merger documentation and any subsequent company disclosures. Stakeholders will be looking for clarity on:\n\n- The identity and business model of the AI infrastructure partner.\n- The post-merger leadership team and ownership structure.\n- Whether GoPro’s camera, subscription, and support operations will remain independently managed.\n- How the combined company plans to allocate capital across consumer hardware and AI infrastructure.\n- Whether there is a concrete product, data, or distribution connection between the two businesses.\n\nFor now, the deal establishes a new corporate direction for GoPro without signaling an immediate withdrawal from the consumer market. The strategic rationale will become clearer when the companies outline how the combined public business is meant to operate.",
     "sourceUrls": [
       "https://techcrunch.com/2026/09/01/gopro-to-be-acquired-for-285m-will-remain-a-public-company/"
