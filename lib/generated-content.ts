@@ -1141,7 +1141,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2024/09/ryan-breslow-bolt.jpg?resize=1200,800",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/bolt-pay-to-play-bridge-funding-ryan-breslow/inline-1.webp",
+        "alt": "Supporting image for Bolt Seeks Up to $27M in Pay-to-Play Bridge Financing",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -1166,7 +1173,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2026/08/28/AWS_Ducklabs_white_logo_800x400.png",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/aws-ducklabs-duckdb-acquisition-2026/inline-1.webp",
+        "alt": "Supporting image for AWS Moves to Acquire DuckLabs, Bringing DuckDB Closer to Its Data Stack",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -1191,7 +1205,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/DCD_Hochul.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/new-york-hochul-ai-data-center-moratorium-operators/inline-1.webp",
+        "alt": "Supporting image for New York’s AI Debate Is Becoming a Data-Center Operating Question",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -1216,7 +1237,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://opengraph.githubassets.com/528091d3f558a99754b74d2c53a7d11528035dca0379ab91fd9da7bfdf621a25/Hebbian-Robotics/hflow",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/hebbian-robotics-hflow-data-pipelines/inline-1.webp",
+        "alt": "Supporting image for Hebbian Robotics Targets the Data Pipeline Bottleneck in Robot Training",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -1241,7 +1269,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/09/STK414_AI_CVIRGINIA_I__0009_7.png?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/debian-ai-assisted-code-policy/inline-1.webp",
+        "alt": "Supporting image for Debian Lets AI-Assisted Code In, but Keeps Existing Contributor Standards",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -1266,7 +1301,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://usealmanac.com/opengraph-image?5038a70137ec138b",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/almanac-company-ai-memory-layer/inline-1.webp",
+        "alt": "Supporting image for Almanac Wants to Give Company AI a Memory Layer, Not Just More Connectors",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   }
 ] as const;
