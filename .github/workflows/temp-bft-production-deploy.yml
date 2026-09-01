@@ -1,0 +1,32 @@
+name: Temporary BFT production deploy
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/temp-bft-production-deploy.yml'
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_TOKEN_A: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_TOKEN_B: ${{ secrets.VERCEL_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Resolve Vercel credential
+        run: |
+          TOKEN="${VERCEL_TOKEN_A:-${VERCEL_TOKEN_B:-}}"
+          if [ -z "$TOKEN" ]; then
+            echo 'No Vercel deployment token is configured in this repository.'
+            exit 2
+          fi
+          echo "VERCEL_DEPLOY_TOKEN=$TOKEN" >> "$GITHUB_ENV"
+      - name: Link exact BFT project locally
+        run: |
+          mkdir -p .vercel
+          printf '%s\n' '{"orgId":"team_IkMx0NPQKuorKeIBwQpGkxSy","projectId":"prj_ZIcdXDpMMyjvzLUYqVUGFvLJM6is"}' > .vercel/project.json
+      - name: Deploy production
+        run: npx --yes vercel@latest deploy --prod --yes --token="$VERCEL_DEPLOY_TOKEN"
