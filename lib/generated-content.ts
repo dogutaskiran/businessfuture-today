@@ -245,7 +245,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://y4n0za9tok4qqkj4.public.blob.vercel-storage.com/blog/2026-08-04-how-we-configured-opentelemetry-logs-in-rails.png",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/rails-opentelemetry-logs-configuration/inline-1.webp",
+        "alt": "Supporting image for A Rails Team Documents Its OpenTelemetry Logs Configuration",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -270,7 +277,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/04/GettyImages-2255009714.jpg?resize=1200,800",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/apple-former-employee-data-theft-openai-evidence/inline-1.webp",
+        "alt": "Supporting image for Apple Says Former Employee Destroyed Evidence in Data-Theft Case Tied to OpenAI",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -295,7 +309,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/08/alteon-airplane.jpg?resize=1200,800",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/alteon-wind-harvesting-autonomous-aircraft-year-long-flight/inline-1.webp",
+        "alt": "Supporting image for Alteon Targets Year-Long Flight With Wind-Harvesting Autonomous Aircraft",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -320,7 +341,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": null,
     "licenseStatus": "none",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/darling-macos-software-linux-compatibility/inline-1.webp",
+        "alt": "Supporting image for Darling Keeps the Goal of Running macOS Software on Linux in View",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -345,7 +373,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": null,
     "licenseStatus": "none",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/safest-job-ai-writing-claim/inline-1.webp",
+        "alt": "Supporting image for A Provocative AI Jobs Claim, With Little Evidence Yet",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -370,7 +405,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/08/waymo-jaguar-ipace.jpg?resize=1200,633",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/robotaxis-hidden-human-costs-source-limitations/inline-1.webp",
+        "alt": "Supporting image for Robotaxis’ human costs need closer scrutiny—but the available record offers few details",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
