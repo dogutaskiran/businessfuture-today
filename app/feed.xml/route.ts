@@ -10,12 +10,14 @@ export async function GET() {
     const link = `${ORIGIN}/story/${story.slug}`;
     const image = story.heroImage ? `${ORIGIN}${story.heroImage}` : null;
     const published = story.publishedAt ? new Date(story.publishedAt) : new Date();
+    const author = story.author ? `${story.author.name} · ${story.author.desk}` : "Business Future Today";
     return `
     <item>
       <title>${xml(story.title)}</title>
       <link>${xml(link)}</link>
       <guid isPermaLink="true">${xml(link)}</guid>
       <pubDate>${published.toUTCString()}</pubDate>
+      <author>${xml(author)}</author>
       <category>${xml(story.category)}</category>
       <description>${xml(story.dek)}</description>
       ${image ? `<media:content url="${xml(image)}" medium="image" type="image/webp"/><media:thumbnail url="${xml(image)}"/>` : ""}
