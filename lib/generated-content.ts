@@ -1,12 +1,76 @@
 export const generatedStories = [
   {
+    "slug": "doltlite-sqlite-git-style-version-control-beta",
+    "kicker": "DATABASES",
+    "title": "DoltLite Brings Git-Style Version Control to a SQLite Fork",
+    "dek": "DoltHub has announced DoltLite, a SQLite fork positioned around Git-style version control. The beta’s most notable development detail: its creators say it was built through roughly 2,000 agent-generated pull requests.",
+    "readTime": "3 min",
+    "category": "Technology",
+    "featured": true,
+    "bodyMarkdown": "## What changed\n\nDoltHub has announced the beta of **DoltLite**, described as a fork of SQLite with Git-style version control. The project’s framing combines two widely used developer ideas: SQLite’s embedded-database model and Git’s familiar approach to tracking changes over time.\n\nThe announcement also highlights how the software was produced: DoltLite was built with roughly **2,000 agent pull requests**. That makes the release both a database-tool announcement and a concrete example of agent-assisted software delivery at a meaningful contribution count.\n\n## Why operators and builders should care\n\nVersioning is a persistent challenge in data systems. Application source code has established workflows for reviewing changes, comparing revisions and coordinating work through pull requests. Database state and database changes often require separate operational processes.\n\nDoltLite’s stated premise is to bring a Git-style model into a SQLite-derived database. For teams evaluating it, the immediate question is not whether version-control language is familiar; it is whether that model fits their data workflow better than existing migration, backup, replication or audit practices.\n\nThat distinction matters especially for builders who use SQLite because it is lightweight and embedded. A version-control layer may be attractive where teams need to reason about data changes alongside application changes, but the beta designation means technical leaders should treat the release as something to evaluate rather than as a default production replacement.\n\n## The agent-development signal\n\nThe claim of about 2,000 agent PRs deserves separate attention. It suggests that the project’s development process relied heavily on agents operating through a standard engineering artifact: the pull request.\n\nFor engineering organizations, that is a more practical signal than broad claims about AI-written code. Pull requests create a potential review and integration boundary. But a large number of agent PRs alone does not establish code quality, security, maintainability or production readiness. Those outcomes depend on the project’s review process, testing discipline and operational experience—details not included in the available announcement summary.\n\nThe relevant management takeaway is to measure agent-assisted development by the quality of the merged result and the cost of supervising it, not simply by the volume of generated changes.\n\n## What to watch next\n\nThe public beta raises several evaluation questions:\n\n- Which Git-like operations are supported, and how closely do they map to established developer workflows?\n- What compatibility expectations apply to existing SQLite applications and tools?\n- How does the versioning model affect performance, storage and operational complexity?\n- What safeguards exist for concurrent changes, recovery and data integrity?\n- How were the agent-created pull requests reviewed, tested and maintained over time?\n\nThe announcement is early, and the supplied source does not provide answers to those questions. Still, DoltLite is notable because it puts two emerging discussions in one release: whether databases can adopt more software-like versioning workflows, and whether agent-driven contribution pipelines can produce substantial systems through conventional code-review processes.\n\nFor teams with a concrete need for versioned local or embedded data, the beta is worth tracking. For everyone else, it is a useful case study in how AI-assisted development is increasingly being presented through auditable engineering workflows rather than as a separate, opaque process.",
+    "sourceUrls": [
+      "https://www.dolthub.com/blog/2026-08-31-doltlite-beta/"
+    ],
+    "publishedAt": "2026-09-01T04:26:09.909Z",
+    "heroImage": "/media/doltlite-sqlite-git-style-version-control-beta/hero.webp",
+    "cardImage": "/media/doltlite-sqlite-git-style-version-control-beta/card.webp",
+    "ogImage": "/media/doltlite-sqlite-git-style-version-control-beta/og.webp",
+    "socialSquareImage": "/media/doltlite-sqlite-git-style-version-control-beta/social-square.webp",
+    "socialPortraitImage": "/media/doltlite-sqlite-git-style-version-control-beta/social-portrait.webp",
+    "imageAlt": "Editorial image for DoltLite Brings Git-Style Version Control to a SQLite Fork",
+    "imageCredit": "Illustration: Business Future Today",
+    "sourceImageCandidate": "https://static.dolthub.com/blogimages/doltlite-beta-featured.webp/dc77fbf9064e690ef4a0ba87824f62640d2b2dea3d6e71cf3c751a8ed76fe6aa.webp",
+    "licenseStatus": "unknown",
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/doltlite-sqlite-git-style-version-control-beta/inline-1.webp",
+        "alt": "Supporting image for DoltLite Brings Git-Style Version Control to a SQLite Fork",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
+    "generated": true
+  },
+  {
+    "slug": "tailscale-tailcat-announcement-details-thin",
+    "kicker": "Technology Brief",
+    "title": "Tailscale Introduces Tailcat, but the Available Details Are Thin",
+    "dek": "A Tailscale blog post titled “Tailcat: Tailscale Without Tailscale” has surfaced, but the supplied source summary does not explain the product’s capabilities, availability or operating model.",
+    "readTime": "3 min",
+    "category": "Technology",
+    "featured": false,
+    "bodyMarkdown": "## What changed\n\nTailscale has published a blog post titled **“Tailcat: Tailscale Without Tailscale.”** The item was submitted to Hacker News, where the available listing showed 26 points and two comments at the time captured in the source material.\n\nThat is the extent of the verifiable detail in the supplied summary. It identifies the post as a Tailscale announcement, but does not describe what Tailcat does, who can use it, how it is deployed, or whether it is a product, project or technical concept.\n\n## Why the title will draw attention\n\nThe phrase “Tailscale Without Tailscale” is notable because it invites questions about the relationship between Tailcat and Tailscale’s existing offering. For infrastructure teams, that distinction matters: network-access tooling affects identity, device administration, connectivity, security controls and operational ownership.\n\nBut the title alone is not enough to determine whether Tailcat changes any of those areas. Operators should avoid treating it as a replacement, an alternative architecture or a new deployment option until they review the underlying announcement and supporting documentation.\n\n## What leaders and builders should verify\n\nBefore making planning decisions, technical leaders should establish a basic fact set from Tailscale’s own materials:\n\n- **Product status:** Is Tailcat generally available, experimental, open source or merely a published concept?\n- **Intended user:** Is it designed for individual developers, small teams, enterprises or software vendors?\n- **Architecture:** What does “without Tailscale” mean in practice, and which components remain involved?\n- **Operational model:** Who manages authentication, policy, networking and ongoing maintenance?\n- **Security posture:** What identity, access-control and audit capabilities are included or absent?\n- **Commercial terms:** Are there pricing, licensing, support or hosting implications?\n- **Migration path:** Does the announcement describe interoperability with existing Tailscale environments or a route for moving workloads?\n\nThese questions are more consequential than the announcement’s framing. A networking tool can be appealing in a prototype while creating new responsibility for production teams if control-plane, policy or support assumptions differ from the systems already in use.\n\n## What to watch next\n\nThe next useful signals will be technical documentation, availability details and evidence of how Tailcat is meant to be operated. Teams evaluating it should look for explicit statements on supported platforms, identity integrations, administration workflows, limitations and security boundaries.\n\nThe Hacker News listing provides an early indication of interest, but its captured discussion is too limited to establish developer reception or implementation experience. Until more detail is available, the prudent interpretation is simple: Tailscale has announced something called Tailcat, and the supplied materials do not yet support stronger conclusions about its business or technical impact.\n\nFor founders and platform leaders, this is a watch item rather than a procurement trigger. Verify the mechanics before assigning it a role in a network-access strategy.",
+    "sourceUrls": [
+      "https://tailscale.com/blog/tailcat"
+    ],
+    "publishedAt": "2026-09-01T04:25:56.546Z",
+    "heroImage": "/media/tailscale-tailcat-announcement-details-thin/hero.webp",
+    "cardImage": "/media/tailscale-tailcat-announcement-details-thin/card.webp",
+    "ogImage": "/media/tailscale-tailcat-announcement-details-thin/og.webp",
+    "socialSquareImage": "/media/tailscale-tailcat-announcement-details-thin/social-square.webp",
+    "socialPortraitImage": "/media/tailscale-tailcat-announcement-details-thin/social-portrait.webp",
+    "imageAlt": "Editorial image for Tailscale Introduces Tailcat, but the Available Details Are Thin",
+    "imageCredit": "Illustration: Business Future Today",
+    "sourceImageCandidate": "https://cdn.sanity.io/images/w77i7m8x/production/eba95bf72cac81675e8f0bd6fc62e757eac2dac4-2304x1188.png",
+    "licenseStatus": "unknown",
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/tailscale-tailcat-announcement-details-thin/inline-1.webp",
+        "alt": "Supporting image for Tailscale Introduces Tailcat, but the Available Details Are Thin",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
+    "generated": true
+  },
+  {
     "slug": "us-drone-robot-barriers-china-scale-global-market",
     "kicker": "Global Technology Competition",
     "title": "US Barriers on Drones and Robots May Redirect Competition, Not End It",
     "dek": "As the U.S. restricts more foreign-made drones and robots, China’s manufacturing scale could shift the competitive fight to markets beyond American borders.",
     "readTime": "3 min",
     "category": "Technology",
-    "featured": true,
+    "featured": false,
     "bodyMarkdown": "The U.S. is putting up more barriers to foreign-made drones and robots, particularly equipment tied to China. The strategy aims to reduce reliance on overseas technology in sectors with commercial, industrial and potential security implications.\n\nBut restricting access to the U.S. market does not necessarily constrain the companies and supply chains involved. China’s advantage is scale: a large manufacturing base, established component ecosystems and the capacity to serve customers in markets outside the United States.\n\n## A market-access strategy meets a scale advantage\n\nFor U.S. policymakers, limiting foreign hardware can create room for domestic suppliers and reduce exposure to products made abroad. For operators that use drones or robotic systems, however, restrictions can alter procurement options, pricing and replacement cycles.\n\nThe larger issue is whether a U.S.-only barrier can reshape a global market. If Chinese manufacturers retain the ability to produce at volume and sell internationally, they can continue building revenue, supplier relationships and product feedback loops elsewhere. That can preserve the scale advantages that make it difficult for competitors to match prices and iterate quickly.\n\n## What it means for builders and buyers\n\nDomestic drone and robotics companies may see a clearer opening in the U.S. But an opening is not the same as a durable competitive position. Companies will still need to build reliable hardware, secure components, support customers and reach manufacturing volumes that make their products economically viable.\n\nFor enterprise and public-sector buyers, the change raises practical questions:\n\n- Which products remain available under new restrictions?\n- Can domestic alternatives meet performance and support requirements?\n- How will rules affect total cost, including maintenance, software and replacement parts?\n- Are suppliers able to provide credible, resilient component supply chains?\n\nThese questions matter because drones and robots are not standalone purchases. They depend on sensors, batteries, communications equipment, software, repair networks and trained operators. A restriction affecting one part of that system can create downstream operational costs.\n\n## Competition could move outward\n\nChina’s scale means the contest may increasingly play out outside the U.S. Companies that cannot sell into the American market can pursue demand in other regions, where buyers may prioritize cost, availability and deployment speed.\n\nThat dynamic could create a more fragmented industry: one set of suppliers and standards for the U.S. market, and another serving broader international demand. Such fragmentation may offer domestic vendors protected demand at home while making it harder for them to gain the global volume needed to compete with large overseas manufacturers.\n\n## What to watch next\n\nThe key test is whether U.S. restrictions are accompanied by measures that help local suppliers scale. Market access alone will not resolve constraints in manufacturing capacity, component sourcing or customer adoption.\n\nExecutives should watch for changes in procurement rules, the availability of compliant alternatives and whether international markets coalesce around competing drone and robotics ecosystems. The policy direction is clear: the U.S. is trying to reshape who can sell critical hardware within its borders. The unanswered question is whether that changes the global balance of production—or merely relocates the competition.",
     "sourceUrls": [
       "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/"
@@ -629,7 +693,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/23935558/acastro_STK103__01.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/ftc-amazon-advertising-surcharge-lawsuit/inline-1.webp",
+        "alt": "Supporting image for FTC and States Sue Amazon Over Alleged Hidden Ad Surcharge",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -654,7 +725,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-2263890424.jpg?w=1024",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/pentagon-central-ai-portal-chatgpt-grok-gemini/inline-1.webp",
+        "alt": "Supporting image for Pentagon Expands Its Central AI Portal With ChatGPT and Grok",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
