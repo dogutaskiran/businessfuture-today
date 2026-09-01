@@ -28,7 +28,22 @@
       "newsletter",
       "partnerships",
       "ads"
-    ]
+    ],
+    "primaryAddress": "hello@businessfuture.today",
+    "newsroomAddress": "news@businessfuture.today",
+    "newsletterFrom": "newsletter@businessfuture.today",
+    "replyTo": "hello@businessfuture.today",
+    "activeAddresses": [
+      "hello@businessfuture.today",
+      "news@businessfuture.today",
+      "editorial@businessfuture.today",
+      "tips@businessfuture.today",
+      "newsletter@businessfuture.today",
+      "partnerships@businessfuture.today",
+      "ads@businessfuture.today"
+    ],
+    "inbound": "mailmesh-smtp-native",
+    "outbound": "aws-ses-eu-central-1"
   },
   "editorialDesks": [
     "ai",
