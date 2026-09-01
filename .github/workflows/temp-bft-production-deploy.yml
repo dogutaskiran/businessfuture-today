@@ -30,3 +30,4 @@ jobs:
           printf '%s\n' '{"orgId":"team_IkMx0NPQKuorKeIBwQpGkxSy","projectId":"prj_ZIcdXDpMMyjvzLUYqVUGFvLJM6is"}' > .vercel/project.json
       - name: Deploy production
         run: npx --yes vercel@latest deploy --prod --yes --token="$VERCEL_DEPLOY_TOKEN"
+# trigger 2
