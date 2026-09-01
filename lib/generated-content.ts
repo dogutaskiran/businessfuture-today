@@ -757,7 +757,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2025/06/GettyImages-2217247219.jpg?w=1024",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/ftc-amazon-secret-ad-surcharge-lawsuit/inline-1.webp",
+        "alt": "Supporting image for FTC Lawsuit Puts Amazon’s Advertising Pricing Under New Scrutiny",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -782,7 +789,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2023/01/caterpillar-lidar-booth.jpg?resize=1200,800",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/caterpillar-mining-automation-lessons-ai-deployment/inline-1.webp",
+        "alt": "Supporting image for Caterpillar Applies Mining Automation Lessons to AI Deployment",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -807,7 +821,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2025/03/GettyImages-2205761844.jpg?resize=1200,846",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/nvidia-mediatek-investment-ai-chip-infrastructure/inline-1.webp",
+        "alt": "Supporting image for Nvidia’s $3.5B MediaTek Investment Signals a Broader AI Infrastructure Strategy",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -832,7 +853,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/08/BlueVoice_Founders.png?resize=1200,600",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/blue-voice-raises-6m-police-legal-guidance/inline-1.webp",
+        "alt": "Supporting image for Blue Voice Raises $6M to Build Real-Time Legal Guidance for Police",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -857,7 +885,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/08/Instagram-label-.png?w=1200",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/instagram-limits-undisclosed-ai-profile-reach/inline-1.webp",
+        "alt": "Supporting image for Instagram Limits Reach of Undisclosed AI Profiles",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -882,7 +917,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2024/06/microsoft-outlook-app.jpg?resize=1200,800",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/microsoft-tests-fix-outlook-email-outage/inline-1.webp",
+        "alt": "Supporting image for Microsoft Tests Fix After Hours-Long Outlook Email Disruption",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
