@@ -1,3 +1,4 @@
+import { authorForStory, type EditorialAuthor } from "@/lib/authors";
 import { generatedStories } from "@/lib/generated-content";
 
 export type Story = {
@@ -8,6 +9,7 @@ export type Story = {
   readTime: string;
   category: "AI" | "Technology" | "Companies" | "Work" | "Tools";
   featured?: boolean;
+  author?: EditorialAuthor;
   bodyMarkdown?: string;
   sourceUrls?: readonly string[];
   publishedAt?: string | null;
@@ -33,6 +35,10 @@ const seedStories: Story[] = [
   { slug: "tools-worth-watching", kicker: "TOOLS", title: "Tools worth watching as business becomes agentic", dek: "A living shortlist of products changing how teams publish, sell, support customers and operate.", readTime: "8 min", category: "Tools" }
 ];
 
-const liveStories = generatedStories.map((story) => ({ ...story })) as Story[];
-export const stories: Story[] = liveStories.length > 0 ? liveStories : seedStories;
+function withAuthor<T extends Story>(story: T): T {
+  return { ...story, author: story.author || authorForStory(story) };
+}
+
+const liveStories = generatedStories.map((story) => withAuthor({ ...story } as Story));
+export const stories: Story[] = liveStories.length > 0 ? liveStories : seedStories.map(withAuthor);
 export const categories = ["AI", "Technology", "Companies", "Work", "Tools"] as const;
