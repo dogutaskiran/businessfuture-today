@@ -19,6 +19,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://research.uga.edu/news/wp-content/uploads/sites/19/2026/08/yaw-buabeng-1040x600-1.jpg",
     "licenseStatus": "unknown",
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/blue-light-fine-detail-vision-study/inline-1.webp",
+        "alt": "Supporting image for Study Flags Blue Light as a Potential Constraint on Fine-Detail Vision",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -41,6 +49,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://images.macrumors.com/t/OsRlBLMFhQf-DlTIBvCnu2Opj54=/2500x/article-new/2026/04/Mac-mini-vs-Studio-Feature-Sans-Text-1.jpg",
     "licenseStatus": "unknown",
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/apple-ai-demand-mac-mini-mac-studio/inline-1.webp",
+        "alt": "Supporting image for Reported AI Demand for Mac Mini and Mac Studio Puts Apple’s Desktop Supply Planning in Focus",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -63,6 +79,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://storage.ghost.io/c/c4/c6/c4c61cc9-7edd-4a33-857b-26f10fd22b0b/content/images/size/w1200/2026/08/malleable-software--1-.png",
     "licenseStatus": "unknown",
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/malleable-software-solid-bases-custom-code/inline-1.webp",
+        "alt": "Supporting image for Malleable Software Starts With Strong Foundations, Not Endless Customization",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -85,6 +109,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://calpaterson.com/images/photo/kungfu.jpeg",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -107,6 +132,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": null,
     "licenseStatus": "none",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -129,6 +155,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://y4n0za9tok4qqkj4.public.blob.vercel-storage.com/blog/2026-08-04-how-we-configured-opentelemetry-logs-in-rails.png",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -151,6 +178,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/04/GettyImages-2255009714.jpg?resize=1200,800",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -173,6 +201,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/08/alteon-airplane.jpg?resize=1200,800",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -195,6 +224,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": null,
     "licenseStatus": "none",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -217,6 +247,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": null,
     "licenseStatus": "none",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -239,6 +270,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/08/waymo-jaguar-ipace.jpg?resize=1200,633",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -261,6 +293,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/05/GettyImages-2277777336.jpg?resize=1200,800",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -283,6 +316,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2025/09/12/EC2-F2.png",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -305,6 +339,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Teamwork_social.max-600x600.format-webp.webp",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -327,6 +362,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/vege-ai-influencer.png?quality=90&strip=all&crop=0%2C0%2C100%2C48.836288442078&w=1200",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -349,6 +385,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25562292/DSCF0055.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -371,6 +408,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": null,
     "licenseStatus": "unresolved",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -393,6 +431,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/23935558/acastro_STK103__01.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -415,6 +454,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-2263890424.jpg?w=1024",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -437,6 +477,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2025/06/GettyImages-2217247219.jpg?w=1024",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -459,6 +500,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2023/01/caterpillar-lidar-booth.jpg?resize=1200,800",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -481,6 +523,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2025/03/GettyImages-2205761844.jpg?resize=1200,846",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -503,6 +546,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/08/BlueVoice_Founders.png?resize=1200,600",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -525,6 +569,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/08/Instagram-label-.png?w=1200",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -547,6 +592,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2024/06/microsoft-outlook-app.jpg?resize=1200,800",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -569,6 +615,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://wp.technologyreview.com/wp-content/uploads/2026/08/openai-human4a.jpg?resize=1200,600",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -591,6 +638,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://app.ashbyhq.com/api/images/org-theme-logo/8c055073-ed97-4980-a925-eecf79fbde90/89560b07-0c51-4946-9d59-1e98694a0a99/f444bc50-13b7-4a53-97ed-89e1897a760b.png",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -613,6 +661,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/08/mckesson-2236133684.jpg?resize=1200,800",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -635,6 +684,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2024/07/brianstack-mspy-email-leak-2024.jpg?resize=1200,675",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -657,6 +707,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/08/STK155_OPEN_AI_4_CVirginia_B.png?quality=90&strip=all&crop=0%2C10.742221417566%2C100%2C78.515557164868&w=1200",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -679,6 +730,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/05/ai-agents-GettyImages-2229880232.jpg?resize=1200,675",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -701,6 +753,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2024/09/ryan-breslow-bolt.jpg?resize=1200,800",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -723,6 +776,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2026/08/28/AWS_Ducklabs_white_logo_800x400.png",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -745,6 +799,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/DCD_Hochul.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -767,6 +822,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://opengraph.githubassets.com/528091d3f558a99754b74d2c53a7d11528035dca0379ab91fd9da7bfdf621a25/Hebbian-Robotics/hflow",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -789,6 +845,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/09/STK414_AI_CVIRGINIA_I__0009_7.png?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   },
   {
@@ -811,6 +868,7 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://usealmanac.com/opengraph-image?5038a70137ec138b",
     "licenseStatus": "unknown",
+    "inlineImages": [],
     "generated": true
   }
 ] as const;

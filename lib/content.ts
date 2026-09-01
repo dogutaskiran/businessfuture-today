@@ -19,6 +19,7 @@ export type Story = {
   imageCredit?: string | null;
   sourceImageCandidate?: string | null;
   licenseStatus?: string | null;
+  inlineImages?: readonly { role: string; src: string; alt: string; credit?: string | null }[];
 };
 
 const seedStories: Story[] = [

@@ -158,3 +158,10 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.06em; }
   .story-card__media { margin: -24px -4px 20px; }
   .article__hero { margin-top: 34px; }
 }
+
+/* Inline editorial media: wider than body copy, narrower than lead hero */
+.article__block { display: contents; }
+.article__inline { width: calc(100% + 140px); margin: 48px -70px 54px; }
+.article__inline img { display:block; width:100%; aspect-ratio:3/2; object-fit:cover; background:#ddd8ce; }
+.article__inline figcaption { margin-top:8px; color:var(--muted); font-family:Arial,Helvetica,sans-serif; font-size:10px; line-height:1.35; letter-spacing:.03em; }
+@media (max-width: 900px) { .article__inline { width:100%; margin:38px 0 44px; } }

@@ -99,6 +99,21 @@ export async function ensureSchema() {
     CREATE INDEX IF NOT EXISTS drafts_status_idx
       ON drafts (status, created_at DESC);
 
+    CREATE TABLE IF NOT EXISTS source_media_policies (
+      domain TEXT PRIMARY KEY,
+      mode TEXT NOT NULL DEFAULT 'review' CHECK (mode IN ('owned','licensed','public_license','review','deny')),
+      allowed_roles JSONB NOT NULL DEFAULT '["hero","inline_1","inline_2","social"]'::jsonb,
+      attribution_template TEXT,
+      license_basis TEXT,
+      metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+      updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    );
+
+    INSERT INTO source_media_policies (domain,mode,attribution_template,license_basis)
+    VALUES ('businessfuture.today','owned','Business Future Today','First-party publication media')
+    ON CONFLICT (domain) DO NOTHING;
+
     CREATE TABLE IF NOT EXISTS media_assets (
       id UUID PRIMARY KEY,
       draft_id UUID NOT NULL REFERENCES drafts(id) ON DELETE CASCADE,
