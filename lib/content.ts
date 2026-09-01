@@ -15,6 +15,8 @@ export type Story = {
   heroImage?: string | null;
   cardImage?: string | null;
   ogImage?: string | null;
+  socialSquareImage?: string | null;
+  socialPortraitImage?: string | null;
   imageAlt?: string | null;
   imageCredit?: string | null;
   sourceImageCandidate?: string | null;

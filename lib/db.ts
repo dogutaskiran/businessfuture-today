@@ -101,7 +101,7 @@ export async function ensureSchema() {
 
     CREATE TABLE IF NOT EXISTS source_media_policies (
       domain TEXT PRIMARY KEY,
-      mode TEXT NOT NULL DEFAULT 'review' CHECK (mode IN ('owned','licensed','public_license','review','deny')),
+      mode TEXT NOT NULL DEFAULT 'review' CHECK (mode IN ('owned','licensed','editorial','public_license','review','deny')),
       allowed_roles JSONB NOT NULL DEFAULT '["hero","inline_1","inline_2","social"]'::jsonb,
       attribution_template TEXT,
       license_basis TEXT,
@@ -113,6 +113,42 @@ export async function ensureSchema() {
     INSERT INTO source_media_policies (domain,mode,attribution_template,license_basis)
     VALUES ('businessfuture.today','owned','Business Future Today','First-party publication media')
     ON CONFLICT (domain) DO NOTHING;
+
+    ALTER TABLE source_media_policies DROP CONSTRAINT IF EXISTS source_media_policies_mode_check;
+    ALTER TABLE source_media_policies ADD CONSTRAINT source_media_policies_mode_check CHECK (mode IN ('owned','licensed','editorial','public_license','review','deny'));
+
+    INSERT INTO source_media_policies (domain,mode,license_basis) VALUES
+      ('techcrunch.com','deny','TechCrunch terms restrict copying/republishing site materials without authorization'),
+      ('theverge.com','review','No source-level reuse approval recorded'),
+      ('technologyreview.com','review','No source-level reuse approval recorded'),
+      ('blog.google','review','No source-level reuse approval recorded'),
+      ('blogs.microsoft.com','review','No source-level reuse approval recorded'),
+      ('aws.amazon.com','review','No source-level reuse approval recorded')
+    ON CONFLICT (domain) DO NOTHING;
+
+    CREATE TABLE IF NOT EXISTS source_media_candidates (
+      id UUID PRIMARY KEY,
+      draft_id UUID NOT NULL REFERENCES drafts(id) ON DELETE CASCADE,
+      page_url TEXT NOT NULL,
+      image_url TEXT NOT NULL,
+      source_kind TEXT NOT NULL,
+      ordinal INTEGER NOT NULL DEFAULT 0,
+      width_hint INTEGER,
+      height_hint INTEGER,
+      actual_width INTEGER,
+      actual_height INTEGER,
+      content_type TEXT,
+      bytes INTEGER,
+      score NUMERIC NOT NULL DEFAULT 0,
+      selected BOOLEAN NOT NULL DEFAULT false,
+      metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+      updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+      UNIQUE (draft_id, image_url)
+    );
+
+    CREATE INDEX IF NOT EXISTS source_media_candidates_draft_idx
+      ON source_media_candidates (draft_id, score DESC, ordinal ASC);
 
     CREATE TABLE IF NOT EXISTS media_assets (
       id UUID PRIMARY KEY,
@@ -128,6 +164,8 @@ export async function ensureSchema() {
       hero_path TEXT NOT NULL,
       card_path TEXT NOT NULL,
       og_path TEXT NOT NULL,
+      social_square_path TEXT,
+      social_portrait_path TEXT,
       mime_type TEXT NOT NULL DEFAULT 'image/webp',
       width INTEGER,
       height INTEGER,
@@ -138,6 +176,9 @@ export async function ensureSchema() {
       updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
       UNIQUE (draft_id, role)
     );
+
+    ALTER TABLE media_assets ADD COLUMN IF NOT EXISTS social_square_path TEXT;
+    ALTER TABLE media_assets ADD COLUMN IF NOT EXISTS social_portrait_path TEXT;
 
     CREATE INDEX IF NOT EXISTS media_assets_draft_idx
       ON media_assets (draft_id, role);
