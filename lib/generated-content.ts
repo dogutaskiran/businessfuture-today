@@ -437,7 +437,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2026/05/GettyImages-2277777336.jpg?resize=1200,800",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/polymarket-reportedly-raises-300m-1789-capital/inline-1.webp",
+        "alt": "Supporting image for Polymarket Reportedly Lands $300 Million From 1789 Capital",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -462,7 +469,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2025/09/12/EC2-F2.png",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/aws-ec2-r9g-r9gd-graviton5-generally-available/inline-1.webp",
+        "alt": "Supporting image for AWS Makes Graviton5 Memory-Optimized Instances Generally Available",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -487,7 +501,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Teamwork_social.max-600x600.format-webp.webp",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/google-antigravity-gemini-3-7-flash-multi-agent-engineering/inline-1.webp",
+        "alt": "Supporting image for Google Pairs Antigravity With Gemini 3.7 Flash for Multi-Agent Math and Engineering Work",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -512,7 +533,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/vege-ai-influencer.png?quality=90&strip=all&crop=0%2C0%2C100%2C48.836288442078&w=1200",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/instagram-ai-generated-profile-labels/inline-1.webp",
+        "alt": "Supporting image for Instagram Moves to Label AI Profiles That Pretend to Be Human",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -537,7 +565,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25562292/DSCF0055.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/google-tv-streamer-price-increase-149/inline-1.webp",
+        "alt": "Supporting image for Google Raises TV Streamer Price to $149 as Device Costs Climb",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -562,7 +597,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": null,
     "licenseStatus": "unresolved",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/agentic-trust-controls-hacker-news-sparse-details/inline-1.webp",
+        "alt": "Supporting image for “Agentic Trust Controls” Surfaces on Hacker News, but Details Remain Sparse",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
