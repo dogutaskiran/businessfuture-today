@@ -1,12 +1,72 @@
 export const generatedStories = [
   {
+    "slug": "us-drone-robot-barriers-china-scale-global-market",
+    "kicker": "Global Technology Competition",
+    "title": "US Barriers on Drones and Robots May Redirect Competition, Not End It",
+    "dek": "As the U.S. restricts more foreign-made drones and robots, China’s manufacturing scale could shift the competitive fight to markets beyond American borders.",
+    "readTime": "3 min",
+    "category": "Technology",
+    "featured": true,
+    "bodyMarkdown": "The U.S. is putting up more barriers to foreign-made drones and robots, particularly equipment tied to China. The strategy aims to reduce reliance on overseas technology in sectors with commercial, industrial and potential security implications.\n\nBut restricting access to the U.S. market does not necessarily constrain the companies and supply chains involved. China’s advantage is scale: a large manufacturing base, established component ecosystems and the capacity to serve customers in markets outside the United States.\n\n## A market-access strategy meets a scale advantage\n\nFor U.S. policymakers, limiting foreign hardware can create room for domestic suppliers and reduce exposure to products made abroad. For operators that use drones or robotic systems, however, restrictions can alter procurement options, pricing and replacement cycles.\n\nThe larger issue is whether a U.S.-only barrier can reshape a global market. If Chinese manufacturers retain the ability to produce at volume and sell internationally, they can continue building revenue, supplier relationships and product feedback loops elsewhere. That can preserve the scale advantages that make it difficult for competitors to match prices and iterate quickly.\n\n## What it means for builders and buyers\n\nDomestic drone and robotics companies may see a clearer opening in the U.S. But an opening is not the same as a durable competitive position. Companies will still need to build reliable hardware, secure components, support customers and reach manufacturing volumes that make their products economically viable.\n\nFor enterprise and public-sector buyers, the change raises practical questions:\n\n- Which products remain available under new restrictions?\n- Can domestic alternatives meet performance and support requirements?\n- How will rules affect total cost, including maintenance, software and replacement parts?\n- Are suppliers able to provide credible, resilient component supply chains?\n\nThese questions matter because drones and robots are not standalone purchases. They depend on sensors, batteries, communications equipment, software, repair networks and trained operators. A restriction affecting one part of that system can create downstream operational costs.\n\n## Competition could move outward\n\nChina’s scale means the contest may increasingly play out outside the U.S. Companies that cannot sell into the American market can pursue demand in other regions, where buyers may prioritize cost, availability and deployment speed.\n\nThat dynamic could create a more fragmented industry: one set of suppliers and standards for the U.S. market, and another serving broader international demand. Such fragmentation may offer domestic vendors protected demand at home while making it harder for them to gain the global volume needed to compete with large overseas manufacturers.\n\n## What to watch next\n\nThe key test is whether U.S. restrictions are accompanied by measures that help local suppliers scale. Market access alone will not resolve constraints in manufacturing capacity, component sourcing or customer adoption.\n\nExecutives should watch for changes in procurement rules, the availability of compliant alternatives and whether international markets coalesce around competing drone and robotics ecosystems. The policy direction is clear: the U.S. is trying to reshape who can sell critical hardware within its borders. The unanswered question is whether that changes the global balance of production—or merely relocates the competition.",
+    "sourceUrls": [
+      "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/"
+    ],
+    "publishedAt": "2026-09-01T02:54:24.417Z",
+    "heroImage": "/media/us-drone-robot-barriers-china-scale-global-market/hero.webp",
+    "cardImage": "/media/us-drone-robot-barriers-china-scale-global-market/card.webp",
+    "ogImage": "/media/us-drone-robot-barriers-china-scale-global-market/og.webp",
+    "imageAlt": "Editorial image for US Barriers on Drones and Robots May Redirect Competition, Not End It",
+    "imageCredit": "Illustration: Business Future Today",
+    "sourceImageCandidate": "https://techcrunch.com/wp-content/uploads/2018/03/gettyimages-507054668.jpg?resize=1200,801",
+    "licenseStatus": "unknown",
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/us-drone-robot-barriers-china-scale-global-market/inline-1.webp",
+        "alt": "Supporting image for US Barriers on Drones and Robots May Redirect Competition, Not End It",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
+    "generated": true
+  },
+  {
+    "slug": "texas-freezes-flock-camera-spending-ai-surveillance",
+    "kicker": "Public Technology",
+    "title": "Texas Freezes New Flock Camera Spending as AI Surveillance Backlash Grows",
+    "dek": "Governor Greg Abbott has halted state spending on Flock cameras after Texas put more than $30 million toward the systems, sharpening the operational and reputational risks around AI-enabled surveillance.",
+    "readTime": "3 min",
+    "category": "Technology",
+    "featured": false,
+    "bodyMarkdown": "Texas Governor Greg Abbott has frozen state spending on Flock Safety camera systems, according to The Verge. The move comes as scrutiny builds around the use of AI-enabled license plate reader networks by public agencies.\n\nThe decision arrived shortly before a Texas Tribune investigation reported that the state had spent more than $30 million on Flock cameras. Much of that funding was raised through a $1 fee added to insurance policies, a mechanism reportedly intended to help address catalytic converter theft.\n\n## What changed\n\nThe freeze stops the state from putting additional money into Flock camera deployments. It does not, based on the available reporting, establish a broader ban on existing systems or their use by local agencies.\n\nStill, the action is notable because it shifts the issue from an abstract privacy debate to a state-budget decision. Texas had been a substantial customer: spending at the reported scale makes any procurement pause consequential for vendors serving law enforcement and public-sector security buyers.\n\n## Why operators should pay attention\n\nFlock’s systems sit at the intersection of physical security, cloud software, AI-assisted search, and law-enforcement data access. That combination can make deployments operationally attractive: agencies can use networks of cameras to identify and search for vehicles connected to investigations.\n\nBut the same features create governance exposure. The Verge reports that Flock systems have faced privacy concerns across the political spectrum. It also notes multiple incidents in which officers were placed on leave or criminally charged over misuse of Flock systems.\n\nFor public-sector technology leaders, the Texas pause is a reminder that a procurement approval is not the end of the risk assessment. Programs involving searchable location or vehicle data need clear controls over who can access the system, which searches are permitted, how activity is logged, and how misuse is investigated.\n\nFor vendors, the lesson is equally direct: product capability alone will not determine buying decisions. Funding sources, auditability, customer policies, and safeguards against improper access can become central to contract durability.\n\n## The funding question\n\nThe reported use of an insurance-policy fee adds another dimension to the controversy. When a fee is tied to a specific public-safety objective, such as combating catalytic converter theft, policymakers and the public can ask whether the resulting technology spend remains proportionate to that purpose.\n\nThat makes outcome measurement important. Agencies considering similar deployments will face pressure to show not only that cameras produce investigative leads, but also that the results justify recurring costs and any privacy tradeoffs.\n\n## What to watch next\n\nThe key unanswered questions are how long the freeze will last, whether Texas reviews existing Flock contracts, and whether the state imposes new oversight requirements before spending resumes.\n\nOther jurisdictions will be watching. A pause in one major state does not settle the debate over automated license plate reader systems, but it raises the likelihood that future deployments will receive more attention from budget officials, legislators, civil-liberties groups, and procurement teams before cameras are installed.",
+    "sourceUrls": [
+      "https://www.theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras"
+    ],
+    "publishedAt": "2026-09-01T02:54:10.703Z",
+    "heroImage": "/media/texas-freezes-flock-camera-spending-ai-surveillance/hero.webp",
+    "cardImage": "/media/texas-freezes-flock-camera-spending-ai-surveillance/card.webp",
+    "ogImage": "/media/texas-freezes-flock-camera-spending-ai-surveillance/og.webp",
+    "imageAlt": "Editorial image for Texas Freezes New Flock Camera Spending as AI Surveillance Backlash Grows",
+    "imageCredit": "Illustration: Business Future Today",
+    "sourceImageCandidate": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/gettyimages-2291175333.jpg?quality=90&strip=all&crop=0%2C10.750889909111%2C100%2C78.498220181778&w=1200",
+    "licenseStatus": "unknown",
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/texas-freezes-flock-camera-spending-ai-surveillance/inline-1.webp",
+        "alt": "Supporting image for Texas Freezes New Flock Camera Spending as AI Surveillance Backlash Grows",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
+    "generated": true
+  },
+  {
     "slug": "blue-light-fine-detail-vision-study",
     "kicker": "DISPLAY TECHNOLOGY",
     "title": "Study Flags Blue Light as a Potential Constraint on Fine-Detail Vision",
     "dek": "A University of Georgia research summary says blue light most impaired the eye’s ability to distinguish fine detail. For teams building screens and visual workflows, the finding is a prompt to examine display conditions—not a standalone prescription.",
     "readTime": "3 min",
     "category": "Technology",
-    "featured": true,
+    "featured": false,
     "bodyMarkdown": "A University of Georgia research summary, highlighted in a Hacker News discussion, reports a study finding that blue light impaired the eye’s ability to distinguish fine detail more than other tested light conditions.\n\nThe supplied report does not provide the study’s methods, participant details, effect size, comparison conditions or practical thresholds. That limits the conclusions operators and product teams should draw. But the core finding is relevant to any work that depends on sustained visual precision: reading dense interfaces, reviewing designs, inspecting images, monitoring dashboards or performing detail-oriented screen work.\n\n## Why the finding matters\n\nMost discussion of blue light in consumer technology has centered on comfort, sleep and display settings. This study points to a different question: whether the spectral characteristics of light can affect fine-detail discrimination itself.\n\nFor businesses, that distinction matters. A reduction in the ability to resolve fine detail could affect how people experience visual information, particularly where small text, subtle contrast differences or precise image inspection are central to a task. It could also matter to hardware and software teams making choices about display modes, lighting environments and visual-interface defaults.\n\nThe finding should not be read as evidence that every blue-light-emitting screen or every blue-heavy environment creates the same outcome. The available source summary does not establish that. It does, however, identify fine-detail vision as a variable worth testing rather than assuming away.\n\n## Practical implications for builders\n\nTeams responsible for visual products can treat this as a research and design prompt.\n\n- **Test critical tasks, not just preference.** If users must identify small elements or inspect visual detail, evaluate task performance across relevant display and lighting settings.\n- **Review dense interface patterns.** Small type, low-contrast controls and information-heavy dashboards may deserve particular scrutiny where accurate detail perception is important.\n- **Separate comfort from performance.** A display setting that users describe as comfortable is not necessarily the one that best supports fine-detail work, and vice versa.\n- **Consider environment alongside the device.** The report concerns blue light’s effect on vision, not a specific product category. Device displays are only one part of a user’s lighting context.\n\nFor procurement and workplace teams, the immediate takeaway is not to mandate a particular filter or display mode. It is to identify roles where visual precision is operationally important and ensure that workstation and interface choices are evaluated against those requirements.\n\n## What to watch next\n\nThe next useful evidence will be the underlying study: its experimental design, the wavelengths and intensities tested, how long effects lasted, and whether the results translate to real-world screen use. It will also be important to know whether the effect varies by viewing conditions or participant characteristics.\n\nUntil those details are available, the study is best treated as a targeted signal for design and ergonomics teams. Blue light may be more than a wellness-setting debate if it changes fine-detail perception; the business question is where that change is large enough to affect work quality or product usability.",
     "sourceUrls": [
       "https://research.uga.edu/news/blue-light-has-a-surprising-effect-on-your-eyes-study-finds/"
@@ -109,7 +169,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": "https://calpaterson.com/images/photo/kungfu.jpeg",
     "licenseStatus": "unknown",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/agent-memory-as-a-file-format/inline-1.webp",
+        "alt": "Supporting image for Agent Memory as a File Format Raises a Practical Question for AI Builders",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
@@ -132,7 +199,14 @@ export const generatedStories = [
     "imageCredit": "Illustration: Business Future Today",
     "sourceImageCandidate": null,
     "licenseStatus": "none",
-    "inlineImages": [],
+    "inlineImages": [
+      {
+        "role": "inline_1",
+        "src": "/media/chatgpt-work-tool-skill-reference/inline-1.webp",
+        "alt": "Supporting image for A New ChatGPT Work Tool Reference Puts the Focus on Operational Clarity",
+        "credit": "Illustration: Business Future Today"
+      }
+    ],
     "generated": true
   },
   {
