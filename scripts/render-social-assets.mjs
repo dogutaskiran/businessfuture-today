@@ -1,58 +1,43 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
-import sharp from 'sharp';
-
-const slug = process.argv[2];
-if (!slug) throw new Error('Usage: node scripts/render-social-assets.mjs <slug>');
-const articlePath = path.join(process.cwd(),'content','articles',slug,'article.json');
-const article = JSON.parse(await fs.readFile(articlePath,'utf8'));
-const mediaBase = process.env.NEXT_PUBLIC_MEDIA_BASE_URL || 'https://assets.businessfuture.today';
-const heroUrl = new URL(article.media.hero, mediaBase).toString();
-const response = await fetch(heroUrl);
-if (!response.ok) throw new Error(`Could not fetch hero: ${response.status}`);
-const hero = Buffer.from(await response.arrayBuffer());
-const outDir = path.join(process.cwd(),'public','social-review-assets',slug);
-await fs.mkdir(outDir,{recursive:true});
-
-const brand = { ink:'#111827', paper:'#f6f3eb', accent:'#f4d03f', muted:'#677386' };
-const esc = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
-const sourceHost = (()=>{try{return new URL(article.sources?.[0]||'').hostname.replace(/^www\./,'')}catch{return 'businessfuture.today'}})();
-const sourceLabel = sourceHost.includes('theverge') ? 'The Verge' : sourceHost;
-async function titleLayer(text,{maxWidth,maxHeight,startSize,minSize=42,color='#111827'}){
-  for(let size=startSize;size>=minSize;size-=2){
-    const input={text:{text:`<span foreground="${color}">${esc(text)}</span>`,font:`Georgia Bold ${size}`,width:maxWidth,align:'center',rgba:true}};
-    const image=sharp(input);
-    const meta=await image.metadata();
-    if((meta.height||0)<=maxHeight){return {buffer:await image.png().toBuffer(),width:meta.width||maxWidth,height:meta.height||maxHeight,fontSize:size};}
+import fs from 'node:fs/promises';import path from 'node:path';import sharp from 'sharp';
+const slug=process.argv[2];if(!slug)throw new Error('Usage: node scripts/render-social-assets.mjs <slug>');const root=process.cwd();
+const article=JSON.parse(await fs.readFile(path.join(root,'content','articles',slug,'article.json'),'utf8'));const social=JSON.parse(await fs.readFile(path.join(root,'content','articles',slug,'social.json'),'utf8'));
+const mediaBase=process.env.NEXT_PUBLIC_MEDIA_BASE_URL||'https://assets.businessfuture.today';const outDir=path.join(root,'public','social-review-assets',slug);await fs.mkdir(outDir,{recursive:true});
+const B={ink:'#111827',paper:'#f6f3eb',accent:'#f4d03f',muted:'#677386',line:'#d6dbe2'};const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+const sourceHost=(()=>{try{return new URL(article.sources?.[0]||'').hostname.replace(/^www\./,'')}catch{return'businessfuture.today'}})();const sourceLabel=sourceHost.includes('theverge')?'The Verge':sourceHost;
+async function fetchAsset(src){const r=await fetch(new URL(src,mediaBase));if(!r.ok)throw new Error(`asset ${r.status}`);return Buffer.from(await r.arrayBuffer())}const hero=await fetchAsset(article.media.hero);const inline={};for(const x of article.media.inline||[])inline[x.role]=await fetchAsset(x.src);const assetFor=r=>r==='hero'?hero:(inline[r]||hero);
+async function textLayer(text,{width,height=1000,startSize=72,minSize=28,color=B.ink,font='Georgia Bold',align='center'}){for(let size=startSize;size>=minSize;size-=2){const img=sharp({text:{text:`<span foreground="${color}">${esc(text)}</span>`,font:`${font} ${size}`,width,align,rgba:true}});const m=await img.metadata();if((m.height||0)<=height)return{buffer:await img.png().toBuffer(),width:m.width||width,height:m.height||height}}const img=sharp({text:{text:`<span foreground="${color}">${esc(text)}</span>`,font:`${font} ${minSize}`,width,align,rgba:true}});const m=await img.metadata();return{buffer:await img.png().toBuffer(),width:m.width||width,height:m.height||height}}
+const masthead=(W,dark=true)=>`<rect width="${W}" height="132" fill="${dark?B.ink:B.paper}"/><text x="60" y="52" fill="${dark?'#fff':B.ink}" font-family="Arial" font-size="19" font-weight="700" letter-spacing="2">BUSINESS FUTURE</text><text x="60" y="96" fill="${dark?'#fff':B.ink}" font-family="Arial" font-size="42" font-weight="800">TODAY</text>`;
+const footer=(W,H,{dark=false,index,total,cta='businessfuture.today'}={})=>`<line x1="60" y1="${H-88}" x2="${W-60}" y2="${H-88}" stroke="${dark?'#ffffff55':B.line}"/><text x="60" y="${H-42}" fill="${dark?'#d5dbe4':B.muted}" font-family="Arial" font-size="15">Source: ${esc(sourceLabel)}</text><text x="${W-60}" y="${H-42}" text-anchor="end" fill="${dark?'#fff':B.ink}" font-family="Arial" font-size="15" font-weight="700">${index&&total?`${index}/${total} · `:''}${cta}</text>`;
+const pill=(label,x,y,w=260)=>`<rect x="${x}" y="${y}" width="${w}" height="42" rx="21" fill="${B.accent}"/><text x="${x+w/2}" y="${y+28}" text-anchor="middle" fill="${B.ink}" font-family="Arial" font-size="15" font-weight="800" letter-spacing="1">${esc(label).toUpperCase()}</text>`;
+async function renderFeed(){const W=1080,H=1350;const photo=await sharp(hero).resize(W,610,{fit:'cover'}).webp({quality:92}).toBuffer();const t=await textLayer(article.title,{width:920,height:300,startSize:72,minSize:48});const o=Buffer.from(`<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">${masthead(W)}${pill(article.category,445,790,190)}${footer(W,H)}</svg>`);await sharp({create:{width:W,height:H,channels:4,background:B.paper}}).composite([{input:photo,left:0,top:132},{input:o,left:0,top:0},{input:t.buffer,left:Math.round((W-t.width)/2),top:875+Math.max(0,Math.floor((285-t.height)/2))}]).webp({quality:92}).toFile(path.join(outDir,'feed-1080x1350.webp'))}
+async function renderStory(){const W=1080,H=1920;const photo=await sharp(hero).resize(W,H,{fit:'cover'}).modulate({brightness:.62,saturation:.85}).webp({quality:92}).toBuffer();const t=await textLayer(article.title,{width:920,height:420,startSize:86,minSize:52,color:'#fff'});const o=Buffer.from(`<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#111827" stop-opacity=".15"/><stop offset=".55" stop-color="#111827" stop-opacity=".35"/><stop offset="1" stop-color="#111827" stop-opacity=".94"/></linearGradient></defs><rect width="${W}" height="${H}" fill="url(#g)"/>${masthead(W,false)}${pill(article.category,435,1140,210)}${footer(W,H,{dark:true,cta:'READ →'})}</svg>`);await sharp(photo).composite([{input:o,left:0,top:0},{input:t.buffer,left:Math.round((W-t.width)/2),top:1245+Math.max(0,Math.floor((430-t.height)/2))}]).webp({quality:92}).toFile(path.join(outDir,'story-1080x1920.webp'))}
+async function renderCarouselSlide(slide,index,total){
+  const W=1080,H=1350,n=String(index).padStart(2,'0'),file=`carousel-${n}-${slide.type}-1080x1350.webp`;
+  let base=sharp({create:{width:W,height:H,channels:4,background:B.paper}});const comps=[];
+  if(slide.type==='cover'){
+    const photo=await sharp(assetFor(slide.imageRole)).resize(W,650,{fit:'cover'}).webp({quality:92}).toBuffer();
+    const head=await textLayer(slide.headline,{width:920,height:290,startSize:72,minSize:46});
+    comps.push({input:photo,left:0,top:132},{input:Buffer.from(`<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">${masthead(W)}${pill(slide.label,420,820,240)}${footer(W,H,{index,total,cta:'SWIPE →'})}</svg>`),left:0,top:0},{input:head.buffer,left:Math.round((W-head.width)/2),top:900+Math.max(0,Math.floor((260-head.height)/2))});
+  } else if(slide.type==='feature'){
+    const photo=await sharp(assetFor(slide.imageRole)).resize(W,H,{fit:'cover'}).modulate({brightness:.55,saturation:.8}).webp({quality:92}).toBuffer();base=sharp(photo);
+    const head=await textLayer(slide.headline,{width:900,height:300,startSize:82,minSize:48,color:'#fff'});const body=await textLayer(slide.body,{width:820,height:270,startSize:34,minSize:26,color:'#eef2f7',font:'Arial'});
+    comps.push({input:Buffer.from(`<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg"><rect width="${W}" height="${H}" fill="#11182766"/>${masthead(W)}${pill(slide.label,400,360,280)}${footer(W,H,{dark:true,index,total})}</svg>`),left:0,top:0},{input:head.buffer,left:Math.round((W-head.width)/2),top:490},{input:body.buffer,left:Math.round((W-body.width)/2),top:850});
+  } else if(slide.type==='watch'){
+    const head=await textLayer(slide.headline,{width:900,height:250,startSize:64,minSize:42});
+    comps.push({input:Buffer.from(`<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">${masthead(W)}${pill(slide.label,400,205,280)}${footer(W,H,{index,total})}</svg>`),left:0,top:0},{input:head.buffer,left:Math.round((W-head.width)/2),top:300});
+    let y=615;for(let i=0;i<(slide.bullets||[]).length;i++){const b=await textLayer(slide.bullets[i],{width:760,height:145,startSize:31,minSize:24,font:'Arial',align:'left'});comps.push({input:Buffer.from(`<svg width="${W}" height="180" xmlns="http://www.w3.org/2000/svg"><circle cx="96" cy="48" r="27" fill="${B.accent}"/><text x="96" y="57" text-anchor="middle" fill="${B.ink}" font-family="Arial" font-size="24" font-weight="800">${i+1}</text></svg>`),left:0,top:y-16},{input:b.buffer,left:160,top:y});y+=190}
+  } else if(slide.type==='cta'){
+    const photo=await sharp(assetFor(slide.imageRole)).resize(W,H,{fit:'cover'}).modulate({brightness:.38,saturation:.65}).webp({quality:92}).toBuffer();base=sharp(photo);
+    const head=await textLayer(slide.headline,{width:900,height:360,startSize:78,minSize:46,color:'#fff'});const body=await textLayer(slide.body,{width:820,height:130,startSize:34,minSize:26,color:'#fff',font:'Arial'});
+    comps.push({input:Buffer.from(`<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg"><rect width="${W}" height="${H}" fill="#11182777"/>${masthead(W)}${pill(slide.label,395,300,290)}${footer(W,H,{dark:true,index,total})}</svg>`),left:0,top:0},{input:head.buffer,left:Math.round((W-head.width)/2),top:455},{input:body.buffer,left:Math.round((W-body.width)/2),top:930});
+  } else {
+    const isImpact=slide.type==='impact',isContext=slide.type==='context';const head=await textLayer(slide.headline,{width:900,height:300,startSize:isImpact?74:66,minSize:42});const body=await textLayer(slide.body,{width:820,height:330,startSize:34,minSize:25,font:'Arial'});
+    comps.push({input:Buffer.from(`<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">${masthead(W)}${pill(slide.label,390,220,300)}${isImpact?`<rect x="60" y="390" width="14" height="520" fill="${B.accent}"/>`:''}${isContext?`<circle cx="540" cy="410" r="92" fill="${B.ink}"/><text x="540" y="430" text-anchor="middle" fill="${B.accent}" font-family="Georgia" font-size="74" font-weight="700">↗</text>`:''}${footer(W,H,{index,total})}</svg>`),left:0,top:0},{input:head.buffer,left:Math.round((W-head.width)/2),top:isContext?535:390},{input:body.buffer,left:Math.round((W-body.width)/2),top:isContext?860:790});
   }
-  const image=sharp({text:{text:`<span foreground="${color}">${esc(text)}</span>`,font:`Georgia Bold ${minSize}`,width:maxWidth,align:'center',rgba:true}});
-  const meta=await image.metadata();
-  return {buffer:await image.png().toBuffer(),width:meta.width||maxWidth,height:meta.height||maxHeight,fontSize:minSize};
+  await base.composite(comps).webp({quality:92}).toFile(path.join(outDir,file));return file;
 }
-async function renderFeed(){
-  const W=1080,H=1350,imgH=610;
-  const photo=await sharp(hero).resize(W,imgH,{fit:'cover'}).webp({quality:92}).toBuffer();
-  const title=await titleLayer(article.title,{maxWidth:920,maxHeight:300,startSize:72,minSize:48});
-  const overlay=Buffer.from(`<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg"><rect y="0" width="${W}" height="138" fill="${brand.ink}"/><text x="64" y="55" fill="#fff" font-family="Arial" font-size="20" font-weight="700" letter-spacing="2">BUSINESS FUTURE</text><text x="64" y="101" fill="#fff" font-family="Arial" font-size="44" font-weight="800" letter-spacing="-2">TODAY</text><rect x="445" y="790" width="190" height="42" rx="21" fill="${brand.accent}"/><text x="540" y="818" text-anchor="middle" fill="${brand.ink}" font-family="Arial" font-size="17" font-weight="800" letter-spacing="1">${esc(article.category).toUpperCase()}</text><line x1="64" y1="1238" x2="1016" y2="1238" stroke="#cfd5dd"/><text x="64" y="1290" fill="${brand.muted}" font-family="Arial" font-size="16">Source: ${esc(sourceLabel)}</text><text x="1016" y="1290" text-anchor="end" fill="${brand.ink}" font-family="Arial" font-size="16" font-weight="700">businessfuture.today</text></svg>`);
-  const titleTop=875+Math.max(0,Math.floor((285-title.height)/2));
-  return sharp({create:{width:W,height:H,channels:4,background:brand.paper}}).composite([{input:photo,left:0,top:138},{input:overlay,left:0,top:0},{input:title.buffer,left:Math.round((W-title.width)/2),top:titleTop}]).webp({quality:92}).toFile(path.join(outDir,'feed-1080x1350.webp'));
-}
-async function renderSquare(){
-  const W=1080,H=1080,imgH=470;
-  const photo=await sharp(hero).resize(W,imgH,{fit:'cover'}).webp({quality:92}).toBuffer();
-  const title=await titleLayer(article.title,{maxWidth:920,maxHeight:245,startSize:66,minSize:44});
-  const overlay=Buffer.from(`<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg"><rect width="${W}" height="118" fill="${brand.ink}"/><text x="60" y="48" fill="#fff" font-family="Arial" font-size="18" font-weight="700" letter-spacing="2">BUSINESS FUTURE</text><text x="60" y="90" fill="#fff" font-family="Arial" font-size="38" font-weight="800">TODAY</text><rect x="445" y="620" width="190" height="40" rx="20" fill="${brand.accent}"/><text x="540" y="647" text-anchor="middle" fill="${brand.ink}" font-family="Arial" font-size="16" font-weight="800">${esc(article.category).toUpperCase()}</text><text x="60" y="1030" fill="${brand.muted}" font-family="Arial" font-size="15">Source: ${esc(sourceLabel)}</text><text x="1020" y="1030" text-anchor="end" fill="${brand.ink}" font-family="Arial" font-size="15" font-weight="700">SWIPE →</text></svg>`);
-  const titleTop=705+Math.max(0,Math.floor((245-title.height)/2));
-  return sharp({create:{width:W,height:H,channels:4,background:brand.paper}}).composite([{input:photo,left:0,top:118},{input:overlay,left:0,top:0},{input:title.buffer,left:Math.round((W-title.width)/2),top:titleTop}]).webp({quality:92}).toFile(path.join(outDir,'carousel-cover-1080x1080.webp'));
-}
-async function renderStory(){
-  const W=1080,H=1920;
-  const photo=await sharp(hero).resize(W,H,{fit:'cover'}).modulate({brightness:.62,saturation:.85}).webp({quality:92}).toBuffer();
-  const title=await titleLayer(article.title,{maxWidth:920,maxHeight:420,startSize:86,minSize:52,color:'#ffffff'});
-  const overlay=Buffer.from(`<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#111827" stop-opacity=".15"/><stop offset=".55" stop-color="#111827" stop-opacity=".35"/><stop offset="1" stop-color="#111827" stop-opacity=".94"/></linearGradient></defs><rect width="${W}" height="${H}" fill="url(#g)"/><text x="64" y="92" fill="#fff" font-family="Arial" font-size="20" font-weight="700" letter-spacing="2">BUSINESS FUTURE</text><text x="64" y="140" fill="#fff" font-family="Arial" font-size="44" font-weight="800">TODAY</text><rect x="435" y="1140" width="210" height="46" rx="23" fill="${brand.accent}"/><text x="540" y="1171" text-anchor="middle" fill="${brand.ink}" font-family="Arial" font-size="18" font-weight="800">${esc(article.category).toUpperCase()}</text><line x1="64" y1="1775" x2="1016" y2="1775" stroke="#ffffff" stroke-opacity=".35"/><text x="64" y="1830" fill="#fff" font-family="Arial" font-size="17">Source: ${esc(sourceLabel)}</text><text x="1016" y="1830" text-anchor="end" fill="#fff" font-family="Arial" font-size="17" font-weight="700">READ →</text></svg>`);
-  const titleTop=1245+Math.max(0,Math.floor((430-title.height)/2));
-  return sharp(photo).composite([{input:overlay,left:0,top:0},{input:title.buffer,left:Math.round((W-title.width)/2),top:titleTop}]).webp({quality:92}).toFile(path.join(outDir,'story-1080x1920.webp'));
-}
-await Promise.all([renderFeed(),renderSquare(),renderStory()]);
-await fs.writeFile(path.join(outDir,'manifest.json'),JSON.stringify({slug,title:article.title,caption:article.socialCaption,source:article.sources?.[0],assets:{feed:'feed-1080x1350.webp',carouselCover:'carousel-cover-1080x1080.webp',story:'story-1080x1920.webp'}},null,2)+'\n');
-console.log(JSON.stringify({ok:true,slug,outDir}));
+
+await Promise.all([renderFeed(),renderStory()]);
+const files=[],total=social.carousel.slides.length;for(let i=0;i<total;i++)files.push(await renderCarouselSlide(social.carousel.slides[i],i+1,total));
+const manifest={slug,title:article.title,caption:social.caption,hashtags:social.hashtags,source:article.sources?.[0],assets:{feed:'feed-1080x1350.webp',story:'story-1080x1920.webp'},carousel:{ratio:social.carousel.ratio,slides:social.carousel.slides.map((s,i)=>({...s,file:files[i]}))}};
+await fs.writeFile(path.join(outDir,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');console.log(JSON.stringify({ok:true,slug,slides:files.length,outDir}));

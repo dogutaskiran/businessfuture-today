@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "platform": "instagram",
+  "caption": "Google Pics brings Gemini-powered image generation and object-level editing to Workspace. The bigger shift is not image generation itself — it is whether AI can make revision cycles faster without taking control away from teams. Swipe for the business implications.",
+  "hashtags": ["BusinessFutureToday", "GoogleWorkspace", "GenerativeAI", "CreativeTools"],
+  "carousel": {
+    "ratio": "4:5",
+    "slides": [
+      {"type":"cover","label":"CREATIVE TOOLS","headline":"Google Pics Brings AI Image Editing Into Workspace","imageRole":"hero"},
+      {"type":"explainer","label":"WHAT CHANGED","headline":"Google is moving image AI from prompt-only generation to targeted editing.","body":"Pics lets Workspace users generate imagery, then select a specific object or piece of text and describe only the change they want."},
+      {"type":"feature","label":"THE KEY FEATURE","headline":"Change one element. Keep the rest.","body":"Instead of regenerating an entire visual after every revision, teams can preserve what works and modify the part that does not.","imageRole":"inline_1"},
+      {"type":"impact","label":"WHY IT MATTERS","headline":"The business value is revision speed, not novelty.","body":"Marketing work is iterative: copy changes, visual swaps, emphasis shifts and format adaptations. Localized AI edits fit that workflow better than one-shot image generation."},
+      {"type":"context","label":"THE COMPETITIVE ANGLE","headline":"Google’s advantage is distribution inside Workspace.","body":"If Pics connects tightly with Docs, Slides and existing collaboration habits, Google can reduce the need to move creative work across multiple tools."},
+      {"type":"watch","label":"WHAT TO WATCH","headline":"Three questions decide whether Pics becomes useful at work.","bullets":["Are object-level edits dependable enough for brand and product details?","How deeply does Pics connect with Docs, Slides and team workflows?","Can non-designers move quickly without limiting creative professionals?"]},
+      {"type":"cta","label":"THE BOTTOM LINE","headline":"Workplace AI is shifting from open-ended generation to controlled production tasks.","body":"Read the full story at businessfuture.today","imageRole":"hero"}
+    ]
+  }
+}
