@@ -1,11 +1,10 @@
 import { NextResponse } from "next/server";
-import { db, ensureSchema } from "@/lib/db";
+import { db } from "@/lib/db";
 
 type Props = { params: Promise<{ slot: string }> };
 
 export async function GET(_request: Request, { params }: Props) {
   const { slot } = await params;
-  await ensureSchema();
   const result = await db().query(
     `SELECT key,name,placement,provider_mode,format,width,height,responsive,fallback_label,provider_config,placeholder,settings
        FROM publication_ad_slots WHERE key=$1 AND status='active' LIMIT 1`,
