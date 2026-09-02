@@ -9,7 +9,8 @@
     "storage:bootstrap": "node scripts/bootstrap-r2.mjs --force",
     "storage:archive-rss": "node scripts/archive-rss-r2.mjs",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "social:ledger": "node scripts/social-publish-ledger.mjs"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
