@@ -26,6 +26,6 @@
       "Do not add shadows or gradients to the logo.",
       "Do not replace the approved brand colors inside the mark."
     ],
-    "profileCrop": "Social profile assets use an inset framed BFT mark sized to remain fully visible inside circular platform crops."
+    "profileCrop": "Circular-profile surfaces use only a large centered BFT monogram. No square frame; the platform crop becomes the visual container."
   }
 }
