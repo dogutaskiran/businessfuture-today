@@ -1,0 +1,11 @@
+FROM node:24-bookworm-slim
+WORKDIR /app
+ENV NODE_ENV=production
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY . .
+ENV NEXT_PUBLIC_MEDIA_BASE_URL=https://assets.businessfuture.today
+ENV BFT_PUBLIC_ASSET_BASE_URL=https://assets.businessfuture.today
+RUN npx next build
+EXPOSE 3000
+CMD ["npm","start","--","-H","0.0.0.0","-p","3000"]
