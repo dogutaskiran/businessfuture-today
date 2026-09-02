@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "6f88d9b7-8351-4f99-82ed-0abd51e2799b",
+  "slug": "chatgpt-health-epic-integration-clinician-data-access",
+  "kicker": "Health Technology",
+  "title": "ChatGPT Health Adds Read-Only Epic Data Access for Clinicians",
+  "dek": "OpenAI says clinicians using ChatGPT Health can now import patient data from Epic, bringing read-only health-record access into its product.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-09-02T03:16:19.148+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/09/01/chatgpt-health-adds-epic-integration-for-clinicians-to-import-patient-data/"
+  ],
+  "socialCaption": "OpenAI says ChatGPT Health now integrates with Epic to give clinicians read-only access to patient records for import. The practical test: whether it fits clinical workflows without adding review and governance overhead.",
+  "media": {
+    "hero": "/media/chatgpt-health-epic-integration-clinician-data-access/hero.webp",
+    "card": "/media/chatgpt-health-epic-integration-clinician-data-access/card.webp",
+    "og": "/media/chatgpt-health-epic-integration-clinician-data-access/og.webp",
+    "socialSquare": "/media/chatgpt-health-epic-integration-clinician-data-access/social-square.webp",
+    "socialPortrait": "/media/chatgpt-health-epic-integration-clinician-data-access/social-portrait.webp",
+    "alt": "Editorial image for ChatGPT Health Adds Read-Only Epic Data Access for Clinicians",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/09/01/chatgpt-health-adds-epic-integration-for-clinicians-to-import-patient-data/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2025/02/GettyImages-2195918462.jpg",
+    "licenseStatus": "denied",
+    "licenseBasis": "TechCrunch terms restrict copying/republishing site materials without authorization",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/chatgpt-health-epic-integration-clinician-data-access/inline-1.webp",
+        "alt": "Supporting image for ChatGPT Health Adds Read-Only Epic Data Access for Clinicians",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

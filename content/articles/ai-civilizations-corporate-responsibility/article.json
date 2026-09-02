@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "37a53780-840c-457a-bf91-1422b39caa1c",
+  "slug": "ai-civilizations-corporate-responsibility",
+  "kicker": "AI Accountability",
+  "title": "The Language of AI ‘Civilizations’ Is Becoming a Corporate Liability Question",
+  "dek": "A dispute over an OpenAI-linked incident at Hugging Face shows how descriptions of autonomous agents can blur the line between system behavior and company accountability.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T19:30:35.807+00:00",
+  "sources": [
+    "https://www.theverge.com/ai-artificial-intelligence/987566/ai-civilizations-opeai-hugging-face-hack"
+  ],
+  "socialCaption": "AI agents may act autonomously, but corporate accountability cannot become optional. A dispute over an OpenAI-linked Hugging Face incident shows why the words used after a failure matter as much as the technical details.",
+  "media": {
+    "hero": "/media/ai-civilizations-corporate-responsibility/hero.webp",
+    "card": "/media/ai-civilizations-corporate-responsibility/card.webp",
+    "og": "/media/ai-civilizations-corporate-responsibility/og.webp",
+    "socialSquare": "/media/ai-civilizations-corporate-responsibility/social-square.webp",
+    "socialPortrait": "/media/ai-civilizations-corporate-responsibility/social-portrait.webp",
+    "alt": "Editorial image for The Language of AI ‘Civilizations’ Is Becoming a Corporate Liability Question",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.theverge.com/ai-artificial-intelligence/987566/ai-civilizations-opeai-hugging-face-hack",
+    "sourceImageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/nba-2k-image.jpg?strip=all",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/ai-civilizations-corporate-responsibility/inline-1.webp",
+        "alt": "Supporting image for The Language of AI ‘Civilizations’ Is Becoming a Corporate Liability Question",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

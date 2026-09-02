@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "490862a0-6555-4d72-bad7-7093650c2ce9",
+  "slug": "malleable-software-solid-bases-custom-code",
+  "kicker": "Software Strategy",
+  "title": "Malleable Software Starts With Strong Foundations, Not Endless Customization",
+  "dek": "A Hacker News-linked essay raises a practical software strategy question: how can teams combine dependable shared systems with the freedom to tailor software to real operating needs?",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T01:47:11.949+00:00",
+  "sources": [
+    "https://www.mdubakov.me/malleable-software-solid-bases-custom-code/"
+  ],
+  "socialCaption": "A Hacker News-linked essay frames a persistent software strategy problem: dependable shared foundations versus the custom code teams need to reflect real business processes. The key question for operators is not whether to customize, but where customization belongs—and who will own it over time.",
+  "media": {
+    "hero": "/media/malleable-software-solid-bases-custom-code/hero.webp",
+    "card": "/media/malleable-software-solid-bases-custom-code/card.webp",
+    "og": "/media/malleable-software-solid-bases-custom-code/og.webp",
+    "socialSquare": "/media/malleable-software-solid-bases-custom-code/social-square.webp",
+    "socialPortrait": "/media/malleable-software-solid-bases-custom-code/social-portrait.webp",
+    "alt": "Editorial image for Malleable Software Starts With Strong Foundations, Not Endless Customization",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.mdubakov.me/malleable-software-solid-bases-custom-code/",
+    "sourceImageUrl": "https://storage.ghost.io/c/c4/c6/c4c61cc9-7edd-4a33-857b-26f10fd22b0b/content/images/size/w1200/2026/08/malleable-software--1-.png",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/malleable-software-solid-bases-custom-code/inline-1.webp",
+        "alt": "Supporting image for Malleable Software Starts With Strong Foundations, Not Endless Customization",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

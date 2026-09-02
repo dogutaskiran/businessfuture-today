@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "63e9bc02-91d0-495a-81c3-66f1397d01d3",
+  "slug": "google-hollywood-ai-licensing-bargain",
+  "kicker": "AI RIGHTS",
+  "title": "Google’s Hollywood Licensing Push Highlights an Uneven AI Bargain",
+  "dek": "Google is reportedly seeking studio licensing deals to train AI models on copyrighted material. The cash may be attractive, but studios face longer-term strategic and economic trade-offs.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T23:10:16.463+00:00",
+  "sources": [
+    "https://www.theverge.com/tech/987429/google-needs-hollywood-more-than-the-studios-need-ai"
+  ],
+  "socialCaption": "Google is reportedly offering Hollywood studios major payments for AI-training rights. The opportunity is real—but so is the risk of trading long-term leverage for short-term licensing revenue.",
+  "media": {
+    "hero": "/media/google-hollywood-ai-licensing-bargain/hero.webp",
+    "card": "/media/google-hollywood-ai-licensing-bargain/card.webp",
+    "og": "/media/google-hollywood-ai-licensing-bargain/og.webp",
+    "socialSquare": "/media/google-hollywood-ai-licensing-bargain/social-square.webp",
+    "socialPortrait": "/media/google-hollywood-ai-licensing-bargain/social-portrait.webp",
+    "alt": "Editorial image for Google’s Hollywood Licensing Push Highlights an Uneven AI Bargain",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.theverge.com/tech/987429/google-needs-hollywood-more-than-the-studios-need-ai",
+    "sourceImageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/beamultra1.jpg?strip=all",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/google-hollywood-ai-licensing-bargain/inline-1.webp",
+        "alt": "Supporting image for Google’s Hollywood Licensing Push Highlights an Uneven AI Bargain",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

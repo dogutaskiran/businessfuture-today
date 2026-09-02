@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "ac9bce46-4ae0-48a8-ac5c-b6c64a866eb0",
+  "slug": "tim-cook-climate-legacy-apple-ai-energy-demand",
+  "kicker": "Technology",
+  "title": "Tim Cook’s Climate Legacy Faces Its Biggest Test in Apple’s AI Push",
+  "dek": "Apple held its carbon footprint steady while much of big tech’s emissions rose. The company’s effort to catch up in AI could make that harder to sustain.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-09-01T21:35:41.784+00:00",
+  "sources": [
+    "https://www.theverge.com/tech/987550/tim-cook-apple-environment-sustainability-legacy"
+  ],
+  "socialCaption": "Tim Cook leaves Apple with a relatively strong environmental record. But the company’s AI catch-up effort could test whether its climate goals can withstand a more energy-intensive computing era.",
+  "media": {
+    "hero": "/media/tim-cook-climate-legacy-apple-ai-energy-demand/hero.webp",
+    "card": "/media/tim-cook-climate-legacy-apple-ai-energy-demand/card.webp",
+    "og": "/media/tim-cook-climate-legacy-apple-ai-energy-demand/og.webp",
+    "socialSquare": "/media/tim-cook-climate-legacy-apple-ai-energy-demand/social-square.webp",
+    "socialPortrait": "/media/tim-cook-climate-legacy-apple-ai-energy-demand/social-portrait.webp",
+    "alt": "Editorial image for Tim Cook’s Climate Legacy Faces Its Biggest Test in Apple’s AI Push",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.theverge.com/tech/987550/tim-cook-apple-environment-sustainability-legacy",
+    "sourceImageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/gettyimages-2287305192.jpg?strip=all",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/tim-cook-climate-legacy-apple-ai-energy-demand/inline-1.webp",
+        "alt": "Supporting image for Tim Cook’s Climate Legacy Faces Its Biggest Test in Apple’s AI Push",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

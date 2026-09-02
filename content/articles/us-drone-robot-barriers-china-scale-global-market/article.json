@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "d6db3583-8727-4375-8c78-a45bc6e1985f",
+  "slug": "us-drone-robot-barriers-china-scale-global-market",
+  "kicker": "Global Technology Competition",
+  "title": "US Barriers on Drones and Robots May Redirect Competition, Not End It",
+  "dek": "As the U.S. restricts more foreign-made drones and robots, China’s manufacturing scale could shift the competitive fight to markets beyond American borders.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T02:54:24.417+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/"
+  ],
+  "socialCaption": "The U.S. is tightening barriers around foreign-made drones and robots. China’s manufacturing scale means the competitive impact may be felt less in production than in where companies choose to sell, scale and set standards.",
+  "media": {
+    "hero": "/media/us-drone-robot-barriers-china-scale-global-market/hero.webp",
+    "card": "/media/us-drone-robot-barriers-china-scale-global-market/card.webp",
+    "og": "/media/us-drone-robot-barriers-china-scale-global-market/og.webp",
+    "socialSquare": "/media/us-drone-robot-barriers-china-scale-global-market/social-square.webp",
+    "socialPortrait": "/media/us-drone-robot-barriers-china-scale-global-market/social-portrait.webp",
+    "alt": "Editorial image for US Barriers on Drones and Robots May Redirect Competition, Not End It",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2018/03/gettyimages-507054668.jpg?resize=1200,801",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/us-drone-robot-barriers-china-scale-global-market/inline-1.webp",
+        "alt": "Supporting image for US Barriers on Drones and Robots May Redirect Competition, Not End It",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

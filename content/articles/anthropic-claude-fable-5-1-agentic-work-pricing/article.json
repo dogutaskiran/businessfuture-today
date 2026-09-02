@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "4bcff830-1269-424e-bb19-71e278fcb5d1",
+  "slug": "anthropic-claude-fable-5-1-agentic-work-pricing",
+  "kicker": "AI Models",
+  "title": "Anthropic Cuts Claude Fable 5.1 Pricing for Agentic Work",
+  "dek": "Anthropic says Claude Fable 5.1 improves performance while lowering typical costs by about 25%, with savings of up to 45% on complex agentic workflows that reuse cached context.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T22:07:38.116+00:00",
+  "sources": [
+    "https://www.theverge.com/ai-artificial-intelligence/987830/anthropic-claude-fable-mythos-5-1"
+  ],
+  "socialCaption": "Anthropic says Claude Fable 5.1 is about 25% cheaper in typical use and up to 45% cheaper for complex agentic tasks, largely through lower cached-context pricing. For AI builders, the real test is cost per completed workflow—not token price alone.",
+  "media": {
+    "hero": "/media/anthropic-claude-fable-5-1-agentic-work-pricing/hero.webp",
+    "card": "/media/anthropic-claude-fable-5-1-agentic-work-pricing/card.webp",
+    "og": "/media/anthropic-claude-fable-5-1-agentic-work-pricing/og.webp",
+    "socialSquare": "/media/anthropic-claude-fable-5-1-agentic-work-pricing/social-square.webp",
+    "socialPortrait": "/media/anthropic-claude-fable-5-1-agentic-work-pricing/social-portrait.webp",
+    "alt": "Editorial image for Anthropic Cuts Claude Fable 5.1 Pricing for Agentic Work",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.theverge.com/ai-artificial-intelligence/987830/anthropic-claude-fable-mythos-5-1",
+    "sourceImageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/10/STEVIE_BONIFIELD_BLURPLE.jpg?strip=all",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/anthropic-claude-fable-5-1-agentic-work-pricing/inline-1.webp",
+        "alt": "Supporting image for Anthropic Cuts Claude Fable 5.1 Pricing for Agentic Work",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

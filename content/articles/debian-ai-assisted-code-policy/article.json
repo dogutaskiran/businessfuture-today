@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "37852930-2fc6-4a20-87a1-67d186996d90",
+  "slug": "debian-ai-assisted-code-policy",
+  "kicker": "Open Source",
+  "title": "Debian Lets AI-Assisted Code In, but Keeps Existing Contributor Standards",
+  "dek": "The Linux distribution has rejected an outright ban on AI-assisted contributions, instead applying its existing expectations for quality, licensing and accountability.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-08-31T16:22:53.662+00:00",
+  "sources": [
+    "https://www.theverge.com/tech/986789/linux-debian-generative-ai-policy"
+  ],
+  "socialCaption": "Debian will allow AI-assisted contributions rather than ban them outright. The important caveat: contributors remain accountable under the project’s existing standards for code, maintenance and documentation.",
+  "media": {
+    "hero": "/media/debian-ai-assisted-code-policy/hero.webp",
+    "card": "/media/debian-ai-assisted-code-policy/card.webp",
+    "og": "/media/debian-ai-assisted-code-policy/og.webp",
+    "socialSquare": "/media/debian-ai-assisted-code-policy/social-square.webp",
+    "socialPortrait": "/media/debian-ai-assisted-code-policy/social-portrait.webp",
+    "alt": "Editorial image for Debian Lets AI-Assisted Code In, but Keeps Existing Contributor Standards",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.theverge.com/tech/986789/linux-debian-generative-ai-policy",
+    "sourceImageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/09/STK414_AI_CVIRGINIA_I__0009_7.png?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/debian-ai-assisted-code-policy/inline-1.webp",
+        "alt": "Supporting image for Debian Lets AI-Assisted Code In, but Keeps Existing Contributor Standards",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

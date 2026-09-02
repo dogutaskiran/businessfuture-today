@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "5a75a6e5-98bb-46d3-b9ab-77f6ad73ae76",
+  "slug": "john-ternus-new-apple-ceo",
+  "kicker": "Leadership",
+  "title": "John Ternus Takes Over Apple as the Company Enters Its Next Hardware—and AI—Test",
+  "dek": "Apple’s former hardware chief succeeds Tim Cook on September 1, inheriting a company facing an AI transition, component pressure and renewed scrutiny of its product pipeline.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T20:33:59.803+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/09/01/who-is-john-ternus-the-incoming-apple-ceo/",
+    "https://www.theverge.com/tech/915272/apple-john-ternus-tim-cook",
+    "https://www.theverge.com/tech/987150/apple-ceo-john-ternus"
+  ],
+  "socialCaption": "John Ternus has succeeded Tim Cook as Apple CEO. His first test: steering a hardware giant through AI, component constraints and a crucial next product cycle.",
+  "media": {
+    "hero": "/media/john-ternus-new-apple-ceo/hero.webp",
+    "card": "/media/john-ternus-new-apple-ceo/card.webp",
+    "og": "/media/john-ternus-new-apple-ceo/og.webp",
+    "socialSquare": "/media/john-ternus-new-apple-ceo/social-square.webp",
+    "socialPortrait": "/media/john-ternus-new-apple-ceo/social-portrait.webp",
+    "alt": "Editorial image for John Ternus Takes Over Apple as the Company Enters Its Next Hardware—and AI—Test",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/09/01/who-is-john-ternus-the-incoming-apple-ceo/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/04/GettyImages-2264179980.jpg",
+    "licenseStatus": "denied",
+    "licenseBasis": "TechCrunch terms restrict copying/republishing site materials without authorization",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/john-ternus-new-apple-ceo/inline-1.webp",
+        "alt": "Supporting image for John Ternus Takes Over Apple as the Company Enters Its Next Hardware—and AI—Test",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

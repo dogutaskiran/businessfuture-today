@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "a5ebb80a-8636-451c-88d1-818e3c16b449",
+  "slug": "almanac-company-ai-memory-layer",
+  "kicker": "Launch HN",
+  "title": "Almanac Wants to Give Company AI a Memory Layer, Not Just More Connectors",
+  "dek": "The YC S26 startup packages an AI agent with connected work accounts and separate personal and company wikis, aiming to make business context persistent and permission-aware.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-08-31T16:19:39.088762+00:00",
+  "sources": [
+    "https://usealmanac.com/"
+  ],
+  "socialCaption": "Almanac’s Launch HN pitch is a bet that workplace AI needs a durable, permission-aware memory layer—not just more integrations. Its product separates personal and company wikis while connecting accounts such as Gmail, Calendar and PostHog.",
+  "media": {
+    "hero": "/media/almanac-company-ai-memory-layer/hero.webp",
+    "card": "/media/almanac-company-ai-memory-layer/card.webp",
+    "og": "/media/almanac-company-ai-memory-layer/og.webp",
+    "socialSquare": "/media/almanac-company-ai-memory-layer/social-square.webp",
+    "socialPortrait": "/media/almanac-company-ai-memory-layer/social-portrait.webp",
+    "alt": "Editorial image for Almanac Wants to Give Company AI a Memory Layer, Not Just More Connectors",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://usealmanac.com/",
+    "sourceImageUrl": "https://usealmanac.com/opengraph-image?5038a70137ec138b",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/almanac-company-ai-memory-layer/inline-1.webp",
+        "alt": "Supporting image for Almanac Wants to Give Company AI a Memory Layer, Not Just More Connectors",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

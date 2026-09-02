@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "0ef0da2a-bca3-4992-96b6-9b51df9f9b81",
+  "slug": "nori-robotics-low-cost-bimanual-mobile-robot-development",
+  "kicker": "Robotics",
+  "title": "Nori Robotics Targets the Hardware Bottleneck in Robot Development",
+  "dek": "The YC-backed startup is selling a $1,688 wheeled, bimanual robot aimed at giving developers and research teams more affordable platforms for data collection, experiments and task training.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T20:34:14.677+00:00",
+  "sources": [
+    "https://www.norirobotics.com/"
+  ],
+  "socialCaption": "Nori Robotics is launching a $1,688 wheeled, bimanual robot for developers and researchers. The bet: cheaper, repairable hardware can unlock more robot experiments, demonstrations and dataset collection than labs can manage with a small number of expensive systems.",
+  "media": {
+    "hero": "/media/nori-robotics-low-cost-bimanual-mobile-robot-development/hero.webp",
+    "card": "/media/nori-robotics-low-cost-bimanual-mobile-robot-development/card.webp",
+    "og": "/media/nori-robotics-low-cost-bimanual-mobile-robot-development/og.webp",
+    "socialSquare": "/media/nori-robotics-low-cost-bimanual-mobile-robot-development/social-square.webp",
+    "socialPortrait": "/media/nori-robotics-low-cost-bimanual-mobile-robot-development/social-portrait.webp",
+    "alt": "Editorial image for Nori Robotics Targets the Hardware Bottleneck in Robot Development",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.norirobotics.com/",
+    "sourceImageUrl": "https://noril1.com/opengraph-image/a3-2026e?09f634070dee520a",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/nori-robotics-low-cost-bimanual-mobile-robot-development/inline-1.webp",
+        "alt": "Supporting image for Nori Robotics Targets the Hardware Bottleneck in Robot Development",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

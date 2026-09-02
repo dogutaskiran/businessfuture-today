@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "e45687fd-4d5d-4783-bb18-271acdd07e4e",
+  "slug": "aws-ec2-r9g-r9gd-graviton5-generally-available",
+  "kicker": "Cloud Infrastructure",
+  "title": "AWS Makes Graviton5 Memory-Optimized Instances Generally Available",
+  "dek": "Amazon’s new R9g and R9gd EC2 instances bring Graviton5 processors to memory-optimized workloads, with AWS claiming up to 25% better compute performance than the prior R8g generation.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-08-31T23:10:10.778+00:00",
+  "sources": [
+    "https://aws.amazon.com/blogs/aws/amazon-ec2-r9g-and-r9gd-instances-powered-by-aws-graviton5-processors-are-now-generally-available/"
+  ],
+  "socialCaption": "AWS has made Graviton5-based R9g and R9gd memory-optimized EC2 instances generally available. AWS cites up to 25% better compute performance than R8g for workloads such as databases, caches and real-time analytics. The operational task now is benchmarking Arm compatibility, latency and total cost.",
+  "media": {
+    "hero": "/media/aws-ec2-r9g-r9gd-graviton5-generally-available/hero.webp",
+    "card": "/media/aws-ec2-r9g-r9gd-graviton5-generally-available/card.webp",
+    "og": "/media/aws-ec2-r9g-r9gd-graviton5-generally-available/og.webp",
+    "socialSquare": "/media/aws-ec2-r9g-r9gd-graviton5-generally-available/social-square.webp",
+    "socialPortrait": "/media/aws-ec2-r9g-r9gd-graviton5-generally-available/social-portrait.webp",
+    "alt": "Editorial image for AWS Makes Graviton5 Memory-Optimized Instances Generally Available",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://aws.amazon.com/blogs/aws/amazon-ec2-r9g-and-r9gd-instances-powered-by-aws-graviton5-processors-are-now-generally-available/",
+    "sourceImageUrl": "https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2025/09/12/EC2-F2.png",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/aws-ec2-r9g-r9gd-graviton5-generally-available/inline-1.webp",
+        "alt": "Supporting image for AWS Makes Graviton5 Memory-Optimized Instances Generally Available",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "f640e50a-8fc2-451a-a2e2-bdd482c25ba7",
+  "slug": "air-raises-50m-ai-agent-skills-add-ons-governance",
+  "kicker": "AI Agent Governance",
+  "title": "AIR Raises $50M to Govern the Skills and Add-Ons Used by AI Agents",
+  "dek": "As companies deploy more AI agents, AIR is targeting a growing operational problem: knowing which agents are active, what tools they can use and whether their behavior remains acceptable.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T19:30:21.409+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/09/01/air-raises-50m-to-help-companies-vet-the-skills-and-add-ons-ai-agents-use/"
+  ],
+  "socialCaption": "AIR has raised $50M to help enterprises discover AI agents, continuously vet the skills and add-ons they use, and block unwanted behavior. The bigger shift: governing agents may require managing their connected capabilities—not simply approving a model once.",
+  "media": {
+    "hero": "/media/air-raises-50m-ai-agent-skills-add-ons-governance/hero.webp",
+    "card": "/media/air-raises-50m-ai-agent-skills-add-ons-governance/card.webp",
+    "og": "/media/air-raises-50m-ai-agent-skills-add-ons-governance/og.webp",
+    "socialSquare": "/media/air-raises-50m-ai-agent-skills-add-ons-governance/social-square.webp",
+    "socialPortrait": "/media/air-raises-50m-ai-agent-skills-add-ons-governance/social-portrait.webp",
+    "alt": "Editorial image for AIR Raises $50M to Govern the Skills and Add-Ons Used by AI Agents",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/09/01/air-raises-50m-to-help-companies-vet-the-skills-and-add-ons-ai-agents-use/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/09/Yair-Saban-and-Niv-Hoffman.-Credit-Netanel-Tobias.jpeg",
+    "licenseStatus": "denied",
+    "licenseBasis": "TechCrunch terms restrict copying/republishing site materials without authorization",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/air-raises-50m-ai-agent-skills-add-ons-governance/inline-1.webp",
+        "alt": "Supporting image for AIR Raises $50M to Govern the Skills and Add-Ons Used by AI Agents",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

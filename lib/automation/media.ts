@@ -1,10 +1,9 @@
 import { randomUUID } from "node:crypto";
-import { mkdir } from "node:fs/promises";
-import path from "node:path";
 import OpenAI from "openai";
 import sharp from "sharp";
 import { db, ensureSchema } from "@/lib/db";
 import { selectBestSourceImage } from "@/lib/automation/source-media";
+import { publicAssetUrl, putPublicObject, putSourceObject } from "@/lib/storage/r2";
 
 type MediaRole = "hero" | "inline_1" | "inline_2";
 type DraftRow = { id:string; cluster_id:string; slug:string; title:string; dek:string; category:string; body_markdown:string; source_urls:string[]; roles:string[] };
@@ -82,23 +81,58 @@ async function generateImage(draft:DraftRow,source:SourceMedia,role:MediaRole){
   return{bytes:Buffer.from(call.result,"base64"),prompt,responseId:response.id,model:process.env.OPENAI_IMAGE_MODEL||"gpt-image-2"};
 }
 
+function originalFormat(format?: string | null) {
+  const formats: Record<string, { ext: string; mime: string }> = {
+    jpeg: { ext: "jpg", mime: "image/jpeg" },
+    jpg: { ext: "jpg", mime: "image/jpeg" },
+    png: { ext: "png", mime: "image/png" },
+    webp: { ext: "webp", mime: "image/webp" },
+    avif: { ext: "avif", mime: "image/avif" },
+    gif: { ext: "gif", mime: "image/gif" },
+    tiff: { ext: "tiff", mime: "image/tiff" },
+    svg: { ext: "svg", mime: "image/svg+xml" }
+  };
+  return formats[String(format || "").toLowerCase()] || { ext: "bin", mime: "application/octet-stream" };
+}
+
+async function archiveSourceOriginal(slug: string, role: MediaRole, bytes: Buffer) {
+  const metadata = await sharp(bytes).metadata();
+  const format = originalFormat(metadata.format);
+  const roleName = role.replace("_", "-");
+  const key = `media/${slug}/source/${roleName}-original.${format.ext}`;
+  await putSourceObject(key, bytes, format.mime);
+  return `r2://businessfuture-source/${key}`;
+}
+
+async function publishWebp(key: string, bytes: Buffer) {
+  await putPublicObject(key, bytes, "image/webp");
+  return publicAssetUrl(key);
+}
+
 async function makeVariants(slug:string,role:MediaRole,bytes:Buffer){
-  const dir=path.join(process.cwd(),"public","media",slug);await mkdir(dir,{recursive:true});
+  const original=await archiveSourceOriginal(slug,role,bytes);
+  const base=`media/${slug}`;
   if(role==="hero"){
-    const original=path.join(dir,"original.webp"),hero=path.join(dir,"hero.webp"),card=path.join(dir,"card.webp"),og=path.join(dir,"og.webp"),socialSquare=path.join(dir,"social-square.webp"),socialPortrait=path.join(dir,"social-portrait.webp");
-    await sharp(bytes).rotate().resize(1600,1067,{fit:"cover",position:"attention",withoutEnlargement:true}).webp({quality:84,effort:5}).toFile(original);
-    await sharp(bytes).rotate().resize(1536,1024,{fit:"cover",position:"attention"}).webp({quality:82,effort:5}).toFile(hero);
-    await sharp(bytes).rotate().resize(1200,675,{fit:"cover",position:"attention"}).webp({quality:80,effort:5}).toFile(card);
-    await sharp(bytes).rotate().resize(1200,630,{fit:"cover",position:"attention"}).webp({quality:80,effort:5}).toFile(og);
-    await sharp(bytes).rotate().resize(1080,1080,{fit:"cover",position:"attention"}).webp({quality:82,effort:5}).toFile(socialSquare);
-    await sharp(bytes).rotate().resize(1080,1350,{fit:"cover",position:"attention"}).webp({quality:82,effort:5}).toFile(socialPortrait);
-    return{original:`/media/${slug}/original.webp`,hero:`/media/${slug}/hero.webp`,card:`/media/${slug}/card.webp`,og:`/media/${slug}/og.webp`,socialSquare:`/media/${slug}/social-square.webp`,socialPortrait:`/media/${slug}/social-portrait.webp`,width:1536,height:1024};
+    const [heroBytes,cardBytes,ogBytes,squareBytes,portraitBytes]=await Promise.all([
+      sharp(bytes).rotate().resize(1536,1024,{fit:"cover",position:"attention"}).webp({quality:82,effort:5}).toBuffer(),
+      sharp(bytes).rotate().resize(1200,675,{fit:"cover",position:"attention"}).webp({quality:80,effort:5}).toBuffer(),
+      sharp(bytes).rotate().resize(1200,630,{fit:"cover",position:"attention"}).webp({quality:80,effort:5}).toBuffer(),
+      sharp(bytes).rotate().resize(1080,1080,{fit:"cover",position:"attention"}).webp({quality:82,effort:5}).toBuffer(),
+      sharp(bytes).rotate().resize(1080,1350,{fit:"cover",position:"attention"}).webp({quality:82,effort:5}).toBuffer()
+    ]);
+    const [hero,card,og,socialSquare,socialPortrait]=await Promise.all([
+      publishWebp(`${base}/hero.webp`,heroBytes),
+      publishWebp(`${base}/card.webp`,cardBytes),
+      publishWebp(`${base}/og.webp`,ogBytes),
+      publishWebp(`${base}/social-square.webp`,squareBytes),
+      publishWebp(`${base}/social-portrait.webp`,portraitBytes)
+    ]);
+    return{original,hero,card,og,socialSquare,socialPortrait,width:1536,height:1024};
   }
-  const stem=role.replace("_","-"); const original=path.join(dir,`${stem}-original.webp`),inline=path.join(dir,`${stem}.webp`);
-  await sharp(bytes).rotate().resize(1600,1067,{fit:"cover",position:"attention",withoutEnlargement:true}).webp({quality:84,effort:5}).toFile(original);
-  await sharp(bytes).rotate().resize(1280,853,{fit:"cover",position:"attention"}).webp({quality:82,effort:5}).toFile(inline);
-  const publicInline=`/media/${slug}/${stem}.webp`;
-  return{original:`/media/${slug}/${stem}-original.webp`,hero:publicInline,card:publicInline,og:publicInline,socialSquare:null,socialPortrait:null,width:1280,height:853};
+  const stem=role.replace("_","-");
+  const inlineBytes=await sharp(bytes).rotate().resize(1280,853,{fit:"cover",position:"attention"}).webp({quality:82,effort:5}).toBuffer();
+  const publicInline=await publishWebp(`${base}/${stem}.webp`,inlineBytes);
+  return{original,hero:publicInline,card:publicInline,og:publicInline,socialSquare:null,socialPortrait:null,width:1280,height:853};
 }
 
 function requiredRoles(draft:DraftRow):MediaRole[]{const words=draft.body_markdown.trim().split(/\s+/).length;return ["hero",...(words>=300?["inline_1" as const]:[]),...(words>=700?["inline_2" as const]:[])];}

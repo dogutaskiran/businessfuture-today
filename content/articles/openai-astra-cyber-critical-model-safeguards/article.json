@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "0d93340e-77e1-47a0-ab4c-b757883d8df5",
+  "slug": "openai-astra-cyber-critical-model-safeguards",
+  "kicker": "Model Governance",
+  "title": "OpenAI Previews Astra, a Cyber-Critical Model With Elevated Safeguards",
+  "dek": "OpenAI says its forthcoming Astra model warrants special precautions because of its cybersecurity capabilities, putting release controls at the center of the product story.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-02T00:41:47.161+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/09/01/open-ais-astra-model-is-on-the-way-and-very-good-at-breaking-into-computer-systems/"
+  ],
+  "socialCaption": "OpenAI is previewing safeguards for Astra, a forthcoming cyber-critical model. The important business question is no longer just what advanced models can do—it’s how access, controls and accountability are designed around them.",
+  "media": {
+    "hero": "/media/openai-astra-cyber-critical-model-safeguards/hero.webp",
+    "card": "/media/openai-astra-cyber-critical-model-safeguards/card.webp",
+    "og": "/media/openai-astra-cyber-critical-model-safeguards/og.webp",
+    "socialSquare": "/media/openai-astra-cyber-critical-model-safeguards/social-square.webp",
+    "socialPortrait": "/media/openai-astra-cyber-critical-model-safeguards/social-portrait.webp",
+    "alt": "Editorial image for OpenAI Previews Astra, a Cyber-Critical Model With Elevated Safeguards",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/09/01/open-ais-astra-model-is-on-the-way-and-very-good-at-breaking-into-computer-systems/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/02/TIm.jpg",
+    "licenseStatus": "denied",
+    "licenseBasis": "TechCrunch terms restrict copying/republishing site materials without authorization",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/openai-astra-cyber-critical-model-safeguards/inline-1.webp",
+        "alt": "Supporting image for OpenAI Previews Astra, a Cyber-Critical Model With Elevated Safeguards",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

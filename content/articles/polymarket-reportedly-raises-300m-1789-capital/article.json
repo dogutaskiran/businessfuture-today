@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "ffc0c934-5713-43e9-bdc3-222b4a82e002",
+  "slug": "polymarket-reportedly-raises-300m-1789-capital",
+  "kicker": "Funding",
+  "title": "Polymarket Reportedly Lands $300 Million From 1789 Capital",
+  "dek": "TechCrunch reports that 1789 Capital, an investment firm associated with Donald Trump Jr., led a $300 million investment in Polymarket as part of a round that could total about $1 billion.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-08-31T23:41:55.604+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/31/polymarket-reportedly-raises-300-million-from-donald-trump-jr-s-investment-fund/"
+  ],
+  "socialCaption": "Polymarket reportedly received a $300 million investment from 1789 Capital, with the wider round expected to reach about $1 billion. The next questions: confirmation, terms, and what the capital will fund.",
+  "media": {
+    "hero": "/media/polymarket-reportedly-raises-300m-1789-capital/hero.webp",
+    "card": "/media/polymarket-reportedly-raises-300m-1789-capital/card.webp",
+    "og": "/media/polymarket-reportedly-raises-300m-1789-capital/og.webp",
+    "socialSquare": "/media/polymarket-reportedly-raises-300m-1789-capital/social-square.webp",
+    "socialPortrait": "/media/polymarket-reportedly-raises-300m-1789-capital/social-portrait.webp",
+    "alt": "Editorial image for Polymarket Reportedly Lands $300 Million From 1789 Capital",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/31/polymarket-reportedly-raises-300-million-from-donald-trump-jr-s-investment-fund/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/05/GettyImages-2277777336.jpg?resize=1200,800",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/polymarket-reportedly-raises-300m-1789-capital/inline-1.webp",
+        "alt": "Supporting image for Polymarket Reportedly Lands $300 Million From 1789 Capital",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

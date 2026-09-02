@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "93e3f284-2d25-4eac-ae47-f0e0fcb6689b",
+  "slug": "blue-voice-raises-6m-police-legal-guidance",
+  "kicker": "Funding",
+  "title": "Blue Voice Raises $6M to Build Real-Time Legal Guidance for Police",
+  "dek": "The startup, founded by a Harvard Law dropout, is building an app designed to give officers real-time legal and policy guidance.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-08-31T19:28:20.572+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/31/harvard-law-dropout-raises-6m-for-blue-voice-to-build-a-harvey-for-police-officers/"
+  ],
+  "socialCaption": "Blue Voice raised a $6M seed round to build real-time legal and policy guidance for police officers. The opportunity is clear; so are the demands for accuracy, governance and agency-specific implementation.",
+  "media": {
+    "hero": "/media/blue-voice-raises-6m-police-legal-guidance/hero.webp",
+    "card": "/media/blue-voice-raises-6m-police-legal-guidance/card.webp",
+    "og": "/media/blue-voice-raises-6m-police-legal-guidance/og.webp",
+    "socialSquare": "/media/blue-voice-raises-6m-police-legal-guidance/social-square.webp",
+    "socialPortrait": "/media/blue-voice-raises-6m-police-legal-guidance/social-portrait.webp",
+    "alt": "Editorial image for Blue Voice Raises $6M to Build Real-Time Legal Guidance for Police",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/31/harvard-law-dropout-raises-6m-for-blue-voice-to-build-a-harvey-for-police-officers/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/08/BlueVoice_Founders.png?resize=1200,600",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/blue-voice-raises-6m-police-legal-guidance/inline-1.webp",
+        "alt": "Supporting image for Blue Voice Raises $6M to Build Real-Time Legal Guidance for Police",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

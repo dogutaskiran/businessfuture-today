@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "60c860e2-cdc0-412c-9990-b6a7ee4652b4",
+  "slug": "ai-alpha-centauri-mission-long-horizon-planning",
+  "kicker": "AI & Space",
+  "title": "AI-Designed Alpha Centauri Mission Puts Long-Horizon Planning in Focus",
+  "dek": "The Fermi Explorer Mission says it plans to launch a spacecraft toward Alpha Centauri by the end of 2029. The proposed voyage underscores both the promise of AI-assisted mission planning and the operational reality of projects built for timescales beyond any organization’s normal planning horizon.",
+  "category": "AI",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-02T01:43:06.451+00:00",
+  "sources": [
+    "https://www.technologyreview.com/2026/09/01/1143247/ai-interstellar-journey-alpha-centauri/"
+  ],
+  "socialCaption": "A proposed 2029 launch toward Alpha Centauri highlights AI’s role in planning complex missions—but also the limits of planning when the journey could last 80,000 years. What operators should watch: technical details, funding, launch arrangements, and evidence of execution.",
+  "media": {
+    "hero": "/media/ai-alpha-centauri-mission-long-horizon-planning/hero.webp",
+    "card": "/media/ai-alpha-centauri-mission-long-horizon-planning/card.webp",
+    "og": "/media/ai-alpha-centauri-mission-long-horizon-planning/og.webp",
+    "socialSquare": "/media/ai-alpha-centauri-mission-long-horizon-planning/social-square.webp",
+    "socialPortrait": "/media/ai-alpha-centauri-mission-long-horizon-planning/social-portrait.webp",
+    "alt": "Editorial image for AI-Designed Alpha Centauri Mission Puts Long-Horizon Planning in Focus",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.technologyreview.com/2026/09/01/1143247/ai-interstellar-journey-alpha-centauri/",
+    "sourceImageUrl": "https://wp.technologyreview.com/wp-content/uploads/2026/09/centauri-route2.jpg",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/ai-alpha-centauri-mission-long-horizon-planning/inline-1.webp",
+        "alt": "Supporting image for AI-Designed Alpha Centauri Mission Puts Long-Horizon Planning in Focus",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

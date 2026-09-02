@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "38740b95-d445-4cde-a4ed-37e08b8d8d81",
+  "slug": "agentic-trust-controls-hacker-news-sparse-details",
+  "kicker": "Technology Watch",
+  "title": "“Agentic Trust Controls” Surfaces on Hacker News, but Details Remain Sparse",
+  "dek": "A link posted to Hacker News points to Agentic Trust Controls. The available source offers little detail, leaving the operational questions around governance, authorization and auditability unanswered.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-08-31T22:08:18.03+00:00",
+  "sources": [
+    "https://trustcontrols.ai/"
+  ],
+  "socialCaption": "A Hacker News post linked to “Agentic Trust Controls,” but the available source provides no product specifics. For teams deploying agents, the key diligence questions remain authorization, approvals, audit trails, monitoring and data handling.",
+  "media": {
+    "hero": "/media/agentic-trust-controls-hacker-news-sparse-details/hero.webp",
+    "card": "/media/agentic-trust-controls-hacker-news-sparse-details/card.webp",
+    "og": "/media/agentic-trust-controls-hacker-news-sparse-details/og.webp",
+    "socialSquare": "/media/agentic-trust-controls-hacker-news-sparse-details/social-square.webp",
+    "socialPortrait": "/media/agentic-trust-controls-hacker-news-sparse-details/social-portrait.webp",
+    "alt": "Editorial image for “Agentic Trust Controls” Surfaces on Hacker News, but Details Remain Sparse",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://trustcontrols.ai/",
+    "sourceImageUrl": null,
+    "licenseStatus": "unresolved",
+    "licenseBasis": "HTTP_429",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/agentic-trust-controls-hacker-news-sparse-details/inline-1.webp",
+        "alt": "Supporting image for “Agentic Trust Controls” Surfaces on Hacker News, but Details Remain Sparse",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

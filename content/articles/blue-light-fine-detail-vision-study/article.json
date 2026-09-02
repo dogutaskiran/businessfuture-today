@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "49703f03-2a67-44de-8ea3-389601e5d435",
+  "slug": "blue-light-fine-detail-vision-study",
+  "kicker": "DISPLAY TECHNOLOGY",
+  "title": "Study Flags Blue Light as a Potential Constraint on Fine-Detail Vision",
+  "dek": "A University of Georgia research summary says blue light most impaired the eye’s ability to distinguish fine detail. For teams building screens and visual workflows, the finding is a prompt to examine display conditions—not a standalone prescription.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T02:19:08.797+00:00",
+  "sources": [
+    "https://research.uga.edu/news/blue-light-has-a-surprising-effect-on-your-eyes-study-finds/"
+  ],
+  "socialCaption": "A reported study finding on blue light shifts the question from display comfort to fine-detail performance. What screen and lighting choices should teams test when users need visual precision?",
+  "media": {
+    "hero": "/media/blue-light-fine-detail-vision-study/hero.webp",
+    "card": "/media/blue-light-fine-detail-vision-study/card.webp",
+    "og": "/media/blue-light-fine-detail-vision-study/og.webp",
+    "socialSquare": "/media/blue-light-fine-detail-vision-study/social-square.webp",
+    "socialPortrait": "/media/blue-light-fine-detail-vision-study/social-portrait.webp",
+    "alt": "Editorial image for Study Flags Blue Light as a Potential Constraint on Fine-Detail Vision",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://research.uga.edu/news/blue-light-has-a-surprising-effect-on-your-eyes-study-finds/",
+    "sourceImageUrl": "https://research.uga.edu/news/wp-content/uploads/sites/19/2026/08/yaw-buabeng-1040x600-1.jpg",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/blue-light-fine-detail-vision-study/inline-1.webp",
+        "alt": "Supporting image for Study Flags Blue Light as a Potential Constraint on Fine-Detail Vision",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

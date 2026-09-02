@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "295d8949-9b61-4aaa-affe-f2ca17922605",
+  "slug": "google-tv-streamer-price-increase-149",
+  "kicker": "Hardware Pricing",
+  "title": "Google Raises TV Streamer Price to $149 as Device Costs Climb",
+  "dek": "Google’s 4K streaming and smart-home hub is now $50 more expensive, adding another consumer device category to a broader run of hardware price increases.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-08-31T22:39:37.779+00:00",
+  "sources": [
+    "https://www.theverge.com/tech/987032/google-tv-streamer-price-increase"
+  ],
+  "socialCaption": "Google has raised the Google TV Streamer from $99 to $149. The 4K streaming box and smart-home hub joins a growing list of consumer devices facing higher prices amid component shortages. Amazon was still showing the old price at the time of reporting.",
+  "media": {
+    "hero": "/media/google-tv-streamer-price-increase-149/hero.webp",
+    "card": "/media/google-tv-streamer-price-increase-149/card.webp",
+    "og": "/media/google-tv-streamer-price-increase-149/og.webp",
+    "socialSquare": "/media/google-tv-streamer-price-increase-149/social-square.webp",
+    "socialPortrait": "/media/google-tv-streamer-price-increase-149/social-portrait.webp",
+    "alt": "Editorial image for Google Raises TV Streamer Price to $149 as Device Costs Climb",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.theverge.com/tech/987032/google-tv-streamer-price-increase",
+    "sourceImageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25562292/DSCF0055.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/google-tv-streamer-price-increase-149/inline-1.webp",
+        "alt": "Supporting image for Google Raises TV Streamer Price to $149 as Device Costs Climb",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

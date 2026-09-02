@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "b74c6198-3804-4c10-9e1d-81a6662fe6cb",
+  "slug": "google-antigravity-gemini-3-7-flash-multi-agent-engineering",
+  "kicker": "AI Agents",
+  "title": "Google Pairs Antigravity With Gemini 3.7 Flash for Multi-Agent Math and Engineering Work",
+  "dek": "Google says Gemini 3.7 Flash is powering autonomous agent teams in Antigravity for open mathematics, CPU emulation and open-source optimization tasks.",
+  "category": "Companies",
+  "readTime": "3 min",
+  "publishedAt": "2026-08-31T23:09:58.968+00:00",
+  "sources": [
+    "https://blog.google/innovation-and-ai/technology/developers-tools/antigravity-teamwork-multi-agent/"
+  ],
+  "socialCaption": "Google says Antigravity agent teams, powered by Gemini 3.7 Flash, are being used for open math problems, CPU emulators and open-source optimization. The bigger business question: how reliably can coordinated agents fit into real engineering workflows?",
+  "media": {
+    "hero": "/media/google-antigravity-gemini-3-7-flash-multi-agent-engineering/hero.webp",
+    "card": "/media/google-antigravity-gemini-3-7-flash-multi-agent-engineering/card.webp",
+    "og": "/media/google-antigravity-gemini-3-7-flash-multi-agent-engineering/og.webp",
+    "socialSquare": "/media/google-antigravity-gemini-3-7-flash-multi-agent-engineering/social-square.webp",
+    "socialPortrait": "/media/google-antigravity-gemini-3-7-flash-multi-agent-engineering/social-portrait.webp",
+    "alt": "Editorial image for Google Pairs Antigravity With Gemini 3.7 Flash for Multi-Agent Math and Engineering Work",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://blog.google/innovation-and-ai/technology/developers-tools/antigravity-teamwork-multi-agent/",
+    "sourceImageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Teamwork_social.max-600x600.format-webp.webp",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/google-antigravity-gemini-3-7-flash-multi-agent-engineering/inline-1.webp",
+        "alt": "Supporting image for Google Pairs Antigravity With Gemini 3.7 Flash for Multi-Agent Math and Engineering Work",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

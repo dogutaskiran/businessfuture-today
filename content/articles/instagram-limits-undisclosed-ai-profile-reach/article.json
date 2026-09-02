@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "5c2ae5fb-9557-44f7-8653-54546e974da5",
+  "slug": "instagram-limits-undisclosed-ai-profile-reach",
+  "kicker": "Platform Policy",
+  "title": "Instagram Limits Reach of Undisclosed AI Profiles",
+  "dek": "The platform is responding to rising frustration over AI influencers by limiting distribution for AI-run profiles that do not disclose their nature.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-08-31T19:28:09.757+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/31/instagram-puts-new-limits-on-undisclosed-ai-profiles/"
+  ],
+  "socialCaption": "Instagram is limiting the reach of AI profiles that do not disclose their nature. For brands and builders, AI transparency may now affect distribution as well as trust.",
+  "media": {
+    "hero": "/media/instagram-limits-undisclosed-ai-profile-reach/hero.webp",
+    "card": "/media/instagram-limits-undisclosed-ai-profile-reach/card.webp",
+    "og": "/media/instagram-limits-undisclosed-ai-profile-reach/og.webp",
+    "socialSquare": "/media/instagram-limits-undisclosed-ai-profile-reach/social-square.webp",
+    "socialPortrait": "/media/instagram-limits-undisclosed-ai-profile-reach/social-portrait.webp",
+    "alt": "Editorial image for Instagram Limits Reach of Undisclosed AI Profiles",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/31/instagram-puts-new-limits-on-undisclosed-ai-profiles/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/08/Instagram-label-.png?w=1200",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/instagram-limits-undisclosed-ai-profile-reach/inline-1.webp",
+        "alt": "Supporting image for Instagram Limits Reach of Undisclosed AI Profiles",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

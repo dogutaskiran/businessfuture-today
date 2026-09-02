@@ -1,5 +1,6 @@
 import { authorForStory } from "@/lib/authors";
 import { db, ensureSchema } from "@/lib/db";
+import { absoluteMediaUrl } from "@/lib/media-url";
 
 export const dynamic = "force-dynamic";
 
@@ -8,11 +9,6 @@ function authorized(request: Request) {
   if (!expected) return true;
   const authorization = request.headers.get("authorization") || "";
   return authorization === `Bearer ${expected}`;
-}
-
-function absolute(path: string | null) {
-  if (!path) return null;
-  return new URL(path, "https://businessfuture.today").toString();
 }
 
 type Row = {
@@ -54,9 +50,9 @@ export async function GET(request: Request) {
       author: { id: author.id, name: author.name, desk: author.desk },
       caption: row.social_caption || `${row.title}\n\n${row.dek}`,
       media: {
-        portrait: absolute(row.social_portrait_path),
-        square: absolute(row.social_square_path),
-        card: absolute(row.card_path)
+        portrait: absoluteMediaUrl(row.social_portrait_path),
+        square: absoluteMediaUrl(row.social_square_path),
+        card: absoluteMediaUrl(row.card_path)
       },
       sources: row.source_urls || [],
       publishedAt: row.published_at?.toISOString() || null,

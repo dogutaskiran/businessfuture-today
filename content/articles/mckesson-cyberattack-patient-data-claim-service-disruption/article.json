@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "cf93a743-fb08-4a62-a43d-6554075dfc83",
+  "slug": "mckesson-cyberattack-patient-data-claim-service-disruption",
+  "kicker": "Healthcare cybersecurity",
+  "title": "McKesson Says Cyberattack May Disrupt Services as Hackers Claim Patient Data Theft",
+  "dek": "The healthcare distributor says it was hacked and expects intermittent service degradation. Hackers claim they stole millions of patient records, a claim not independently verified in the company’s statement.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-08-31T18:26:55.883+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/31/hackers-claim-millions-of-patient-records-stolen-during-data-breach-at-healthcare-giant-mckesson/"
+  ],
+  "socialCaption": "McKesson says a cyberattack may cause intermittent service degradation, while hackers claim they stole millions of patient records. For healthcare operators, the immediate issue is supply-chain continuity—and the key details are still unresolved.",
+  "media": {
+    "hero": "/media/mckesson-cyberattack-patient-data-claim-service-disruption/hero.webp",
+    "card": "/media/mckesson-cyberattack-patient-data-claim-service-disruption/card.webp",
+    "og": "/media/mckesson-cyberattack-patient-data-claim-service-disruption/og.webp",
+    "socialSquare": "/media/mckesson-cyberattack-patient-data-claim-service-disruption/social-square.webp",
+    "socialPortrait": "/media/mckesson-cyberattack-patient-data-claim-service-disruption/social-portrait.webp",
+    "alt": "Editorial image for McKesson Says Cyberattack May Disrupt Services as Hackers Claim Patient Data Theft",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/31/hackers-claim-millions-of-patient-records-stolen-during-data-breach-at-healthcare-giant-mckesson/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/08/mckesson-2236133684.jpg?resize=1200,800",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/mckesson-cyberattack-patient-data-claim-service-disruption/inline-1.webp",
+        "alt": "Supporting image for McKesson Says Cyberattack May Disrupt Services as Hackers Claim Patient Data Theft",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

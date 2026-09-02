@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "d4b48b85-5fb9-4fc5-8a27-0eba6fc870c5",
+  "slug": "newlight-hydrogen-injection-cargo-ships-seed-round",
+  "kicker": "Maritime technology",
+  "title": "Newlight Raises $9M to Test Hydrogen Injection for Cargo Ships",
+  "dek": "The startup says it has completed an 8,500-nautical-mile voyage from Singapore to Ghana as it develops hydrogen fuel-injection technology for maritime efficiency.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-09-02T00:11:24.826+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/09/01/this-startup-is-fuel-injecting-hydrogen-to-make-cargo-ships-more-efficient/"
+  ],
+  "socialCaption": "Cargo-shipping startup Newlight has raised $9M and completed an 8,500-nautical-mile Singapore-to-Ghana test run for its hydrogen fuel-injection technology. The next test is commercial: repeatable efficiency gains on working fleets.",
+  "media": {
+    "hero": "/media/newlight-hydrogen-injection-cargo-ships-seed-round/hero.webp",
+    "card": "/media/newlight-hydrogen-injection-cargo-ships-seed-round/card.webp",
+    "og": "/media/newlight-hydrogen-injection-cargo-ships-seed-round/og.webp",
+    "socialSquare": "/media/newlight-hydrogen-injection-cargo-ships-seed-round/social-square.webp",
+    "socialPortrait": "/media/newlight-hydrogen-injection-cargo-ships-seed-round/social-portrait.webp",
+    "alt": "Editorial image for Newlight Raises $9M to Test Hydrogen Injection for Cargo Ships",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/09/01/this-startup-is-fuel-injecting-hydrogen-to-make-cargo-ships-more-efficient/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/09/Newlight-co-founders_-CEO-Haran-Hillel-Cohen-and-COO-Evyatar-Cohen.jpg",
+    "licenseStatus": "denied",
+    "licenseBasis": "TechCrunch terms restrict copying/republishing site materials without authorization",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/newlight-hydrogen-injection-cargo-ships-seed-round/inline-1.webp",
+        "alt": "Supporting image for Newlight Raises $9M to Test Hydrogen Injection for Cargo Ships",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

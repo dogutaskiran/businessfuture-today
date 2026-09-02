@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "ba7936d2-b02a-4159-a3d0-858f0d1c1777",
+  "slug": "tailscale-tailcat-announcement-details-thin",
+  "kicker": "Technology Brief",
+  "title": "Tailscale Introduces Tailcat, but the Available Details Are Thin",
+  "dek": "A Tailscale blog post titled “Tailcat: Tailscale Without Tailscale” has surfaced, but the supplied source summary does not explain the product’s capabilities, availability or operating model.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T04:25:56.546+00:00",
+  "sources": [
+    "https://tailscale.com/blog/tailcat"
+  ],
+  "socialCaption": "Tailscale has published “Tailcat: Tailscale Without Tailscale,” but the supplied announcement summary leaves key questions unanswered. Before treating it as an alternative or replacement, teams should verify its architecture, operating model, security boundaries and availability.",
+  "media": {
+    "hero": "/media/tailscale-tailcat-announcement-details-thin/hero.webp",
+    "card": "/media/tailscale-tailcat-announcement-details-thin/card.webp",
+    "og": "/media/tailscale-tailcat-announcement-details-thin/og.webp",
+    "socialSquare": "/media/tailscale-tailcat-announcement-details-thin/social-square.webp",
+    "socialPortrait": "/media/tailscale-tailcat-announcement-details-thin/social-portrait.webp",
+    "alt": "Editorial image for Tailscale Introduces Tailcat, but the Available Details Are Thin",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://tailscale.com/blog/tailcat",
+    "sourceImageUrl": "https://cdn.sanity.io/images/w77i7m8x/production/eba95bf72cac81675e8f0bd6fc62e757eac2dac4-2304x1188.png",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/tailscale-tailcat-announcement-details-thin/inline-1.webp",
+        "alt": "Supporting image for Tailscale Introduces Tailcat, but the Available Details Are Thin",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

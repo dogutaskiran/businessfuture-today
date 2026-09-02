@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "977f33c5-06cb-4f85-839e-a1a7afaff9f1",
+  "slug": "weedout-safari-extension-youtube-ai-labeled-videos",
+  "kicker": "Platform Controls",
+  "title": "A Safari Extension Filters YouTube’s ‘Made with AI’ Labels",
+  "dek": "Weedout uses YouTube’s own disclosure label to remove AI-labeled videos from browsing surfaces, illustrating a practical approach to user-controlled content filtering.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-02T00:41:57.597+00:00",
+  "sources": [
+    "https://masteranza.github.io/weedout/"
+  ],
+  "socialCaption": "A new Safari extension hides YouTube videos labeled “Made with AI.” Its approach is simple—and its limits show why disclosure metadata is becoming an important product control.",
+  "media": {
+    "hero": "/media/weedout-safari-extension-youtube-ai-labeled-videos/hero.webp",
+    "card": "/media/weedout-safari-extension-youtube-ai-labeled-videos/card.webp",
+    "og": "/media/weedout-safari-extension-youtube-ai-labeled-videos/og.webp",
+    "socialSquare": "/media/weedout-safari-extension-youtube-ai-labeled-videos/social-square.webp",
+    "socialPortrait": "/media/weedout-safari-extension-youtube-ai-labeled-videos/social-portrait.webp",
+    "alt": "Editorial image for A Safari Extension Filters YouTube’s ‘Made with AI’ Labels",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://masteranza.github.io/weedout/",
+    "sourceImageUrl": "https://masteranza.github.io/weedout/screenshot.png",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/weedout-safari-extension-youtube-ai-labeled-videos/inline-1.webp",
+        "alt": "Supporting image for A Safari Extension Filters YouTube’s ‘Made with AI’ Labels",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

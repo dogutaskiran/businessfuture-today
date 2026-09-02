@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "14b9428e-2f20-42f2-9904-cf148b9519ed",
+  "slug": "pivotal-ceo-departs-flying-car-startup",
+  "kicker": "Leadership",
+  "title": "Pivotal CEO Departs as the Flying-Car Startup Enters Its Next Phase",
+  "dek": "Pivotal, the electric vertical-takeoff aircraft company backed by Larry Page, has lost its chief executive, according to TechCrunch. The company says he is pursuing new endeavors.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-09-02T02:15:06.64+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/09/01/larry-pages-flying-car-company-pivotal-loses-its-ceo/"
+  ],
+  "socialCaption": "Pivotal, the flying-car company associated with Larry Page, has lost its CEO. The company says he is “pursuing new endeavors.” What matters next: succession, strategic continuity and execution in a capital-intensive aviation market.",
+  "media": {
+    "hero": "/media/pivotal-ceo-departs-flying-car-startup/hero.webp",
+    "card": "/media/pivotal-ceo-departs-flying-car-startup/card.webp",
+    "og": "/media/pivotal-ceo-departs-flying-car-startup/og.webp",
+    "socialSquare": "/media/pivotal-ceo-departs-flying-car-startup/social-square.webp",
+    "socialPortrait": "/media/pivotal-ceo-departs-flying-car-startup/social-portrait.webp",
+    "alt": "Editorial image for Pivotal CEO Departs as the Flying-Car Startup Enters Its Next Phase",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/09/01/larry-pages-flying-car-company-pivotal-loses-its-ceo/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/09/pivotal-helix.jpg?resize=1200,633",
+    "licenseStatus": "denied",
+    "licenseBasis": "TechCrunch terms restrict copying/republishing site materials without authorization",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/pivotal-ceo-departs-flying-car-startup/inline-1.webp",
+        "alt": "Supporting image for Pivotal CEO Departs as the Flying-Car Startup Enters Its Next Phase",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

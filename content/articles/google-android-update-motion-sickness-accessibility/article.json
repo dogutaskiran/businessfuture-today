@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "a134b2ac-95a2-4193-9363-5f1378b3b330",
+  "slug": "google-android-update-motion-sickness-accessibility",
+  "kicker": "Android",
+  "title": "Google’s Android Update Expands Accessibility Tools for Motion Sickness and Blind Users",
+  "dek": "Google is adding Android features intended to reduce motion sickness and help blind users better navigate their surroundings, extending accessibility from a compliance concern into a broader product-design priority.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-02T02:45:44.9+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/09/01/googles-android-update-tackles-motion-sickness-accessibility-and-more/"
+  ],
+  "socialCaption": "Google’s newest Android update targets motion sickness and support for blind users navigating their surroundings. For product teams, the practical message is clear: accessibility is increasingly a platform capability—and a baseline expectation for mobile experiences.",
+  "media": {
+    "hero": "/media/google-android-update-motion-sickness-accessibility/hero.webp",
+    "card": "/media/google-android-update-motion-sickness-accessibility/card.webp",
+    "og": "/media/google-android-update-motion-sickness-accessibility/og.webp",
+    "socialSquare": "/media/google-android-update-motion-sickness-accessibility/social-square.webp",
+    "socialPortrait": "/media/google-android-update-motion-sickness-accessibility/social-portrait.webp",
+    "alt": "Editorial image for Google’s Android Update Expands Accessibility Tools for Motion Sickness and Blind Users",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/09/01/googles-android-update-tackles-motion-sickness-accessibility-and-more/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/09/MotionAssist-Google.png",
+    "licenseStatus": "denied",
+    "licenseBasis": "TechCrunch terms restrict copying/republishing site materials without authorization",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/google-android-update-motion-sickness-accessibility/inline-1.webp",
+        "alt": "Supporting image for Google’s Android Update Expands Accessibility Tools for Motion Sickness and Blind Users",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

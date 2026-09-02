@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "a1805426-ed19-49ec-ab84-5aa99226cc98",
+  "slug": "google-pics-ai-image-editing-workspace",
+  "kicker": "Creative tools",
+  "title": "Google Pics Brings AI Image Editing Into Workspace",
+  "dek": "Google’s new Workspace design suite combines Gemini and the Nano Banana model to give business users more targeted control over generated and edited imagery.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T21:35:54.936+00:00",
+  "sources": [
+    "https://www.theverge.com/tech/987423/google-pics-ai-image-editor-generator"
+  ],
+  "socialCaption": "Google Pics brings Gemini-powered image generation and object-level editing to Workspace. The business test: can more targeted AI edits make creative revision faster without compromising control?",
+  "media": {
+    "hero": "/media/google-pics-ai-image-editing-workspace/hero.webp",
+    "card": "/media/google-pics-ai-image-editing-workspace/card.webp",
+    "og": "/media/google-pics-ai-image-editing-workspace/og.webp",
+    "socialSquare": "/media/google-pics-ai-image-editing-workspace/social-square.webp",
+    "socialPortrait": "/media/google-pics-ai-image-editing-workspace/social-portrait.webp",
+    "alt": "Editorial image for Google Pics Brings AI Image Editing Into Workspace",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.theverge.com/tech/987423/google-pics-ai-image-editor-generator",
+    "sourceImageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/gettyimages-2287305192.jpg?strip=all",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/google-pics-ai-image-editing-workspace/inline-1.webp",
+        "alt": "Supporting image for Google Pics Brings AI Image Editing Into Workspace",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

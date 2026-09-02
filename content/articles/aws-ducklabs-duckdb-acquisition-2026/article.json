@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "5a4ff31e-d857-436e-9d11-f495e5175d87",
+  "slug": "aws-ducklabs-duckdb-acquisition-2026",
+  "kicker": "AWS Weekly Roundup",
+  "title": "AWS Moves to Acquire DuckLabs, Bringing DuckDB Closer to Its Data Stack",
+  "dek": "AWS has signed an agreement to acquire DuckLabs, the Amsterdam-based company behind DuckDB. For data teams, the notable detail is that DuckDB is set to remain open source under its independent foundation.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-08-31T16:54:17.924+00:00",
+  "sources": [
+    "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-welcome-ducklabs-to-the-team-agentic-resource-discovery-ard-and-more-august-31-2026/"
+  ],
+  "socialCaption": "AWS has signed an agreement to acquire DuckLabs, the company behind DuckDB. The key detail for data teams: AWS says DuckDB will remain open source under its independent foundation. Here’s what the move could mean—and what remains unknown.",
+  "media": {
+    "hero": "/media/aws-ducklabs-duckdb-acquisition-2026/hero.webp",
+    "card": "/media/aws-ducklabs-duckdb-acquisition-2026/card.webp",
+    "og": "/media/aws-ducklabs-duckdb-acquisition-2026/og.webp",
+    "socialSquare": "/media/aws-ducklabs-duckdb-acquisition-2026/social-square.webp",
+    "socialPortrait": "/media/aws-ducklabs-duckdb-acquisition-2026/social-portrait.webp",
+    "alt": "Editorial image for AWS Moves to Acquire DuckLabs, Bringing DuckDB Closer to Its Data Stack",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-welcome-ducklabs-to-the-team-agentic-resource-discovery-ard-and-more-august-31-2026/",
+    "sourceImageUrl": "https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2026/08/28/AWS_Ducklabs_white_logo_800x400.png",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/aws-ducklabs-duckdb-acquisition-2026/inline-1.webp",
+        "alt": "Supporting image for AWS Moves to Acquire DuckLabs, Bringing DuckDB Closer to Its Data Stack",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

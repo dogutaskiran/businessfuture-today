@@ -1,0 +1,29 @@
+Most workplace AI tools can connect to a company’s systems. The harder problem is turning scattered messages, calendars, analytics and notes into context that an agent can use reliably over time.
+
+Almanac, a YC S26 startup, is entering that gap with what it describes as an AI agent backed by a company-specific “brain.” The product provides a Hermes agent out of the box, lets users connect accounts such as Gmail, Calendar, Granola and PostHog, and organizes information into distinct personal and company wikis.
+
+The pitch is less about a single chat interface than about the memory and context layer behind it.
+
+## What Almanac is building
+
+The company says connected information is organized into two wikis. A personal wiki is intended to understand an individual’s preferences, relationships and ongoing work. A company wiki is intended to capture the organization’s identity, projects, roadmap and blockers.
+
+An agent can then use those wikis alongside the original connected accounts when responding to questions. Almanac’s founders argue that this combination should make an assistant feel as though it already knows the relevant organizational and individual context.
+
+The product also separates personal and shared accounts. Personal accounts are accessible only to the individual user, while shared accounts are available across the company. That design matters because an all-knowing company assistant quickly becomes unusable if employees cannot distinguish private information from material meant for team access.
+
+## Why the architecture matters
+
+For operators, the central issue is not merely whether an AI can retrieve a document. It is whether it can identify the current project context, distinguish a personal preference from a company decision, and ground an answer in the underlying systems.
+
+Almanac’s approach suggests that durable AI assistance may require a structured knowledge layer rather than relying solely on an assistant’s default memory or a collection of point-to-point integrations. The founders say their initial experience setting up Hermes involved building OAuth applications for connectors, manually feeding context and wrestling with the agent’s default memory.
+
+That is a familiar implementation burden for small teams: integrations are costly to maintain, and context gets fragmented across tools. A managed setup that combines connectors, access controls and an organized wiki could reduce some of that work—if the information remains accurate and permissions are enforced consistently.
+
+## What to watch next
+
+The important questions are operational. How well does Almanac’s wiki stay current as projects change? How does it resolve conflicting information across messages, calendars and analytics tools? And what controls do administrators have over company-wide knowledge, access and retention?
+
+The company’s differentiation rests on its view of memory as a primary product problem. Its founders say they have spent more than a year working on AI wikis and previously built products around a “pre-compiled knowledge layer,” including work for Harvard and NASA.
+
+That thesis will be tested in everyday company use. The value of a context-aware agent is high, but so is the cost of stale, overbroad or poorly permissioned context. For teams evaluating the category, the key benchmark is not whether the agent can summarize connected data. It is whether it can provide useful answers while preserving the boundaries between personal and shared work information.

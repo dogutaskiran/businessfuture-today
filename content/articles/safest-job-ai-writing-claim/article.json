@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "52fd57c2-bbda-4268-bd6f-cb2fc81e6231",
+  "slug": "safest-job-ai-writing-claim",
+  "kicker": "AI and Work",
+  "title": "A Provocative AI Jobs Claim, With Little Evidence Yet",
+  "dek": "A Hacker News submission argues that writing may be the safest job from AI. The available source material offers the headline, but not the evidence needed for workforce planning.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T00:12:32.696+00:00",
+  "sources": [
+    "http://muratbuffalo.blogspot.com/2026/08/the-safest-job-from-ai-may-be-writing.html"
+  ],
+  "socialCaption": "A Hacker News headline says writing may be the safest job from AI. The supplied source offers no evidence behind the claim—making it a useful prompt, not a workforce forecast. Here are the questions leaders should ask before acting.",
+  "media": {
+    "hero": "/media/safest-job-ai-writing-claim/hero.webp",
+    "card": "/media/safest-job-ai-writing-claim/card.webp",
+    "og": "/media/safest-job-ai-writing-claim/og.webp",
+    "socialSquare": "/media/safest-job-ai-writing-claim/social-square.webp",
+    "socialPortrait": "/media/safest-job-ai-writing-claim/social-portrait.webp",
+    "alt": "Editorial image for A Provocative AI Jobs Claim, With Little Evidence Yet",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "http://muratbuffalo.blogspot.com/2026/08/the-safest-job-from-ai-may-be-writing.html",
+    "sourceImageUrl": null,
+    "licenseStatus": "none",
+    "licenseBasis": "No source image discovered",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/safest-job-ai-writing-claim/inline-1.webp",
+        "alt": "Supporting image for A Provocative AI Jobs Claim, With Little Evidence Yet",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

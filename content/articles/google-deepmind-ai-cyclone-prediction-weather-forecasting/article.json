@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "ee06b1a9-b65b-46fb-af74-9d79b2147346",
+  "slug": "google-deepmind-ai-cyclone-prediction-weather-forecasting",
+  "kicker": "AI WEATHER",
+  "title": "Google DeepMind’s Cyclone Forecasting Push Shows Where AI Weather Models May Matter Most",
+  "dek": "Google DeepMind says its researchers are using AI weather prediction to improve cyclone forecasts and support earlier community warnings. For operators, the bigger question is how such models move from research into dependable decision systems.",
+  "category": "Companies",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-02T01:12:34.88+00:00",
+  "sources": [
+    "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/weathernext-extreme-weather-cyclone-predictions/"
+  ],
+  "socialCaption": "Google DeepMind is spotlighting AI cyclone prediction as a path to earlier community warnings. The business opportunity is not just better forecasts—it is the systems that turn weather signals into operational decisions.",
+  "media": {
+    "hero": "/media/google-deepmind-ai-cyclone-prediction-weather-forecasting/hero.webp",
+    "card": "/media/google-deepmind-ai-cyclone-prediction-weather-forecasting/card.webp",
+    "og": "/media/google-deepmind-ai-cyclone-prediction-weather-forecasting/og.webp",
+    "socialSquare": "/media/google-deepmind-ai-cyclone-prediction-weather-forecasting/social-square.webp",
+    "socialPortrait": "/media/google-deepmind-ai-cyclone-prediction-weather-forecasting/social-portrait.webp",
+    "alt": "Editorial image for Google DeepMind’s Cyclone Forecasting Push Shows Where AI Weather Models May Matter Most",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/weathernext-extreme-weather-cyclone-predictions/",
+    "sourceImageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AskAScientist_Cyclone.width-1300.png",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/google-deepmind-ai-cyclone-prediction-weather-forecasting/inline-1.webp",
+        "alt": "Supporting image for Google DeepMind’s Cyclone Forecasting Push Shows Where AI Weather Models May Matter Most",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

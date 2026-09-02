@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "33f25cbf-42d2-495a-8cea-de9fc8d4f070",
+  "slug": "texas-freezes-flock-camera-spending-ai-surveillance",
+  "kicker": "Public Technology",
+  "title": "Texas Freezes New Flock Camera Spending as AI Surveillance Backlash Grows",
+  "dek": "Governor Greg Abbott has halted state spending on Flock cameras after Texas put more than $30 million toward the systems, sharpening the operational and reputational risks around AI-enabled surveillance.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T02:54:10.703+00:00",
+  "sources": [
+    "https://www.theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras"
+  ],
+  "socialCaption": "Texas has frozen new state spending on Flock cameras after more than $30 million in reported spending. For public-sector tech buyers, the issue is no longer just camera capability—it is governance, funding accountability, and misuse controls.",
+  "media": {
+    "hero": "/media/texas-freezes-flock-camera-spending-ai-surveillance/hero.webp",
+    "card": "/media/texas-freezes-flock-camera-spending-ai-surveillance/card.webp",
+    "og": "/media/texas-freezes-flock-camera-spending-ai-surveillance/og.webp",
+    "socialSquare": "/media/texas-freezes-flock-camera-spending-ai-surveillance/social-square.webp",
+    "socialPortrait": "/media/texas-freezes-flock-camera-spending-ai-surveillance/social-portrait.webp",
+    "alt": "Editorial image for Texas Freezes New Flock Camera Spending as AI Surveillance Backlash Grows",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras",
+    "sourceImageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/gettyimages-2291175333.jpg?quality=90&strip=all&crop=0%2C10.750889909111%2C100%2C78.498220181778&w=1200",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/texas-freezes-flock-camera-spending-ai-surveillance/inline-1.webp",
+        "alt": "Supporting image for Texas Freezes New Flock Camera Spending as AI Surveillance Backlash Grows",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}
