@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 export function SubscribeForm({ compact = false }: { compact?: boolean }) {
   const [email, setEmail] = useState("");
@@ -24,6 +25,11 @@ export function SubscribeForm({ compact = false }: { compact?: boolean }) {
         throw new Error(data.error || "Subscription is not available yet.");
       }
 
+      trackEvent("sign_up", {
+        method: "newsletter",
+        form_variant: compact ? "compact" : "main",
+        source_path: window.location.pathname
+      });
       setState("success");
       setMessage("You’re subscribed.");
       setEmail("");
