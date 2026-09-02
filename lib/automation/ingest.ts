@@ -2,10 +2,11 @@ import { createHash } from "node:crypto";
 import Parser from "rss-parser";
 import { db } from "@/lib/db";
 import { SOURCES, type SourceConfig } from "@/lib/automation/sources";
+import { datedPrefix, putSourceObject } from "@/lib/storage/r2";
 
 const parser: Parser<any, any> = new Parser({
   timeout: 12_000,
-  headers: { "User-Agent": "BusinessFutureToday/0.3 (+https://businessfuture.today)" },
+  headers: { "User-Agent": "BusinessFutureToday/0.6 (+https://businessfuture.today)" },
   customFields: {
     item: [
       ["media:content", "mediaContent"],
@@ -16,6 +17,7 @@ const parser: Parser<any, any> = new Parser({
 
 function hash(value: string) { return createHash("sha256").update(value).digest("hex"); }
 function stripHtml(value?: string | null) { return (value ?? "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim().slice(0, 2400); }
+function safeName(value: string) { return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 80) || "feed"; }
 
 async function upsertSource(source: SourceConfig) {
   const result = await db().query<{ id: string }>(
@@ -27,11 +29,32 @@ async function upsertSource(source: SourceConfig) {
 }
 
 export async function ingestSources() {
-  let feedsOk = 0, feedsFailed = 0, inserted = 0;
+  let feedsOk = 0, feedsFailed = 0, inserted = 0, archivedFeeds = 0;
+  const prefix = datedPrefix();
+
   for (const source of SOURCES) {
     const sourceId = await upsertSource(source);
     try {
-      const feed = await parser.parseURL(source.url); feedsOk += 1;
+      const response = await fetch(source.url, {
+        headers: { "user-agent": "BusinessFutureToday/0.6 (+https://businessfuture.today)" },
+        redirect: "follow",
+        signal: AbortSignal.timeout(15_000)
+      });
+      if (!response.ok) throw new Error(`FEED_HTTP_${response.status}`);
+
+      const rawFeed = await response.text();
+      const feedName = safeName(source.name);
+      try {
+        await putSourceObject(`rss/raw/${prefix}/${feedName}.xml`, rawFeed, response.headers.get("content-type") || "application/xml; charset=utf-8");
+        archivedFeeds += 1;
+      } catch (archiveError) {
+        console.error(`feed archive failed: ${source.name}`, archiveError);
+      }
+
+      const feed = await parser.parseString(rawFeed);
+      feedsOk += 1;
+      const snapshotItems: any[] = [];
+
       for (const item of feed.items.slice(0, 30)) {
         const url = item.link?.trim(); const title = item.title?.trim();
         if (!url || !title) continue;
@@ -44,6 +67,18 @@ export async function ingestSources() {
           mediaContent: item.mediaContent?.$?.url || item.mediaContent?.url || null,
           mediaThumbnail: item.mediaThumbnail?.$?.url || item.mediaThumbnail?.url || null
         };
+
+        snapshotItems.push({
+          id: itemId,
+          guid: item.guid ?? null,
+          url,
+          title,
+          summary,
+          author: item.creator || null,
+          publishedAt: publishedAt && !Number.isNaN(publishedAt.getTime()) ? publishedAt.toISOString() : null,
+          media
+        });
+
         const result = await db().query(
           `INSERT INTO source_items (id, source_id, url, title, summary, author, published_at, raw)
            VALUES ($1,$2,$3,$4,$5,$6,$7,$8::jsonb)
@@ -54,8 +89,29 @@ export async function ingestSources() {
         );
         if (result.rowCount && result.command === "INSERT") inserted += result.rowCount;
       }
+
+      try {
+        await putSourceObject(
+          `rss/snapshots/${prefix}/${feedName}.json`,
+          JSON.stringify({
+            source: { name: source.name, url: source.url, category: source.category, weight: source.weight },
+            fetchedAt: new Date().toISOString(),
+            title: feed.title || null,
+            link: feed.link || null,
+            items: snapshotItems
+          }),
+          "application/json; charset=utf-8"
+        );
+      } catch (snapshotError) {
+        console.error(`feed snapshot archive failed: ${source.name}`, snapshotError);
+      }
+
       await db().query(`UPDATE sources SET last_fetched_at=NOW() WHERE id=$1`, [sourceId]);
-    } catch (error) { feedsFailed += 1; console.error(`feed failed: ${source.name}`, error); }
+    } catch (error) {
+      feedsFailed += 1;
+      console.error(`feed failed: ${source.name}`, error);
+    }
   }
-  return { feedsOk, feedsFailed, inserted };
+
+  return { feedsOk, feedsFailed, inserted, archivedFeeds };
 }
