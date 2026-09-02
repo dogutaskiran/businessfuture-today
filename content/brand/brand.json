@@ -27,5 +27,21 @@
       "Do not replace the approved brand colors inside the mark."
     ],
     "profileCrop": "Circular-profile surfaces use only a large centered BFT monogram. No square frame; the platform crop becomes the visual container."
+  },
+  "socialRules": {
+    "profile": "Use the large BFT monogram only. No frame. Platform circular crop is the container.",
+    "feedCarousel": "Use the canonical Edition wordmark in the approved dark masthead. Do not redraw or restyle the logo per template.",
+    "story": "Use the canonical transparent light wordmark inside the safe content area. Never place brand identity under Instagram chrome.",
+    "storySafeZone": {
+      "topPx": 260,
+      "bottomPx": 280,
+      "contentTopPx": 260,
+      "contentBottomPx": 1640
+    },
+    "storyLinkStickerZone": {
+      "topPx": 1460,
+      "bottomPx": 1580,
+      "note": "Reserved CTA/sticker area. Interactive sticker must be added only by a supported publishing surface."
+    }
   }
 }

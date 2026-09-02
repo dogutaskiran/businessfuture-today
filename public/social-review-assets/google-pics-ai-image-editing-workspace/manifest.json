@@ -10,6 +10,16 @@
   ],
   "source": "https://www.theverge.com/tech/987423/google-pics-ai-image-editor-generator",
   "brand": "edition",
+  "storySafeZone": {
+    "topPx": 260,
+    "bottomPx": 280,
+    "contentBottomPx": 1640,
+    "linkStickerZone": {
+      "topPx": 1460,
+      "bottomPx": 1580,
+      "note": "Reserved CTA/sticker area. Interactive sticker must be added only by a supported publishing surface."
+    }
+  },
   "assets": {
     "feed": "feed-1080x1350.webp",
     "story": "story-1080x1920.webp"

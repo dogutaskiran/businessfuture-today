@@ -28,6 +28,22 @@
         "Do not replace the approved brand colors inside the mark."
       ],
       "profileCrop": "Circular-profile surfaces use only a large centered BFT monogram. No square frame; the platform crop becomes the visual container."
+    },
+    "socialRules": {
+      "profile": "Use the large BFT monogram only. No frame. Platform circular crop is the container.",
+      "feedCarousel": "Use the canonical Edition wordmark in the approved dark masthead. Do not redraw or restyle the logo per template.",
+      "story": "Use the canonical transparent light wordmark inside the safe content area. Never place brand identity under Instagram chrome.",
+      "storySafeZone": {
+        "topPx": 260,
+        "bottomPx": 280,
+        "contentTopPx": 260,
+        "contentBottomPx": 1640
+      },
+      "storyLinkStickerZone": {
+        "topPx": 1460,
+        "bottomPx": 1580,
+        "note": "Reserved CTA/sticker area. Interactive sticker must be added only by a supported publishing surface."
+      }
     }
   },
   "assetCount": 31,
@@ -123,7 +139,7 @@
     {
       "id": "profiles",
       "title": "Profile identities",
-      "description": "Circle-safe profile assets. The framed BFT mark stays fully visible inside circular social crops.",
+      "description": "Circle-safe profile assets using the large BFT monogram only. No frame; the platform crop is the container.",
       "assets": [
         {
           "name": "instagram profile",
@@ -235,7 +251,7 @@
     {
       "id": "social-system",
       "title": "Social template identity",
-      "description": "Reusable identity strips and bugs for feed, carousel and story renderers.",
+      "description": "Canonical Edition identity primitives for social surfaces. Feed/carousel use the approved masthead; Story uses a transparent safe-zone signature.",
       "assets": [
         {
           "name": "feed / carousel masthead",
@@ -244,10 +260,11 @@
           "kind": "wide"
         },
         {
-          "name": "story masthead",
-          "meta": "1080×180 · WebP",
-          "src": "/brand-review-assets/story-masthead-1080x180.webp",
-          "kind": "wide"
+          "name": "story signature",
+          "meta": "560×122 · transparent PNG · safe-zone identity",
+          "src": "/brand-review-assets/story-signature-560x122.png",
+          "kind": "wide",
+          "dark": true
         },
         {
           "name": "light watermark bug",
