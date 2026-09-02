@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "platform": "instagram",
+  "caption": "OpenAI is moving ChatGPT Health deeper into clinical workflows with read-only access to Epic patient data. The important boundary: clinicians can import and review information, but the integration cannot write back to the medical record. The business test is whether that saves time without adding new governance and review overhead.",
+  "hashtags": ["BusinessFutureToday", "HealthcareAI", "HealthTech", "ChatGPT"],
+  "carousel": {
+    "ratio": "4:5",
+    "slides": [
+      {
+        "type": "cover",
+        "label": "HEALTH TECH",
+        "headline": "ChatGPT Health Adds Read-Only Epic Data Access for Clinicians",
+        "imageRole": "hero"
+      },
+      {
+        "type": "explainer",
+        "label": "WHAT CHANGED",
+        "headline": "ChatGPT Health can now pull patient information from Epic.",
+        "body": "Clinicians can import data from the electronic health record into ChatGPT Health instead of manually moving information between systems."
+      },
+      {
+        "type": "feature",
+        "label": "READ-ONLY BY DESIGN",
+        "headline": "It can retrieve records. It cannot alter them.",
+        "body": "The integration is limited to viewing and importing patient information, keeping write access to the medical record outside ChatGPT Health.",
+        "imageRole": "inline_1"
+      },
+      {
+        "type": "impact",
+        "label": "WHY IT MATTERS",
+        "headline": "AI becomes more useful when it connects to the system of record.",
+        "body": "For clinical teams, the value is not another standalone AI interface. It is reducing the friction of finding and bringing relevant patient information into the workflow."
+      },
+      {
+        "type": "context",
+        "label": "THE OPERATING MODEL",
+        "headline": "A narrower integration may be easier for healthcare organizations to evaluate.",
+        "body": "Read-only access limits the operational surface area while leaving the core medical record under existing clinical and organizational controls."
+      },
+      {
+        "type": "watch",
+        "label": "WHAT TO WATCH",
+        "headline": "Three questions will determine whether this becomes useful in practice.",
+        "bullets": [
+          "Which Epic records and data types can clinicians actually import?",
+          "Does the workflow save time without creating extra review or governance work?",
+          "Will OpenAI eventually seek write-back access to the medical record?"
+        ]
+      },
+      {
+        "type": "cta",
+        "label": "THE BOTTOM LINE",
+        "headline": "ChatGPT Health is moving closer to daily clinical systems — without taking control of the record.",
+        "body": "Read the full story at businessfuture.today",
+        "imageRole": "hero"
+      }
+    ]
+  }
+}

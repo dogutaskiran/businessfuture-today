@@ -1,0 +1,49 @@
+{
+  "slug": "chatgpt-health-epic-integration-clinician-data-access",
+  "brand": "edition",
+  "caption": "OpenAI is moving ChatGPT Health deeper into clinical workflows with read-only access to Epic patient data. The important boundary: clinicians can import and review information, but the integration cannot write back to the medical record. The business test is whether that saves time without adding new governance and review overhead.",
+  "hashtags": [
+    "BusinessFutureToday",
+    "HealthcareAI",
+    "HealthTech",
+    "ChatGPT"
+  ],
+  "carousel": [
+    {
+      "file": "carousel-01-cover-1080x1350.jpg",
+      "url": "https://businessfuture.today/social-publish-assets/chatgpt-health-epic-integration-clinician-data-access/carousel-01-cover-1080x1350.jpg"
+    },
+    {
+      "file": "carousel-02-explainer-1080x1350.jpg",
+      "url": "https://businessfuture.today/social-publish-assets/chatgpt-health-epic-integration-clinician-data-access/carousel-02-explainer-1080x1350.jpg"
+    },
+    {
+      "file": "carousel-03-feature-1080x1350.jpg",
+      "url": "https://businessfuture.today/social-publish-assets/chatgpt-health-epic-integration-clinician-data-access/carousel-03-feature-1080x1350.jpg"
+    },
+    {
+      "file": "carousel-04-impact-1080x1350.jpg",
+      "url": "https://businessfuture.today/social-publish-assets/chatgpt-health-epic-integration-clinician-data-access/carousel-04-impact-1080x1350.jpg"
+    },
+    {
+      "file": "carousel-05-context-1080x1350.jpg",
+      "url": "https://businessfuture.today/social-publish-assets/chatgpt-health-epic-integration-clinician-data-access/carousel-05-context-1080x1350.jpg"
+    },
+    {
+      "file": "carousel-06-watch-1080x1350.jpg",
+      "url": "https://businessfuture.today/social-publish-assets/chatgpt-health-epic-integration-clinician-data-access/carousel-06-watch-1080x1350.jpg"
+    },
+    {
+      "file": "carousel-07-cta-1080x1350.jpg",
+      "url": "https://businessfuture.today/social-publish-assets/chatgpt-health-epic-integration-clinician-data-access/carousel-07-cta-1080x1350.jpg"
+    }
+  ],
+  "feed": {
+    "file": "feed-1080x1350.jpg",
+    "url": "https://businessfuture.today/social-publish-assets/chatgpt-health-epic-integration-clinician-data-access/feed-1080x1350.jpg"
+  },
+  "story": {
+    "file": "story-1080x1920.jpg",
+    "url": "https://businessfuture.today/social-publish-assets/chatgpt-health-epic-integration-clinician-data-access/story-1080x1920.jpg"
+  }
+}
