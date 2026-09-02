@@ -9,7 +9,10 @@
     "storage:bootstrap": "node scripts/bootstrap-r2.mjs --force",
     "storage:archive-rss": "node scripts/archive-rss-r2.mjs",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "automation:run": "tsx scripts/automation-run.ts",
+    "media:run": "tsx scripts/media-pipeline.ts",
+    "worker:cycle": "bash scripts/worker-cycle.sh"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
@@ -26,6 +29,7 @@
     "@types/pg": "^8.23.1",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "tsx": "^4.23.13",
     "typescript": "^5.9.0"
   }
 }
