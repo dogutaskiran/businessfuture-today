@@ -9,6 +9,7 @@
     "CreativeTools"
   ],
   "source": "https://www.theverge.com/tech/987423/google-pics-ai-image-editor-generator",
+  "brand": "edition",
   "assets": {
     "feed": "feed-1080x1350.webp",
     "story": "story-1080x1920.webp"
@@ -71,6 +72,20 @@
         "imageRole": "hero",
         "file": "carousel-07-cta-1080x1350.webp"
       }
+    ]
+  },
+  "publish": {
+    "base": "/social-publish-assets/google-pics-ai-image-editing-workspace",
+    "feed": "feed-1080x1350.jpg",
+    "story": "story-1080x1920.jpg",
+    "carousel": [
+      "carousel-01-cover-1080x1350.jpg",
+      "carousel-02-explainer-1080x1350.jpg",
+      "carousel-03-feature-1080x1350.jpg",
+      "carousel-04-impact-1080x1350.jpg",
+      "carousel-05-context-1080x1350.jpg",
+      "carousel-06-watch-1080x1350.jpg",
+      "carousel-07-cta-1080x1350.jpg"
     ]
   }
 }

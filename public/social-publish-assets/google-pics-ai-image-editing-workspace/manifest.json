@@ -1,0 +1,49 @@
+{
+  "slug": "google-pics-ai-image-editing-workspace",
+  "brand": "edition",
+  "caption": "Google Pics brings Gemini-powered image generation and object-level editing to Workspace. The bigger shift is not image generation itself — it is whether AI can make revision cycles faster without taking control away from teams. Swipe for the business implications.",
+  "hashtags": [
+    "BusinessFutureToday",
+    "GoogleWorkspace",
+    "GenerativeAI",
+    "CreativeTools"
+  ],
+  "carousel": [
+    {
+      "file": "carousel-01-cover-1080x1350.jpg",
+      "url": "https://businessfuture.today/social-publish-assets/google-pics-ai-image-editing-workspace/carousel-01-cover-1080x1350.jpg"
+    },
+    {
+      "file": "carousel-02-explainer-1080x1350.jpg",
+      "url": "https://businessfuture.today/social-publish-assets/google-pics-ai-image-editing-workspace/carousel-02-explainer-1080x1350.jpg"
+    },
+    {
+      "file": "carousel-03-feature-1080x1350.jpg",
+      "url": "https://businessfuture.today/social-publish-assets/google-pics-ai-image-editing-workspace/carousel-03-feature-1080x1350.jpg"
+    },
+    {
+      "file": "carousel-04-impact-1080x1350.jpg",
+      "url": "https://businessfuture.today/social-publish-assets/google-pics-ai-image-editing-workspace/carousel-04-impact-1080x1350.jpg"
+    },
+    {
+      "file": "carousel-05-context-1080x1350.jpg",
+      "url": "https://businessfuture.today/social-publish-assets/google-pics-ai-image-editing-workspace/carousel-05-context-1080x1350.jpg"
+    },
+    {
+      "file": "carousel-06-watch-1080x1350.jpg",
+      "url": "https://businessfuture.today/social-publish-assets/google-pics-ai-image-editing-workspace/carousel-06-watch-1080x1350.jpg"
+    },
+    {
+      "file": "carousel-07-cta-1080x1350.jpg",
+      "url": "https://businessfuture.today/social-publish-assets/google-pics-ai-image-editing-workspace/carousel-07-cta-1080x1350.jpg"
+    }
+  ],
+  "feed": {
+    "file": "feed-1080x1350.jpg",
+    "url": "https://businessfuture.today/social-publish-assets/google-pics-ai-image-editing-workspace/feed-1080x1350.jpg"
+  },
+  "story": {
+    "file": "story-1080x1920.jpg",
+    "url": "https://businessfuture.today/social-publish-assets/google-pics-ai-image-editing-workspace/story-1080x1920.jpg"
+  }
+}
