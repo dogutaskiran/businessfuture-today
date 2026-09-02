@@ -1,0 +1,11 @@
+{
+  "slug": "google-pics-ai-image-editing-workspace",
+  "title": "Google Pics Brings AI Image Editing Into Workspace",
+  "caption": "Google Pics brings Gemini-powered image generation and object-level editing to Workspace. The business test: can more targeted AI edits make creative revision faster without compromising control?",
+  "source": "https://www.theverge.com/tech/987423/google-pics-ai-image-editor-generator",
+  "assets": {
+    "feed": "feed-1080x1350.webp",
+    "carouselCover": "carousel-cover-1080x1080.webp",
+    "story": "story-1080x1920.webp"
+  }
+}

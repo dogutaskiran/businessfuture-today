@@ -14,6 +14,7 @@ export type Story = {
   author?: EditorialAuthor;
   bodyMarkdown?: string;
   sourceUrls?: readonly string[];
+  socialCaption?: string;
   publishedAt?: string | null;
   generated?: boolean;
   heroImage?: string | null;
