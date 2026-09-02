@@ -22,15 +22,16 @@ function json(value) {
   return `${JSON.stringify(value, null, 2)}\n`;
 }
 
-const pool = new Pool({
-  connectionString: connectionString(),
-  max: 2,
-  idleTimeoutMillis: 10_000,
-  connectionTimeoutMillis: 8_000,
-  ssl: process.env.DATABASE_SSL === "false" ? false : { rejectUnauthorized: false }
-});
-
+let pool;
 try {
+  pool = new Pool({
+    connectionString: connectionString(),
+    max: 2,
+    idleTimeoutMillis: 10_000,
+    connectionTimeoutMillis: 8_000,
+    ssl: process.env.DATABASE_SSL === "false" ? false : { rejectUnauthorized: false }
+  });
+
   const result = await pool.query(`
     SELECT d.id,d.slug,d.kicker,d.title,d.dek,d.category,d.body_markdown,d.source_urls,d.social_caption,d.published_at,
       h.hero_path,h.card_path,h.og_path,h.social_square_path,h.social_portrait_path,h.alt_text,h.attribution_text,h.source_image_url,h.license_status,h.license_basis,h.source_page_url,
@@ -144,6 +145,13 @@ try {
   await writeFile(path.join(CONTENT_DIR, "index.json"), json(stories), "utf8");
   await writeFile(path.join(CONTENT_DIR, "media-manifest.json"), json(mediaManifest), "utf8");
   console.log(JSON.stringify({ exported: stories.length, contentDir: "content/articles", mediaManifest: mediaManifest.length }));
+} catch (error) {
+  if (process.env.VERCEL === "1") {
+    console.warn(`Static content export skipped during Vercel build: ${error instanceof Error ? error.message : String(error)}`);
+    console.warn("Vercel builds consume the committed static content tree. Run npm run content:export from the Kvar publication runtime before committing a content refresh.");
+  } else {
+    throw error;
+  }
 } finally {
-  await pool.end();
+  if (pool) await pool.end().catch(() => undefined);
 }
