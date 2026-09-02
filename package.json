@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "content:export": "node scripts/export-static-content.mjs",
+    "build": "npm run content:export && next build",
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },
