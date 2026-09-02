@@ -1,0 +1,87 @@
+{
+  "brand": {
+    "schemaVersion": 1,
+    "name": "Business Future Today",
+    "shortName": "BFT",
+    "tagline": "Business, technology and what matters next.",
+    "domain": "businessfuture.today",
+    "colors": {
+      "ink": "#111827",
+      "paper": "#F6F3EB",
+      "accent": "#F4D03F",
+      "muted": "#677386",
+      "white": "#FFFFFF"
+    },
+    "activeConcept": null,
+    "concepts": [
+      {
+        "id": "signal",
+        "name": "Signal",
+        "description": "Editorial wordmark with a forward signal mark. Strongest fit for a modern business publication."
+      },
+      {
+        "id": "ticker",
+        "name": "Ticker",
+        "description": "Compact newsroom identity built around a bold BFT monogram and TODAY tag."
+      },
+      {
+        "id": "frame",
+        "name": "Frame",
+        "description": "More institutional identity using a framed mark and a calmer wordmark."
+      }
+    ]
+  },
+  "concepts": [
+    {
+      "id": "signal",
+      "name": "Signal",
+      "description": "Editorial wordmark with a forward signal mark. Strongest fit for a modern business publication.",
+      "assets": {
+        "wordmark": "/brand-review-assets/signal/wordmark.svg",
+        "mark": "/brand-review-assets/signal/mark.svg",
+        "avatar": "/brand-review-assets/signal/avatar-1080.webp",
+        "icon": "/brand-review-assets/signal/icon-512.webp",
+        "favicon": "/brand-review-assets/signal/favicon-64.webp",
+        "og": "/brand-review-assets/signal/og-1200x630.webp",
+        "facebook": "/brand-review-assets/signal/facebook-1640x624.webp",
+        "linkedin": "/brand-review-assets/signal/linkedin-1128x191.webp",
+        "youtube": "/brand-review-assets/signal/youtube-2560x1440.webp",
+        "newsletter": "/brand-review-assets/signal/newsletter-1200x400.webp"
+      }
+    },
+    {
+      "id": "ticker",
+      "name": "Ticker",
+      "description": "Compact newsroom identity built around a bold BFT monogram and TODAY tag.",
+      "assets": {
+        "wordmark": "/brand-review-assets/ticker/wordmark.svg",
+        "mark": "/brand-review-assets/ticker/mark.svg",
+        "avatar": "/brand-review-assets/ticker/avatar-1080.webp",
+        "icon": "/brand-review-assets/ticker/icon-512.webp",
+        "favicon": "/brand-review-assets/ticker/favicon-64.webp",
+        "og": "/brand-review-assets/ticker/og-1200x630.webp",
+        "facebook": "/brand-review-assets/ticker/facebook-1640x624.webp",
+        "linkedin": "/brand-review-assets/ticker/linkedin-1128x191.webp",
+        "youtube": "/brand-review-assets/ticker/youtube-2560x1440.webp",
+        "newsletter": "/brand-review-assets/ticker/newsletter-1200x400.webp"
+      }
+    },
+    {
+      "id": "frame",
+      "name": "Frame",
+      "description": "More institutional identity using a framed mark and a calmer wordmark.",
+      "assets": {
+        "wordmark": "/brand-review-assets/frame/wordmark.svg",
+        "mark": "/brand-review-assets/frame/mark.svg",
+        "avatar": "/brand-review-assets/frame/avatar-1080.webp",
+        "icon": "/brand-review-assets/frame/icon-512.webp",
+        "favicon": "/brand-review-assets/frame/favicon-64.webp",
+        "og": "/brand-review-assets/frame/og-1200x630.webp",
+        "facebook": "/brand-review-assets/frame/facebook-1640x624.webp",
+        "linkedin": "/brand-review-assets/frame/linkedin-1128x191.webp",
+        "youtube": "/brand-review-assets/frame/youtube-2560x1440.webp",
+        "newsletter": "/brand-review-assets/frame/newsletter-1200x400.webp"
+      }
+    }
+  ]
+}

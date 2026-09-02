@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "name": "Business Future Today",
+  "shortName": "BFT",
+  "tagline": "Business, technology and what matters next.",
+  "domain": "businessfuture.today",
+  "colors": {
+    "ink": "#111827",
+    "paper": "#F6F3EB",
+    "accent": "#F4D03F",
+    "muted": "#677386",
+    "white": "#FFFFFF"
+  },
+  "activeConcept": null,
+  "concepts": [
+    {"id":"signal","name":"Signal","description":"Editorial wordmark with a forward signal mark. Strongest fit for a modern business publication."},
+    {"id":"ticker","name":"Ticker","description":"Compact newsroom identity built around a bold BFT monogram and TODAY tag."},
+    {"id":"frame","name":"Frame","description":"More institutional identity using a framed mark and a calmer wordmark."}
+  ]
+}
