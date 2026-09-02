@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "74fd72e0-14d3-4df9-88cd-9b4ed038711d",
+  "slug": "robotaxis-hidden-human-costs-source-limitations",
+  "kicker": "Mobility",
+  "title": "Robotaxis’ human costs need closer scrutiny—but the available record offers few details",
+  "dek": "A TechCrunch Mobility item flags the human impact of robotaxis as a topic worth examining. The supplied summary, however, does not identify the workers, companies, policies or incidents involved.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-08-31T23:42:07.464+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/30/techcrunch-mobility-the-hidden-human-cost-of-robotaxis/"
+  ],
+  "socialCaption": "Robotaxis are often evaluated through technology and unit economics. TechCrunch Mobility’s framing points to another question: the human impact. The supplied summary contains no specific examples or findings, underscoring the need for evidence before drawing conclusions.",
+  "media": {
+    "hero": "/media/robotaxis-hidden-human-costs-source-limitations/hero.webp",
+    "card": "/media/robotaxis-hidden-human-costs-source-limitations/card.webp",
+    "og": "/media/robotaxis-hidden-human-costs-source-limitations/og.webp",
+    "socialSquare": "/media/robotaxis-hidden-human-costs-source-limitations/social-square.webp",
+    "socialPortrait": "/media/robotaxis-hidden-human-costs-source-limitations/social-portrait.webp",
+    "alt": "Editorial image for Robotaxis’ human costs need closer scrutiny—but the available record offers few details",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/30/techcrunch-mobility-the-hidden-human-cost-of-robotaxis/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/08/waymo-jaguar-ipace.jpg?resize=1200,633",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/robotaxis-hidden-human-costs-source-limitations/inline-1.webp",
+        "alt": "Supporting image for Robotaxis’ human costs need closer scrutiny—but the available record offers few details",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

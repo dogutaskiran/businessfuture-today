@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "fc5dff4f-77e2-4c0d-b839-ee7fe7ddf860",
+  "slug": "ai-may-shrink-governments-window-to-use-hacking-tools",
+  "kicker": "Technology",
+  "title": "AI May Shrink Governments’ Window to Use Hacking Tools",
+  "dek": "As AI improves vulnerability discovery and exploitation, the useful life of government hacking capabilities could become shorter—and the policy fight over device access may intensify.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-08-31T17:55:52.848+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/31/how-ai-could-make-it-harder-for-governments-to-use-hacking-tools/"
+  ],
+  "socialCaption": "AI-assisted vulnerability discovery could shorten the shelf life of government exploits and commercial spyware. The result may be faster patch cycles, costlier offensive programs, and renewed pressure for device-access backdoors.",
+  "media": {
+    "hero": "/media/ai-may-shrink-governments-window-to-use-hacking-tools/hero.webp",
+    "card": "/media/ai-may-shrink-governments-window-to-use-hacking-tools/card.webp",
+    "og": "/media/ai-may-shrink-governments-window-to-use-hacking-tools/og.webp",
+    "socialSquare": "/media/ai-may-shrink-governments-window-to-use-hacking-tools/social-square.webp",
+    "socialPortrait": "/media/ai-may-shrink-governments-window-to-use-hacking-tools/social-portrait.webp",
+    "alt": "Editorial image for AI May Shrink Governments’ Window to Use Hacking Tools",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/31/how-ai-could-make-it-harder-for-governments-to-use-hacking-tools/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2024/07/brianstack-mspy-email-leak-2024.jpg?resize=1200,675",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/ai-may-shrink-governments-window-to-use-hacking-tools/inline-1.webp",
+        "alt": "Supporting image for AI May Shrink Governments’ Window to Use Hacking Tools",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

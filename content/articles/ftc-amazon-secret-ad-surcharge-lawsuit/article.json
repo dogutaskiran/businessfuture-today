@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "29b25363-8feb-4050-8b19-d1097ed0c52a",
+  "slug": "ftc-amazon-secret-ad-surcharge-lawsuit",
+  "kicker": "Regulation",
+  "title": "FTC Lawsuit Puts Amazon’s Advertising Pricing Under New Scrutiny",
+  "dek": "The FTC and 22 states allege Amazon secretly charged businesses more for advertising, opening a new front in regulatory scrutiny of the company’s marketplace power.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-08-31T21:36:56.09+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/31/ftc-accuses-amazon-of-running-a-secret-ad-surcharge-scheme-in-new-lawsuit/"
+  ],
+  "socialCaption": "The FTC and 22 states are suing Amazon over allegations of a “secret ad surcharge scheme.” The case puts marketplace advertising pricing—and the cost of visibility for sellers—under sharper scrutiny.",
+  "media": {
+    "hero": "/media/ftc-amazon-secret-ad-surcharge-lawsuit/hero.webp",
+    "card": "/media/ftc-amazon-secret-ad-surcharge-lawsuit/card.webp",
+    "og": "/media/ftc-amazon-secret-ad-surcharge-lawsuit/og.webp",
+    "socialSquare": "/media/ftc-amazon-secret-ad-surcharge-lawsuit/social-square.webp",
+    "socialPortrait": "/media/ftc-amazon-secret-ad-surcharge-lawsuit/social-portrait.webp",
+    "alt": "Editorial image for FTC Lawsuit Puts Amazon’s Advertising Pricing Under New Scrutiny",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/31/ftc-accuses-amazon-of-running-a-secret-ad-surcharge-scheme-in-new-lawsuit/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2025/06/GettyImages-2217247219.jpg?w=1024",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/ftc-amazon-secret-ad-surcharge-lawsuit/inline-1.webp",
+        "alt": "Supporting image for FTC Lawsuit Puts Amazon’s Advertising Pricing Under New Scrutiny",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

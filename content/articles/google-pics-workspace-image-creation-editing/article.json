@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "fc1acd43-5715-4cfa-9c7d-91b9d91e62e2",
+  "slug": "google-pics-workspace-image-creation-editing",
+  "kicker": "WORKSPACE",
+  "title": "Google launches Pics, an image creation and editing tool for Workspace",
+  "dek": "Google says its new Pics tool, built on its latest Nano Banana model, is now available in Google Workspace.",
+  "category": "Companies",
+  "readTime": "2 min",
+  "publishedAt": "2026-09-01T22:07:47.33+00:00",
+  "sources": [
+    "https://blog.google/products-and-platforms/products/workspace/google-pics/"
+  ],
+  "socialCaption": "Google has launched Pics, an image creation and editing tool for Workspace built on its Nano Banana model. The next questions for business users: where it integrates, what it can edit and what governance controls Google provides.",
+  "media": {
+    "hero": "/media/google-pics-workspace-image-creation-editing/hero.webp",
+    "card": "/media/google-pics-workspace-image-creation-editing/card.webp",
+    "og": "/media/google-pics-workspace-image-creation-editing/og.webp",
+    "socialSquare": "/media/google-pics-workspace-image-creation-editing/social-square.webp",
+    "socialPortrait": "/media/google-pics-workspace-image-creation-editing/social-portrait.webp",
+    "alt": "Editorial image for Google launches Pics, an image creation and editing tool for Workspace",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://blog.google/products-and-platforms/products/workspace/google-pics/",
+    "sourceImageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/GooglePics_Hero.width-1300.png",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/google-pics-workspace-image-creation-editing/inline-1.webp",
+        "alt": "Supporting image for Google launches Pics, an image creation and editing tool for Workspace",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "be7a07db-f85a-4b82-a58f-a027dde2887a",
+  "slug": "rails-opentelemetry-logs-configuration",
+  "kicker": "OBSERVABILITY",
+  "title": "A Rails Team Documents Its OpenTelemetry Logs Configuration",
+  "dek": "A newly surfaced engineering write-up points to continued interest in bringing OpenTelemetry log instrumentation into Rails applications. The available source material does not disclose the implementation details.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T01:15:07.951+00:00",
+  "sources": [
+    "https://www.sixpatterns.com/blog/how-we-configured-opentelemetry-logs-in-rails"
+  ],
+  "socialCaption": "A Six Patterns post on configuring OpenTelemetry logs in Rails has surfaced on Hacker News. The available summary confirms the topic, but not the technical approach—teams should inspect the original for details on correlation, export, cost and production behavior.",
+  "media": {
+    "hero": "/media/rails-opentelemetry-logs-configuration/hero.webp",
+    "card": "/media/rails-opentelemetry-logs-configuration/card.webp",
+    "og": "/media/rails-opentelemetry-logs-configuration/og.webp",
+    "socialSquare": "/media/rails-opentelemetry-logs-configuration/social-square.webp",
+    "socialPortrait": "/media/rails-opentelemetry-logs-configuration/social-portrait.webp",
+    "alt": "Editorial image for A Rails Team Documents Its OpenTelemetry Logs Configuration",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.sixpatterns.com/blog/how-we-configured-opentelemetry-logs-in-rails",
+    "sourceImageUrl": "https://y4n0za9tok4qqkj4.public.blob.vercel-storage.com/blog/2026-08-04-how-we-configured-opentelemetry-logs-in-rails.png",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/rails-opentelemetry-logs-configuration/inline-1.webp",
+        "alt": "Supporting image for A Rails Team Documents Its OpenTelemetry Logs Configuration",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

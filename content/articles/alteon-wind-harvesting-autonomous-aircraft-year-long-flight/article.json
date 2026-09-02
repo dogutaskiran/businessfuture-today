@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "4763209c-1ad7-45e8-b293-3e741de654b4",
+  "slug": "alteon-wind-harvesting-autonomous-aircraft-year-long-flight",
+  "kicker": "Long-duration aviation",
+  "title": "Alteon Targets Year-Long Flight With Wind-Harvesting Autonomous Aircraft",
+  "dek": "Backed by Lachy Groom, Indian startup Alteon is developing autonomous aircraft designed to use wind energy to remain airborne for months, potentially up to a year.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-09-01T00:44:27.734+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/31/lachy-groom-backs-indian-startup-aiming-to-keep-aircraft-aloft-for-a-year/"
+  ],
+  "socialCaption": "Indian startup Alteon, backed by Lachy Groom, is developing autonomous aircraft designed to harvest wind energy and stay airborne for months. Its stated ambition: flight endurance of up to a year. The next signal to watch is demonstrated time aloft.",
+  "media": {
+    "hero": "/media/alteon-wind-harvesting-autonomous-aircraft-year-long-flight/hero.webp",
+    "card": "/media/alteon-wind-harvesting-autonomous-aircraft-year-long-flight/card.webp",
+    "og": "/media/alteon-wind-harvesting-autonomous-aircraft-year-long-flight/og.webp",
+    "socialSquare": "/media/alteon-wind-harvesting-autonomous-aircraft-year-long-flight/social-square.webp",
+    "socialPortrait": "/media/alteon-wind-harvesting-autonomous-aircraft-year-long-flight/social-portrait.webp",
+    "alt": "Editorial image for Alteon Targets Year-Long Flight With Wind-Harvesting Autonomous Aircraft",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/31/lachy-groom-backs-indian-startup-aiming-to-keep-aircraft-aloft-for-a-year/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/08/alteon-airplane.jpg?resize=1200,800",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/alteon-wind-harvesting-autonomous-aircraft-year-long-flight/inline-1.webp",
+        "alt": "Supporting image for Alteon Targets Year-Long Flight With Wind-Harvesting Autonomous Aircraft",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

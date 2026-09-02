@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "eca18fbc-677e-420d-ac73-bef5e1231645",
+  "slug": "chatgpt-work-tool-skill-reference",
+  "kicker": "AI Tooling",
+  "title": "A New ChatGPT Work Tool Reference Puts the Focus on Operational Clarity",
+  "dek": "A Hacker News-linked reference for ChatGPT work tools and skills signals continued demand for clearer documentation around how AI systems are used in day-to-day work.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T01:15:20.542+00:00",
+  "sources": [
+    "https://codex-tool-reference.simonw.chatgpt.site/"
+  ],
+  "socialCaption": "A new “ChatGPT Work Tool and Skill Reference” shared on Hacker News highlights a practical adoption challenge: AI value depends on clear tool boundaries, tested workflows and accountable human review—not just model access.",
+  "media": {
+    "hero": "/media/chatgpt-work-tool-skill-reference/hero.webp",
+    "card": "/media/chatgpt-work-tool-skill-reference/card.webp",
+    "og": "/media/chatgpt-work-tool-skill-reference/og.webp",
+    "socialSquare": "/media/chatgpt-work-tool-skill-reference/social-square.webp",
+    "socialPortrait": "/media/chatgpt-work-tool-skill-reference/social-portrait.webp",
+    "alt": "Editorial image for A New ChatGPT Work Tool Reference Puts the Focus on Operational Clarity",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://codex-tool-reference.simonw.chatgpt.site/",
+    "sourceImageUrl": null,
+    "licenseStatus": "none",
+    "licenseBasis": "No source image discovered",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/chatgpt-work-tool-skill-reference/inline-1.webp",
+        "alt": "Supporting image for A New ChatGPT Work Tool Reference Puts the Focus on Operational Clarity",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

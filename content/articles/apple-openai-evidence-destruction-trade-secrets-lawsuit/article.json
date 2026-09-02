@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "5873c075-c02c-460d-97b0-0655db83c741",
+  "slug": "apple-openai-evidence-destruction-trade-secrets-lawsuit",
+  "kicker": "Legal Tech",
+  "title": "Apple Says OpenAI May Have Destroyed Evidence in Trade-Secrets Fight",
+  "dek": "Apple is seeking expedited discovery after alleging that a former employee’s MacBook contained discussions about deleting forensic data relevant to its case against OpenAI.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-02T01:12:47.367+00:00",
+  "sources": [
+    "https://www.theverge.com/tech/987575/apple-openai-destroying-evidence-trade-secrets-lawsuit"
+  ],
+  "socialCaption": "Apple is seeking expedited discovery in its trade-secrets suit against OpenAI, alleging a former employee’s MacBook included discussions about destroying forensic data. The procedural fight could shape the case before its core claims are tested.",
+  "media": {
+    "hero": "/media/apple-openai-evidence-destruction-trade-secrets-lawsuit/hero.webp",
+    "card": "/media/apple-openai-evidence-destruction-trade-secrets-lawsuit/card.webp",
+    "og": "/media/apple-openai-evidence-destruction-trade-secrets-lawsuit/og.webp",
+    "socialSquare": "/media/apple-openai-evidence-destruction-trade-secrets-lawsuit/social-square.webp",
+    "socialPortrait": "/media/apple-openai-evidence-destruction-trade-secrets-lawsuit/social-portrait.webp",
+    "alt": "Editorial image for Apple Says OpenAI May Have Destroyed Evidence in Trade-Secrets Fight",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.theverge.com/tech/987575/apple-openai-destroying-evidence-trade-secrets-lawsuit",
+    "sourceImageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/beamultra1.jpg?strip=all",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/apple-openai-evidence-destruction-trade-secrets-lawsuit/inline-1.webp",
+        "alt": "Supporting image for Apple Says OpenAI May Have Destroyed Evidence in Trade-Secrets Fight",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

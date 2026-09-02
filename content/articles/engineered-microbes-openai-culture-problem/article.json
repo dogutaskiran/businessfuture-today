@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "89c22c85-3c5e-4acf-9add-866db13918e6",
+  "slug": "engineered-microbes-openai-culture-problem",
+  "kicker": "The Download",
+  "title": "Engineered microbes and OpenAI’s culture problem put execution under scrutiny",
+  "dek": "MIT Technology Review’s daily briefing pairs two reminders for technology leaders: climate-relevant innovation must clear operational hurdles, and AI companies’ internal cultures can become a strategic risk.",
+  "category": "AI",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T12:45:59.762+00:00",
+  "sources": [
+    "https://www.technologyreview.com/2026/09/01/1143199/the-download-engineered-microbes-openai-safety-culture/"
+  ],
+  "socialCaption": "Engineered microbes could reduce agriculture’s fertilizer burden, while OpenAI’s safety culture faces scrutiny. The common business lesson: breakthrough technology depends on execution, trust, and systems that work beyond the lab.",
+  "media": {
+    "hero": "/media/engineered-microbes-openai-culture-problem/hero.webp",
+    "card": "/media/engineered-microbes-openai-culture-problem/card.webp",
+    "og": "/media/engineered-microbes-openai-culture-problem/og.webp",
+    "socialSquare": "/media/engineered-microbes-openai-culture-problem/social-square.webp",
+    "socialPortrait": "/media/engineered-microbes-openai-culture-problem/social-portrait.webp",
+    "alt": "Editorial image for Engineered microbes and OpenAI’s culture problem put execution under scrutiny",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.technologyreview.com/2026/09/01/1143199/the-download-engineered-microbes-openai-safety-culture/",
+    "sourceImageUrl": "https://wp.technologyreview.com/wp-content/uploads/2026/08/microbe-fertilizer.jpg",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/engineered-microbes-openai-culture-problem/inline-1.webp",
+        "alt": "Supporting image for Engineered microbes and OpenAI’s culture problem put execution under scrutiny",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

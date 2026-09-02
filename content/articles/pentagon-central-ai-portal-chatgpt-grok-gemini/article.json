@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "e193f7ee-c5e5-4d66-ac4e-4860ddda06eb",
+  "slug": "pentagon-central-ai-portal-chatgpt-grok-gemini",
+  "kicker": "Enterprise AI",
+  "title": "Pentagon Expands Its Central AI Portal With ChatGPT and Grok",
+  "dek": "The Defense Department is adding versions of OpenAI’s ChatGPT and SpaceXAI’s Grok to a central AI-tools portal that already includes Google’s Gemini.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-08-31T21:37:11.674+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/31/the-pentagon-now-has-its-own-version-of-chatgpt-and-grok/"
+  ],
+  "socialCaption": "The Pentagon is adding versions of ChatGPT and Grok to its central AI-tools portal, alongside Google’s Gemini. The notable signal for enterprise leaders: AI access may be managed as a multi-vendor platform, not a single-model bet.",
+  "media": {
+    "hero": "/media/pentagon-central-ai-portal-chatgpt-grok-gemini/hero.webp",
+    "card": "/media/pentagon-central-ai-portal-chatgpt-grok-gemini/card.webp",
+    "og": "/media/pentagon-central-ai-portal-chatgpt-grok-gemini/og.webp",
+    "socialSquare": "/media/pentagon-central-ai-portal-chatgpt-grok-gemini/social-square.webp",
+    "socialPortrait": "/media/pentagon-central-ai-portal-chatgpt-grok-gemini/social-portrait.webp",
+    "alt": "Editorial image for Pentagon Expands Its Central AI Portal With ChatGPT and Grok",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/31/the-pentagon-now-has-its-own-version-of-chatgpt-and-grok/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-2263890424.jpg?w=1024",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/pentagon-central-ai-portal-chatgpt-grok-gemini/inline-1.webp",
+        "alt": "Supporting image for Pentagon Expands Its Central AI Portal With ChatGPT and Grok",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

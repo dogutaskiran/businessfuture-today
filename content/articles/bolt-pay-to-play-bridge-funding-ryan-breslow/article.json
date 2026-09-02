@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "2daa82d9-9f21-456f-bd51-b494afa2dbe4",
+  "slug": "bolt-pay-to-play-bridge-funding-ryan-breslow",
+  "kicker": "Startup financing",
+  "title": "Bolt Seeks Up to $27M in Pay-to-Play Bridge Financing",
+  "dek": "Bolt founder Ryan Breslow is contributing $5 million as the checkout company pursues a bridge round of up to $27 million, according to TechCrunch.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-08-31T17:24:56+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/31/ryan-breslow-is-raising-up-to-27m-in-pay-to-play-bridge-funding-to-save-bolt/"
+  ],
+  "socialCaption": "Bolt is seeking up to $27M in pay-to-play bridge funding, with founder Ryan Breslow contributing $5M. The structure highlights how companies can extend runway while reshaping investor incentives when a conventional round is difficult.",
+  "media": {
+    "hero": "/media/bolt-pay-to-play-bridge-funding-ryan-breslow/hero.webp",
+    "card": "/media/bolt-pay-to-play-bridge-funding-ryan-breslow/card.webp",
+    "og": "/media/bolt-pay-to-play-bridge-funding-ryan-breslow/og.webp",
+    "socialSquare": "/media/bolt-pay-to-play-bridge-funding-ryan-breslow/social-square.webp",
+    "socialPortrait": "/media/bolt-pay-to-play-bridge-funding-ryan-breslow/social-portrait.webp",
+    "alt": "Editorial image for Bolt Seeks Up to $27M in Pay-to-Play Bridge Financing",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/31/ryan-breslow-is-raising-up-to-27m-in-pay-to-play-bridge-funding-to-save-bolt/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2024/09/ryan-breslow-bolt.jpg?resize=1200,800",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/bolt-pay-to-play-bridge-funding-ryan-breslow/inline-1.webp",
+        "alt": "Supporting image for Bolt Seeks Up to $27M in Pay-to-Play Bridge Financing",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

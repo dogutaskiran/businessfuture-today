@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "b05c4da4-01f0-4dc4-99f0-1bb20222d0ad",
+  "slug": "doltlite-sqlite-git-style-version-control-beta",
+  "kicker": "DATABASES",
+  "title": "DoltLite Brings Git-Style Version Control to a SQLite Fork",
+  "dek": "DoltHub has announced DoltLite, a SQLite fork positioned around Git-style version control. The beta’s most notable development detail: its creators say it was built through roughly 2,000 agent-generated pull requests.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T04:26:09.909+00:00",
+  "sources": [
+    "https://www.dolthub.com/blog/2026-08-31-doltlite-beta/"
+  ],
+  "socialCaption": "DoltHub has announced DoltLite, a SQLite fork with Git-style version control, in beta. Its other notable claim: roughly 2,000 agent-generated pull requests helped build it. The key question now is whether the versioning model and the agent-assisted process hold up under real-world evaluation.",
+  "media": {
+    "hero": "/media/doltlite-sqlite-git-style-version-control-beta/hero.webp",
+    "card": "/media/doltlite-sqlite-git-style-version-control-beta/card.webp",
+    "og": "/media/doltlite-sqlite-git-style-version-control-beta/og.webp",
+    "socialSquare": "/media/doltlite-sqlite-git-style-version-control-beta/social-square.webp",
+    "socialPortrait": "/media/doltlite-sqlite-git-style-version-control-beta/social-portrait.webp",
+    "alt": "Editorial image for DoltLite Brings Git-Style Version Control to a SQLite Fork",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.dolthub.com/blog/2026-08-31-doltlite-beta/",
+    "sourceImageUrl": "https://static.dolthub.com/blogimages/doltlite-beta-featured.webp/dc77fbf9064e690ef4a0ba87824f62640d2b2dea3d6e71cf3c751a8ed76fe6aa.webp",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/doltlite-sqlite-git-style-version-control-beta/inline-1.webp",
+        "alt": "Supporting image for DoltLite Brings Git-Style Version Control to a SQLite Fork",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

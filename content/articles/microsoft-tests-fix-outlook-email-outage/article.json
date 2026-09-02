@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "c9565d38-e4e2-451f-9b15-b9266820f70b",
+  "slug": "microsoft-tests-fix-outlook-email-outage",
+  "kicker": "Service Reliability",
+  "title": "Microsoft Tests Fix After Hours-Long Outlook Email Disruption",
+  "dek": "Microsoft says it is testing a remedy for widespread Outlook problems that caused email delays and delivery failures.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-08-31T18:57:58.657+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/31/microsoft-tests-fix-for-latest-hours-long-outlook-outage/"
+  ],
+  "socialCaption": "Microsoft is testing a fix for widespread Outlook issues that caused email delays and failures. For businesses, the outage is a reminder to plan backup communications for workflows that still depend on the inbox.",
+  "media": {
+    "hero": "/media/microsoft-tests-fix-outlook-email-outage/hero.webp",
+    "card": "/media/microsoft-tests-fix-outlook-email-outage/card.webp",
+    "og": "/media/microsoft-tests-fix-outlook-email-outage/og.webp",
+    "socialSquare": "/media/microsoft-tests-fix-outlook-email-outage/social-square.webp",
+    "socialPortrait": "/media/microsoft-tests-fix-outlook-email-outage/social-portrait.webp",
+    "alt": "Editorial image for Microsoft Tests Fix After Hours-Long Outlook Email Disruption",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/31/microsoft-tests-fix-for-latest-hours-long-outlook-outage/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2024/06/microsoft-outlook-app.jpg?resize=1200,800",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/microsoft-tests-fix-outlook-email-outage/inline-1.webp",
+        "alt": "Supporting image for Microsoft Tests Fix After Hours-Long Outlook Email Disruption",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

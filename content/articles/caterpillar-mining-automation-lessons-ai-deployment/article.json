@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "7b382144-3447-427e-a35c-495ba3c96943",
+  "slug": "caterpillar-mining-automation-lessons-ai-deployment",
+  "kicker": "Industrial Technology",
+  "title": "Caterpillar Applies Mining Automation Lessons to AI Deployment",
+  "dek": "After decades of operating autonomous equipment at remote mining sites, Caterpillar is bringing that deployment experience to artificial intelligence.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-08-31T19:58:33.074+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/30/caterpillar-is-bringing-to-ai-deployment-what-it-learned-from-automating-mining/"
+  ],
+  "socialCaption": "Caterpillar’s AI strategy draws on decades of operating autonomous equipment in remote mines. The business lesson: in industrial AI, deployment experience may matter as much as the technology itself.",
+  "media": {
+    "hero": "/media/caterpillar-mining-automation-lessons-ai-deployment/hero.webp",
+    "card": "/media/caterpillar-mining-automation-lessons-ai-deployment/card.webp",
+    "og": "/media/caterpillar-mining-automation-lessons-ai-deployment/og.webp",
+    "socialSquare": "/media/caterpillar-mining-automation-lessons-ai-deployment/social-square.webp",
+    "socialPortrait": "/media/caterpillar-mining-automation-lessons-ai-deployment/social-portrait.webp",
+    "alt": "Editorial image for Caterpillar Applies Mining Automation Lessons to AI Deployment",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/30/caterpillar-is-bringing-to-ai-deployment-what-it-learned-from-automating-mining/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2023/01/caterpillar-lidar-booth.jpg?resize=1200,800",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/caterpillar-mining-automation-lessons-ai-deployment/inline-1.webp",
+        "alt": "Supporting image for Caterpillar Applies Mining Automation Lessons to AI Deployment",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

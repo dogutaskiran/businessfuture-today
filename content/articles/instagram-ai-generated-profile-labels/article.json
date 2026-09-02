@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "ca0cd4aa-ae7e-4ee9-b019-f65246ff92f3",
+  "slug": "instagram-ai-generated-profile-labels",
+  "kicker": "Platform Policy",
+  "title": "Instagram Moves to Label AI Profiles That Pretend to Be Human",
+  "dek": "Instagram is renaming its AI creator label and says it will limit the reach of accounts that fail to disclose AI-generated personas.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-08-31T22:39:50.104+00:00",
+  "sources": [
+    "https://www.theverge.com/tech/986593/instagram-addresses-fake-ai-profile-slop"
+  ],
+  "socialCaption": "Instagram will label profiles featuring AI-generated people and says accounts that do not disclose may face limited distribution. For virtual-influencer operators, transparency is becoming a reach and brand-safety issue.",
+  "media": {
+    "hero": "/media/instagram-ai-generated-profile-labels/hero.webp",
+    "card": "/media/instagram-ai-generated-profile-labels/card.webp",
+    "og": "/media/instagram-ai-generated-profile-labels/og.webp",
+    "socialSquare": "/media/instagram-ai-generated-profile-labels/social-square.webp",
+    "socialPortrait": "/media/instagram-ai-generated-profile-labels/social-portrait.webp",
+    "alt": "Editorial image for Instagram Moves to Label AI Profiles That Pretend to Be Human",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.theverge.com/tech/986593/instagram-addresses-fake-ai-profile-slop",
+    "sourceImageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/vege-ai-influencer.png?quality=90&strip=all&crop=0%2C0%2C100%2C48.836288442078&w=1200",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/instagram-ai-generated-profile-labels/inline-1.webp",
+        "alt": "Supporting image for Instagram Moves to Label AI Profiles That Pretend to Be Human",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

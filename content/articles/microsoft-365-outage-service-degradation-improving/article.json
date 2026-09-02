@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "961e4c9b-3473-4e63-a8ae-3a27f45a9ced",
+  "slug": "microsoft-365-outage-service-degradation-improving",
+  "kicker": "Service Reliability",
+  "title": "Microsoft 365 disruption persists as service recovery progresses",
+  "dek": "Microsoft’s status page continued to show degradations affecting Microsoft 365 and Outlook on Tuesday, even as conditions improved.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-09-02T03:16:29.367+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/09/01/microsoft-365-outage-drags-on-but-things-are-improving/"
+  ],
+  "socialCaption": "Microsoft 365 and Outlook were still showing service degradation Tuesday, though Microsoft said conditions were improving. The key operational distinction: improvement is not full restoration. Teams should keep monitoring official status updates and validate critical workflows before closing the incident.",
+  "media": {
+    "hero": "/media/microsoft-365-outage-service-degradation-improving/hero.webp",
+    "card": "/media/microsoft-365-outage-service-degradation-improving/card.webp",
+    "og": "/media/microsoft-365-outage-service-degradation-improving/og.webp",
+    "socialSquare": "/media/microsoft-365-outage-service-degradation-improving/social-square.webp",
+    "socialPortrait": "/media/microsoft-365-outage-service-degradation-improving/social-portrait.webp",
+    "alt": "Editorial image for Microsoft 365 disruption persists as service recovery progresses",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/09/01/microsoft-365-outage-drags-on-but-things-are-improving/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2023/05/GettyImages-1185699748-e1697104507888.jpg",
+    "licenseStatus": "denied",
+    "licenseBasis": "TechCrunch terms restrict copying/republishing site materials without authorization",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/microsoft-365-outage-service-degradation-improving/inline-1.webp",
+        "alt": "Supporting image for Microsoft 365 disruption persists as service recovery progresses",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

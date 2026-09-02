@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "4479a5c1-ff4b-4447-9776-b6170c6f5bf9",
+  "slug": "nvidia-dlss-5-neural-rendering-explained",
+  "kicker": "Graphics Technology",
+  "title": "Nvidia’s DLSS 5 Reframes AI Graphics as a Developer-Controlled Rendering Tool",
+  "dek": "Ahead of its September 3 launch, Nvidia is emphasizing artistic control and frame fidelity after an early DLSS 5 demo drew backlash over AI-altered character imagery.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T21:05:14.024+00:00",
+  "sources": [
+    "https://www.theverge.com/games/986980/nvidias-dlss-5-explained"
+  ],
+  "socialCaption": "Nvidia is reintroducing DLSS 5 ahead of its September 3 launch with a new emphasis on developer control, artistic intent, and fidelity to the rendered frame. The key test: whether neural rendering can avoid the visible artifacts that sparked the initial backlash.",
+  "media": {
+    "hero": "/media/nvidia-dlss-5-neural-rendering-explained/hero.webp",
+    "card": "/media/nvidia-dlss-5-neural-rendering-explained/card.webp",
+    "og": "/media/nvidia-dlss-5-neural-rendering-explained/og.webp",
+    "socialSquare": "/media/nvidia-dlss-5-neural-rendering-explained/social-square.webp",
+    "socialPortrait": "/media/nvidia-dlss-5-neural-rendering-explained/social-portrait.webp",
+    "alt": "Editorial image for Nvidia’s DLSS 5 Reframes AI Graphics as a Developer-Controlled Rendering Tool",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.theverge.com/games/986980/nvidias-dlss-5-explained",
+    "sourceImageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/YakuzaKiwami-2026-08-30-23-59-22_16.jpg?strip=all",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/nvidia-dlss-5-neural-rendering-explained/inline-1.webp",
+        "alt": "Supporting image for Nvidia’s DLSS 5 Reframes AI Graphics as a Developer-Controlled Rendering Tool",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

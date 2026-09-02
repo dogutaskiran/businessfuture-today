@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "39dc9758-a8c9-4223-a978-b7e847b81148",
+  "slug": "darling-macos-software-linux-compatibility",
+  "kicker": "Compatibility",
+  "title": "Darling Keeps the Goal of Running macOS Software on Linux in View",
+  "dek": "The Darling project is working on a compatibility layer intended to let some macOS software run on Linux, a technically ambitious effort with practical limits for teams evaluating cross-platform workflows.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-09-01T00:12:43.148+00:00",
+  "sources": [
+    "https://www.darlinghq.org/"
+  ],
+  "socialCaption": "Darling is pursuing a Wine-like ambition for macOS software on Linux. The opportunity is real for targeted tools and workflows—but teams should validate compatibility application by application before treating it as production infrastructure.",
+  "media": {
+    "hero": "/media/darling-macos-software-linux-compatibility/hero.webp",
+    "card": "/media/darling-macos-software-linux-compatibility/card.webp",
+    "og": "/media/darling-macos-software-linux-compatibility/og.webp",
+    "socialSquare": "/media/darling-macos-software-linux-compatibility/social-square.webp",
+    "socialPortrait": "/media/darling-macos-software-linux-compatibility/social-portrait.webp",
+    "alt": "Editorial image for Darling Keeps the Goal of Running macOS Software on Linux in View",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.darlinghq.org/",
+    "sourceImageUrl": null,
+    "licenseStatus": "none",
+    "licenseBasis": "No source image discovered",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/darling-macos-software-linux-compatibility/inline-1.webp",
+        "alt": "Supporting image for Darling Keeps the Goal of Running macOS Software on Linux in View",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

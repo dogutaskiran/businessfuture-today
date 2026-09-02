@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "edc2af89-fc8b-445b-8202-96cafbd2ebbb",
+  "slug": "chatgpt-eu-dsa-very-large-online-search-engine",
+  "kicker": "EU regulation",
+  "title": "ChatGPT’s EU designation raises the compliance bar for general-purpose AI services",
+  "dek": "The European Commission has classified ChatGPT as a Very Large Online Search Engine under the Digital Services Act, bringing new obligations around systemic risk, minors and illegal content.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-08-31T17:55:39.487+00:00",
+  "sources": [
+    "https://www.theverge.com/ai-artificial-intelligence/986682/openai-chatgpt-eu-dsa"
+  ],
+  "socialCaption": "The EU has designated ChatGPT a Very Large Online Search Engine under the Digital Services Act. The move raises the bar on managing risks involving minors, mental health and illegal content—and offers a warning for other scaled consumer AI products.",
+  "media": {
+    "hero": "/media/chatgpt-eu-dsa-very-large-online-search-engine/hero.webp",
+    "card": "/media/chatgpt-eu-dsa-very-large-online-search-engine/card.webp",
+    "og": "/media/chatgpt-eu-dsa-very-large-online-search-engine/og.webp",
+    "socialSquare": "/media/chatgpt-eu-dsa-very-large-online-search-engine/social-square.webp",
+    "socialPortrait": "/media/chatgpt-eu-dsa-very-large-online-search-engine/social-portrait.webp",
+    "alt": "Editorial image for ChatGPT’s EU designation raises the compliance bar for general-purpose AI services",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.theverge.com/ai-artificial-intelligence/986682/openai-chatgpt-eu-dsa",
+    "sourceImageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/08/STK155_OPEN_AI_4_CVirginia_B.png?quality=90&strip=all&crop=0%2C10.742221417566%2C100%2C78.515557164868&w=1200",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/chatgpt-eu-dsa-very-large-online-search-engine/inline-1.webp",
+        "alt": "Supporting image for ChatGPT’s EU designation raises the compliance bar for general-purpose AI services",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

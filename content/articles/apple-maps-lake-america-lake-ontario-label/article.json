@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "6758568e-cf59-40f7-89a2-ea6ca8ad000d",
+  "slug": "apple-maps-lake-america-lake-ontario-label",
+  "kicker": "Digital Platforms",
+  "title": "Apple Maps Adopts ‘Lake America’ Label, Following Google",
+  "dek": "Apple has updated its map labels after a federal naming change, illustrating how geographic data platforms are adapting their products by market and jurisdiction.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-09-02T01:42:52.833+00:00",
+  "sources": [
+    "https://www.theverge.com/tech/987784/apple-maps-lake-america-renaming"
+  ],
+  "socialCaption": "Apple Maps has joined Google in using “Lake America” for Lake Ontario in the US after a federal naming update. The Canadian app retains “Lake Ontario,” while international versions show both—a reminder that map data is increasingly localized by jurisdiction.",
+  "media": {
+    "hero": "/media/apple-maps-lake-america-lake-ontario-label/hero.webp",
+    "card": "/media/apple-maps-lake-america-lake-ontario-label/card.webp",
+    "og": "/media/apple-maps-lake-america-lake-ontario-label/og.webp",
+    "socialSquare": "/media/apple-maps-lake-america-lake-ontario-label/social-square.webp",
+    "socialPortrait": "/media/apple-maps-lake-america-lake-ontario-label/social-portrait.webp",
+    "alt": "Editorial image for Apple Maps Adopts ‘Lake America’ Label, Following Google",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.theverge.com/tech/987784/apple-maps-lake-america-renaming",
+    "sourceImageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/beamultra1.jpg?strip=all",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/apple-maps-lake-america-lake-ontario-label/inline-1.webp",
+        "alt": "Supporting image for Apple Maps Adopts ‘Lake America’ Label, Following Google",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

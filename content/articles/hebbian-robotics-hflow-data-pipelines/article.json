@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "38d471a5-a7fa-4670-b123-e0b98f333208",
+  "slug": "hebbian-robotics-hflow-data-pipelines",
+  "kicker": "Robotics infrastructure",
+  "title": "Hebbian Robotics Targets the Data Pipeline Bottleneck in Robot Training",
+  "dek": "HFlow is an open-source SDK for turning synchronized robot recordings into standardized, quality-checked, reproducible datasets.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-08-31T16:23:06.072+00:00",
+  "sources": [
+    "https://github.com/Hebbian-Robotics/hflow"
+  ],
+  "socialCaption": "Hebbian Robotics has launched HFlow, an open-source SDK for quality-checking, transforming and tracking multimodal robotics recordings. The target is a growing bottleneck: turning raw robot data into reproducible training datasets.",
+  "media": {
+    "hero": "/media/hebbian-robotics-hflow-data-pipelines/hero.webp",
+    "card": "/media/hebbian-robotics-hflow-data-pipelines/card.webp",
+    "og": "/media/hebbian-robotics-hflow-data-pipelines/og.webp",
+    "socialSquare": "/media/hebbian-robotics-hflow-data-pipelines/social-square.webp",
+    "socialPortrait": "/media/hebbian-robotics-hflow-data-pipelines/social-portrait.webp",
+    "alt": "Editorial image for Hebbian Robotics Targets the Data Pipeline Bottleneck in Robot Training",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://github.com/Hebbian-Robotics/hflow",
+    "sourceImageUrl": "https://opengraph.githubassets.com/528091d3f558a99754b74d2c53a7d11528035dca0379ab91fd9da7bfdf621a25/Hebbian-Robotics/hflow",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/hebbian-robotics-hflow-data-pipelines/inline-1.webp",
+        "alt": "Supporting image for Hebbian Robotics Targets the Data Pipeline Bottleneck in Robot Training",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

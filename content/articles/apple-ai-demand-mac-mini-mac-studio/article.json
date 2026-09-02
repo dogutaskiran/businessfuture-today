@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "b850221f-e8b4-433f-a810-b2316c1b9669",
+  "slug": "apple-ai-demand-mac-mini-mac-studio",
+  "kicker": "Technology",
+  "title": "Reported AI Demand for Mac Mini and Mac Studio Puts Apple’s Desktop Supply Planning in Focus",
+  "dek": "A report highlighted unexpected demand for Apple’s compact desktops tied to AI use. The immediate issue is availability; the larger question is whether this is a durable business workload or a short-term buying wave.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T02:18:54.525+00:00",
+  "sources": [
+    "https://www.macrumors.com/2026/08/30/apple-unexpected-mac-mini-and-studio-demand/"
+  ],
+  "socialCaption": "A report says Apple was caught off guard by AI demand for the Mac mini and Mac Studio. For buyers, the near-term issue is supply planning; for Apple, it is whether this becomes a durable desktop workload segment.",
+  "media": {
+    "hero": "/media/apple-ai-demand-mac-mini-mac-studio/hero.webp",
+    "card": "/media/apple-ai-demand-mac-mini-mac-studio/card.webp",
+    "og": "/media/apple-ai-demand-mac-mini-mac-studio/og.webp",
+    "socialSquare": "/media/apple-ai-demand-mac-mini-mac-studio/social-square.webp",
+    "socialPortrait": "/media/apple-ai-demand-mac-mini-mac-studio/social-portrait.webp",
+    "alt": "Editorial image for Reported AI Demand for Mac Mini and Mac Studio Puts Apple’s Desktop Supply Planning in Focus",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://www.macrumors.com/2026/08/30/apple-unexpected-mac-mini-and-studio-demand/",
+    "sourceImageUrl": "https://images.macrumors.com/t/OsRlBLMFhQf-DlTIBvCnu2Opj54=/2500x/article-new/2026/04/Mac-mini-vs-Studio-Feature-Sans-Text-1.jpg",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/apple-ai-demand-mac-mini-mac-studio/inline-1.webp",
+        "alt": "Supporting image for Reported AI Demand for Mac Mini and Mac Studio Puts Apple’s Desktop Supply Planning in Focus",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

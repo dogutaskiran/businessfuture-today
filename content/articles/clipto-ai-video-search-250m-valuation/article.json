@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "e876d7ff-06f7-4f8b-9c87-9007ff8ee3e7",
+  "slug": "clipto-ai-video-search-250m-valuation",
+  "kicker": "MEDIA TECHNOLOGY",
+  "title": "Clipto’s $250M Valuation Puts a Price on Searchable Video Archives",
+  "dek": "The three-year-old startup says it has reached $15 million in ARR and profitability before raising a new $15 million round, signaling investor interest in AI tools that make large video libraries usable.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-08-31T17:25:13.12+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/31/three-year-old-ai-media-search-startup-clipto-hits-a-250m-valuation/"
+  ],
+  "socialCaption": "Clipto says it reached $15M in ARR and profitability before a new $15M round valued the AI video-search startup at $250M. The signal for builders: retrieval tools can unlock value in media archives that are too large to manage manually.",
+  "media": {
+    "hero": "/media/clipto-ai-video-search-250m-valuation/hero.webp",
+    "card": "/media/clipto-ai-video-search-250m-valuation/card.webp",
+    "og": "/media/clipto-ai-video-search-250m-valuation/og.webp",
+    "socialSquare": "/media/clipto-ai-video-search-250m-valuation/social-square.webp",
+    "socialPortrait": "/media/clipto-ai-video-search-250m-valuation/social-portrait.webp",
+    "alt": "Editorial image for Clipto’s $250M Valuation Puts a Price on Searchable Video Archives",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/31/three-year-old-ai-media-search-startup-clipto-hits-a-250m-valuation/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/05/ai-agents-GettyImages-2229880232.jpg?resize=1200,675",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/clipto-ai-video-search-250m-valuation/inline-1.webp",
+        "alt": "Supporting image for Clipto’s $250M Valuation Puts a Price on Searchable Video Archives",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

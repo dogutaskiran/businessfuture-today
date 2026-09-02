@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "36a02316-d8f0-4e59-973a-5ca06861895b",
+  "slug": "techcrunch-disrupt-2026-volunteer-call",
+  "kicker": "Event Operations",
+  "title": "TechCrunch Opens Volunteer Call for Disrupt 2026",
+  "dek": "The event organizer is seeking volunteers for TechCrunch Disrupt 2026, underscoring the operational work required to convene startups, investors and the broader technology ecosystem.",
+  "category": "Technology",
+  "readTime": "2 min",
+  "publishedAt": "2026-09-01T23:40:44.445+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/09/01/help-build-the-future-of-startups-volunteer-at-techcrunch-disrupt-2026/"
+  ],
+  "socialCaption": "TechCrunch is recruiting volunteers for Disrupt 2026. The announcement offers few logistics so far, but it highlights the behind-the-scenes operations needed to run a major startup gathering.",
+  "media": {
+    "hero": "/media/techcrunch-disrupt-2026-volunteer-call/hero.webp",
+    "card": "/media/techcrunch-disrupt-2026-volunteer-call/card.webp",
+    "og": "/media/techcrunch-disrupt-2026-volunteer-call/og.webp",
+    "socialSquare": "/media/techcrunch-disrupt-2026-volunteer-call/social-square.webp",
+    "socialPortrait": "/media/techcrunch-disrupt-2026-volunteer-call/social-portrait.webp",
+    "alt": "Editorial image for TechCrunch Opens Volunteer Call for Disrupt 2026",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/09/01/help-build-the-future-of-startups-volunteer-at-techcrunch-disrupt-2026/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/08/TechCrunch-Disrupt-2025-Day-3.jpg?resize=1200,800",
+    "licenseStatus": "denied",
+    "licenseBasis": "TechCrunch terms restrict copying/republishing site materials without authorization",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/techcrunch-disrupt-2026-volunteer-call/inline-1.webp",
+        "alt": "Supporting image for TechCrunch Opens Volunteer Call for Disrupt 2026",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

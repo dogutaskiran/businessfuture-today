@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "d765fa89-fee6-49cd-8035-5ea752203e09",
+  "slug": "google-agentic-video-understanding-gemini",
+  "kicker": "AI Models",
+  "title": "Google Adds Agentic Video Understanding Across Gemini Models",
+  "dek": "Google says its latest Gemini models can now use an agentic approach to video analysis, aimed at improving accuracy while reducing token consumption and cost.",
+  "category": "Companies",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T22:38:28.931+00:00",
+  "sources": [
+    "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-agentic-video-in-gemini/"
+  ],
+  "socialCaption": "Google is bringing agentic video understanding to its latest Gemini models, saying it can improve video-analysis accuracy while cutting token usage and cost. The business test will be whether those gains hold up on real, long-form video workflows.",
+  "media": {
+    "hero": "/media/google-agentic-video-understanding-gemini/hero.webp",
+    "card": "/media/google-agentic-video-understanding-gemini/card.webp",
+    "og": "/media/google-agentic-video-understanding-gemini/og.webp",
+    "socialSquare": "/media/google-agentic-video-understanding-gemini/social-square.webp",
+    "socialPortrait": "/media/google-agentic-video-understanding-gemini/social-portrait.webp",
+    "alt": "Editorial image for Google Adds Agentic Video Understanding Across Gemini Models",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-agentic-video-in-gemini/",
+    "sourceImageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/agentic-video___keyword__blog-header.width-1300.png",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no reusable rights profile/license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/google-agentic-video-understanding-gemini/inline-1.webp",
+        "alt": "Supporting image for Google Adds Agentic Video Understanding Across Gemini Models",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "150452e7-fa8e-4867-9a36-1da7cfcf83db",
+  "slug": "nvidia-mediatek-investment-ai-chip-infrastructure",
+  "kicker": "Technology",
+  "title": "Nvidia’s $3.5B MediaTek Investment Signals a Broader AI Infrastructure Strategy",
+  "dek": "Nvidia’s $3.5 billion investment in MediaTek points to a strategy aimed at preserving its role in AI infrastructure as major technology companies develop more chips in-house.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-08-31T19:58:21.285+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/31/nvidias-3-5b-mediatek-bet-reveals-its-plan-for-tackling-big-techs-ai-chip-buildout/"
+  ],
+  "socialCaption": "Nvidia’s $3.5B MediaTek investment is a signal that it is preparing for an AI chip market where its biggest customers build more silicon themselves. The next battle is over who controls the broader infrastructure stack.",
+  "media": {
+    "hero": "/media/nvidia-mediatek-investment-ai-chip-infrastructure/hero.webp",
+    "card": "/media/nvidia-mediatek-investment-ai-chip-infrastructure/card.webp",
+    "og": "/media/nvidia-mediatek-investment-ai-chip-infrastructure/og.webp",
+    "socialSquare": "/media/nvidia-mediatek-investment-ai-chip-infrastructure/social-square.webp",
+    "socialPortrait": "/media/nvidia-mediatek-investment-ai-chip-infrastructure/social-portrait.webp",
+    "alt": "Editorial image for Nvidia’s $3.5B MediaTek Investment Signals a Broader AI Infrastructure Strategy",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/31/nvidias-3-5b-mediatek-bet-reveals-its-plan-for-tackling-big-techs-ai-chip-buildout/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2025/03/GettyImages-2205761844.jpg?resize=1200,846",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/nvidia-mediatek-investment-ai-chip-infrastructure/inline-1.webp",
+        "alt": "Supporting image for Nvidia’s $3.5B MediaTek Investment Signals a Broader AI Infrastructure Strategy",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

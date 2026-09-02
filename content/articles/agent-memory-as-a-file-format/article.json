@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "64628924-cf13-4c68-a676-92b90a5e8322",
+  "slug": "agent-memory-as-a-file-format",
+  "kicker": "Technology",
+  "title": "Agent Memory as a File Format Raises a Practical Question for AI Builders",
+  "dek": "A widely discussed Hacker News link points to a deceptively operational idea: treating an agent’s memory as a portable file rather than an opaque byproduct of a model session.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T01:46:56.877+00:00",
+  "sources": [
+    "https://calpaterson.com/memoryfields.html"
+  ],
+  "socialCaption": "Agent memory is increasingly an operational design problem. A Hacker News discussion around “Agent Memory as a File Format” puts the focus on portability, inspection, governance, and lifecycle control—not just longer context.",
+  "media": {
+    "hero": "/media/agent-memory-as-a-file-format/hero.webp",
+    "card": "/media/agent-memory-as-a-file-format/card.webp",
+    "og": "/media/agent-memory-as-a-file-format/og.webp",
+    "socialSquare": "/media/agent-memory-as-a-file-format/social-square.webp",
+    "socialPortrait": "/media/agent-memory-as-a-file-format/social-portrait.webp",
+    "alt": "Editorial image for Agent Memory as a File Format Raises a Practical Question for AI Builders",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://calpaterson.com/memoryfields.html",
+    "sourceImageUrl": "https://calpaterson.com/images/photo/kungfu.jpeg",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/agent-memory-as-a-file-format/inline-1.webp",
+        "alt": "Supporting image for Agent Memory as a File Format Raises a Practical Question for AI Builders",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

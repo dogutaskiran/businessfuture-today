@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "1c296204-08bd-4c93-9cb2-0a31f7e0de9a",
+  "slug": "apple-former-employee-data-theft-openai-evidence",
+  "kicker": "Corporate Data Security",
+  "title": "Apple Says Former Employee Destroyed Evidence in Data-Theft Case Tied to OpenAI",
+  "dek": "Apple alleges a former employee destroyed evidence after learning of an investigation into the alleged theft of company data for OpenAI.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-01T00:44:38.399+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/08/31/apple-shares-shocking-evidence-against-former-employee-accused-of-stealing-company-data-for-openai/"
+  ],
+  "socialCaption": "Apple says a former employee destroyed evidence after learning of an investigation into alleged theft of company data for OpenAI. The case is a reminder that AI-era talent competition puts offboarding, access logging and evidence preservation under greater scrutiny.",
+  "media": {
+    "hero": "/media/apple-former-employee-data-theft-openai-evidence/hero.webp",
+    "card": "/media/apple-former-employee-data-theft-openai-evidence/card.webp",
+    "og": "/media/apple-former-employee-data-theft-openai-evidence/og.webp",
+    "socialSquare": "/media/apple-former-employee-data-theft-openai-evidence/social-square.webp",
+    "socialPortrait": "/media/apple-former-employee-data-theft-openai-evidence/social-portrait.webp",
+    "alt": "Editorial image for Apple Says Former Employee Destroyed Evidence in Data-Theft Case Tied to OpenAI",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/08/31/apple-shares-shocking-evidence-against-former-employee-accused-of-stealing-company-data-for-openai/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/04/GettyImages-2255009714.jpg?resize=1200,800",
+    "licenseStatus": "unknown",
+    "licenseBasis": "Publisher image discovered, but no machine-readable reusable license was found",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/apple-former-employee-data-theft-openai-evidence/inline-1.webp",
+        "alt": "Supporting image for Apple Says Former Employee Destroyed Evidence in Data-Theft Case Tied to OpenAI",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}

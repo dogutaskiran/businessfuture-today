@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "publication": "business-future-today",
+  "id": "555f7554-88bf-4e57-a815-4998e749c3bc",
+  "slug": "google-pics-prompt-first-design-canva-adobe",
+  "kicker": "Creative Software",
+  "title": "Google Pics Takes Aim at Canva With Prompt-First Design",
+  "dek": "Google is moving deeper into creative software with Google Pics, an AI-first product positioned around prompting rather than conventional design workflows.",
+  "category": "Technology",
+  "readTime": "3 min",
+  "publishedAt": "2026-09-02T00:11:16.525+00:00",
+  "sources": [
+    "https://techcrunch.com/2026/09/01/googles-answer-to-canva-is-an-ai-tool-where-you-prompt-instead-of-design/"
+  ],
+  "socialCaption": "Google is taking on Canva and Adobe with Google Pics, an AI-first creative tool built around prompts instead of conventional design workflows. The business question is whether faster creation can still deliver the control and brand consistency teams need.",
+  "media": {
+    "hero": "/media/google-pics-prompt-first-design-canva-adobe/hero.webp",
+    "card": "/media/google-pics-prompt-first-design-canva-adobe/card.webp",
+    "og": "/media/google-pics-prompt-first-design-canva-adobe/og.webp",
+    "socialSquare": "/media/google-pics-prompt-first-design-canva-adobe/social-square.webp",
+    "socialPortrait": "/media/google-pics-prompt-first-design-canva-adobe/social-portrait.webp",
+    "alt": "Editorial image for Google Pics Takes Aim at Canva With Prompt-First Design",
+    "credit": "Illustration: Business Future Today",
+    "sourcePageUrl": "https://techcrunch.com/2026/09/01/googles-answer-to-canva-is-an-ai-tool-where-you-prompt-instead-of-design/",
+    "sourceImageUrl": "https://techcrunch.com/wp-content/uploads/2026/09/google-pics.webp?resize=1200,675",
+    "licenseStatus": "denied",
+    "licenseBasis": "TechCrunch terms restrict copying/republishing site materials without authorization",
+    "inline": [
+      {
+        "role": "inline_1",
+        "src": "/media/google-pics-prompt-first-design-canva-adobe/inline-1.webp",
+        "alt": "Supporting image for Google Pics Takes Aim at Canva With Prompt-First Design",
+        "credit": "Illustration: Business Future Today"
+      }
+    ]
+  }
+}
