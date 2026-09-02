@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PublicationArticle } from "@/components/publication/article";
 import { stories } from "@/lib/content";
+import { absoluteMediaUrl } from "@/lib/media-url";
 import { resolveTemplate } from "@/lib/publication";
 
 type Props={params:Promise<{slug:string}>;searchParams:Promise<{template?:string|string[]}>};
@@ -11,7 +12,7 @@ export async function generateMetadata({params}:Props):Promise<Metadata>{
   const story=stories.find((item)=>item.slug===slug);
   if(!story)return{};
   const canonical=`https://businessfuture.today/story/${story.slug}`;
-  const image=story.ogImage?`https://businessfuture.today${story.ogImage}`:undefined;
+  const image=absoluteMediaUrl(story.ogImage)||undefined;
   return{
     title:story.title,
     description:story.dek,
