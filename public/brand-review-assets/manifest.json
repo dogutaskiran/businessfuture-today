@@ -15,72 +15,72 @@
     "activeConcept": null,
     "concepts": [
       {
-        "id": "signal",
-        "name": "Signal",
-        "description": "Editorial wordmark with a forward signal mark. Strongest fit for a modern business publication."
+        "id": "masthead",
+        "name": "Masthead",
+        "description": "A pure editorial identity: high-contrast publication typography, no tech symbol. Designed to feel like a real business title first."
       },
       {
-        "id": "ticker",
-        "name": "Ticker",
-        "description": "Compact newsroom identity built around a bold BFT monogram and TODAY tag."
+        "id": "index",
+        "name": "Index",
+        "description": "A sharper contemporary newsroom wordmark with a small editorial index device instead of a standalone pictogram."
       },
       {
-        "id": "frame",
-        "name": "Frame",
-        "description": "More institutional identity using a framed mark and a calmer wordmark."
+        "id": "edition",
+        "name": "Edition",
+        "description": "A quieter premium publication direction: serif authority, disciplined spacing and a minimal BFT edition stamp for small surfaces."
       }
     ]
   },
   "concepts": [
     {
-      "id": "signal",
-      "name": "Signal",
-      "description": "Editorial wordmark with a forward signal mark. Strongest fit for a modern business publication.",
+      "id": "masthead",
+      "name": "Masthead",
+      "description": "A pure editorial identity: high-contrast publication typography, no tech symbol. Designed to feel like a real business title first.",
       "assets": {
-        "wordmark": "/brand-review-assets/signal/wordmark.svg",
-        "mark": "/brand-review-assets/signal/mark.svg",
-        "avatar": "/brand-review-assets/signal/avatar-1080.webp",
-        "icon": "/brand-review-assets/signal/icon-512.webp",
-        "favicon": "/brand-review-assets/signal/favicon-64.webp",
-        "og": "/brand-review-assets/signal/og-1200x630.webp",
-        "facebook": "/brand-review-assets/signal/facebook-1640x624.webp",
-        "linkedin": "/brand-review-assets/signal/linkedin-1128x191.webp",
-        "youtube": "/brand-review-assets/signal/youtube-2560x1440.webp",
-        "newsletter": "/brand-review-assets/signal/newsletter-1200x400.webp"
+        "wordmark": "/brand-review-assets/masthead/wordmark.svg",
+        "mark": "/brand-review-assets/masthead/mark.svg",
+        "avatar": "/brand-review-assets/masthead/avatar-1080.webp",
+        "icon": "/brand-review-assets/masthead/icon-512.webp",
+        "favicon": "/brand-review-assets/masthead/favicon-64.webp",
+        "og": "/brand-review-assets/masthead/og-1200x630.webp",
+        "facebook": "/brand-review-assets/masthead/facebook-1640x624.webp",
+        "linkedin": "/brand-review-assets/masthead/linkedin-1128x191.webp",
+        "youtube": "/brand-review-assets/masthead/youtube-2560x1440.webp",
+        "newsletter": "/brand-review-assets/masthead/newsletter-1200x400.webp"
       }
     },
     {
-      "id": "ticker",
-      "name": "Ticker",
-      "description": "Compact newsroom identity built around a bold BFT monogram and TODAY tag.",
+      "id": "index",
+      "name": "Index",
+      "description": "A sharper contemporary newsroom wordmark with a small editorial index device instead of a standalone pictogram.",
       "assets": {
-        "wordmark": "/brand-review-assets/ticker/wordmark.svg",
-        "mark": "/brand-review-assets/ticker/mark.svg",
-        "avatar": "/brand-review-assets/ticker/avatar-1080.webp",
-        "icon": "/brand-review-assets/ticker/icon-512.webp",
-        "favicon": "/brand-review-assets/ticker/favicon-64.webp",
-        "og": "/brand-review-assets/ticker/og-1200x630.webp",
-        "facebook": "/brand-review-assets/ticker/facebook-1640x624.webp",
-        "linkedin": "/brand-review-assets/ticker/linkedin-1128x191.webp",
-        "youtube": "/brand-review-assets/ticker/youtube-2560x1440.webp",
-        "newsletter": "/brand-review-assets/ticker/newsletter-1200x400.webp"
+        "wordmark": "/brand-review-assets/index/wordmark.svg",
+        "mark": "/brand-review-assets/index/mark.svg",
+        "avatar": "/brand-review-assets/index/avatar-1080.webp",
+        "icon": "/brand-review-assets/index/icon-512.webp",
+        "favicon": "/brand-review-assets/index/favicon-64.webp",
+        "og": "/brand-review-assets/index/og-1200x630.webp",
+        "facebook": "/brand-review-assets/index/facebook-1640x624.webp",
+        "linkedin": "/brand-review-assets/index/linkedin-1128x191.webp",
+        "youtube": "/brand-review-assets/index/youtube-2560x1440.webp",
+        "newsletter": "/brand-review-assets/index/newsletter-1200x400.webp"
       }
     },
     {
-      "id": "frame",
-      "name": "Frame",
-      "description": "More institutional identity using a framed mark and a calmer wordmark.",
+      "id": "edition",
+      "name": "Edition",
+      "description": "A quieter premium publication direction: serif authority, disciplined spacing and a minimal BFT edition stamp for small surfaces.",
       "assets": {
-        "wordmark": "/brand-review-assets/frame/wordmark.svg",
-        "mark": "/brand-review-assets/frame/mark.svg",
-        "avatar": "/brand-review-assets/frame/avatar-1080.webp",
-        "icon": "/brand-review-assets/frame/icon-512.webp",
-        "favicon": "/brand-review-assets/frame/favicon-64.webp",
-        "og": "/brand-review-assets/frame/og-1200x630.webp",
-        "facebook": "/brand-review-assets/frame/facebook-1640x624.webp",
-        "linkedin": "/brand-review-assets/frame/linkedin-1128x191.webp",
-        "youtube": "/brand-review-assets/frame/youtube-2560x1440.webp",
-        "newsletter": "/brand-review-assets/frame/newsletter-1200x400.webp"
+        "wordmark": "/brand-review-assets/edition/wordmark.svg",
+        "mark": "/brand-review-assets/edition/mark.svg",
+        "avatar": "/brand-review-assets/edition/avatar-1080.webp",
+        "icon": "/brand-review-assets/edition/icon-512.webp",
+        "favicon": "/brand-review-assets/edition/favicon-64.webp",
+        "og": "/brand-review-assets/edition/og-1200x630.webp",
+        "facebook": "/brand-review-assets/edition/facebook-1640x624.webp",
+        "linkedin": "/brand-review-assets/edition/linkedin-1128x191.webp",
+        "youtube": "/brand-review-assets/edition/youtube-2560x1440.webp",
+        "newsletter": "/brand-review-assets/edition/newsletter-1200x400.webp"
       }
     }
   ]

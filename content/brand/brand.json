@@ -13,8 +13,20 @@
   },
   "activeConcept": null,
   "concepts": [
-    {"id":"signal","name":"Signal","description":"Editorial wordmark with a forward signal mark. Strongest fit for a modern business publication."},
-    {"id":"ticker","name":"Ticker","description":"Compact newsroom identity built around a bold BFT monogram and TODAY tag."},
-    {"id":"frame","name":"Frame","description":"More institutional identity using a framed mark and a calmer wordmark."}
+    {
+      "id": "masthead",
+      "name": "Masthead",
+      "description": "A pure editorial identity: high-contrast publication typography, no tech symbol. Designed to feel like a real business title first."
+    },
+    {
+      "id": "index",
+      "name": "Index",
+      "description": "A sharper contemporary newsroom wordmark with a small editorial index device instead of a standalone pictogram."
+    },
+    {
+      "id": "edition",
+      "name": "Edition",
+      "description": "A quieter premium publication direction: serif authority, disciplined spacing and a minimal BFT edition stamp for small surfaces."
+    }
   ]
 }
