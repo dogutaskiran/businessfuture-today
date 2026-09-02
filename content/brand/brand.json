@@ -1,9 +1,15 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "name": "Business Future Today",
   "shortName": "BFT",
   "tagline": "Business, technology and what matters next.",
   "domain": "businessfuture.today",
+  "activeConcept": "edition",
+  "concept": {
+    "id": "edition",
+    "name": "Edition",
+    "description": "A premium editorial identity: serif authority for the publication name, disciplined sans-serif support typography, and a framed BFT compact mark."
+  },
   "colors": {
     "ink": "#111827",
     "paper": "#F6F3EB",
@@ -11,22 +17,10 @@
     "muted": "#677386",
     "white": "#FFFFFF"
   },
-  "activeConcept": null,
-  "concepts": [
-    {
-      "id": "masthead",
-      "name": "Masthead",
-      "description": "A pure editorial identity: high-contrast publication typography, no tech symbol. Designed to feel like a real business title first."
-    },
-    {
-      "id": "index",
-      "name": "Index",
-      "description": "A sharper contemporary newsroom wordmark with a small editorial index device instead of a standalone pictogram."
-    },
-    {
-      "id": "edition",
-      "name": "Edition",
-      "description": "A quieter premium publication direction: serif authority, disciplined spacing and a minimal BFT edition stamp for small surfaces."
-    }
-  ]
+  "rules": {
+    "compactMark": "Framed BFT only. No TODAY line inside compact marks.",
+    "wordmark": "Business Future in serif, TODAY in spaced sans-serif, restrained accent rule.",
+    "minimumClearspace": "Keep at least one BFT cap-height around the mark or wordmark.",
+    "doNot": ["Do not stretch or condense the mark.", "Do not add shadows or gradients to the logo.", "Do not replace the approved brand colors inside the mark."]
+  }
 }

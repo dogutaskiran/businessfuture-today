@@ -1,10 +1,16 @@
 {
   "brand": {
-    "schemaVersion": 1,
+    "schemaVersion": 2,
     "name": "Business Future Today",
     "shortName": "BFT",
     "tagline": "Business, technology and what matters next.",
     "domain": "businessfuture.today",
+    "activeConcept": "edition",
+    "concept": {
+      "id": "edition",
+      "name": "Edition",
+      "description": "A premium editorial identity: serif authority for the publication name, disciplined sans-serif support typography, and a framed BFT compact mark."
+    },
     "colors": {
       "ink": "#111827",
       "paper": "#F6F3EB",
@@ -12,76 +18,244 @@
       "muted": "#677386",
       "white": "#FFFFFF"
     },
-    "activeConcept": null,
-    "concepts": [
-      {
-        "id": "masthead",
-        "name": "Masthead",
-        "description": "A pure editorial identity: high-contrast publication typography, no tech symbol. Designed to feel like a real business title first."
-      },
-      {
-        "id": "index",
-        "name": "Index",
-        "description": "A sharper contemporary newsroom wordmark with a small editorial index device instead of a standalone pictogram."
-      },
-      {
-        "id": "edition",
-        "name": "Edition",
-        "description": "A quieter premium publication direction: serif authority, disciplined spacing and a minimal BFT edition stamp for small surfaces."
-      }
-    ]
+    "rules": {
+      "compactMark": "Framed BFT only. No TODAY line inside compact marks.",
+      "wordmark": "Business Future in serif, TODAY in spaced sans-serif, restrained accent rule.",
+      "minimumClearspace": "Keep at least one BFT cap-height around the mark or wordmark.",
+      "doNot": [
+        "Do not stretch or condense the mark.",
+        "Do not add shadows or gradients to the logo.",
+        "Do not replace the approved brand colors inside the mark."
+      ]
+    }
   },
-  "concepts": [
+  "assetCount": 30,
+  "sections": [
     {
-      "id": "masthead",
-      "name": "Masthead",
-      "description": "A pure editorial identity: high-contrast publication typography, no tech symbol. Designed to feel like a real business title first.",
-      "assets": {
-        "wordmark": "/brand-review-assets/masthead/wordmark.svg",
-        "mark": "/brand-review-assets/masthead/mark.svg",
-        "avatar": "/brand-review-assets/masthead/avatar-1080.webp",
-        "icon": "/brand-review-assets/masthead/icon-512.webp",
-        "favicon": "/brand-review-assets/masthead/favicon-64.webp",
-        "og": "/brand-review-assets/masthead/og-1200x630.webp",
-        "facebook": "/brand-review-assets/masthead/facebook-1640x624.webp",
-        "linkedin": "/brand-review-assets/masthead/linkedin-1128x191.webp",
-        "youtube": "/brand-review-assets/masthead/youtube-2560x1440.webp",
-        "newsletter": "/brand-review-assets/masthead/newsletter-1200x400.webp"
-      }
+      "id": "master",
+      "title": "Master identity",
+      "description": "Source-of-truth vector marks and presentation variants.",
+      "assets": [
+        {
+          "name": "Wordmark · dark",
+          "meta": "SVG · transparent",
+          "src": "/brand-review-assets/wordmark-dark.svg",
+          "kind": "wide"
+        },
+        {
+          "name": "Wordmark · light",
+          "meta": "SVG · transparent",
+          "src": "/brand-review-assets/wordmark-light.svg",
+          "kind": "wide",
+          "dark": true
+        },
+        {
+          "name": "Compact BFT · dark",
+          "meta": "SVG · transparent",
+          "src": "/brand-review-assets/mark-dark.svg",
+          "kind": "square"
+        },
+        {
+          "name": "Compact BFT · light",
+          "meta": "SVG · transparent",
+          "src": "/brand-review-assets/mark-light.svg",
+          "kind": "square",
+          "dark": true
+        }
+      ]
     },
     {
-      "id": "index",
-      "name": "Index",
-      "description": "A sharper contemporary newsroom wordmark with a small editorial index device instead of a standalone pictogram.",
-      "assets": {
-        "wordmark": "/brand-review-assets/index/wordmark.svg",
-        "mark": "/brand-review-assets/index/mark.svg",
-        "avatar": "/brand-review-assets/index/avatar-1080.webp",
-        "icon": "/brand-review-assets/index/icon-512.webp",
-        "favicon": "/brand-review-assets/index/favicon-64.webp",
-        "og": "/brand-review-assets/index/og-1200x630.webp",
-        "facebook": "/brand-review-assets/index/facebook-1640x624.webp",
-        "linkedin": "/brand-review-assets/index/linkedin-1128x191.webp",
-        "youtube": "/brand-review-assets/index/youtube-2560x1440.webp",
-        "newsletter": "/brand-review-assets/index/newsletter-1200x400.webp"
-      }
+      "id": "icons",
+      "title": "Browser & app icons",
+      "description": "Compact framed BFT mark at practical browser, PWA and app sizes.",
+      "assets": [
+        {
+          "name": "favicon 16",
+          "meta": "16×16 · PNG",
+          "src": "/brand-review-assets/favicon-16.png",
+          "kind": "square"
+        },
+        {
+          "name": "favicon 32",
+          "meta": "32×32 · PNG",
+          "src": "/brand-review-assets/favicon-32.png",
+          "kind": "square"
+        },
+        {
+          "name": "favicon 48",
+          "meta": "48×48 · PNG",
+          "src": "/brand-review-assets/favicon-48.png",
+          "kind": "square"
+        },
+        {
+          "name": "favicon 64",
+          "meta": "64×64 · PNG",
+          "src": "/brand-review-assets/favicon-64.png",
+          "kind": "square"
+        },
+        {
+          "name": "apple touch icon",
+          "meta": "180×180 · PNG",
+          "src": "/brand-review-assets/apple-touch-icon.png",
+          "kind": "square"
+        },
+        {
+          "name": "pwa 192",
+          "meta": "192×192 · PNG",
+          "src": "/brand-review-assets/pwa-192.png",
+          "kind": "square"
+        },
+        {
+          "name": "pwa 512",
+          "meta": "512×512 · PNG",
+          "src": "/brand-review-assets/pwa-512.png",
+          "kind": "square"
+        },
+        {
+          "name": "app icon 1024",
+          "meta": "1024×1024 · PNG",
+          "src": "/brand-review-assets/app-icon-1024.png",
+          "kind": "square"
+        }
+      ]
     },
     {
-      "id": "edition",
-      "name": "Edition",
-      "description": "A quieter premium publication direction: serif authority, disciplined spacing and a minimal BFT edition stamp for small surfaces.",
-      "assets": {
-        "wordmark": "/brand-review-assets/edition/wordmark.svg",
-        "mark": "/brand-review-assets/edition/mark.svg",
-        "avatar": "/brand-review-assets/edition/avatar-1080.webp",
-        "icon": "/brand-review-assets/edition/icon-512.webp",
-        "favicon": "/brand-review-assets/edition/favicon-64.webp",
-        "og": "/brand-review-assets/edition/og-1200x630.webp",
-        "facebook": "/brand-review-assets/edition/facebook-1640x624.webp",
-        "linkedin": "/brand-review-assets/edition/linkedin-1128x191.webp",
-        "youtube": "/brand-review-assets/edition/youtube-2560x1440.webp",
-        "newsletter": "/brand-review-assets/edition/newsletter-1200x400.webp"
-      }
+      "id": "profiles",
+      "title": "Profile identities",
+      "description": "Platform-ready square profile assets using the compact mark.",
+      "assets": [
+        {
+          "name": "instagram profile",
+          "meta": "1080×1080 · WebP",
+          "src": "/brand-review-assets/instagram-profile-1080.webp",
+          "kind": "square"
+        },
+        {
+          "name": "facebook profile",
+          "meta": "1080×1080 · WebP",
+          "src": "/brand-review-assets/facebook-profile-1080.webp",
+          "kind": "square"
+        },
+        {
+          "name": "threads profile",
+          "meta": "1080×1080 · WebP",
+          "src": "/brand-review-assets/threads-profile-1080.webp",
+          "kind": "square"
+        },
+        {
+          "name": "linkedin company logo",
+          "meta": "400×400 · WebP",
+          "src": "/brand-review-assets/linkedin-company-logo-400.webp",
+          "kind": "square"
+        },
+        {
+          "name": "youtube profile",
+          "meta": "800×800 · WebP",
+          "src": "/brand-review-assets/youtube-profile-800.webp",
+          "kind": "square"
+        },
+        {
+          "name": "email sender avatar",
+          "meta": "512×512 · WebP",
+          "src": "/brand-review-assets/email-sender-avatar-512.webp",
+          "kind": "square"
+        }
+      ]
+    },
+    {
+      "id": "covers",
+      "title": "Channel covers",
+      "description": "Primary social channel cover/banner assets.",
+      "assets": [
+        {
+          "name": "facebook cover",
+          "meta": "1640×624 · WebP",
+          "src": "/brand-review-assets/facebook-cover-1640x624.webp",
+          "kind": "wide"
+        },
+        {
+          "name": "linkedin cover",
+          "meta": "1128×191 · WebP",
+          "src": "/brand-review-assets/linkedin-cover-1128x191.webp",
+          "kind": "wide"
+        },
+        {
+          "name": "youtube banner",
+          "meta": "2560×1440 · WebP",
+          "src": "/brand-review-assets/youtube-banner-2560x1440.webp",
+          "kind": "wide"
+        },
+        {
+          "name": "x cover",
+          "meta": "1500×500 · WebP",
+          "src": "/brand-review-assets/x-cover-1500x500.webp",
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "id": "editorial",
+      "title": "Editorial & distribution",
+      "description": "Publication identity assets used around stories, newsletters and link sharing.",
+      "assets": [
+        {
+          "name": "default OG / link preview",
+          "meta": "1200×630 · WebP",
+          "src": "/brand-review-assets/og-default-1200x630.webp",
+          "kind": "wide"
+        },
+        {
+          "name": "newsletter header",
+          "meta": "1200×400 · WebP",
+          "src": "/brand-review-assets/newsletter-header-1200x400.webp",
+          "kind": "wide"
+        },
+        {
+          "name": "site header wordmark",
+          "meta": "600×130 · transparent PNG",
+          "src": "/brand-review-assets/site-header-wordmark-600x130.png",
+          "kind": "wide"
+        },
+        {
+          "name": "footer inverse wordmark",
+          "meta": "600×130 · transparent PNG",
+          "src": "/brand-review-assets/site-footer-wordmark-600x130.png",
+          "kind": "wide",
+          "dark": true
+        }
+      ]
+    },
+    {
+      "id": "social-system",
+      "title": "Social template identity",
+      "description": "Reusable identity strips and bugs for feed, carousel and story renderers.",
+      "assets": [
+        {
+          "name": "feed / carousel masthead",
+          "meta": "1080×132 · WebP",
+          "src": "/brand-review-assets/social-masthead-1080x132.webp",
+          "kind": "wide"
+        },
+        {
+          "name": "story masthead",
+          "meta": "1080×180 · WebP",
+          "src": "/brand-review-assets/story-masthead-1080x180.webp",
+          "kind": "wide"
+        },
+        {
+          "name": "light watermark bug",
+          "meta": "240×240 · transparent PNG",
+          "src": "/brand-review-assets/social-bug-light-240.png",
+          "kind": "square",
+          "dark": true
+        },
+        {
+          "name": "dark watermark bug",
+          "meta": "240×240 · transparent PNG",
+          "src": "/brand-review-assets/social-bug-dark-240.png",
+          "kind": "square"
+        }
+      ]
     }
   ]
 }
