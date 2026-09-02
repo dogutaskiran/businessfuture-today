@@ -9,7 +9,15 @@
   "content": {
     "rss": "https://businessfuture.today/feed.xml",
     "canonicalStoryPattern": "https://businessfuture.today/story/{slug}",
-    "sourcePolicy": "source-first-with-rights-check",
+    "sourcePolicy": "source-first-unless-explicitly-prohibited",
+    "sourceMediaPolicy": {
+      "requireExplicitPermissiveLicense": false,
+      "blockOnExplicitRestriction": true,
+      "preserveSourceAttribution": true,
+      "preserveOriginalSourceUrl": true,
+      "preferOriginalSourceMedia": true,
+      "generatedMediaFallback": "only-when-source-media-is-unavailable-unsuitable-or-explicitly-restricted"
+    },
     "generatedMediaFallback": "gpt-image-2-high",
     "editorialVoicesArePersonas": true
   },
