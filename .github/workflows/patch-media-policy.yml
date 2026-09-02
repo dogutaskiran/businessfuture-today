@@ -1,0 +1,54 @@
+name: Patch BFT source media policy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Patch source media resolver
+        shell: python
+        run: |
+          from pathlib import Path
+
+          p = Path("lib/automation/media.ts")
+          s = p.read_text()
+
+          old = '''    const policyReusable=!!policy&&allowedRole(policy,role)&&(rightsMode==="owned"||rightsMode==="licensed"||rightsMode==="editorial"||(rightsMode==="public_license"&&publicReusable));
+    const reusable=!!imageUrl&&(publicReusable||policyReusable);'''
+          new = '''    const policyReusable=!!policy&&allowedRole(policy,role)&&(rightsMode==="owned"||rightsMode==="licensed"||rightsMode==="editorial"||(rightsMode==="public_license"&&publicReusable));
+    const explicitlyRestricted=rightsMode==="deny"||(!!policy&&rightsMode==="public_license"&&!publicReusable)||(!!policy&&rightsMode!=="review"&&!allowedRole(policy,role));
+    const editorialDefault=!policy||rightsMode==="review";
+    const reusable=!!imageUrl&&!explicitlyRestricted&&(publicReusable||policyReusable||editorialDefault);'''
+          if old not in s:
+              raise SystemExit("Expected reusable-policy block not found")
+          s = s.replace(old, new, 1)
+
+          old2 = '''reusable?(rightsMode==="owned"?"owned":rightsMode==="licensed"?"licensed":rightsMode==="editorial"?"editorial":"reusable")'''
+          new2 = '''reusable?(rightsMode==="owned"?"owned":rightsMode==="licensed"?"licensed":rightsMode==="editorial"?"editorial":"editorial")'''
+          if old2 not in s:
+              raise SystemExit("Expected license-status block not found")
+          s = s.replace(old2, new2, 1)
+
+          old3 = '''reusable?(policy?.license_basis||`Reusable license: ${licenseUrl||rightsMode}`):imageUrl?"Publisher image discovered, but no reusable rights profile/license was found"'''
+          new3 = '''reusable?(policy?.license_basis||(publicReusable&&licenseUrl?`Reusable license: ${licenseUrl}`:"Editorial source-first default; no explicit reuse restriction recorded")):imageUrl?"Publisher image blocked by an explicit source policy or required-license rule"'''
+          if old3 not in s:
+              raise SystemExit("Expected license-basis block not found")
+          s = s.replace(old3, new3, 1)
+
+          p.write_text(s)
+      - name: Commit patch
+        run: |
+          git config user.name "Dogu Taskiran"
+          git config user.email "10977151+dogutaskiran@users.noreply.github.com"
+          git add lib/automation/media.ts
+          git diff --cached --quiet && exit 0
+          git commit -m "Use source media unless explicitly restricted"
+          git push origin HEAD:main
