@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "platform": "instagram",
+  "caption": "Unacademy is being sold to rival upGrad for $206 million — roughly 94% below its peak valuation. The deal is a sharp reminder that private-market marks are not exit prices. The next question is whether consolidation can create operating value beyond the transaction itself.",
+  "hashtags": ["BusinessFutureToday", "EdTech", "Startups", "VentureCapital"],
+  "carousel": {
+    "ratio": "4:5",
+    "slides": [
+      {
+        "type": "cover",
+        "label": "EDTECH",
+        "headline": "Unacademy Sells to upGrad for $206M — About 94% Below Its Peak Valuation",
+        "imageRole": "hero"
+      },
+      {
+        "type": "explainer",
+        "label": "THE RESET",
+        "headline": "A peak private valuation and an exit price are two very different things.",
+        "body": "Unacademy’s sale makes the gap explicit: a company can raise at a headline valuation that later bears little resemblance to what a buyer will actually pay."
+      },
+      {
+        "type": "feature",
+        "label": "THE NUMBER",
+        "headline": "$206M sale price. Roughly 94% below the peak.",
+        "body": "That does not just reprice the company. It resets expectations for investors, employees and founders who once anchored on the private-market mark.",
+        "imageRole": "inline_1"
+      },
+      {
+        "type": "impact",
+        "label": "WHY IT MATTERS",
+        "headline": "Fundraising valuations are expectations. Exits are realized prices.",
+        "body": "When market conditions change, companies may have to choose among down rounds, cost cuts, remaining independent or selling at a much lower value."
+      },
+      {
+        "type": "context",
+        "label": "THE STRATEGIC ANGLE",
+        "headline": "The buyer is a direct rival — making this an edtech consolidation story too.",
+        "body": "The value of the deal now depends on what upGrad keeps, combines or cuts across products, teams, brands and customer relationships."
+      },
+      {
+        "type": "watch",
+        "label": "WHAT TO WATCH",
+        "headline": "The transaction price is only the first signal.",
+        "bullets": [
+          "How upGrad handles the Unacademy brand and product overlap",
+          "Whether leadership and key employees stay through integration",
+          "Whether the deal triggers more consolidation across Indian edtech"
+        ]
+      },
+      {
+        "type": "cta",
+        "label": "THE BOTTOM LINE",
+        "headline": "In a disciplined market, liquidity matters more than the last headline valuation.",
+        "body": "Read the full story at businessfuture.today",
+        "imageRole": "hero"
+      }
+    ]
+  }
+}

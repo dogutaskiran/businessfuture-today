@@ -1,0 +1,101 @@
+{
+  "slug": "unacademy-upgrad-sale-206m-below-peak-valuation",
+  "title": "Unacademy Agrees to Sell to upGrad for $206M, Far Below Its Peak Valuation",
+  "caption": "Unacademy is being sold to rival upGrad for $206 million — roughly 94% below its peak valuation. The deal is a sharp reminder that private-market marks are not exit prices. The next question is whether consolidation can create operating value beyond the transaction itself.",
+  "hashtags": [
+    "BusinessFutureToday",
+    "EdTech",
+    "Startups",
+    "VentureCapital"
+  ],
+  "source": "https://techcrunch.com/2026/09/01/indias-unacademy-sells-to-rival-upgrad-for-206m-about-94-less-than-its-peak-valuation/",
+  "brand": "edition",
+  "storySafeZone": {
+    "topPx": 260,
+    "bottomPx": 280,
+    "contentBottomPx": 1640,
+    "linkStickerZone": {
+      "topPx": 1460,
+      "bottomPx": 1580,
+      "note": "Reserved CTA/sticker area. Interactive sticker must be added only by a supported publishing surface."
+    }
+  },
+  "assets": {
+    "feed": "feed-1080x1350.webp",
+    "story": "story-1080x1920.webp"
+  },
+  "carousel": {
+    "ratio": "4:5",
+    "slides": [
+      {
+        "type": "cover",
+        "label": "EDTECH",
+        "headline": "Unacademy Sells to upGrad for $206M — About 94% Below Its Peak Valuation",
+        "imageRole": "hero",
+        "file": "carousel-01-cover-1080x1350.webp"
+      },
+      {
+        "type": "explainer",
+        "label": "THE RESET",
+        "headline": "A peak private valuation and an exit price are two very different things.",
+        "body": "Unacademy’s sale makes the gap explicit: a company can raise at a headline valuation that later bears little resemblance to what a buyer will actually pay.",
+        "file": "carousel-02-explainer-1080x1350.webp"
+      },
+      {
+        "type": "feature",
+        "label": "THE NUMBER",
+        "headline": "$206M sale price. Roughly 94% below the peak.",
+        "body": "That does not just reprice the company. It resets expectations for investors, employees and founders who once anchored on the private-market mark.",
+        "imageRole": "inline_1",
+        "file": "carousel-03-feature-1080x1350.webp"
+      },
+      {
+        "type": "impact",
+        "label": "WHY IT MATTERS",
+        "headline": "Fundraising valuations are expectations. Exits are realized prices.",
+        "body": "When market conditions change, companies may have to choose among down rounds, cost cuts, remaining independent or selling at a much lower value.",
+        "file": "carousel-04-impact-1080x1350.webp"
+      },
+      {
+        "type": "context",
+        "label": "THE STRATEGIC ANGLE",
+        "headline": "The buyer is a direct rival — making this an edtech consolidation story too.",
+        "body": "The value of the deal now depends on what upGrad keeps, combines or cuts across products, teams, brands and customer relationships.",
+        "file": "carousel-05-context-1080x1350.webp"
+      },
+      {
+        "type": "watch",
+        "label": "WHAT TO WATCH",
+        "headline": "The transaction price is only the first signal.",
+        "bullets": [
+          "How upGrad handles the Unacademy brand and product overlap",
+          "Whether leadership and key employees stay through integration",
+          "Whether the deal triggers more consolidation across Indian edtech"
+        ],
+        "file": "carousel-06-watch-1080x1350.webp"
+      },
+      {
+        "type": "cta",
+        "label": "THE BOTTOM LINE",
+        "headline": "In a disciplined market, liquidity matters more than the last headline valuation.",
+        "body": "Read the full story at businessfuture.today",
+        "imageRole": "hero",
+        "file": "carousel-07-cta-1080x1350.webp"
+      }
+    ]
+  },
+  "publish": {
+    "base": "/social-publish-assets/unacademy-upgrad-sale-206m-below-peak-valuation",
+    "feed": "feed-1080x1350.jpg",
+    "story": "story-1080x1920.jpg",
+    "carousel": [
+      "carousel-01-cover-1080x1350.jpg",
+      "carousel-02-explainer-1080x1350.jpg",
+      "carousel-03-feature-1080x1350.jpg",
+      "carousel-04-impact-1080x1350.jpg",
+      "carousel-05-context-1080x1350.jpg",
+      "carousel-06-watch-1080x1350.jpg",
+      "carousel-07-cta-1080x1350.jpg"
+    ]
+  }
+}
