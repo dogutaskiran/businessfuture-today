@@ -1,5 +1,6 @@
 import { authorForStory, type EditorialAuthor } from "@/lib/authors";
-import { generatedStories } from "@/lib/generated-content";
+import staticStoriesJson from "@/content/index.json";
+import { generatedStories as legacyGeneratedStories } from "@/lib/generated-content";
 
 export type Story = {
   slug: string;
@@ -39,6 +40,9 @@ function withAuthor<T extends Story>(story: T): T {
   return { ...story, author: story.author || authorForStory(story) };
 }
 
-const liveStories = generatedStories.map((story) => withAuthor({ ...story } as Story));
+const staticStories = (staticStoriesJson as unknown as Story[]).map((story) => withAuthor({ ...story }));
+const legacyStories = legacyGeneratedStories.map((story) => withAuthor({ ...story } as Story));
+const liveStories = staticStories.length > 0 ? staticStories : legacyStories;
+
 export const stories: Story[] = liveStories.length > 0 ? liveStories : seedStories.map(withAuthor);
 export const categories = ["AI", "Technology", "Companies", "Work", "Tools"] as const;
