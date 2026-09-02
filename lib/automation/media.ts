@@ -56,10 +56,10 @@ async function resolveSourceMedia(draftId:string,sourceUrls:string[],rssImageUrl
     const licenseUrl=meta(html,"license")||licenseFromHtml(html);
     const publicReusable=reusableLicense(licenseUrl);
     const policyReusable=!!policy&&allowedRole(policy,role)&&(rightsMode==="owned"||rightsMode==="licensed"||rightsMode==="editorial"||(rightsMode==="public_license"&&publicReusable));
-    const reusable=!!imageUrl&&(publicReusable||policyReusable);
+    const reusable=!!imageUrl&&rightsMode!=="deny"&&(publicReusable||policyReusable||!policy||rightsMode==="review");
     const author=meta(html,"author"); const site=meta(html,"og:site_name");
     const attribution=policy?.attribution_template||author||site||hostname(pageUrl);
-    return{pageUrl,imageUrl,licenseUrl,licenseStatus:rightsMode==="deny"?"denied":reusable?(rightsMode==="owned"?"owned":rightsMode==="licensed"?"licensed":rightsMode==="editorial"?"editorial":"reusable"):imageUrl?"unknown":"none",licenseBasis:rightsMode==="deny"?(policy?.license_basis||"Source policy denies media reuse"):reusable?(policy?.license_basis||`Reusable license: ${licenseUrl||rightsMode}`):imageUrl?"Publisher image discovered, but no reusable rights profile/license was found":"No source image discovered",attribution,reusable:rightsMode==="deny"?false:reusable,rightsMode};
+    return{pageUrl,imageUrl,licenseUrl,licenseStatus:rightsMode==="deny"?"denied":reusable?(rightsMode==="owned"?"owned":rightsMode==="licensed"?"licensed":rightsMode==="editorial"?"editorial":"reusable"):imageUrl?"unknown":"none",licenseBasis:rightsMode==="deny"?(policy?.license_basis||"Source policy denies media reuse"):reusable?(policy?.license_basis||(publicReusable&&licenseUrl?`Reusable license: ${licenseUrl}`:"Editorial source-first default; no explicit reuse restriction recorded")):imageUrl?"Publisher image blocked by an explicit source policy or required-license rule":"No source image discovered",attribution,reusable:rightsMode==="deny"?false:reusable,rightsMode};
   }catch(error){return{pageUrl,imageUrl:null,licenseUrl:null,licenseStatus:"unresolved",licenseBasis:error instanceof Error?error.message:"Source media lookup failed",attribution:null,reusable:false,rightsMode};}
 }
 
