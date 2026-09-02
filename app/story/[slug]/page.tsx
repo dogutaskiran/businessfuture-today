@@ -3,9 +3,9 @@ import { notFound } from "next/navigation";
 import { PublicationArticle } from "@/components/publication/article";
 import { stories } from "@/lib/content";
 import { absoluteMediaUrl } from "@/lib/media-url";
-import { resolveTemplate } from "@/lib/publication";
+import { canonicalTemplate } from "@/lib/publication";
 
-type Props={params:Promise<{slug:string}>;searchParams:Promise<{template?:string|string[]}>};
+type Props={params:Promise<{slug:string}>};
 export function generateStaticParams(){return stories.map((story)=>({slug:story.slug}));}
 export async function generateMetadata({params}:Props):Promise<Metadata>{
   const{slug}=await params;
@@ -22,4 +22,4 @@ export async function generateMetadata({params}:Props):Promise<Metadata>{
     twitter:{card:"summary_large_image",title:story.title,description:story.dek,images:image?[image]:undefined}
   };
 }
-export default async function StoryPage({params,searchParams}:Props){const[{slug},query]=await Promise.all([params,searchParams]);const story=stories.find((item)=>item.slug===slug);if(!story)notFound();const template=resolveTemplate(query.template);return <PublicationArticle story={story} stories={stories} template={template}/>;}
+export default async function StoryPage({params}:Props){const{slug}=await params;const story=stories.find((item)=>item.slug===slug);if(!story)notFound();return <PublicationArticle story={story} stories={stories} template={canonicalTemplate}/>;}

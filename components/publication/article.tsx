@@ -3,6 +3,7 @@ import { SubscribeForm } from "@/components/subscribe-form";
 import { PublicationFooter, PublicationHeader, StoryLink } from "@/components/publication/chrome";
 import type { Story } from "@/lib/content";
 import { publicationBrand, type PublicationTemplate } from "@/lib/publication";
+import {sectionForStory} from "@/lib/sections";
 
 type InlineImage={role:string;src:string;alt:string;credit?:string|null};
 
@@ -27,9 +28,9 @@ function ArticleBody({markdown,inlineImages=[],adSlots=[]}:{markdown?:string;inl
 }
 
 function RelatedStories({ story, stories, template }: {story:Story;stories:Story[];template:PublicationTemplate}){
-  const related=stories.filter((candidate)=>candidate.slug!==story.slug&&candidate.category===story.category).slice(0,3);
+  const section=sectionForStory(story);const related=stories.filter((candidate)=>candidate.slug!==story.slug&&sectionForStory(candidate)===section).slice(0,3);
   if(!related.length)return null;
-  return <section className="pub-related"><div className="pub-section__head"><h2>More in {story.category}</h2></div><div className="pub-related__grid">{related.map((item)=><article key={item.slug}>{item.cardImage?<StoryLink slug={item.slug} template={template}><img src={item.cardImage} alt={item.imageAlt||item.title}/></StoryLink>:null}<p className="pub-kicker">{item.kicker}</p><h3><StoryLink slug={item.slug} template={template}>{item.title}</StoryLink></h3><div className="pub-meta"><span>{item.author?`${item.author.name} · ${item.author.desk}`:item.category}</span><span>{item.readTime}</span></div></article>)}</div></section>;
+  return <section className="pub-related"><div className="pub-section__head"><h2>More in {section}</h2></div><div className="pub-related__grid">{related.map((item)=><article key={item.slug}>{item.cardImage?<StoryLink slug={item.slug} template={template}><img src={item.cardImage} alt={item.imageAlt||item.title}/></StoryLink>:null}<p className="pub-kicker">{item.kicker}</p><h3><StoryLink slug={item.slug} template={template}>{item.title}</StoryLink></h3><div className="pub-meta"><span>{item.author?`${item.author.name} · ${item.author.desk}`:item.category}</span><span>{item.readTime}</span></div></article>)}</div></section>;
 }
 
 export function PublicationArticle({story,stories,template}:{story:Story;stories:Story[];template:PublicationTemplate}){
