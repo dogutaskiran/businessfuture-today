@@ -2,9 +2,6 @@
 
 import { useEffect, useId, useMemo, useState } from "react";
 
-const CHANNEL_ID = "4e86fd82-691a-41ee-ac48-73bd850a33f7";
-const PUBMESH_BASE = "https://pubmesh.media";
-
 type ResolvedAd = {
   slot: { id:string; key:string; name:string; placement:string; format:string; width:number|null; height:number|null; responsive:boolean; label:string };
   provider: "placeholder" | "google_adsense" | "google_ad_manager";
@@ -63,7 +60,7 @@ function GoogleAdManager({ad}:{ad:ResolvedAd}) {
 
 export function AdSlot({slotKey,className="",sticky=false}:{slotKey:string;className?:string;sticky?:boolean}) {
   const [ad,setAd]=useState<ResolvedAd|null>(null); const [dismissed,setDismissed]=useState(false);
-  useEffect(()=>{ let active=true; fetch(`${PUBMESH_BASE}/api/v1/public/channels/${CHANNEL_ID}/ads/${encodeURIComponent(slotKey)}`,{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject()).then(data=>{if(active)setAd(data)}).catch(()=>{}); return()=>{active=false}; },[slotKey]);
+  useEffect(()=>{ let active=true; fetch(`/api/ads/${encodeURIComponent(slotKey)}`,{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject()).then(data=>{if(active)setAd(data)}).catch(()=>{}); return()=>{active=false}; },[slotKey]);
   if(dismissed) return null;
   const fallback:ResolvedAd={slot:{id:"",key:slotKey,name:"",placement:"",format:"auto",width:null,height:null,responsive:true,label:"Advertisement"},provider:"placeholder",providerConfig:{},scriptSrc:null,placeholder:{label:"Advertisement",headline:"Advertisement",body:"Business Future Today"}};
   const resolved=ad||fallback;

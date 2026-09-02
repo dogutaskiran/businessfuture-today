@@ -22,7 +22,7 @@
     "editorialVoicesArePersonas": true
   },
   "distribution": {
-    "provider": "pubmesh",
+    "provider": "dogu.one/meta",
     "socialOutbox": "https://businessfuture.today/api/social/outbox",
     "preferredPortrait": "1080x1350",
     "preferredSquare": "1080x1080"

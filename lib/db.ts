@@ -99,6 +99,31 @@ export async function ensureSchema() {
     CREATE INDEX IF NOT EXISTS drafts_status_idx
       ON drafts (status, created_at DESC);
 
+    ALTER TABLE drafts ADD COLUMN IF NOT EXISTS metadata JSONB NOT NULL DEFAULT '{}'::jsonb;
+
+    CREATE OR REPLACE VIEW articles AS
+      SELECT id, cluster_id, slug, title, dek, kicker, category, body_markdown, source_urls,
+             social_caption, model, status, published_at, metadata, created_at, updated_at
+      FROM drafts;
+
+    CREATE TABLE IF NOT EXISTS publication_ad_slots (
+      key TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      placement TEXT NOT NULL,
+      provider_mode TEXT NOT NULL DEFAULT 'placeholder',
+      format TEXT NOT NULL DEFAULT 'auto',
+      width INTEGER,
+      height INTEGER,
+      responsive BOOLEAN NOT NULL DEFAULT TRUE,
+      fallback_label TEXT NOT NULL DEFAULT 'Advertisement',
+      provider_config JSONB NOT NULL DEFAULT '{}'::jsonb,
+      placeholder JSONB NOT NULL DEFAULT '{}'::jsonb,
+      settings JSONB NOT NULL DEFAULT '{}'::jsonb,
+      status TEXT NOT NULL DEFAULT 'active',
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+      updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    );
+
     CREATE TABLE IF NOT EXISTS source_media_policies (
       domain TEXT PRIMARY KEY,
       mode TEXT NOT NULL DEFAULT 'review' CHECK (mode IN ('owned','licensed','editorial','public_license','review','deny')),
