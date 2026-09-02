@@ -16,7 +16,7 @@ export function SubscribeForm({ compact = false }: { compact?: boolean }) {
       const response = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email, source: "businessfuture.today" })
+        body: JSON.stringify({ email, source: "businessfuture.today", frequency: "daily" })
       });
       const data = await response.json();
 
@@ -25,7 +25,7 @@ export function SubscribeForm({ compact = false }: { compact?: boolean }) {
       }
 
       setState("success");
-      setMessage(data.confirmationRequired ? "Check your inbox to confirm." : "You’re subscribed.");
+      setMessage("You’re subscribed.");
       setEmail("");
     } catch (error) {
       setState("error");
@@ -49,6 +49,7 @@ export function SubscribeForm({ compact = false }: { compact?: boolean }) {
         {state === "loading" ? "Joining…" : "Stay ahead"}
       </button>
       {message ? <span className={`form-message form-message--${state}`}>{message}</span> : null}
+      {!compact ? <small className="subscribe__legal">By subscribing, you agree to receive the Business Future Today briefing. Unsubscribe anytime. <a href="/privacy">Privacy</a>.</small> : null}
     </form>
   );
 }

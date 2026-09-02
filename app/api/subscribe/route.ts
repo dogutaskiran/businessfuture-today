@@ -12,7 +12,8 @@ export async function POST(request: Request) {
     const subscriber = await subscribe({
       email,
       interests: Array.isArray(body?.interests) ? body.interests.filter((value: unknown): value is string => typeof value === "string").slice(0, 20) : [],
-      source: typeof body?.source === "string" ? body.source.slice(0, 200) : "businessfuture.today"
+      source: typeof body?.source === "string" ? body.source.slice(0, 200) : "businessfuture.today",
+      frequency: body?.frequency === "weekly" ? "weekly" : "daily"
     });
     return NextResponse.json({
       ok: true,

@@ -48,7 +48,7 @@ export function PublicationArticle({story,stories,template}:{story:Story;stories
       {story.sourceUrls?.length?<section className="pub-sources"><h2>Sources</h2><ul>{story.sourceUrls.map((url)=><li key={url}><a href={url} target="_blank" rel="noreferrer">{new URL(url).hostname}</a></li>)}</ul></section>:null}
       <RelatedStories story={story} stories={stories} template={template}/>
     </article>
-    <section id="briefing" className="pub-newsletter"><div className="pub-shell pub-newsletter__inner"><div><p className="pub-kicker">STAY AHEAD</p><h2>The future of business, in your inbox.</h2></div><div><p>{publicationBrand.description}</p><SubscribeForm/><small>One useful briefing. Double opt-in.</small></div></div></section>
+    <section id="briefing" className="pub-newsletter"><div className="pub-shell pub-newsletter__inner"><div><p className="pub-kicker">STAY AHEAD</p><h2>The future of business, in your inbox.</h2></div><div><p>{publicationBrand.description}</p><SubscribeForm/><small>One useful briefing. Unsubscribe any time.</small></div></div></section>
     <PublicationFooter template={template}/>
     {template.article.showStickyAd?<AdSlot slotKey="article_sticky" sticky/>:null}
   </main>;

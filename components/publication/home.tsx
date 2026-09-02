@@ -58,7 +58,7 @@ function ArchiveSection({ stories, template, title, limit }: { stories: Story[];
 }
 
 function NewsletterSection() {
-  return <section id="briefing" className="pub-newsletter"><div className="pub-shell pub-newsletter__inner"><div><p className="pub-kicker">THE DAILY BRIEFING</p><h2>Know what matters before the day gets noisy.</h2></div><div><p>{publicationBrand.description} One useful briefing, built from the same publication engine.</p><SubscribeForm/><small>Double opt-in. Unsubscribe any time.</small></div></div></section>;
+  return <section id="briefing" className="pub-newsletter"><div className="pub-shell pub-newsletter__inner"><div><p className="pub-kicker">THE DAILY BRIEFING</p><h2>Know what matters before the day gets noisy.</h2></div><div><p>{publicationBrand.description} One useful briefing, built from the same publication engine.</p><SubscribeForm/><small>Unsubscribe any time. Privacy choices stay yours.</small></div></div></section>;
 }
 
 function ManifestoSection(){return <section className="pub-manifesto pub-shell"><p className="pub-kicker">WHY THIS EXISTS</p><h2>There is too much news.<br/>We care about what changes next.</h2><p>Business Future Today turns the daily flood of company, technology and AI updates into useful signals, sharp explainers and practical context.</p></section>}

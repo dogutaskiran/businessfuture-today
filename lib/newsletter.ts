@@ -1,43 +1,6 @@
-import { db } from "@/lib/db";
-
-let initialized = false;
-
-async function ensureNewsletterSchema() {
-  if (initialized) return;
-  await db().query(`
-    CREATE TABLE IF NOT EXISTS newsletter_subscribers (
-      email TEXT PRIMARY KEY,
-      status TEXT NOT NULL DEFAULT 'subscribed' CHECK (status IN ('subscribed','unsubscribed','pending')),
-      interests JSONB NOT NULL DEFAULT '[]'::jsonb,
-      source TEXT NOT NULL DEFAULT 'businessfuture.today',
-      consent JSONB NOT NULL DEFAULT '{}'::jsonb,
-      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-      updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-    );
-    CREATE INDEX IF NOT EXISTS newsletter_subscribers_status_idx
-      ON newsletter_subscribers (status, updated_at DESC);
-  `);
-  initialized = true;
-}
-
-export async function subscribe(params: { email: string; interests?: string[]; source?: string }) {
-  await ensureNewsletterSchema();
-  const result = await db().query<{ email: string; status: string; updated_at: Date }>(
-    `INSERT INTO newsletter_subscribers (email,status,interests,source,consent)
-     VALUES ($1,'subscribed',$2::jsonb,$3,$4::jsonb)
-     ON CONFLICT (email) DO UPDATE SET
-       status='subscribed',
-       interests=EXCLUDED.interests,
-       source=EXCLUDED.source,
-       consent=EXCLUDED.consent,
-       updated_at=NOW()
-     RETURNING email,status,updated_at`,
-    [
-      params.email,
-      JSON.stringify(params.interests || []),
-      params.source || "businessfuture.today",
-      JSON.stringify({ source: params.source || "businessfuture.today", form: "bft-web-subscribe", privacy: "accepted", capturedAt: new Date().toISOString() })
-    ]
-  );
-  return result.rows[0];
-}
+import {randomUUID} from "node:crypto";
+import {db} from "@/lib/db";
+let initialized=false;export const NEWSLETTER_CONSENT_VERSION="2026-09-02";
+async function ensureNewsletterSchema(){if(initialized)return;await db().query(`CREATE TABLE IF NOT EXISTS newsletter_subscribers(email TEXT PRIMARY KEY,status TEXT NOT NULL DEFAULT 'subscribed',interests JSONB NOT NULL DEFAULT '[]'::jsonb,source TEXT NOT NULL DEFAULT 'businessfuture.today',consent JSONB NOT NULL DEFAULT '{}'::jsonb,created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW());ALTER TABLE newsletter_subscribers ADD COLUMN IF NOT EXISTS frequency TEXT NOT NULL DEFAULT 'daily';ALTER TABLE newsletter_subscribers ADD COLUMN IF NOT EXISTS locale TEXT NOT NULL DEFAULT 'en';ALTER TABLE newsletter_subscribers ADD COLUMN IF NOT EXISTS unsubscribe_token TEXT;ALTER TABLE newsletter_subscribers ADD COLUMN IF NOT EXISTS consent_version TEXT;ALTER TABLE newsletter_subscribers ADD COLUMN IF NOT EXISTS subscribed_at TIMESTAMPTZ;ALTER TABLE newsletter_subscribers ADD COLUMN IF NOT EXISTS confirmed_at TIMESTAMPTZ;ALTER TABLE newsletter_subscribers ADD COLUMN IF NOT EXISTS unsubscribed_at TIMESTAMPTZ;UPDATE newsletter_subscribers SET unsubscribe_token=md5(email||clock_timestamp()::text||random()::text) WHERE unsubscribe_token IS NULL;CREATE UNIQUE INDEX IF NOT EXISTS newsletter_subscribers_unsubscribe_token_idx ON newsletter_subscribers(unsubscribe_token);CREATE INDEX IF NOT EXISTS newsletter_subscribers_status_idx ON newsletter_subscribers(status,updated_at DESC);CREATE TABLE IF NOT EXISTS newsletter_events(id UUID PRIMARY KEY,email TEXT NOT NULL,event_type TEXT NOT NULL,source TEXT,consent_version TEXT,metadata JSONB NOT NULL DEFAULT '{}'::jsonb,created_at TIMESTAMPTZ NOT NULL DEFAULT NOW());CREATE INDEX IF NOT EXISTS newsletter_events_email_idx ON newsletter_events(email,created_at DESC);CREATE TABLE IF NOT EXISTS newsletter_campaigns(id UUID PRIMARY KEY,issue_date DATE NOT NULL,kind TEXT NOT NULL DEFAULT 'daily_digest',subject TEXT NOT NULL,preheader TEXT NOT NULL DEFAULT '',html TEXT NOT NULL,text TEXT NOT NULL,status TEXT NOT NULL DEFAULT 'draft',metadata JSONB NOT NULL DEFAULT '{}'::jsonb,created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),UNIQUE(issue_date,kind));`);initialized=true}
+export async function subscribe(params:{email:string;interests?:string[];source?:string;frequency?:"daily"|"weekly"}){await ensureNewsletterSchema();const token=randomUUID().replaceAll("-","");const source=params.source||"businessfuture.today";const frequency=params.frequency==="weekly"?"weekly":"daily";const capturedAt=new Date().toISOString();const result=await db().query<{email:string;status:string;updated_at:Date}>(`INSERT INTO newsletter_subscribers(email,status,interests,source,consent,frequency,unsubscribe_token,consent_version,subscribed_at,confirmed_at,unsubscribed_at) VALUES($1,'subscribed',$2::jsonb,$3,$4::jsonb,$5,$6,$7,NOW(),NOW(),NULL) ON CONFLICT(email) DO UPDATE SET status='subscribed',interests=EXCLUDED.interests,source=EXCLUDED.source,consent=EXCLUDED.consent,frequency=EXCLUDED.frequency,unsubscribe_token=COALESCE(newsletter_subscribers.unsubscribe_token,EXCLUDED.unsubscribe_token),consent_version=EXCLUDED.consent_version,subscribed_at=COALESCE(newsletter_subscribers.subscribed_at,NOW()),confirmed_at=NOW(),unsubscribed_at=NULL,updated_at=NOW() RETURNING email,status,updated_at`,[params.email,JSON.stringify(params.interests||[]),source,JSON.stringify({purpose:"Business Future Today newsletter",source,form:"bft-web-subscribe",action:"explicit-subscribe",privacy:"accepted",capturedAt}),frequency,token,NEWSLETTER_CONSENT_VERSION]);await db().query(`INSERT INTO newsletter_events(id,email,event_type,source,consent_version,metadata) VALUES($1,$2,'subscribe',$3,$4,$5::jsonb)`,[randomUUID(),params.email,source,NEWSLETTER_CONSENT_VERSION,JSON.stringify({frequency,interests:params.interests||[]})]);return result.rows[0]}
+export async function unsubscribeByToken(token:string){await ensureNewsletterSchema();const result=await db().query<{email:string}>(`UPDATE newsletter_subscribers SET status='unsubscribed',unsubscribed_at=NOW(),updated_at=NOW() WHERE unsubscribe_token=$1 RETURNING email`,[token]);const s=result.rows[0];if(s)await db().query(`INSERT INTO newsletter_events(id,email,event_type,source,consent_version) VALUES($1,$2,'unsubscribe','unsubscribe-link',$3)`,[randomUUID(),s.email,NEWSLETTER_CONSENT_VERSION]);return Boolean(s)}

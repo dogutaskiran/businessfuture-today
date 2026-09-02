@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useMemo, useState } from "react";
+import { readConsent, type ConsentState } from "@/lib/consent";
 
 type ResolvedAd = {
   slot: { id:string; key:string; name:string; placement:string; format:string; width:number|null; height:number|null; responsive:boolean; label:string };
@@ -59,15 +60,17 @@ function GoogleAdManager({ad}:{ad:ResolvedAd}) {
 }
 
 export function AdSlot({slotKey,className="",sticky=false}:{slotKey:string;className?:string;sticky?:boolean}) {
-  const [ad,setAd]=useState<ResolvedAd|null>(null); const [dismissed,setDismissed]=useState(false);
+  const [ad,setAd]=useState<ResolvedAd|null>(null); const [dismissed,setDismissed]=useState(false); const [advertisingAllowed,setAdvertisingAllowed]=useState(false);
+  useEffect(()=>{ const sync=(event?:Event)=>{ const state=event instanceof CustomEvent ? event.detail as ConsentState : readConsent(); setAdvertisingAllowed(Boolean(state?.advertising)); }; sync(); window.addEventListener("bft-consent-change",sync); return()=>window.removeEventListener("bft-consent-change",sync); },[]);
   useEffect(()=>{ let active=true; fetch(`/api/ads/${encodeURIComponent(slotKey)}`,{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject()).then(data=>{if(active)setAd(data)}).catch(()=>{}); return()=>{active=false}; },[slotKey]);
   if(dismissed) return null;
   const fallback:ResolvedAd={slot:{id:"",key:slotKey,name:"",placement:"",format:"auto",width:null,height:null,responsive:true,label:"Advertisement"},provider:"placeholder",providerConfig:{},scriptSrc:null,placeholder:{label:"Advertisement",headline:"Advertisement",body:"Business Future Today"}};
   const resolved=ad||fallback;
+  const consented = advertisingAllowed ? resolved : { ...resolved, provider: "placeholder" as const };
   return <aside className={`ad-slot ad-slot--${slotKey} ${sticky?"ad-slot--sticky":""} ${className}`.trim()} aria-label="Advertisement">
-    <div className="ad-slot__label">{resolved.slot.label||resolved.placeholder.label||"Advertisement"}</div>
+    <div className="ad-slot__label">{consented.slot.label||consented.placeholder.label||"Advertisement"}</div>
     <div className="ad-slot__creative">
-      {resolved.provider==="google_adsense"?<Adsense ad={resolved}/>:resolved.provider==="google_ad_manager"?<GoogleAdManager ad={resolved}/>:<Placeholder ad={resolved}/>} 
+      {consented.provider==="google_adsense"?<Adsense ad={consented}/>:consented.provider==="google_ad_manager"?<GoogleAdManager ad={consented}/>:<Placeholder ad={consented}/>} 
     </div>
     {sticky?<button className="ad-slot__close" onClick={()=>setDismissed(true)} aria-label="Close advertisement">×</button>:null}
   </aside>;
