@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "content:export": "node scripts/export-static-content.mjs",
-    "build": "npm run content:export && next build && node scripts/bootstrap-r2.mjs",
+    "build": "npm run content:export && next build && node scripts/archive-rss-r2.mjs",
     "storage:bootstrap": "node scripts/bootstrap-r2.mjs --force",
+    "storage:archive-rss": "node scripts/archive-rss-r2.mjs",
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },
