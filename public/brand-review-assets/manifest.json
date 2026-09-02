@@ -26,7 +26,8 @@
         "Do not stretch or condense the mark.",
         "Do not add shadows or gradients to the logo.",
         "Do not replace the approved brand colors inside the mark."
-      ]
+      ],
+      "profileCrop": "Social profile assets use an inset framed BFT mark sized to remain fully visible inside circular platform crops."
     }
   },
   "assetCount": 31,
@@ -122,41 +123,41 @@
     {
       "id": "profiles",
       "title": "Profile identities",
-      "description": "Platform-ready square profile assets using the compact mark.",
+      "description": "Circle-safe profile assets. The framed BFT mark stays fully visible inside circular social crops.",
       "assets": [
         {
           "name": "instagram profile",
-          "meta": "1080×1080 · WebP",
+          "meta": "1080×1080 · WebP · circle-safe",
           "src": "/brand-review-assets/instagram-profile-1080.webp",
           "kind": "square"
         },
         {
           "name": "facebook profile",
-          "meta": "1080×1080 · WebP",
+          "meta": "1080×1080 · WebP · circle-safe",
           "src": "/brand-review-assets/facebook-profile-1080.webp",
           "kind": "square"
         },
         {
           "name": "threads profile",
-          "meta": "1080×1080 · WebP",
+          "meta": "1080×1080 · WebP · circle-safe",
           "src": "/brand-review-assets/threads-profile-1080.webp",
           "kind": "square"
         },
         {
           "name": "linkedin company logo",
-          "meta": "400×400 · WebP",
+          "meta": "400×400 · WebP · circle-safe",
           "src": "/brand-review-assets/linkedin-company-logo-400.webp",
           "kind": "square"
         },
         {
           "name": "youtube profile",
-          "meta": "800×800 · WebP",
+          "meta": "800×800 · WebP · circle-safe",
           "src": "/brand-review-assets/youtube-profile-800.webp",
           "kind": "square"
         },
         {
           "name": "email sender avatar",
-          "meta": "512×512 · WebP",
+          "meta": "512×512 · WebP · circle-safe",
           "src": "/brand-review-assets/email-sender-avatar-512.webp",
           "kind": "square"
         }

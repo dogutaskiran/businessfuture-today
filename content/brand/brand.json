@@ -21,6 +21,11 @@
     "compactMark": "Framed BFT only. No TODAY line inside compact marks.",
     "wordmark": "Business Future in serif, TODAY in spaced sans-serif, restrained accent rule.",
     "minimumClearspace": "Keep at least one BFT cap-height around the mark or wordmark.",
-    "doNot": ["Do not stretch or condense the mark.", "Do not add shadows or gradients to the logo.", "Do not replace the approved brand colors inside the mark."]
+    "doNot": [
+      "Do not stretch or condense the mark.",
+      "Do not add shadows or gradients to the logo.",
+      "Do not replace the approved brand colors inside the mark."
+    ],
+    "profileCrop": "Social profile assets use an inset framed BFT mark sized to remain fully visible inside circular platform crops."
   }
 }
