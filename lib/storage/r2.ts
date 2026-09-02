@@ -2,7 +2,7 @@ const ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID || "726e58dee7f6dbc6504a4c1
 const SOURCE_BUCKET = process.env.BFT_SOURCE_BUCKET || "businessfuture-source";
 const PUBLIC_BUCKET = process.env.BFT_PUBLIC_BUCKET || "businessfuture-public";
 export const PUBLIC_ASSET_BASE_URL =
-  process.env.BFT_PUBLIC_ASSET_BASE_URL || "https://pub-bee1ccae8444499fb2a74842fcf63f2b.r2.dev";
+  process.env.BFT_PUBLIC_ASSET_BASE_URL || "https://assets.businessfuture.today";
 
 function token() {
   return process.env.CLOUDFLARE_API_TOKEN || "";
