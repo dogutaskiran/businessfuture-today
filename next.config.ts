@@ -7,6 +7,7 @@ const R2_PUBLIC_ORIGIN =
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  assetPrefix: process.env.VERCEL === "1" ? undefined : "https://api.businessfuture.today",
   async rewrites() {
     return {
       beforeFiles: [
