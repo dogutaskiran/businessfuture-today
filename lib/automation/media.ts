@@ -3,12 +3,18 @@ import OpenAI from "openai";
 import sharp from "sharp";
 import { db, ensureSchema } from "@/lib/db";
 import { selectBestSourceImage } from "@/lib/automation/source-media";
+import { bundleJson } from "@/lib/automation/crawlmesh";
 import { publicAssetUrl, putPublicObject, putSourceObject } from "@/lib/storage/r2";
 
 type MediaRole = "hero" | "inline_1" | "inline_2";
 type DraftRow = { id:string; cluster_id:string; slug:string; title:string; dek:string; category:string; body_markdown:string; source_urls:string[]; roles:string[] };
 type RightsMode = "owned"|"licensed"|"editorial"|"public_license"|"review"|"deny";
-type SourceMedia = { pageUrl:string|null; imageUrl:string|null; licenseUrl:string|null; licenseStatus:string; licenseBasis:string; attribution:string|null; reusable:boolean; rightsMode:RightsMode };
+type MediaStrategy = "source_first" | "rights_gated";
+type SourceMedia = { pageUrl:string|null; imageUrl:string|null; licenseUrl:string|null; licenseStatus:string; licenseBasis:string; attribution:string|null; reusable:boolean; rightsMode:RightsMode; strategy:MediaStrategy; familyKey?:string|null; sourceName?:string|null };
+type CrawlImage = { sourceUrl?:string; role?:string; alt?:string|null; caption?:string|null; credit?:string|null; creator?:string|null; copyrightNotice?:string|null; license?:string|null; acquireLicensePage?:string|null; widthHint?:number|null; heightHint?:number|null; familyKey?:string|null; classification?:string|null; variantCount?:number|null };
+type CrawlResourceBundle = { images?:CrawlImage[] };
+
+const MEDIA_STRATEGY:MediaStrategy = process.env.BFT_MEDIA_STRATEGY === "rights_gated" ? "rights_gated" : "source_first";
 
 type SourcePolicy = { domain:string; mode:RightsMode; allowed_roles:unknown; attribution_template:string|null; license_basis:string|null };
 
@@ -42,15 +48,64 @@ async function policyFor(pageUrl:string|null):Promise<SourcePolicy|null>{
   return null;
 }
 
-async function resolveSourceMedia(draftId:string,sourceUrls:string[],rssImageUrl:string|null,role:MediaRole):Promise<SourceMedia>{
+function roleRank(role:MediaRole){return role==="hero"?0:role==="inline_1"?1:2;}
+function imageFamilyKey(image:CrawlImage){
+  try{const u=new URL(String(image.sourceUrl||""));const pathname=decodeURIComponent(u.pathname).replace(/-(?:\d{2,5})x(?:\d{2,5})(?=\.[A-Za-z0-9]+$)/,"");return `${u.hostname.toLowerCase()}${pathname}`;}catch{return image.familyKey||String(image.sourceUrl||"");}
+}
+function crawlImageScore(image:CrawlImage){
+  const width=Number(image.widthHint||0),height=Number(image.heightHint||0);
+  const area=width*Math.max(height,1);
+  const roleBoost=image.role==="hero"?50:image.role==="og"?35:image.role==="social"?25:15;
+  return roleBoost+Math.min(120,width/16)+Math.min(80,area/80000)+(image.credit?8:0);
+}
+
+async function crawlEditorialCandidates(clusterId:string){
+  const rows=await db().query<{source_name:string;url:string;canonical_url:string|null;crawl_ingest_id:string|null}>(`SELECT s.name source_name,si.url,si.canonical_url,si.crawl_ingest_id FROM cluster_items ci JOIN source_items si ON si.id=ci.source_item_id JOIN sources s ON s.id=si.source_id WHERE ci.cluster_id=$1 ORDER BY COALESCE(si.published_at,si.created_at) DESC`,[clusterId]);
+  const out:Array<{image:CrawlImage;pageUrl:string;sourceName:string;familyKey:string}> = [];
+  const seen=new Set<string>();
+  for(const row of rows.rows){
+    if(!row.crawl_ingest_id)continue;
+    try{
+      const bundle=await bundleJson<CrawlResourceBundle>(row.crawl_ingest_id,"resources.json");
+      for(const image of bundle.images||[]){
+        const sourceUrl=typeof image.sourceUrl==="string"&&/^https?:\/\//i.test(image.sourceUrl)?image.sourceUrl:null;
+        if(!sourceUrl)continue;
+        if(image.classification&&image.classification!=="editorial")continue;
+        const familyKey=imageFamilyKey(image); if(!familyKey||seen.has(familyKey))continue;
+        seen.add(familyKey);
+        out.push({image:{...image,sourceUrl},pageUrl:row.canonical_url||row.url,sourceName:row.source_name,familyKey});
+      }
+    }catch{}
+  }
+  return out.sort((a,b)=>crawlImageScore(b.image)-crawlImageScore(a.image));
+}
+
+async function resolveSourceFirstMedia(clusterId:string,sourceUrls:string[],rssImageUrl:string|null,role:MediaRole):Promise<SourceMedia>{
+  const candidates=await crawlEditorialCandidates(clusterId);
+  const selected=candidates[roleRank(role)]||null;
+  if(selected){
+    const policy=await policyFor(selected.pageUrl); const rightsMode=policy?.mode||"review";
+    const attribution=selected.image.credit||selected.image.creator||selected.sourceName||hostname(selected.pageUrl);
+    const licenseUrl=selected.image.license||selected.image.acquireLicensePage||null;
+    return{pageUrl:selected.pageUrl,imageUrl:selected.image.sourceUrl||null,licenseUrl,licenseStatus:"editorial-source",licenseBasis:`BFT media strategy=source_first; CrawlMesh deterministic editorial family=${selected.familyKey}; recorded source policy=${rightsMode}${policy?.license_basis?`; ${policy.license_basis}`:""}`,attribution,reusable:true,rightsMode,strategy:"source_first",familyKey:selected.familyKey,sourceName:selected.sourceName};
+  }
   const pageUrl=sourceUrls[0]||null;
-  if(!pageUrl)return{pageUrl:null,imageUrl:null,licenseUrl:null,licenseStatus:"none",licenseBasis:"No source page",attribution:null,reusable:false,rightsMode:"review"};
+  if(role==="hero"&&rssImageUrl){
+    const policy=await policyFor(pageUrl); const rightsMode=policy?.mode||"review";
+    return{pageUrl,imageUrl:rssImageUrl,licenseUrl:null,licenseStatus:"editorial-source-rss",licenseBasis:`BFT media strategy=source_first; CrawlMesh had no editorial family for this slot; using RSS source media; recorded source policy=${rightsMode}`,attribution:hostname(pageUrl),reusable:true,rightsMode,strategy:"source_first",familyKey:null,sourceName:null};
+  }
+  return{pageUrl,imageUrl:null,licenseUrl:null,licenseStatus:"none",licenseBasis:"BFT media strategy=source_first; no distinct CrawlMesh editorial source asset available for this slot",attribution:null,reusable:false,rightsMode:"review",strategy:"source_first",familyKey:null,sourceName:null};
+}
+
+async function resolveRightsGatedSourceMedia(draftId:string,sourceUrls:string[],rssImageUrl:string|null,role:MediaRole):Promise<SourceMedia>{
+  const pageUrl=sourceUrls[0]||null;
+  if(!pageUrl)return{pageUrl:null,imageUrl:null,licenseUrl:null,licenseStatus:"none",licenseBasis:"No source page",attribution:null,reusable:false,rightsMode:"review",strategy:"rights_gated"};
   const policy=await policyFor(pageUrl); const rightsMode=policy?.mode||"review";
   try{
     const response=await fetch(pageUrl,{headers:{"user-agent":"BusinessFutureToday/0.4 (+https://businessfuture.today)"},redirect:"follow",signal:AbortSignal.timeout(12000)});
     if(!response.ok)throw new Error(`HTTP_${response.status}`);
     const html=(await response.text()).slice(0,2_500_000);
-    const best=await selectBestSourceImage({draftId,pageUrl,rssImageUrl,rank:role==="hero"?0:role==="inline_1"?1:2});
+    const best=await selectBestSourceImage({draftId,pageUrl,rssImageUrl,rank:roleRank(role)});
     const imageUrl=best?.url||rssImageUrl||meta(html,"og:image")||meta(html,"twitter:image")||null;
     const licenseUrl=meta(html,"license")||licenseFromHtml(html);
     const publicReusable=reusableLicense(licenseUrl);
@@ -58,8 +113,12 @@ async function resolveSourceMedia(draftId:string,sourceUrls:string[],rssImageUrl
     const reusable=!!imageUrl&&rightsMode!=="deny"&&(publicReusable||policyReusable||!policy||rightsMode==="review");
     const author=meta(html,"author"); const site=meta(html,"og:site_name");
     const attribution=policy?.attribution_template||author||site||hostname(pageUrl);
-    return{pageUrl,imageUrl,licenseUrl,licenseStatus:rightsMode==="deny"?"denied":reusable?(rightsMode==="owned"?"owned":rightsMode==="licensed"?"licensed":rightsMode==="editorial"?"editorial":"reusable"):imageUrl?"unknown":"none",licenseBasis:rightsMode==="deny"?(policy?.license_basis||"Source policy denies media reuse"):reusable?(policy?.license_basis||(publicReusable&&licenseUrl?`Reusable license: ${licenseUrl}`:"Editorial source-first default; no explicit reuse restriction recorded")):imageUrl?"Publisher image blocked by an explicit source policy or required-license rule":"No source image discovered",attribution,reusable:rightsMode==="deny"?false:reusable,rightsMode};
-  }catch(error){return{pageUrl,imageUrl:null,licenseUrl:null,licenseStatus:"unresolved",licenseBasis:error instanceof Error?error.message:"Source media lookup failed",attribution:null,reusable:false,rightsMode};}
+    return{pageUrl,imageUrl,licenseUrl,licenseStatus:rightsMode==="deny"?"denied":reusable?(rightsMode==="owned"?"owned":rightsMode==="licensed"?"licensed":rightsMode==="editorial"?"editorial":"reusable"):imageUrl?"unknown":"none",licenseBasis:rightsMode==="deny"?(policy?.license_basis||"Source policy denies media reuse"):reusable?(policy?.license_basis||(publicReusable&&licenseUrl?`Reusable license: ${licenseUrl}`:"Editorial source-first default; no explicit reuse restriction recorded")):imageUrl?"Publisher image blocked by an explicit source policy or required-license rule":"No source image discovered",attribution,reusable:rightsMode==="deny"?false:reusable,rightsMode,strategy:"rights_gated"};
+  }catch(error){return{pageUrl,imageUrl:null,licenseUrl:null,licenseStatus:"unresolved",licenseBasis:error instanceof Error?error.message:"Source media lookup failed",attribution:null,reusable:false,rightsMode,strategy:"rights_gated"};}
+}
+
+async function resolveSourceMedia(clusterId:string,draftId:string,sourceUrls:string[],rssImageUrl:string|null,role:MediaRole):Promise<SourceMedia>{
+  return MEDIA_STRATEGY==="source_first"?resolveSourceFirstMedia(clusterId,sourceUrls,rssImageUrl,role):resolveRightsGatedSourceMedia(draftId,sourceUrls,rssImageUrl,role);
 }
 
 async function downloadImage(url:string){const response=await fetch(url,{headers:{"user-agent":"BusinessFutureToday/0.4 (+https://businessfuture.today)"},redirect:"follow",signal:AbortSignal.timeout(20000)});if(!response.ok)throw new Error(`IMAGE_HTTP_${response.status}`);const bytes=Buffer.from(await response.arrayBuffer());if(bytes.length>15_000_000)throw new Error("SOURCE_IMAGE_TOO_LARGE");return bytes;}
@@ -75,7 +134,7 @@ function roleDirection(draft:DraftRow,role:MediaRole){
 
 async function generateImage(draft:DraftRow,source:SourceMedia,role:MediaRole){
   const client=new OpenAI({apiKey:process.env.OPENAI_API_KEY,maxRetries:0,timeout:300_000});
-  const prompt=[STYLE,`Article: ${draft.title}`,`Context: ${draft.dek}`,`Category: ${draft.category}.`,roleDirection(draft,role),"Landscape 3:2 composition with clean crop-safe edges.",source.imageUrl?"A publisher source image was discovered but is not reusable under current rights policy. Do not copy its composition or protected details; create an independent original visual.":"Create an independent original visual."].join("\n\n");
+  const prompt=[STYLE,`Article: ${draft.title}`,`Context: ${draft.dek}`,`Category: ${draft.category}.`,roleDirection(draft,role),"Landscape 3:2 composition with clean crop-safe edges.",source.imageUrl?"A source image was discovered but could not be used for this media slot. Do not copy its composition or protected details; create an independent original visual.":"Create an independent original visual."].join("\n\n");
   const response=await client.responses.create({model:process.env.OPENAI_IMAGE_ORCHESTRATOR_MODEL||"gpt-5.6-terra",input:prompt,store:false,tools:[{type:"image_generation",model:process.env.OPENAI_IMAGE_MODEL||"gpt-image-2",size:"1536x1024",quality:"high",output_format:"webp"}],tool_choice:{type:"image_generation"}});
   const call=response.output.find((item:any)=>item.type==="image_generation_call") as any;if(!call?.result)throw new Error("OPENAI_IMAGE_RESULT_MISSING");
   return{bytes:Buffer.from(call.result,"base64"),prompt,responseId:response.id,model:process.env.OPENAI_IMAGE_MODEL||"gpt-image-2"};
@@ -148,12 +207,12 @@ export async function processArticleMedia(options: { draftId?: string; maxGenera
     for(const role of requiredRoles(draft)){
       if(draft.roles.includes(role)||generatedCount>=limit)continue;
       const rssMedia=await db().query<{image_url:string|null}>(`SELECT COALESCE(si.raw->'media'->>'enclosure',si.raw->'media'->>'mediaContent',si.raw->'media'->>'mediaThumbnail') image_url FROM cluster_items ci JOIN source_items si ON si.id=ci.source_item_id WHERE ci.cluster_id=$1 AND COALESCE(si.raw->'media'->>'enclosure',si.raw->'media'->>'mediaContent',si.raw->'media'->>'mediaThumbnail') IS NOT NULL LIMIT 1`,[draft.cluster_id]);
-      const source=await resolveSourceMedia(draft.id,draft.source_urls||[],rssMedia.rows[0]?.image_url||null,role);
+      const source=await resolveSourceMedia(draft.cluster_id,draft.id,draft.source_urls||[],rssMedia.rows[0]?.image_url||null,role);
       let bytes:Buffer,sourceType:"source"|"generated"="generated",prompt:string|null=null,generation:any=null;
       if(source.reusable&&source.imageUrl){try{bytes=await downloadImage(source.imageUrl);sourceType="source";}catch{generation=await generateImage(draft,source,role);bytes=generation.bytes;prompt=generation.prompt;}}else{generation=await generateImage(draft,source,role);bytes=generation.bytes;prompt=generation.prompt;}
       const paths=await makeVariants(draft.slug,role,bytes!); const assetId=randomUUID(); const alt=role==="hero"?`Editorial image for ${draft.title}`:`Supporting image for ${draft.title}`; const credit=sourceType==="source"?source.attribution:"Illustration: Business Future Today";
-      await db().query(`INSERT INTO media_assets (id,draft_id,role,source_type,source_page_url,source_image_url,license_status,license_basis,attribution_text,original_path,hero_path,card_path,og_path,social_square_path,social_portrait_path,mime_type,width,height,alt_text,prompt,metadata) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,'image/webp',$16,$17,$18,$19,$20::jsonb) ON CONFLICT (draft_id,role) DO NOTHING`,[assetId,draft.id,role,sourceType,source.pageUrl,source.imageUrl,source.licenseStatus,source.licenseBasis,credit,paths.original,paths.hero,paths.card,paths.og,paths.socialSquare,paths.socialPortrait,paths.width,paths.height,alt,prompt,JSON.stringify({licenseUrl:source.licenseUrl,rightsMode:source.rightsMode,generationResponseId:generation?.responseId||null,generationModel:generation?.model||null})]);
-      results.push({slug:draft.slug,role,sourceType,path:paths.hero,sourceCandidate:source.imageUrl,licenseStatus:source.licenseStatus,rightsMode:source.rightsMode}); generatedCount++;
+      await db().query(`INSERT INTO media_assets (id,draft_id,role,source_type,source_page_url,source_image_url,license_status,license_basis,attribution_text,original_path,hero_path,card_path,og_path,social_square_path,social_portrait_path,mime_type,width,height,alt_text,prompt,metadata) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,'image/webp',$16,$17,$18,$19,$20::jsonb) ON CONFLICT (draft_id,role) DO NOTHING`,[assetId,draft.id,role,sourceType,source.pageUrl,source.imageUrl,source.licenseStatus,source.licenseBasis,credit,paths.original,paths.hero,paths.card,paths.og,paths.socialSquare,paths.socialPortrait,paths.width,paths.height,alt,prompt,JSON.stringify({licenseUrl:source.licenseUrl,rightsMode:source.rightsMode,mediaStrategy:source.strategy,familyKey:source.familyKey||null,sourceName:source.sourceName||null,generationResponseId:generation?.responseId||null,generationModel:generation?.model||null})]);
+      results.push({slug:draft.slug,role,sourceType,path:paths.hero,sourceCandidate:source.imageUrl,licenseStatus:source.licenseStatus,rightsMode:source.rightsMode,mediaStrategy:source.strategy,familyKey:source.familyKey||null}); generatedCount++;
     }
     if(generatedCount>=limit)break;
   }
