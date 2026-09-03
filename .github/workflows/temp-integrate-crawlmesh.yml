@@ -1,0 +1,25 @@
+name: temp-integrate-crawlmesh
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - name: Apply integration patch
+        run: python .github/scripts/integrate-crawlmesh.py
+      - name: Typecheck
+        run: npm ci && npx tsc --noEmit
+      - name: Commit
+        run: |
+          git config user.name "dogu.one"
+          git config user.email "automation@dogu.one"
+          git add lib/automation lib/db.ts .env.example
+          git diff --cached --quiet && exit 0
+          git commit -m "Route source acquisition through CrawlMesh"
+          git pull --rebase origin main
+          git push origin HEAD:main
