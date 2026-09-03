@@ -29,14 +29,28 @@ export type CrawlIngestResult = {
   central?: {
     documentId: string;
     revisionId: string;
-    documentCreated: boolean;
-    revisionCreated: boolean;
-    canonicalUrl: string;
+    documentCreated?: boolean;
+    revisionCreated?: boolean;
+    canonicalUrl?: string;
   } | null;
   provenance?: { contentHash?: string; canonicalUrl?: string };
   content?: { hash?: string };
   metadata?: Record<string, unknown>;
   images?: Array<Record<string, unknown>>;
+};
+
+type DiscoveryResponse = {
+  ok: boolean;
+  runId: string;
+  results: Array<{
+    ok: boolean;
+    error?: string;
+    ingestId?: string;
+    documentId?: string;
+    revisionId?: string;
+    canonicalUrl?: string;
+    method?: string;
+  }>;
 };
 
 export async function ingestSource(params: {
@@ -45,23 +59,48 @@ export async function ingestSource(params: {
   sourceName: string;
   feedUrl: string;
 }): Promise<CrawlIngestResult> {
-  const { text } = await request("/v1/ingest", {
+  const runId = `rss-${params.sourceItemId.slice(0, 48).toLowerCase().replace(/[^a-z0-9._-]+/g, "-")}`;
+  const { text } = await request("/v1/discoveries", {
     method: "POST",
     body: JSON.stringify({
-      url: params.url,
-      mode: "auto",
-      assetPolicy: "manifest",
-      maxAssets: 12,
-      discoveryContext: {
-        system: "businessfuture.today",
-        channel: "rss",
-        sourceItemId: params.sourceItemId,
-        sourceName: params.sourceName,
-        fedUrl: iparams.feedUrl
+      consumer: "businessfuture-network",
+      consumerName: "Business Future Network",
+      site: "businessfuture.today",
+      siteUrl: "https://businessfuture.today",
+      pipeline: "editorial",
+      channel: "rss",
+      runId,
+      sourceUrl: params.feedUrl,
+      items: [{
+        url: params.url,
+        externalId: params.sourceItemId,
+        title: params.sourceName,
+        metadata: { sourceName: params.sourceName }
+      }],
+      ingest: {
+        mode: "auto",
+        assetPolicy: "manifest",
+        maxAssets: 12
       }
     })
-  }, 150_000);
-  return JSON.parse(text);
+  }, 180_000);
+
+  const response = JSON.parse(text) as DiscoveryResponse;
+  const item = response.results?.[0];
+  if (!item?.ok || !item.ingestId || !item.documentId || !item.revisionId) {
+    throw new Error(`CRAWLMESH_DISCOVERY_FAILED:${item?.error || "missing canonical refs"}`);
+  }
+
+  return {
+    id: item.ingestId,
+    method: item.method || "unknown",
+    central: {
+      documentId: item.documentId,
+      revisionId: item.revisionId,
+      canonicalUrl: item.canonicalUrl
+    },
+    provenance: { canonicalUrl: item.canonicalUrl }
+  };
 }
 
 export async function bundleText(
