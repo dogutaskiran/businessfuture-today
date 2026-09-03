@@ -12,6 +12,7 @@ export async function runAutomation(){
  try{
   const acquired=(await lock.query<{locked:boolean}>(`SELECT pg_try_advisory_xact_lock($1::bigint) locked`,[LOCK_ID])).rows[0]?.locked;
   if(!acquired){await lock.query("ROLLBACK");return{status:"skipped",reason:"already_running"};}
+  await db().query(`UPDATE automation_runs SET status='degraded',finished_at=NOW(),error=COALESCE(error,'stale_run_recovered') WHERE status='running'`);
   const runId=randomUUID();await db().query(`INSERT INTO automation_runs(id,status) VALUES($1,'running')`,[runId]);
   const errors:Record<string,string>={};let ingest:any=null,acquisition:any=null,cluster:any=null,generated:any=null;
   try{ingest=await ingestSources()}catch(e){errors.ingest=msg(e)}

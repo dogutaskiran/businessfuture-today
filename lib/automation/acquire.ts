@@ -42,11 +42,11 @@ async function acquireOne(item: DueItem) {
     await db().query(
       `UPDATE source_items
           SET acquisition_status='completed',
-              crawl_ingest_id=$2,
-              crawl_document_id=$3,
-              crawl_revision_id=$4,
-              canonical_url=$5,
-              source_content_hash=$6,
+              crawl_ingest_id=$2::text,
+              crawl_document_id=$3::uuid,
+              crawl_revision_id=$4::uuid,
+              canonical_url=$5::text,
+              source_content_hash=$6::text,
               acquired_at=NOW(),
               acquisition_next_at=NOW(),
               acquisition_error=NULL,
@@ -54,12 +54,12 @@ async function acquireOne(item: DueItem) {
                   jsonb_build_object(
                     'crawlmesh',
                     jsonb_build_object(
-                      'ingestId',$2,
-                      'documentId',$3,
-                      'revisionId',$4,
-                      'canonicalUrl',$5,
-                      'contentHash',$6,
-                      'method',$7
+                      'ingestId',$2::text,
+                      'documentId',$3::uuid,
+                      'revisionId',$4::uuid,
+                      'canonicalUrl',$5::text,
+                      'contentHash',$6::text,
+                      'method',$7::text
                     )
                   )
         WHERE id=$1`,
@@ -88,7 +88,7 @@ async function acquireOne(item: DueItem) {
       `UPDATE source_items
           SET acquisition_status=$2,
               acquisition_error=$3,
-              acquisition_next_at=NOW()+($4||' minutes')::interval
+              acquisition_next_at=NOW()+($4::text||' minutes')::interval
         WHERE id=$1`,
       [item.id, dead ? "dead" : "retry_wait", message.slice(0, 3000), String(retryMinutes(attempt))]
     );
