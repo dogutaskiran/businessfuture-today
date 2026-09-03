@@ -71,15 +71,11 @@ p.write_text(s)
 p = Path("lib/automation/cluster.ts")
 s = p.read_text()
 if "si.acquisition_status='completed'" not in s:
-    old = '''      WHERE ci.source_item_id IS NULL
-        AND COALESCE(si.published_at,si.created_at)>NOW()-INTERVAL '72 hours' '''
-    new = '''      WHERE ci.source_item_id IS NULL
-        AND si.acquisition_status='completed'
-        AND si.crawl_ingest_id IS NOT NULL
-        AND COALESCE(si.published_at,si.created_at)>NOW()-INTERVAL '72 hours' '''
-    if old not in s:
-        raise SystemExit("cluster.ts item anchor missing")
-    s = s.replace(old, new, 1)
+    pattern = re.compile(r"WHERE ci\.source_item_id IS NULL\s+AND COALESCE\(si\.published_at,si\.created_at\)>NOW\(\)-INTERVAL '72 hours'")
+    replacement = "WHERE ci.source_item_id IS NULL\n        AND si.acquisition_status='completed'\n        AND si.crawl_ingest_id IS NOT NULL\n        AND COALESCE(si.published_at,si.created_at)>NOW()-INTERVAL '72 hours'"
+    s, count = pattern.subn(replacement, s, count=1)
+    if count != 1:
+        raise SystemExit(f"cluster.ts item replacement count={count}")
 p.write_text(s)
 
 # Editorial generation uses CrawlMesh normalized Markdown, not feed summaries.
