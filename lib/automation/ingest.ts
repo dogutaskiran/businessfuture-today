@@ -80,16 +80,35 @@ export async function ingestSources() {
         });
 
         seen += 1;
-        const result = await db().query<{ inserted: boolean }>(
+        const publishedIso = publishedAt && !Number.isNaN(publishedAt.getTime()) ? publishedAt.toISOString() : null;
+        const raw = JSON.stringify({ guid: item.guid ?? null, feedUrl: url, media });
+        const result = await db().query<{ id: string }>(
           `INSERT INTO source_items (id, source_id, url, title, summary, author, published_at, raw)
            VALUES ($1,$2,$3,$4,$5,$6,$7,$8::jsonb)
-           ON CONFLICT (url) DO UPDATE SET raw=source_items.raw || EXCLUDED.raw
-           RETURNING (xmax = 0) AS inserted`,
-          [itemId, sourceId, url, title, summary, item.creator || null,
-           publishedAt && !Number.isNaN(publishedAt.getTime()) ? publishedAt.toISOString() : null,
-           JSON.stringify({ guid: item.guid ?? null, media })]
+           ON CONFLICT DO NOTHING
+           RETURNING id`,
+          [itemId, sourceId, url, title, summary, item.creator || null, publishedIso, raw]
         );
-        if (result.rows[0]?.inserted) inserted += 1; else updated += 1;
+        if (result.rowCount) {
+          inserted += 1;
+        } else {
+          await db().query(
+            `UPDATE source_items
+                SET raw=COALESCE(raw,'{}'::jsonb) || $3::jsonb,
+                    title=$4,
+                    summary=$5,
+                    author=COALESCE($6,author),
+                    published_at=COALESCE($7::timestamptz,published_at)
+              WHERE id=(
+                SELECT id FROM source_items
+                 WHERE id=$1 OR url=$2
+                 ORDER BY CASE WHEN id=$1 THEN 0 ELSE 1 END
+                 LIMIT 1
+              )`,
+            [itemId, url, raw, title, summary, item.creator || null, publishedIso]
+          );
+          updated += 1;
+        }
       }
 
       try {
