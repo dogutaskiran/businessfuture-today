@@ -1,5 +1,6 @@
 {
   "crons": [
-    { "path": "/api/automation/run", "schedule": "* * * * *" }
+    { "path": "/api/automation/run", "schedule": "* * * * *" },
+    { "path": "/api/automation/media/run", "schedule": "*/5 * * * *" }
   ]
 }
