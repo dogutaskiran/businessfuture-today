@@ -137,9 +137,11 @@ async function makeVariants(slug:string,role:MediaRole,bytes:Buffer){
 
 function requiredRoles(draft:DraftRow):MediaRole[]{const words=draft.body_markdown.trim().split(/\s+/).length;return ["hero",...(words>=300?["inline_1" as const]:[]),...(words>=700?["inline_2" as const]:[])];}
 
-export async function processArticleMedia(){
-  await ensureSchema(); const limit=Math.max(1,Math.min(8,Number(process.env.MEDIA_MAX_GENERATIONS||2)));
-  const rows=await db().query<DraftRow>(`SELECT d.id,d.cluster_id,d.slug,d.title,d.dek,d.category,d.body_markdown,d.source_urls,COALESCE(array_agg(m.role) FILTER (WHERE m.role IS NOT NULL),ARRAY[]::text[]) roles FROM drafts d LEFT JOIN media_assets m ON m.draft_id=d.id WHERE d.status='published' GROUP BY d.id ORDER BY d.published_at DESC NULLS LAST,d.created_at DESC LIMIT 80`);
+export async function processArticleMedia(options: { draftId?: string; maxGenerations?: number } = {}){
+  await ensureSchema(); const limit=Math.max(1,Math.min(8,Number(options.maxGenerations ?? process.env.MEDIA_MAX_GENERATIONS ?? 2)));
+  const filter=options.draftId?`d.id=$1::uuid`:`d.status='published'`;
+  const values=options.draftId?[options.draftId]:[];
+  const rows=await db().query<DraftRow>(`SELECT d.id,d.cluster_id,d.slug,d.title,d.dek,d.category,d.body_markdown,d.source_urls,COALESCE(array_agg(m.role) FILTER (WHERE m.role IS NOT NULL),ARRAY[]::text[]) roles FROM drafts d LEFT JOIN media_assets m ON m.draft_id=d.id WHERE ${filter} GROUP BY d.id ORDER BY d.published_at DESC NULLS LAST,d.created_at DESC LIMIT 80`,values);
   const results:any[]=[]; let generatedCount=0;
   for(const draft of rows.rows){
     for(const role of requiredRoles(draft)){
@@ -155,4 +157,8 @@ export async function processArticleMedia(){
     if(generatedCount>=limit)break;
   }
   return results;
+}
+
+export async function processDraftMedia(draftId:string){
+  return processArticleMedia({draftId,maxGenerations:3});
 }

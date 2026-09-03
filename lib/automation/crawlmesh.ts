@@ -105,14 +105,14 @@ export async function ingestSource(params: {
 
 export async function bundleText(
   id: string,
-  file: "content.md" | "metadata.json" | "assets.json" | "report.json"
+  file: "content.md" | "metadata.json" | "assets.json" | "resources.json" | "report.json"
 ) {
   return (await request(`/v1/ingests/${encodeURIComponent(id)}/${file}`, {}, 30_000)).text;
 }
 
 export async function bundleJson<T = unknown>(
   id: string,
-  file: "metadata.json" | "assets.json" | "report.json"
+  file: "metadata.json" | "assets.json" | "resources.json" | "report.json"
 ): Promise<T> {
   return JSON.parse(await bundleText(id, file)) as T;
 }
