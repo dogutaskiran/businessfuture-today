@@ -21,15 +21,5 @@ CREATE TABLE IF NOT EXISTS automation_provider_state (
   last_success_at TIMESTAMPTZ,
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
-CREATE TABLE IF NOT EXISTS automation_scheduler_tokens (
-  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  name TEXT NOT NULL UNIQUE,
-  token_hash TEXT NOT NULL UNIQUE,
-  enabled BOOLEAN NOT NULL DEFAULT TRUE,
-  last_used_at TIMESTAMPTZ,
-  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-);
 GRANT SELECT,INSERT,UPDATE,DELETE ON automation_generation_queue TO business_future_today_app;
 GRANT SELECT,INSERT,UPDATE,DELETE ON automation_provider_state TO business_future_today_app;
-GRANT SELECT,INSERT,UPDATE,DELETE ON automation_scheduler_tokens TO business_future_today_app;
-GRANT USAGE,SELECT ON SEQUENCE automation_scheduler_tokens_id_seq TO business_future_today_app;

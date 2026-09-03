@@ -229,10 +229,6 @@ export async function ensureSchema() {
       provider TEXT PRIMARY KEY, state TEXT NOT NULL DEFAULT 'healthy', cooldown_until TIMESTAMPTZ,
       last_error_code TEXT, last_error TEXT, last_success_at TIMESTAMPTZ, updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     );
-    CREATE TABLE IF NOT EXISTS automation_scheduler_tokens (
-      id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, name TEXT NOT NULL UNIQUE, token_hash TEXT NOT NULL UNIQUE,
-      enabled BOOLEAN NOT NULL DEFAULT TRUE, last_used_at TIMESTAMPTZ, created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-    );
   `);
 
   initialized = true;
