@@ -12,6 +12,18 @@ jobs:
           ref: main
       - name: Apply integration patch
         run: python .github/scripts/integrate-crawlmesh.py
+      - name: Repair generated source packet escaping
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path("lib/automation/generate.ts")
+          s=p.read_text()
+          s,count=re.subn(r'const packet=sourcePackets\.join\(".*?"\);', lambda m: 'const packet=sourcePackets.join("\\n\\n---\\n\\n");', s, count=1, flags=re.S)
+          if count != 1:
+              raise SystemExit(f"generate packet repair count={count}")
+          p.write_text(s)
+          PY
       - name: Typecheck
         run: npm ci && npx tsc --noEmit
       - name: Commit
