@@ -10,7 +10,10 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return {
       beforeFiles: [
-        ...(process.env.VERCEL === "1" ? [{ source: "/api/:path*", destination: `${process.env.BFT_API_ORIGIN || "https://api.businessfuture.today"}/api/:path*` }] : []),
+        ...(process.env.VERCEL === "1" ? [
+          { source: "/api/:path*", destination: `${process.env.BFT_API_ORIGIN || "https://api.businessfuture.today"}/api/:path*` },
+          { source: "/preview/:path*", destination: `${process.env.BFT_API_ORIGIN || "https://api.businessfuture.today"}/preview/:path*` },
+        ] : []),
         {
           source: "/media/:path*",
           has: [{ type: "host", value: "assets.businessfuture.today" }],
