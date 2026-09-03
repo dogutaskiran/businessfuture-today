@@ -1,0 +1,13 @@
+[Unit]
+Description=Run Business Future Today automation every 15 minutes
+
+[Timer]
+OnBootSec=2min
+OnCalendar=*:0/15
+Persistent=true
+AccuracySec=30s
+RandomizedDelaySec=20s
+Unit=businessfuture-automation.service
+
+[Install]
+WantedBy=timers.target

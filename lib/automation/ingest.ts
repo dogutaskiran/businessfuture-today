@@ -29,7 +29,7 @@ async function upsertSource(source: SourceConfig) {
 }
 
 export async function ingestSources() {
-  let feedsOk = 0, feedsFailed = 0, inserted = 0, archivedFeeds = 0;
+  let feedsOk = 0, feedsFailed = 0, seen = 0, inserted = 0, updated = 0, archivedFeeds = 0;
   const prefix = datedPrefix();
 
   for (const source of SOURCES) {
@@ -79,15 +79,17 @@ export async function ingestSources() {
           media
         });
 
-        const result = await db().query(
+        seen += 1;
+        const result = await db().query<{ inserted: boolean }>(
           `INSERT INTO source_items (id, source_id, url, title, summary, author, published_at, raw)
            VALUES ($1,$2,$3,$4,$5,$6,$7,$8::jsonb)
-           ON CONFLICT (url) DO UPDATE SET raw=source_items.raw || EXCLUDED.raw`,
+           ON CONFLICT (url) DO UPDATE SET raw=source_items.raw || EXCLUDED.raw
+           RETURNING (xmax = 0) AS inserted`,
           [itemId, sourceId, url, title, summary, item.creator || null,
            publishedAt && !Number.isNaN(publishedAt.getTime()) ? publishedAt.toISOString() : null,
            JSON.stringify({ guid: item.guid ?? null, media })]
         );
-        if (result.rowCount && result.command === "INSERT") inserted += result.rowCount;
+        if (result.rows[0]?.inserted) inserted += 1; else updated += 1;
       }
 
       try {
@@ -113,5 +115,5 @@ export async function ingestSources() {
     }
   }
 
-  return { feedsOk, feedsFailed, inserted, archivedFeeds };
+  return { feedsOk, feedsFailed, seen, inserted, updated, archivedFeeds };
 }

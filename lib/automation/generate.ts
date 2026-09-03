@@ -1,118 +1,36 @@
-import { randomUUID } from "node:crypto";
-import { db } from "@/lib/db";
-
-function extractOutputText(payload: any): string {
-  if (typeof payload?.output_text === "string") return payload.output_text;
-  for (const output of payload?.output ?? []) {
-    for (const content of output?.content ?? []) {
-      if (content?.type === "output_text" && typeof content.text === "string") return content.text;
-    }
-  }
-  throw new Error("OpenAI response did not contain output text");
+import {randomUUID} from "node:crypto";
+import {db} from "@/lib/db";
+const PROVIDER="openai", CREDIT_WAIT=15, MAX_ATTEMPTS=8;
+type Job={cluster_id:string;title:string;category:string;score:string;source_count:number;attempts:number};
+class GenError extends Error{constructor(public code:string,public status:number|null,message:string){super(message)}}
+function outputText(p:any){if(typeof p?.output_text==="string")return p.output_text;for(const o of p?.output??[])for(const c of o?.content??[])if(c?.type==="output_text"&&typeof c.text==="string")return c.text;throw new GenError("missing_output",null,"OpenAI response contained no output text")}
+function details(status:number,body:string){try{const p=JSON.parse(body),e=p?.error??p;return{code:String(e?.code||e?.type||`http_${status}`),message:String(e?.message||body)}}catch{return{code:`http_${status}`,message:body||`HTTP ${status}`}}}
+function credit(e:GenError){const x=`${e.code} ${e.message}`.toLowerCase();return x.includes("credit_balance_exhausted")||x.includes("insufficient_quota")||x.includes("no credits remaining")}
+function retryMinutes(n:number){return Math.min(360,5*2**Math.max(0,n-1))}
+async function enqueue(){const r=await db().query(`INSERT INTO automation_generation_queue(cluster_id) SELECT c.id FROM clusters c LEFT JOIN drafts d ON d.cluster_id=c.id LEFT JOIN automation_generation_queue q ON q.cluster_id=c.id WHERE d.cluster_id IS NULL AND q.cluster_id IS NULL AND c.status='open' AND c.score>=0.54 AND c.updated_at>NOW()-INTERVAL '72 hours' AND (c.source_count>=2 OR lower(c.title)~'(ai|agent|enterprise|company|startup|software|cloud|chip|developer|robot|automation|business|regulat|nvidia|openai|chatgpt|microsoft|google|aws|funding|valuation|acquisition)') AND lower(c.title)!~'(headphone|earbud|lowest price|discount|steam leak|game asset|microcar)' ON CONFLICT DO NOTHING`);return r.rowCount??0}
+async function state(){return (await db().query<{state:string;cooldown_until:Date|null;last_error_code:string|null}>(`SELECT state,cooldown_until,last_error_code FROM automation_provider_state WHERE provider=$1`,[PROVIDER])).rows[0]??null}
+async function cooldown(code:string,msg:string,min=CREDIT_WAIT){await db().query(`INSERT INTO automation_provider_state(provider,state,cooldown_until,last_error_code,last_error) VALUES($1,'cooldown',NOW()+($2||' minutes')::interval,$3,$4) ON CONFLICT(provider) DO UPDATE SET state='cooldown',cooldown_until=EXCLUDED.cooldown_until,last_error_code=EXCLUDED.last_error_code,last_error=EXCLUDED.last_error,updated_at=NOW()`,[PROVIDER,String(min),code,msg.slice(0,2000)])}
+async function healthy(){await db().query(`INSERT INTO automation_provider_state(provider,state,last_success_at) VALUES($1,'healthy',NOW()) ON CONFLICT(provider) DO UPDATE SET state='healthy',cooldown_until=NULL,last_error_code=NULL,last_error=NULL,last_success_at=NOW(),updated_at=NOW()`,[PROVIDER])}
+async function defer(id:string,n:number,e:GenError,min:number,dead=false){await db().query(`UPDATE automation_generation_queue SET status=$2,attempts=$3,next_attempt_at=NOW()+($4||' minutes')::interval,last_attempt_at=NOW(),locked_at=NULL,last_error_code=$5,last_error=$6,updated_at=NOW() WHERE cluster_id=$1`,[id,dead?"dead":"retry_wait",n,String(min),e.code,e.message.slice(0,4000)])}
+async function one(j:Job,key:string,model:string,publish:boolean){
+ const src=await db().query<{title:string;url:string;summary:string;published_at:Date|null;source_name:string}>(`SELECT si.title,si.url,si.summary,si.published_at,s.name source_name FROM cluster_items ci JOIN source_items si ON si.id=ci.source_item_id JOIN sources s ON s.id=si.source_id WHERE ci.cluster_id=$1 ORDER BY COALESCE(si.published_at,si.created_at) DESC LIMIT 12`,[j.cluster_id]);
+ const packet=src.rows.map((x,i)=>`[${i+1}] ${x.source_name}\nTitle: ${x.title}\nPublished: ${x.published_at?.toISOString()??"unknown"}\nURL: ${x.url}\nSummary: ${x.summary}`).join("\n\n");
+ let r:Response;try{r=await fetch("https://api.openai.com/v1/responses",{method:"POST",headers:{authorization:`Bearer ${key}`,"content-type":"application/json"},signal:AbortSignal.timeout(120000),body:JSON.stringify({model,reasoning:{effort:"low"},instructions:"You are the editorial engine for Business Future Today. Turn source material into a concise, useful business-and-technology article. Do not invent unsupported facts. Focus on what changed, why it matters to operators, founders, executives and builders, and what to watch next. Avoid hype and generic filler. Write 450-800 words in Markdown with short sections. Return only data matching the requested JSON schema.",input:`Cluster: ${j.title}\nCategory: ${j.category}\nScore: ${j.score}\n\nSources:\n${packet}`,text:{format:{type:"json_schema",name:"business_future_article",strict:true,schema:{type:"object",additionalProperties:false,properties:{title:{type:"string"},slug:{type:"string"},dek:{type:"string"},kicker:{type:"string"},category:{type:"string",enum:["AI","Technology","Companies","Work","Tools"]},body_markdown:{type:"string"},social_caption:{type:"string"}},required:["title","slug","dek","kicker","category","body_markdown","social_caption"]}}}})})}catch(e){throw new GenError("network_error",null,e instanceof Error?e.message:String(e))}
+ if(!r.ok){const d=details(r.status,await r.text());throw new GenError(d.code,r.status,d.message)}
+ let a:any;try{a=JSON.parse(outputText(await r.json()))}catch(e){if(e instanceof GenError)throw e;throw new GenError("invalid_json",null,e instanceof Error?e.message:String(e))}
+ const id=randomUUID(),slug=String(a.slug).toLowerCase().replace(/[^a-z0-9-]+/g,"-").replace(/^-+|-+$/g,"").slice(0,120);
+ await db().query(`INSERT INTO drafts(id,cluster_id,slug,title,dek,kicker,category,body_markdown,source_urls,social_caption,model,status,published_at) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9::jsonb,$10,$11,$12,$13) ON CONFLICT(cluster_id) DO NOTHING`,[id,j.cluster_id,slug,a.title,a.dek,a.kicker,a.category,a.body_markdown,JSON.stringify(src.rows.map(x=>x.url)),a.social_caption,model,publish?"published":"draft",publish?new Date().toISOString():null]);
+ await db().query(`UPDATE automation_generation_queue SET status='completed',attempts=attempts+1,last_attempt_at=NOW(),locked_at=NULL,completed_at=NOW(),last_error_code=NULL,last_error=NULL,updated_at=NOW() WHERE cluster_id=$1`,[j.cluster_id]);
+ return{id,title:a.title,score:Number(j.score),sources:j.source_count}
 }
-
-export async function generateDrafts() {
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) throw new Error("OPENAI_API_KEY is not configured");
-
-  const model = process.env.OPENAI_MODEL || "gpt-5.6-terra";
-  const limit = Math.max(1, Math.min(5, Number(process.env.AUTOMATION_MAX_DRAFTS || 2)));
-  const autoPublish = process.env.AUTOMATION_AUTO_PUBLISH === "true";
-
-  const clusters = await db().query<{
-    id: string; title: string; category: string; score: string; source_count: number;
-  }>(
-    `SELECT c.id,c.title,c.category,c.score::text,c.source_count
-       FROM clusters c LEFT JOIN drafts d ON d.cluster_id=c.id
-      WHERE d.cluster_id IS NULL AND c.status='open' AND c.score>=0.54
-        AND c.updated_at>NOW()-INTERVAL '72 hours'
-        AND (
-          c.source_count >= 2 OR
-          lower(c.title) ~ '(ai|agent|enterprise|company|startup|software|cloud|chip|developer|robot|automation|business|regulat|nvidia|openai|chatgpt|microsoft|google|aws|funding|valuation|acquisition)'
-        )
-        AND lower(c.title) !~ '(headphone|earbud|lowest price|discount|steam leak|game asset|microcar)'
-      ORDER BY c.score DESC,c.source_count DESC,c.updated_at DESC LIMIT $1`,
-    [limit]
-  );
-
-  const generated: Array<{ id: string; title: string; score: number; sources: number }> = [];
-
-  for (const cluster of clusters.rows) {
-    const sourceItems = await db().query<{
-      title: string; url: string; summary: string; published_at: Date | null; source_name: string;
-    }>(
-      `SELECT si.title,si.url,si.summary,si.published_at,s.name AS source_name
-         FROM cluster_items ci JOIN source_items si ON si.id=ci.source_item_id
-         JOIN sources s ON s.id=si.source_id
-        WHERE ci.cluster_id=$1
-        ORDER BY COALESCE(si.published_at,si.created_at) DESC LIMIT 12`,
-      [cluster.id]
-    );
-
-    const packet = sourceItems.rows.map((item,index) =>
-      `[${index+1}] ${item.source_name}\nTitle: ${item.title}\nPublished: ${item.published_at?.toISOString() ?? "unknown"}\nURL: ${item.url}\nSummary: ${item.summary}`
-    ).join("\n\n");
-
-    const response = await fetch("https://api.openai.com/v1/responses", {
-      method: "POST",
-      headers: { authorization: `Bearer ${apiKey}`, "content-type": "application/json" },
-      body: JSON.stringify({
-        model,
-        reasoning: { effort: "low" },
-        instructions: [
-          "You are the editorial engine for Business Future Today.",
-          "Turn source material into a concise, useful business-and-technology article.",
-          "Do not invent facts or add claims unsupported by the supplied source summaries.",
-          "Focus on what changed, why it matters to operators, founders, executives and builders, and what to watch next.",
-          "Avoid hype, press-release language and generic AI filler.",
-          "Write 450-800 words in Markdown with short sections.",
-          "Return only data matching the requested JSON schema."
-        ].join(" "),
-        input: `Cluster: ${cluster.title}\nCategory: ${cluster.category}\nScore: ${cluster.score}\n\nSources:\n${packet}`,
-        text: {
-          format: {
-            type: "json_schema",
-            name: "business_future_article",
-            strict: true,
-            schema: {
-              type: "object", additionalProperties: false,
-              properties: {
-                title: { type: "string" }, slug: { type: "string" }, dek: { type: "string" },
-                kicker: { type: "string" },
-                category: { type: "string", enum: ["AI","Technology","Companies","Work","Tools"] },
-                body_markdown: { type: "string" }, social_caption: { type: "string" }
-              },
-              required: ["title","slug","dek","kicker","category","body_markdown","social_caption"]
-            }
-          }
-        }
-      })
-    });
-
-    if (!response.ok) {
-      throw new Error(`OpenAI generation failed (${response.status}): ${await response.text()}`);
-    }
-
-    const article = JSON.parse(extractOutputText(await response.json()));
-    const draftId = randomUUID();
-    const slug = String(article.slug).toLowerCase()
-      .replace(/[^a-z0-9-]+/g,"-").replace(/^-+|-+$/g,"").slice(0,120);
-
-    await db().query(
-      `INSERT INTO drafts
-        (id,cluster_id,slug,title,dek,kicker,category,body_markdown,source_urls,social_caption,model,status,published_at)
-       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9::jsonb,$10,$11,$12,$13)`,
-      [
-        draftId,cluster.id,slug,article.title,article.dek,article.kicker,article.category,
-        article.body_markdown,JSON.stringify(sourceItems.rows.map((item)=>item.url)),
-        article.social_caption,model,autoPublish ? "published" : "draft",autoPublish ? new Date().toISOString() : null
-      ]
-    );
-
-    generated.push({
-      id: draftId, title: article.title, score: Number(cluster.score), sources: cluster.source_count
-    });
-  }
-
-  return generated;
+export async function generateDrafts(){
+ const enqueued=await enqueue();await db().query(`UPDATE automation_generation_queue SET status='retry_wait',locked_at=NULL,next_attempt_at=NOW(),updated_at=NOW() WHERE status='running' AND locked_at<NOW()-INTERVAL '30 minutes'`);
+ const ps=await state();if(ps?.cooldown_until&&ps.cooldown_until.getTime()>Date.now()){const q=(await db().query(`SELECT status,COUNT(*)::int count FROM automation_generation_queue GROUP BY status ORDER BY status`)).rows;return{enqueued,attempted:0,generated:[],deferred:0,provider:{state:"cooldown",cooldownUntil:ps.cooldown_until,code:ps.last_error_code},queue:q}}
+ if(ps?.state==="cooldown"){await db().query(`UPDATE automation_provider_state SET state='ready',cooldown_until=NULL,updated_at=NOW() WHERE provider=$1`,[PROVIDER]);ps.state="ready";ps.cooldown_until=null}
+ const key=process.env.OPENAI_API_KEY;if(!key){await cooldown("missing_api_key","OPENAI_API_KEY is not configured",60);return{enqueued,attempted:0,generated:[],deferred:0,provider:{state:"cooldown",code:"missing_api_key"}}}
+ const model=process.env.OPENAI_MODEL||"gpt-5.6-terra",limit=Math.max(1,Math.min(5,Number(process.env.AUTOMATION_MAX_DRAFTS||2))),publish=process.env.AUTOMATION_AUTO_PUBLISH==="true";
+ const due=await db().query<Job>(`SELECT q.cluster_id,c.title,c.category,c.score::text,c.source_count,q.attempts FROM automation_generation_queue q JOIN clusters c ON c.id=q.cluster_id LEFT JOIN drafts d ON d.cluster_id=q.cluster_id WHERE q.status IN('pending','retry_wait') AND q.next_attempt_at<=NOW() AND d.cluster_id IS NULL ORDER BY c.score DESC,c.source_count DESC,q.next_attempt_at LIMIT $1`,[limit]);
+ const generated:any[]=[], provider:{state:string;code?:string;cooldownUntil?:string}={state:ps?.state||"healthy"};let deferred=0,attempted=0;
+ for(const j of due.rows){attempted++;const n=j.attempts+1;await db().query(`UPDATE automation_generation_queue SET status='running',locked_at=NOW(),last_attempt_at=NOW(),updated_at=NOW() WHERE cluster_id=$1`,[j.cluster_id]);try{generated.push(await one(j,key,model,publish));await healthy();provider.state="healthy";delete provider.code;delete provider.cooldownUntil}catch(raw){const e=raw instanceof GenError?raw:new GenError("generation_error",null,raw instanceof Error?raw.message:String(raw));if(credit(e)){await defer(j.cluster_id,n,e,CREDIT_WAIT);await cooldown(e.code,e.message);deferred++;provider.state="cooldown";provider.code=e.code;provider.cooldownUntil=new Date(Date.now()+CREDIT_WAIT*60000).toISOString();break}await defer(j.cluster_id,n,e,retryMinutes(n),n>=MAX_ATTEMPTS);deferred++;provider.state="degraded";provider.code=e.code}}
+ const q=(await db().query(`SELECT status,COUNT(*)::int count FROM automation_generation_queue GROUP BY status ORDER BY status`)).rows;return{enqueued,attempted,generated,deferred,provider,queue:q}
 }
