@@ -32,19 +32,64 @@ export default async function DraftPreview({params}:{params:Promise<{id:string}>
   const embeds=resourceBundles.flatMap(x=>x.resources?.embeds||[]);
   const supporting=resourceBundles.flatMap(x=>x.resources?.supportingLinks||[]);
   const sourceImages=resourceBundles.flatMap(x=>(x.resources?.images||[]).map(image=>({source:x.source.source_name,image})));
-  return <>
-    <div style={{position:"sticky",top:0,zIndex:80,background:"#d8ff43",color:"#11110f",padding:"10px 18px",font:"600 13px/1.3 system-ui",borderBottom:"1px solid #11110f"}}>DRAFT PREVIEW · {draft.status.toUpperCase()} · {draft.model} · {draft.id}</div>
+  return <div className="draft-preview">
+    <aside className="draft-preview__bar" aria-label="Draft preview status">
+      <div className="draft-preview__bar-inner">
+        <span className="draft-preview__badge">Draft preview</span>
+        <span>{draft.status}</span>
+        <span>{draft.model}</span>
+        <code>{draft.id}</code>
+      </div>
+    </aside>
     <PublicationArticle story={story} stories={[]} template={canonicalTemplate}/>
-    <section style={{maxWidth:1180,margin:"0 auto 80px",padding:"28px 24px",fontFamily:"system-ui",borderTop:"1px solid #d7d3c8"}}>
-      <h2 style={{fontSize:28,marginBottom:8}}>Source artifacts</h2>
-      <p style={{maxWidth:820,color:"#5c594f"}}>Everything extracted from the source is preserved as input. Source media shown here is evidence/reference only unless its rights status separately permits publication.</p>
-      <h3>Canonical sources</h3>
-      <ul>{sources.map(s=><li key={s.url}><a href={s.canonical_url||s.url} target="_blank" rel="noreferrer">{s.source_name}: {s.canonical_url||s.url}</a>{s.crawl_ingest_id?<small> · ingest {s.crawl_ingest_id} · document {s.crawl_document_id} · revision {s.crawl_revision_id}</small>:null}</li>)}</ul>
-      <h3>Source image candidates</h3>
-      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",gap:18}}>{candidates.slice(0,6).map(c=><figure key={c.image_url} style={{margin:0,border:"1px solid #d7d3c8",padding:10}}><img src={c.image_url} alt="Source candidate" style={{width:"100%",aspectRatio:"3/2",objectFit:"cover",background:"#eee"}}/><figcaption style={{fontSize:12,marginTop:8,wordBreak:"break-word"}}>{c.source_kind} · {c.actual_width||"?"}×{c.actual_height||"?"} · score {c.score}{c.selected?" · SELECTED":""}<br/>Source reference — not automatically cleared for publication.</figcaption></figure>)}</div>
-      {sourceImages.length?<><h3>Extracted image manifest</h3><pre style={{whiteSpace:"pre-wrap",fontSize:12,background:"#f4f0e7",padding:14,overflow:"auto"}}>{JSON.stringify(sourceImages,null,2)}</pre></>:null}
-      {embeds.length?<><h3>Embedded objects</h3><ul>{embeds.map((e,i)=><li key={`${e.url}-${i}`}><strong>{e.provider||"embed"}</strong> · <a href={safeUrl(e.url)||"#"} target="_blank" rel="noreferrer">{e.title||e.url}</a></li>)}</ul></>:<><h3>Embedded objects</h3><p>None detected in this source article.</p></>}
-      {supporting.length?<><h3>Supporting links extracted from article body</h3><ul>{supporting.slice(0,40).map((l,i)=><li key={`${l.url}-${i}`}><a href={safeUrl(l.url)||"#"} target="_blank" rel="noreferrer">{l.text||l.host||l.url}</a> <small>· {l.role||"supporting"} · {l.host}</small></li>)}</ul></>:null}
+    <section className="preview-artifacts publication publication--newsroom">
+      <div className="preview-artifacts__inner pub-shell">
+        <header className="preview-artifacts__head">
+          <div>
+            <p className="pub-kicker">Editorial source packet</p>
+            <h2>Source artifacts</h2>
+            <p>Everything extracted from the source is preserved as input. Source media shown here is evidence/reference only unless its rights status separately permits publication.</p>
+          </div>
+          <div className="preview-artifacts__summary">
+            <span><strong>{sources.length}</strong> sources</span>
+            <span><strong>{candidates.length}</strong> image candidates</span>
+            <span><strong>{embeds.length}</strong> embeds</span>
+            <span><strong>{supporting.length}</strong> supporting links</span>
+          </div>
+        </header>
+
+        <section className="preview-artifacts__section">
+          <div className="preview-artifacts__section-head"><h3>Canonical sources</h3><span>Acquisition lineage</span></div>
+          <div className="preview-source-list">{sources.map(s=><article className="preview-source" key={s.url}>
+            <div><span>{s.source_name}</span><a href={s.canonical_url||s.url} target="_blank" rel="noreferrer">{s.canonical_url||s.url}</a></div>
+            {s.crawl_ingest_id?<dl><div><dt>Ingest</dt><dd>{s.crawl_ingest_id}</dd></div><div><dt>Document</dt><dd>{s.crawl_document_id}</dd></div><div><dt>Revision</dt><dd>{s.crawl_revision_id}</dd></div></dl>:null}
+          </article>)}</div>
+        </section>
+
+        <section className="preview-artifacts__section">
+          <div className="preview-artifacts__section-head"><h3>Source image candidates</h3><span>Reference / rights review</span></div>
+          <div className="preview-image-grid">{candidates.slice(0,6).map(c=><figure className={`preview-image-card ${c.selected?"is-selected":""}`} key={c.image_url}>
+            <div className="preview-image-card__media"><img src={c.image_url} alt="Source candidate" loading="lazy"/></div>
+            <figcaption>
+              <div className="preview-image-card__meta"><span>{c.source_kind}</span><span>{c.actual_width||"?"} × {c.actual_height||"?"}</span><span>Score {Number(c.score).toFixed(1)}</span>{c.selected?<strong>Selected</strong>:null}</div>
+              <p>Source reference — not automatically cleared for publication.</p>
+            </figcaption>
+          </figure>)}</div>
+        </section>
+
+        <div className="preview-artifacts__columns">
+          <section className="preview-artifacts__section preview-artifacts__section--compact">
+            <div className="preview-artifacts__section-head"><h3>Embedded objects</h3><span>{embeds.length}</span></div>
+            {embeds.length?<ul className="preview-link-list">{embeds.map((e,i)=><li key={`${e.url}-${i}`}><span>{e.provider||"embed"}</span><a href={safeUrl(e.url)||"#"} target="_blank" rel="noreferrer">{e.title||e.url}</a></li>)}</ul>:<p className="preview-artifacts__empty">None detected in this source article.</p>}
+          </section>
+          <section className="preview-artifacts__section preview-artifacts__section--compact">
+            <div className="preview-artifacts__section-head"><h3>Supporting links</h3><span>{supporting.length}</span></div>
+            {supporting.length?<ul className="preview-link-list">{supporting.slice(0,40).map((l,i)=><li key={`${l.url}-${i}`}><span>{l.host||l.role||"source"}</span><a href={safeUrl(l.url)||"#"} target="_blank" rel="noreferrer">{l.text||l.url}</a></li>)}</ul>:<p className="preview-artifacts__empty">No external supporting links extracted.</p>}
+          </section>
+        </div>
+
+        {sourceImages.length?<details className="preview-artifacts__manifest"><summary>Extracted image manifest <span>{sourceImages.length} entries</span></summary><pre>{JSON.stringify(sourceImages,null,2)}</pre></details>:null}
+      </div>
     </section>
-  </>;
+  </div>
 }

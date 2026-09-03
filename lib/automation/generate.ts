@@ -1,6 +1,6 @@
 import {randomUUID} from "node:crypto";
 import {db} from "@/lib/db";
-import {bundleText} from "@/lib/automation/crawlmesh";
+import {bundleText,bundleJson} from "@/lib/automation/crawlmesh";
 const PROVIDER="openai", CREDIT_WAIT=15, MAX_ATTEMPTS=8;
 type Job={cluster_id:string;title:string;category:string;score:string;source_count:number;attempts:number};
 class GenError extends Error{constructor(public code:string,public status:number|null,message:string){super(message)}}
@@ -16,15 +16,30 @@ async function defer(id:string,n:number,e:GenError,min:number,dead=false){await 
 async function one(j:Job,key:string,model:string,publish:boolean){
  const src=await db().query<{title:string;url:string;published_at:Date|null;source_name:string;crawl_ingest_id:string}>(`SELECT si.title,si.url,si.published_at,s.name source_name,si.crawl_ingest_id FROM cluster_items ci JOIN source_items si ON si.id=ci.source_item_id JOIN sources s ON s.id=si.source_id WHERE ci.cluster_id=$1 AND si.acquisition_status='completed' AND si.crawl_ingest_id IS NOT NULL ORDER BY COALESCE(si.published_at,si.created_at) DESC LIMIT 12`,[j.cluster_id]);
  const sourcePackets:string[]=[];
- for(let i=0;i<src.rows.length;i++){const x=src.rows[i];try{const md=(await bundleText(x.crawl_ingest_id,"content.md")).trim();if(md)sourcePackets.push(`[${i+1}] ${x.source_name}
+ for(let i=0;i<src.rows.length;i++){
+  const x=src.rows[i];
+  try{
+   const md=(await bundleText(x.crawl_ingest_id,"content.md")).trim();
+   if(!md)continue;
+   let resourceText="";
+   try{
+    const resources=await bundleJson<{images?:Array<Record<string,unknown>>;embeds?:Array<Record<string,unknown>>;supportingLinks?:Array<Record<string,unknown>>}>(x.crawl_ingest_id,"resources.json");
+    const compact={images:(resources.images||[]).slice(0,8),embeds:(resources.embeds||[]).slice(0,20),supportingLinks:(resources.supportingLinks||[]).slice(0,40)};
+    if(compact.images.length||compact.embeds.length||compact.supportingLinks.length)resourceText=`
+Extracted source resources (context/evidence; media rights are handled separately):
+${JSON.stringify(compact)}`;
+   }catch{}
+   sourcePackets.push(`[${i+1}] ${x.source_name}
 Title: ${x.title}
 Published: ${x.published_at?.toISOString()??"unknown"}
 URL: ${x.url}
 Normalized source Markdown:
-${md.slice(0,12000)}`)}catch{}}
+${md.slice(0,12000)}${resourceText}`);
+  }catch{}
+ }
  if(!sourcePackets.length)throw new GenError("source_bundle_unavailable",null,"No canonical CrawlMesh source bundle could be loaded for this cluster");
  const packet=sourcePackets.join("\n\n---\n\n");
- let r:Response;try{r=await fetch("https://api.openai.com/v1/responses",{method:"POST",headers:{authorization:`Bearer ${key}`,"content-type":"application/json"},signal:AbortSignal.timeout(120000),body:JSON.stringify({model,reasoning:{effort:"low"},instructions:"You are the editorial engine for Business Future Today. Turn the canonical normalized source bundles into a concise, useful business-and-technology article. Do not invent unsupported facts. Focus on what changed, why it matters to operators, founders, executives and builders, and what to watch next. Avoid hype and generic filler. Write 450-800 words in Markdown with short sections. Return only data matching the requested JSON schema.",input:`Cluster: ${j.title}\nCategory: ${j.category}\nScore: ${j.score}\n\nSources:\n${packet}`,text:{format:{type:"json_schema",name:"business_future_article",strict:true,schema:{type:"object",additionalProperties:false,properties:{title:{type:"string"},slug:{type:"string"},dek:{type:"string"},kicker:{type:"string"},category:{type:"string",enum:["AI","Technology","Companies","Work","Tools"]},body_markdown:{type:"string"},social_caption:{type:"string"}},required:["title","slug","dek","kicker","category","body_markdown","social_caption"]}}}})})}catch(e){throw new GenError("network_error",null,e instanceof Error?e.message:String(e))}
+ let r:Response;try{r=await fetch("https://api.openai.com/v1/responses",{method:"POST",headers:{authorization:`Bearer ${key}`,"content-type":"application/json"},signal:AbortSignal.timeout(120000),body:JSON.stringify({model,reasoning:{effort:"low"},instructions:"You are the editorial engine for Business Future Today. Turn the canonical normalized source bundles into a concise, useful business-and-technology article. Do not invent unsupported facts. Extracted source resources such as official links and embeds are evidence/context; media reuse rights are handled separately. Focus on what changed, why it matters to operators, founders, executives and builders, and what to watch next. Avoid hype and generic filler. Write 450-800 words in Markdown with short sections. Return only data matching the requested JSON schema.",input:`Cluster: ${j.title}\nCategory: ${j.category}\nScore: ${j.score}\n\nSources:\n${packet}`,text:{format:{type:"json_schema",name:"business_future_article",strict:true,schema:{type:"object",additionalProperties:false,properties:{title:{type:"string"},slug:{type:"string"},dek:{type:"string"},kicker:{type:"string"},category:{type:"string",enum:["AI","Technology","Companies","Work","Tools"]},body_markdown:{type:"string"},social_caption:{type:"string"}},required:["title","slug","dek","kicker","category","body_markdown","social_caption"]}}}})})}catch(e){throw new GenError("network_error",null,e instanceof Error?e.message:String(e))}
  if(!r.ok){const d=details(r.status,await r.text());throw new GenError(d.code,r.status,d.message)}
  let a:any;try{a=JSON.parse(outputText(await r.json()))}catch(e){if(e instanceof GenError)throw e;throw new GenError("invalid_json",null,e instanceof Error?e.message:String(e))}
  const id=randomUUID(),slug=String(a.slug).toLowerCase().replace(/[^a-z0-9-]+/g,"-").replace(/^-+|-+$/g,"").slice(0,120);
