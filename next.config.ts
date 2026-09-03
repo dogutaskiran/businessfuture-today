@@ -23,6 +23,7 @@ const nextConfig: NextConfig = {
         ...(process.env.VERCEL === "1" ? [
           { source: "/api/:path*", destination: `${process.env.BFT_API_ORIGIN || "https://api.businessfuture.today"}/api/:path*` },
           { source: "/preview/:path*", destination: `${process.env.BFT_API_ORIGIN || "https://api.businessfuture.today"}/preview/:path*` },
+          { source: "/preview-source/:path*", destination: `${process.env.BFT_API_ORIGIN || "https://api.businessfuture.today"}/preview-source/:path*` },
         ] : []),
         {
           source: "/media/:path*",
