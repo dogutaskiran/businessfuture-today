@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import * as cheerio from "cheerio";
 import sharp from "sharp";
 import { db } from "@/lib/db";
+import { bundleJson } from "@/lib/automation/crawlmesh";
 
 type Candidate = {
   url: string;
@@ -86,6 +87,57 @@ function collectJsonImages(value: unknown, output: string[]) {
 }
 
 export async function discoverSourceImageCandidates(params: { draftId: string; pageUrl: string; rssImageUrl?: string | null }) {
+  try {
+    const ref = await db().query<{ crawl_ingest_id: string }>(
+      `SELECT crawl_ingest_id FROM source_items
+        WHERE crawl_ingest_id IS NOT NULL AND (url=$1 OR canonical_url=$1)
+        ORDER BY acquired_at DESC NULLS LAST LIMIT 1`,
+      [params.pageUrl]
+    );
+    const ingestId = ref.rows[0]?.crawl_ingest_id;
+    if (ingestId) {
+      const assets = await bundleJson<Array<{ sourceUrl?: string; role?: string }>>(ingestId, "assets.json");
+      if (assets?.length) {
+        const meshCandidates = new Map<string, Candidate>();
+        let meshOrdinal = 0;
+        for (const asset of assets) {
+          const url = absolute(asset.sourceUrl, params.pageUrl);
+          if (!url) continue;
+          const score = asset.role === "og" ? 104 : asset.role === "social" ? 96 : 88;
+          addCandidate(meshCandidates, {
+            url,
+            kind: `crawlmesh:${asset.role || "content"}`,
+            ordinal: meshOrdinal++,
+            widthHint: null,
+            heightHint: null,
+            score,
+            metadata: { crawlmeshIngestId: ingestId }
+          });
+        }
+        const sorted = [...meshCandidates.values()]
+          .sort((a, b) => b.score - a.score || a.ordinal - b.ordinal)
+          .slice(0, 16);
+        await db().query(`DELETE FROM source_media_candidates WHERE draft_id=$1`, [params.draftId]);
+        for (const candidate of sorted) {
+          await db().query(
+            `INSERT INTO source_media_candidates
+              (id,draft_id,page_url,image_url,source_kind,ordinal,width_hint,height_hint,score,metadata)
+             VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10::jsonb)
+             ON CONFLICT (draft_id,image_url) DO UPDATE SET
+               source_kind=EXCLUDED.source_kind,ordinal=EXCLUDED.ordinal,
+               width_hint=EXCLUDED.width_hint,height_hint=EXCLUDED.height_hint,
+               score=EXCLUDED.score,metadata=EXCLUDED.metadata,updated_at=NOW()`,
+            [randomUUID(), params.draftId, params.pageUrl, candidate.url, candidate.kind, candidate.ordinal,
+             candidate.widthHint, candidate.heightHint, candidate.score, JSON.stringify(candidate.metadata || {})]
+          );
+        }
+        if (sorted.length) return sorted;
+      }
+    }
+  } catch (error) {
+    console.error("CrawlMesh source-media manifest fallback", error);
+  }
+
   const response = await fetch(params.pageUrl, { headers: { "user-agent": "BusinessFutureToday/0.5 (+https://businessfuture.today)" }, redirect: "follow", signal: AbortSignal.timeout(15000) });
   if (!response.ok) throw new Error(`SOURCE_PAGE_HTTP_${response.status}`);
   const html = (await response.text()).slice(0, 5_000_000);

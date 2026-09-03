@@ -84,6 +84,8 @@ export async function clusterStories() {
        FROM source_items si JOIN sources s ON s.id=si.source_id
        LEFT JOIN cluster_items ci ON ci.source_item_id=si.id
       WHERE ci.source_item_id IS NULL
+        AND si.acquisition_status='completed'
+        AND si.crawl_ingest_id IS NOT NULL
         AND COALESCE(si.published_at,si.created_at)>NOW()-INTERVAL '72 hours'
       ORDER BY COALESCE(si.published_at,si.created_at) DESC LIMIT 500`
   );

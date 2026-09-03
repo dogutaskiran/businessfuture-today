@@ -56,6 +56,25 @@ export async function ensureSchema() {
     CREATE INDEX IF NOT EXISTS source_items_published_idx
       ON source_items (published_at DESC);
 
+    ALTER TABLE source_items ADD COLUMN IF NOT EXISTS crawl_ingest_id TEXT;
+    ALTER TABLE source_items ADD COLUMN IF NOT EXISTS crawl_document_id UUID;
+    ALTER TABLE source_items ADD COLUMN IF NOT EXISTS crawl_revision_id UUID;
+    ALTER TABLE source_items ADD COLUMN IF NOT EXISTS canonical_url TEXT;
+    ALTER TABLE source_items ADD COLUMN IF NOT EXISTS source_content_hash TEXT;
+    ALTER TABLE source_items ADD COLUMN IF NOT EXISTS acquisition_status TEXT NOT NULL DEFAULT 'pending';
+    ALTER TABLE source_items ADD COLUMN IF NOT EXISTS acquisition_attempts INTEGER NOT NULL DEFAULT 0;
+    ALTER TABLE source_items ADD COLUMN IF NOT EXISTS acquisition_next_at TIMESTAMPTZ NOT NULL DEFAULT NOW();
+    ALTER TABLE source_items ADD COLUMN IF NOT EXISTS acquisition_error TEXT;
+    ALTER TABLE source_items ADD COLUMN IF NOT EXISTS acquired_at TIMESTAMPTZ;
+    DO $$ BEGIN
+      ALTER TABLE source_items ADD CONSTRAINT source_items_acquisition_status_check
+        CHECK (acquisition_status IN ('pending','running','retry_wait','completed','dead'));
+    EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+    CREATE INDEX IF NOT EXISTS source_items_acquisition_due_idx
+      ON source_items (acquisition_status, acquisition_next_at, created_at DESC);
+    CREATE INDEX IF NOT EXISTS source_items_crawl_document_idx ON source_items (crawl_document_id);
+    CREATE INDEX IF NOT EXISTS source_items_canonical_url_idx ON source_items (canonical_url);
+
     CREATE TABLE IF NOT EXISTS clusters (
       id UUID PRIMARY KEY,
       title TEXT NOT NULL,
