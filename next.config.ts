@@ -8,6 +8,15 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   assetPrefix: process.env.VERCEL === "1" ? undefined : "https://api.businessfuture.today",
+  async headers() {
+    return [{
+      source: "/_next/static/:path*",
+      headers: [
+        { key: "Access-Control-Allow-Origin", value: "*" },
+        { key: "Cross-Origin-Resource-Policy", value: "cross-origin" },
+      ],
+    }];
+  },
   async rewrites() {
     return {
       beforeFiles: [

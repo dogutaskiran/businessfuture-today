@@ -32,6 +32,7 @@ export default async function DraftPreview({params}:{params:Promise<{id:string}>
   const embeds=resourceBundles.flatMap(x=>x.resources?.embeds||[]);
   const supporting=resourceBundles.flatMap(x=>x.resources?.supportingLinks||[]);
   const sourceImages=resourceBundles.flatMap(x=>(x.resources?.images||[]).map(image=>({source:x.source.source_name,image})));
+  const displayCandidates=candidates.filter(c=>c.selected||Boolean(c.actual_width&&c.actual_height)).slice(0,6);
   return <div className="draft-preview">
     <aside className="draft-preview__bar" aria-label="Draft preview status">
       <div className="draft-preview__bar-inner">
@@ -68,7 +69,7 @@ export default async function DraftPreview({params}:{params:Promise<{id:string}>
 
         <section className="preview-artifacts__section">
           <div className="preview-artifacts__section-head"><h3>Source image candidates</h3><span>Reference / rights review</span></div>
-          <div className="preview-image-grid">{candidates.slice(0,6).map(c=><figure className={`preview-image-card ${c.selected?"is-selected":""}`} key={c.image_url}>
+          <div className="preview-image-grid">{displayCandidates.map(c=><figure className={`preview-image-card ${c.selected?"is-selected":""}`} key={c.image_url}>
             <div className="preview-image-card__media"><img src={c.image_url} alt="Source candidate" loading="lazy"/></div>
             <figcaption>
               <div className="preview-image-card__meta"><span>{c.source_kind}</span><span>{c.actual_width||"?"} × {c.actual_height||"?"}</span><span>Score {Number(c.score).toFixed(1)}</span>{c.selected?<strong>Selected</strong>:null}</div>
