@@ -1,7 +1,9 @@
 import type {MetadataRoute} from "next";
-import {stories} from "@/lib/content";
+import {liveStories} from "@/lib/live-content";
 import {publicationSections,sectionHref} from "@/lib/sections";
-export default function sitemap():MetadataRoute.Sitemap{
+export const dynamic="force-dynamic";
+export default async function sitemap():Promise<MetadataRoute.Sitemap>{
+  const stories=await liveStories(500);
   const base="https://businessfuture.today";
   const evergreen=["about","newsletter","privacy","cookies","terms","editorial-standards","corrections","affiliate-disclosure"];
   return [

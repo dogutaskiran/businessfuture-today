@@ -1,7 +1,5 @@
-import { PublicationHome } from "@/components/publication/home";
-import { stories } from "@/lib/content";
-import { canonicalTemplate } from "@/lib/publication";
-
-export default function Home() {
-  return <PublicationHome stories={stories} template={canonicalTemplate}/>;
-}
+import {PublicationHome} from "@/components/publication/home";
+import {liveStories} from "@/lib/live-content";
+import {canonicalTemplate} from "@/lib/publication";
+export const dynamic="force-dynamic";
+export default async function Home(){return <PublicationHome stories={await liveStories()} template={canonicalTemplate}/>}

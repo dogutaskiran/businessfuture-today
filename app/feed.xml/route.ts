@@ -1,4 +1,4 @@
-import { stories } from "@/lib/content";
+import { liveStories } from "@/lib/live-content";
 
 const ORIGIN = "https://businessfuture.today";
 function xml(value: string) {
@@ -6,9 +6,10 @@ function xml(value: string) {
 }
 
 export async function GET() {
+  const stories = await liveStories(50);
   const items = stories.slice(0, 50).map((story) => {
     const link = `${ORIGIN}/story/${story.slug}`;
-    const image = story.heroImage ? `${ORIGIN}${story.heroImage}` : null;
+    const image = story.heroImage ? (/^https?:\/\//i.test(story.heroImage) ? story.heroImage : `${ORIGIN}${story.heroImage}`) : null;
     const published = story.publishedAt ? new Date(story.publishedAt) : new Date();
     const author = story.author ? `${story.author.name} · ${story.author.desk}` : "Business Future Today";
     return `

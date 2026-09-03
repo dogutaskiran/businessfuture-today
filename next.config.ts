@@ -24,6 +24,9 @@ const nextConfig: NextConfig = {
           { source: "/api/:path*", destination: `${process.env.BFT_API_ORIGIN || "https://api.businessfuture.today"}/api/:path*` },
           { source: "/preview/:path*", destination: `${process.env.BFT_API_ORIGIN || "https://api.businessfuture.today"}/preview/:path*` },
           { source: "/preview-source/:path*", destination: `${process.env.BFT_API_ORIGIN || "https://api.businessfuture.today"}/preview-source/:path*` },
+          { source: "/social-review/:path*", destination: `${process.env.BFT_API_ORIGIN || "https://api.businessfuture.today"}/social-review/:path*` },
+          { source: "/social-review-assets/:path*", destination: `${process.env.BFT_API_ORIGIN || "https://api.businessfuture.today"}/social-review-assets/:path*` },
+          { source: "/social-publish-assets/:path*", destination: `${process.env.BFT_API_ORIGIN || "https://api.businessfuture.today"}/social-publish-assets/:path*` },
         ] : []),
         {
           source: "/media/:path*",
