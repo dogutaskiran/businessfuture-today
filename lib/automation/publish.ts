@@ -2,7 +2,7 @@ import {db,ensureSchema} from "@/lib/db";
 
 export async function publishReadyDraft(){
   await ensureSchema();
-  const interval=Math.max(15,Math.min(360,Number(process.env.PUBLICATION_MIN_INTERVAL_MINUTES||60)));
+  const interval=Math.max(15,Math.min(1440,Number(process.env.PUBLICATION_MIN_INTERVAL_MINUTES||480)));
   const latest=await db().query<{published_at:Date|null}>(`SELECT max(published_at) published_at FROM drafts WHERE status='published'`);
   const last=latest.rows[0]?.published_at?new Date(latest.rows[0].published_at):null;
   if(last&&Date.now()-last.getTime()<interval*60_000)return{status:"skipped",reason:"publication_interval",intervalMinutes:interval,lastPublishedAt:last.toISOString()};
