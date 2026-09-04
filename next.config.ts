@@ -27,8 +27,8 @@ const nextConfig: NextConfig = {
           { source: "/social-review/:path*", destination: `${process.env.BFT_API_ORIGIN || "https://api.businessfuture.today"}/social-review/:path*` },
           { source: "/social-review-assets/:path*", destination: `${process.env.BFT_API_ORIGIN || "https://api.businessfuture.today"}/social-review-assets/:path*` },
           { source: "/social-publish-assets/:path*", destination: `${process.env.BFT_API_ORIGIN || "https://api.businessfuture.today"}/social-publish-assets/:path*` },
-          { source: "/media/:path*", has: [{ type: "host", value: "businessfuture.today" }], destination: `https://assets.businessfuture.today/media/:path*` },
-          { source: "/media/:path*", has: [{ type: "host", value: "www.businessfuture.today" }], destination: `https://assets.businessfuture.today/media/:path*` },
+          { source: "/media/:path*", has: [{ type: "host" as const, value: "businessfuture.today" }], destination: `https://assets.businessfuture.today/media/:path*` },
+          { source: "/media/:path*", has: [{ type: "host" as const, value: "www.businessfuture.today" }], destination: `https://assets.businessfuture.today/media/:path*` },
         ] : []),
         {
           source: "/media/:path*",
