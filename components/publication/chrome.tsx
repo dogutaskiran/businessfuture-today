@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SubscribeForm } from "@/components/subscribe-form";
 import { publicationBrand, storyHref, type PublicationTemplate } from "@/lib/publication";
 import {publicationSections,sectionHref} from "@/lib/sections";
+import {PrivacyChoicesLink} from "@/components/privacy-choices-link";
 
 export function PublicationHeader({ template: _template, pathname: _pathname = "/" }: { template: PublicationTemplate; pathname?: string }) {
   return <>
@@ -22,7 +23,7 @@ export function PublicationFooter({ template: _template }: { template: Publicati
       <div><Link href="/" className="pub-brand pub-brand--footer"><img src="/brand/site-header-wordmark-600x130.png" alt="Business Future Today" /></Link><p>{publicationBrand.tagline}</p></div>
       <div><h4>Sections</h4>{publicationSections.map((section) => <Link key={section.id} href={sectionHref(section)}>{section.name}</Link>)}</div>
       <div><h4>Products</h4><Link href="/newsletter">Daily Briefing</Link><Link href="/feed.xml">RSS Feed</Link><a href="mailto:ads@businessfuture.today">Advertise</a></div>
-      <div><h4>Business Future Today</h4><Link href="/about">About</Link><Link href="/editorial-standards">Editorial Standards</Link><Link href="/corrections">Corrections</Link><Link href="/affiliate-disclosure">Affiliate Disclosure</Link><Link href="/privacy">Privacy</Link><Link href="/cookies">Cookies</Link><Link href="/terms">Terms</Link><a href="mailto:hello@businessfuture.today">Contact</a><span>© {new Date().getFullYear()}</span></div>
+      <div><h4>Business Future Today</h4><Link href="/about">About</Link><Link href="/editorial-standards">Editorial Standards</Link><Link href="/corrections">Corrections</Link><Link href="/affiliate-disclosure">Affiliate Disclosure</Link><Link href="/privacy">Privacy</Link><PrivacyChoicesLink/><Link href="/cookies">Cookies</Link><Link href="/terms">Terms</Link><a href="mailto:hello@businessfuture.today">Contact</a><span>© {new Date().getFullYear()}</span></div>
     </div>
   </footer>;
 }
