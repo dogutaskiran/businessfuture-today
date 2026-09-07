@@ -30,7 +30,6 @@ type Row = {
   inline2_path: string | null;
   inline2_alt: string | null;
   inline2_credit: string | null;
-  instagram_published: boolean;
 };
 
 export async function buildSocialOutbox() {
@@ -41,11 +40,7 @@ export async function buildSocialOutbox() {
       h.alt_text hero_alt,h.attribution_text hero_credit,h.source_page_url hero_source_page_url,
       h.source_image_url hero_source_image_url,h.license_status hero_license_status,h.license_basis hero_license_basis,
       i1.hero_path inline1_path,i1.alt_text inline1_alt,i1.attribution_text inline1_credit,
-      i2.hero_path inline2_path,i2.alt_text inline2_alt,i2.attribution_text inline2_credit,
-      EXISTS(
-        SELECT 1 FROM social_publications sp
-        WHERE sp.platform='instagram' AND sp.status='published' AND sp.content_slug=d.slug
-      ) instagram_published
+      i2.hero_path inline2_path,i2.alt_text inline2_alt,i2.attribution_text inline2_credit
     FROM drafts d
     LEFT JOIN media_assets h ON h.draft_id=d.id AND h.role='hero'
     LEFT JOIN media_assets i1 ON i1.draft_id=d.id AND i1.role='inline_1'
@@ -120,8 +115,6 @@ export async function buildSocialOutbox() {
       },
       sources: row.source_urls || [],
       publishedAt: row.published_at?.toISOString() || null,
-      instagramPublished: Boolean(row.instagram_published),
-      delivered: { instagram: Boolean(row.instagram_published) },
       ready: Boolean(hero),
       article,
     };
@@ -130,6 +123,11 @@ export async function buildSocialOutbox() {
   return {
     publication: "business-future-today",
     recipe: "bft-edition-v1",
+    ownership: {
+      content: "business-future-today",
+      orchestration: "dogu-one",
+      deliveryState: "dogu-one",
+    },
     items,
   };
 }
