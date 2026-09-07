@@ -23,6 +23,7 @@ type Row = {
   social_square_path: string | null;
   social_portrait_path: string | null;
   card_path: string | null;
+  instagram_published: boolean;
 };
 
 export async function GET(request: Request) {
@@ -30,7 +31,11 @@ export async function GET(request: Request) {
   await ensureSchema();
   const result = await db().query<Row>(`
     SELECT d.id,d.slug,d.title,d.dek,d.category,d.social_caption,d.source_urls,d.published_at,
-      m.social_square_path,m.social_portrait_path,m.card_path
+      m.social_square_path,m.social_portrait_path,m.card_path,
+      EXISTS(
+        SELECT 1 FROM social_publications sp
+        WHERE sp.platform='instagram' AND sp.status='published' AND sp.content_slug=d.slug
+      ) instagram_published
     FROM drafts d
     LEFT JOIN media_assets m ON m.draft_id=d.id AND m.role='hero'
     WHERE d.status='published'
@@ -56,6 +61,8 @@ export async function GET(request: Request) {
       },
       sources: row.source_urls || [],
       publishedAt: row.published_at?.toISOString() || null,
+      instagramPublished: Boolean(row.instagram_published),
+      delivered: { instagram: Boolean(row.instagram_published) },
       ready: Boolean(row.social_portrait_path || row.social_square_path)
     };
   });
