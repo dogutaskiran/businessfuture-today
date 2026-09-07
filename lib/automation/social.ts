@@ -31,6 +31,7 @@ type DraftRow = {
   source_urls: string[];
   published_at: Date;
 };
+type PublishResult = { mediaId: string; instagramBusinessAccountId?: string; imageCount?: number; published?: boolean };
 type JobRow = {
   id: string;
   draft_id: string;
@@ -38,7 +39,8 @@ type JobRow = {
   status: string;
   attempts: number;
   plan: SocialPlan | null;
-  assets: { imageUrls?: string[] } | null;
+  assets: { imageUrls?: string[]; publishResult?: PublishResult } | null;
+  published_object_id: string | null;
 };
 type MediaRow = { role: "hero" | "inline_1" | "inline_2"; hero_path: string | null; social_portrait_path: string | null };
 
@@ -99,6 +101,7 @@ async function ensureSocialSchema() {
 }
 
 async function discoverJobs() {
+  await db().query(`UPDATE social_jobs SET status='retry_wait',next_attempt_at=NOW(),locked_at=NULL,updated_at=NOW(),last_error=COALESCE(last_error,'stale_processing_recovered') WHERE status='processing' AND locked_at<NOW()-INTERVAL '20 minutes'`);
   const candidates = await db().query<{id:string;slug:string}>(`
     SELECT d.id,d.slug
     FROM drafts d
@@ -132,7 +135,7 @@ async function claimJob(): Promise<JobRow | null> {
   try {
     await client.query("BEGIN");
     const found = await client.query<JobRow>(`
-      SELECT id,draft_id,content_slug,status,attempts,plan,assets
+      SELECT id,draft_id,content_slug,status,attempts,plan,assets,published_object_id
       FROM social_jobs
       WHERE platform='instagram'
         AND status IN ('pending','retry_wait')
@@ -147,7 +150,7 @@ async function claimJob(): Promise<JobRow | null> {
       UPDATE social_jobs
       SET status='processing',attempts=attempts+1,locked_at=NOW(),updated_at=NOW(),last_error=NULL
       WHERE id=$1
-      RETURNING id,draft_id,content_slug,status,attempts,plan,assets
+      RETURNING id,draft_id,content_slug,status,attempts,plan,assets,published_object_id
     `,[job.id]);
     await client.query("COMMIT");
     return updated.rows[0] || null;
@@ -336,7 +339,7 @@ async function publishInstagram(imageUrls: string[], plan: SocialPlan) {
   try { payload = text ? JSON.parse(text) : null; } catch { payload = { raw: text.slice(0,1000) }; }
   if (!response.ok) throw new Error(`DOGU_ONE_INSTAGRAM_${response.status}:${JSON.stringify(payload).slice(0,1400)}`);
   if (!payload?.mediaId) throw new Error(`DOGU_ONE_INSTAGRAM_INVALID_RESPONSE:${JSON.stringify(payload).slice(0,1000)}`);
-  return payload as { mediaId: string; instagramBusinessAccountId?: string; imageCount?: number; published?: boolean };
+  return payload as PublishResult;
 }
 
 async function saveFailure(job: JobRow, error: unknown) {
@@ -368,7 +371,12 @@ export async function runSocialAutomation() {
       assets = await renderAndStore(draft,plan,media,job.id);
       await db().query(`UPDATE social_jobs SET assets=$2::jsonb,updated_at=NOW() WHERE id=$1`,[job.id,JSON.stringify(assets)]);
     }
-    const published = await publishInstagram(assets.imageUrls || [],plan);
+    let published = assets.publishResult;
+    if (!published?.mediaId) {
+      published = await publishInstagram(assets.imageUrls || [],plan);
+      assets = { ...assets, publishResult: published };
+      await db().query(`UPDATE social_jobs SET assets=$2::jsonb,published_object_id=$3,updated_at=NOW() WHERE id=$1`,[job.id,JSON.stringify(assets),String(published.mediaId)]);
+    }
     const tx = await db().connect();
     try {
       await tx.query("BEGIN");
