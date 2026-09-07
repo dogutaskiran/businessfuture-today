@@ -85,6 +85,8 @@ export async function authorizeAutomationRequest(request:Request){
   if(bearerOk(process.env.CRON_SECRET,auth))return true;
   if(bearerOk(process.env.AUTOMATION_CONTROL_TOKEN,auth))return true;
   if(await vercelOidcOk(auth))return true;
+  const forwarded=request.headers.get("x-dogu-vercel-oidc");
+  if(forwarded&&await vercelOidcOk(`Bearer ${forwarded}`))return true;
   const bootstrap=process.env.BOOTSTRAP_TOKEN,supplied=new URL(request.url).searchParams.get("bootstrap");
   if(bootstrap&&supplied===bootstrap)return true;
   return probeOk(request);
