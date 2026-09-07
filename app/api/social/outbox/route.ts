@@ -4,13 +4,6 @@ import { absoluteMediaUrl } from "@/lib/media-url";
 
 export const dynamic = "force-dynamic";
 
-function authorized(request: Request) {
-  const expected = process.env.SOCIAL_OUTBOX_TOKEN;
-  if (!expected) return true;
-  const authorization = request.headers.get("authorization") || "";
-  return authorization === `Bearer ${expected}`;
-}
-
 type Row = {
   id: string;
   slug: string;
@@ -26,8 +19,7 @@ type Row = {
   instagram_published: boolean;
 };
 
-export async function GET(request: Request) {
-  if (!authorized(request)) return Response.json({ error: "unauthorized" }, { status: 401 });
+export async function GET() {
   await ensureSchema();
   const result = await db().query<Row>(`
     SELECT d.id,d.slug,d.title,d.dek,d.category,d.social_caption,d.source_urls,d.published_at,
