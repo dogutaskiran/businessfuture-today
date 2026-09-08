@@ -3,6 +3,8 @@
 import { FormEvent, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
 
+const SUBSCRIBE_URL = "https://dogu.one/api/publications/business-future-today/subscribe";
+
 export function SubscribeForm({ compact = false }: { compact?: boolean }) {
   const [email, setEmail] = useState("");
   const [state, setState] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -14,10 +16,16 @@ export function SubscribeForm({ compact = false }: { compact?: boolean }) {
     setMessage("");
 
     try {
-      const response = await fetch("/api/subscribe", {
+      const response = await fetch(SUBSCRIBE_URL, {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email, source: "businessfuture.today", frequency: "daily" })
+        body: JSON.stringify({
+          email,
+          source: "businessfuture.today",
+          form: compact ? "bft-web-compact" : "bft-web-main",
+          frequency: "daily",
+          consentVersion: "2026-09-02"
+        })
       });
       const data = await response.json();
 
