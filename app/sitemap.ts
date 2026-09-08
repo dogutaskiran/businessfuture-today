@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { stories } from "@/lib/content";
 import { publicationSections, sectionHref } from "@/lib/sections";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://businessfuture.today";
   const evergreen = ["about", "newsletter", "privacy", "cookies", "terms", "editorial-standards", "corrections", "affiliate-disclosure"];
