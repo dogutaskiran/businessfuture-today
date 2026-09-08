@@ -17,7 +17,7 @@ export async function liveStories(limit = 500): Promise<Story[]> {
       { next: { revalidate: 60 } },
     );
     if (response.ok) {
-      const payload = await response.json() as { stories?: Story[]: items?: Story[] };
+      const payload = await response.json() as { stories?: Story[]; items?: Story[] };
       const rows = Array.isArray(payload.stories) ? payload.stories : payload.items;
       if (Array.isArray(rows) && rows.length) return rows.map(withAuthor);
     }
