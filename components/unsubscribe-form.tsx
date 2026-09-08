@@ -1,31 +1,4 @@
 "use client";
-import {useState} from "react";
-
-export function UnsubscribeForm({token}:{token:string}) {
-  const [state,setState] = useState<"idle"|"loading"|"done"|"error">("idle");
-
-  async function go() {
-    setState("loading");
-    try {
-      const r = await fetch(`https://dogu.one/api/publications/business-future-today/unsubscribe/${encodeURIComponent(token)}`, {
-        method:"POST",
-        headers:{"content-type":"application/json"},
-        body:JSON.stringify({source:"businessfuture.today"})
-      });
-      setState(r.ok ? "done" : "error");
-    } catch {
-      setState("error");
-    }
-  }
-
-  if (state === "done") {
-    return <p>You’ve been unsubscribed. You won’t receive future briefings unless you subscribe again.</p>;
-  }
-
-  return <div>
-    <button className="legal-primary-button" disabled={state==="loading"} onClick={go}>
-      {state==="loading" ? "Unsubscribing…" : "Unsubscribe"}
-    </button>
-    {state==="error" ? <p>We couldn’t process this link. Email <a href="mailto:privacy@businessfuture.today">privacy@businessfuture.today</a>.</p> : null}
-  </div>;
-}
+import { useState } from "react";
+function readToken() { if (typeof window === "undefined") return ""; const queryToken = new URLSearchParams(window.location.search).get("token"); if (queryToken) return queryToken; const parts = window.location.pathname.split("/").filter(Boolean); return parts[0] === "newsletter" && parts[1] === "unsubscribe" && parts[2] ? decodeURIComponent(parts[2]) : ""; }
+export function UnsubscribeForm() { const [state,setState] = useState<"idle"|"loading"|"done"|"error">("idle"); async function go() { const token = readToken(); if (!token) { setState("error"); return; } setState("loading"); try { const r = await fetch(`https://dogu.one/api/publications/business-future-today/unsubscribe/${encodeURIComponent(token)}`, { method:"POST", headers:{"content-type":"application/json"}, body:JSON.stringify({source:"businessfuture.today"}) }); setState(r.ok ? "done" : "error"); } catch { setState("error"); } } if (state === "done") return <p>You’ve been unsubscribed. You won’t receive future briefings unless you subscribe again.</p>; return <div><button className="legal-primary-button" disabled={state==="loading"} onClick={go}>{state==="loading" ? "Unsubscribing…" : "Unsubscribe"}</button>{state==="error" ? <p>We couldn’t process this link. Email <a href="mailto:privacy@businessfuture.today">privacy@businessfuture.today</a>.</p> : null}</div>; }

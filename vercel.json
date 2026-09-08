@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/newsletter/unsubscribe/:token", "destination": "/newsletter/unsubscribe/?token=:token", "permanent": false }
+  ]
+}

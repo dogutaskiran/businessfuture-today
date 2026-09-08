@@ -1,16 +1,12 @@
 {
   "name": "businessfuture-today",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "content:export": "node scripts/export-static-content.mjs",
     "build": "npm run content:export && next build",
-    "storage:bootstrap": "node scripts/bootstrap-r2.mjs --force",
-    "storage:archive-rss": "node scripts/archive-rss-r2.mjs",
-    "start": "next start",
-    "typecheck": "tsc --noEmit",
-    "social:ledger": "node scripts/social-publish-ledger.mjs"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
