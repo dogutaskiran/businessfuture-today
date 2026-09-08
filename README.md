@@ -1,16 +1,38 @@
 # Business Future Today
 
-Independent publication runtime for Business Future Today.
+Static publication frontend for [businessfuture.today](https://businessfuture.today).
 
-## Ownership
+## Architecture
 
-- **Content lifecycle:** dedicated PostgreSQL database `business_future_today`; `drafts` is the lifecycle table and `articles` is the canonical publication view.
-- **Source ingest:** publication-owned RSS/source tables plus the `businessfuture-source` R2 bucket.
-- **Public media:** `businessfuture-public`, served at `assets.businessfuture.today`.
-- **Newsletter audience:** publication-owned `newsletter_subscribers`; outbound delivery uses MailMesh.
-- **Ads:** publication-owned `publication_ad_slots`, resolved by `/api/ads/[slot]`.
-- **Social:** publication outbox with dogu.one Meta capabilities.
-- **Secrets:** Business Future OpenBao namespace/runtime injection.
-- **Deploy:** GitHub + Vercel.
+Business Future Today does not own a runtime database, crawler, content API, AI key, cron worker, publication queue, or social outbox.
 
-`lib/generated-content.ts` and `content/` are deploy artifacts exported from the publication database; they are not the source of truth.
+The source of truth lives in the shared dogu.one publication services. During every production build:
+
+1. `scripts/export-static-content.mjs` reads published content from `https://dogu.one/api/publications/business-future-today/content`.
+2. It materializes the build snapshot under `content/` and generates static RSS/feed files.
+3. Next.js exports the entire site as static files (`output: "export"`).
+4. Vercel serves the static output. There are no Vercel Functions or publication crons.
+
+Newsletter subscribe/unsubscribe actions are browser calls to the shared dogu.one publication endpoints. No local API proxy is used.
+
+## Media
+
+New media is managed centrally. Existing article URLs under `assets.businessfuture.today` remain compatible through a temporary CDN rewrite to the legacy R2 public origin while historical assets are migrated to the central Media Library.
+
+## Development
+
+```bash
+npm ci
+npm run content:export
+npm run dev
+```
+
+`PUBLICATION_CONTENT_URL` may be overridden for testing. It is not a secret.
+
+## Production
+
+```bash
+npm run build
+```
+
+A successful build exports the current central publication snapshot and produces a fully static site. Production Vercel configuration must not contain database, OpenAI, BrowserMesh, Cloudflare, cron, or automation secrets.
