@@ -10,11 +10,11 @@
   "rewrites": [
     {
       "source": "/media/:path*",
-      "destination": "https://pub-bee1ccae8444499fb2a74842fcf63f2b.r2.dev/media/:path*"
+      "destination": "https://pub-a31821b9c2db412f8267d2f30df9ff73.r2.dev/business-future-today/legacy/media/:path*"
     },
     {
       "source": "/articles/:path*",
-      "destination": "https://pub-bee1ccae8444499fb2a74842fcf63f2b.r2.dev/articles/:path*"
+      "destination": "https://pub-a31821b9c2db412f8267d2f30df9ff73.r2.dev/business-future-today/legacy/articles/:path*"
     }
   ]
 }
