@@ -10,10 +10,24 @@ const CONTENT_URL = (process.env.PUBLICATION_CONTENT_URL || "https://dogu.one/ap
 const json = (value) => `${JSON.stringify(value, null, 2)}\n`;
 const xml = (value) => String(value || "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&apos;");
 
-const response = await fetch(`${CONTENT_URL}?status=published&limit=500`, {
-  headers: { accept: "application/json", "user-agent": "businessfuture.today-static-build" },
+const exportUrl = new URL(CONTENT_URL);
+exportUrl.searchParams.set("status", "published");
+exportUrl.searchParams.set("limit", "500");
+exportUrl.searchParams.set("fresh", "1");
+exportUrl.searchParams.set("build", process.env.VERCEL_DEPLOYMENT_ID || String(Date.now()));
+
+const response = await fetch(exportUrl, {
+  cache: "no-store",
+  headers: {
+    accept: "application/json",
+    "user-agent": "businessfuture.today-static-build",
+    "x-dogu-content-fresh": "1",
+  },
 });
 if (!response.ok) throw new Error(`Doğu One content export failed: ${response.status} ${response.statusText}`);
+if (response.headers.get("x-dogu-content-fresh") !== "1") {
+  throw new Error("Doğu One content export did not confirm a fresh canonical read");
+}
 const payload = await response.json();
 const stories = Array.isArray(payload.stories) ? payload.stories : payload.items;
 if (!Array.isArray(stories) || stories.length === 0) throw new Error("Doğu One returned no published stories; refusing to publish an empty site");
@@ -55,4 +69,4 @@ const items = stories.slice(0, 100).map((story) => {
 const rss = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n  <channel>\n    <title>Business Future Today</title>\n    <link>https://businessfuture.today/</link>\n    <description>What changes business next.</description>\n    <language>en</language>\n${items}\n  </channel>\n</rss>\n`;
 await writeFile(path.join(PUBLIC_DIR, "rss.xml"), rss, "utf8");
 await writeFile(path.join(PUBLIC_DIR, "feed.xml"), rss, "utf8");
-console.log(JSON.stringify({ source: CONTENT_URL, exported: stories.length, rssItems: Math.min(100, stories.length) }));
+console.log(JSON.stringify({ source: CONTENT_URL, fresh: true, generatedAt: payload.generatedAt || null, exported: stories.length, rssItems: Math.min(100, stories.length) }));
