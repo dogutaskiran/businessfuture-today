@@ -1,11 +1,10 @@
 {
   "name": "businessfuture-today",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "content:export": "node scripts/export-static-content.mjs",
-    "build": "npm run content:export && next build",
+    "build": "next build",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

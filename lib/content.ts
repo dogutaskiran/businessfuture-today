@@ -1,5 +1,4 @@
 import { authorForStory, type EditorialAuthor } from "@/lib/authors";
-import staticStoriesJson from "@/content/index.json";
 import { resolveMediaUrl } from "@/lib/media-url";
 
 export type Story = {
@@ -28,6 +27,8 @@ export type Story = {
   inlineImages?: readonly { role: string; src: string; alt: string; credit?: string | null }[];
 };
 
+const CONTENT_URL = process.env.PUBLICATION_CONTENT_URL || "https://dogu.one/api/publications/business-future-today/content";
+
 function withAuthor<T extends Story>(story: T): T {
   const inlineImages = story.inlineImages?.map((image) => ({ ...image, src: resolveMediaUrl(image.src) || image.src }));
   return {
@@ -38,9 +39,23 @@ function withAuthor<T extends Story>(story: T): T {
     ogImage: resolveMediaUrl(story.ogImage),
     socialSquareImage: resolveMediaUrl(story.socialSquareImage),
     socialPortraitImage: resolveMediaUrl(story.socialPortraitImage),
-    inlineImages
+    inlineImages,
   } as T;
 }
 
-export const stories: Story[] = (staticStoriesJson as unknown as Story[]).map((story) => withAuthor({ ...story }));
+export async function getStories(): Promise<Story[]> {
+  const url = new URL(CONTENT_URL);
+  url.searchParams.set("status", "published");
+  url.searchParams.set("limit", "500");
+  url.searchParams.set("fresh", "1");
+  const response = await fetch(url, {
+    cache: "no-store",
+    headers: { accept: "application/json", "x-dogu-content-fresh": "1" },
+  });
+  if (!response.ok) throw new Error(`Doğu One content read failed: ${response.status}`);
+  const payload = await response.json();
+  const rows = Array.isArray(payload?.stories) ? payload.stories : Array.isArray(payload?.items) ? payload.items : [];
+  return rows.map((story: Story) => withAuthor({ ...story }));
+}
+
 export const categories = ["AI", "Technology", "Companies", "Work", "Tools"] as const;
