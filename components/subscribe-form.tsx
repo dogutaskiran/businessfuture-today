@@ -36,10 +36,11 @@ export function SubscribeForm({ compact = false }: { compact?: boolean }) {
       trackEvent("sign_up", {
         method: "newsletter",
         form_variant: compact ? "compact" : "main",
-        source_path: window.location.pathname
+        source_path: window.location.pathname,
+        subscription_status: data.status || "subscribed"
       });
       setState("success");
-      setMessage("You’re subscribed.");
+      setMessage(data.status === "already_subscribed" ? "You’re already subscribed." : "You’re subscribed.");
       setEmail("");
     } catch (error) {
       setState("error");
